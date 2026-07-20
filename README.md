@@ -2,7 +2,7 @@
 
 A static, mobile-first trip companion for our 10 days in the Tyrolean Alps (11–20 Aug 2026): day-by-day itinerary, interactive map, attractions, candidate stays, restaurants/supermarkets/gas, live weather, Austrian food & drink, packing/booking checklists, a PIN-gated Tickets wallet (flights + rental car), an AI tour-guide chat (**Wolfi**), and a per-day kids' quiz. Bilingual English / Hebrew. Built to live on the phone during the trip.
 
-Deployed to GitHub Pages at **https://zolowsc.github.io/austria-2026/**.
+Deployed to GitHub Pages at **https://zolofamilysummer.com/**.
 
 Built from the trip-companion template — for the full design rationale and the playbook, see [`docs/HOW_TO_BUILD_A_VACATION_WEBSITE.md`](docs/HOW_TO_BUILD_A_VACATION_WEBSITE.md).
 
@@ -35,7 +35,7 @@ npm run preview  # preview the production build locally
 npm run lint     # ESLint flat config
 ```
 
-`vite.config.ts` switches the `base` path between local dev (`/`) and the GitHub Pages deploy — update the prod `base` to match your repo slug.
+`vite.config.ts` sets `base: "/"` because the site is served from the custom apex domain **zolofamilysummer.com** (root). The custom domain is pinned by `public/CNAME`. If you ever drop the domain and go back to project Pages, set the build `base` back to `/<repo-slug>/`.
 
 ## Environment variables
 

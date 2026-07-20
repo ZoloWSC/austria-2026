@@ -51,10 +51,10 @@ export default function Navbar() {
           onClick={() => handleClick("hero")}
           className="flex items-baseline gap-2 group min-h-11"
         >
-          <span className={`font-serif text-xl sm:text-2xl ${scrolled ? "text-ink-900" : "text-ink-900 sm:text-cream-50 sm:drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]"} group-hover:text-terracotta-600 transition-colors`}>
+          <span className={`font-serif text-xl sm:text-2xl ${scrolled ? "text-ink-900" : "text-ink-900 drop-shadow-[0_1px_4px_rgba(255,255,255,0.5)] sm:text-cream-50 sm:drop-shadow-[0_1px_4px_rgba(0,0,0,0.45)]"} group-hover:text-terracotta-600 transition-colors`}>
             {t("brand_short")}
           </span>
-          <span className="font-serif italic text-terracotta-600 text-base sm:text-lg">{t("brand_year")}</span>
+          <span className={`font-serif italic text-base sm:text-lg ${scrolled ? "text-terracotta-600" : "text-terracotta-500 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)] sm:text-terracotta-400 sm:drop-shadow-[0_1px_4px_rgba(0,0,0,0.45)]"}`}>{t("brand_year")}</span>
         </button>
 
         <div className="hidden md:flex items-center gap-1">
