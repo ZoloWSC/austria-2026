@@ -50,6 +50,15 @@ interface ResolvedLead {
 }
 
 function resolveLead(day: Day): ResolvedLead {
+  // Prefer the day's explicit leadImage (the author's chosen anchor shot)
+  // over the first activity's attraction photo.
+  if (day.leadImage) {
+    return {
+      src: day.leadImage,
+      alt: day.title,
+      credit: day.leadImageCredit
+    };
+  }
   const fromActivity = day.activities
     .map(a => (a.attractionId ? getAttraction(a.attractionId) : undefined))
     .find(a => !!a?.image);
@@ -60,13 +69,6 @@ function resolveLead(day: Day): ResolvedLead {
       credit: fromActivity.imageCredit,
       category: fromActivity.category,
       tags: fromActivity.tags
-    };
-  }
-  if (day.leadImage) {
-    return {
-      src: day.leadImage,
-      alt: day.title,
-      credit: day.leadImageCredit
     };
   }
   // Last resort: any activity attraction (with no image) — for icon hint

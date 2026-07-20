@@ -44,6 +44,14 @@ interface ResolvedLead {
  * Full attribution is shown on the dedicated chapter detail page instead.
  */
 function resolveLead(day: Day, getPoi: (p: POI) => POI): ResolvedLead {
+  // Prefer the day's explicit leadImage — it's the author's chosen anchor
+  // shot for the day (e.g. the lake, not the airport the day starts at).
+  if (day.leadImage) {
+    return {
+      src: day.leadImage,
+      alt: day.title
+    };
+  }
   const fromActivity = day.activities
     .map(a => (a.attractionId ? getAttraction(a.attractionId) : undefined))
     .find(a => !!a?.image);
@@ -54,12 +62,6 @@ function resolveLead(day: Day, getPoi: (p: POI) => POI): ResolvedLead {
       alt: local.name,
       category: fromActivity.category,
       tags: fromActivity.tags
-    };
-  }
-  if (day.leadImage) {
-    return {
-      src: day.leadImage,
-      alt: day.title
     };
   }
   const anyAtt = day.activities
