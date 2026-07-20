@@ -336,7 +336,7 @@ export default function ChapterDetailPage({ dayNumber }: { dayNumber: number }) 
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
-          <div className="font-serif text-2xl text-ink-900">{lang === "he" ? "פרק לא נמצא" : "Chapter not found"}</div>
+          <div className="font-serif text-2xl text-ink-900">{lang === "he" ? "יום לא נמצא" : "Day not found"}</div>
           <button
             type="button"
             onClick={() => navigateHome({ scrollToTrip: true })}

@@ -79,51 +79,65 @@ export default function TripStrip({ compact = false, activeDay, onSelect }: Prop
   };
 
   if (compact) {
+    // A row of day "coins": each shows the weekday (Sun, Mon…) over the
+    // date. Chevrons between them make the day-to-day flow direction
+    // obvious. Horizontally scrollable; the active day auto-centers.
     return (
       <div className="relative">
         <div
           ref={scrollerRef}
           className="overflow-x-auto scrollbar-hide -mx-4 sm:-mx-6 px-4 sm:px-6"
         >
-          <ol className="flex items-center gap-1.5 min-w-max">
-            {itinerary.map(day => {
+          <ol className="flex items-center min-w-max py-0.5">
+            {itinerary.map((day, i) => {
               const localDay = localizeDay(day);
               const isToday = day.dayNumber === todayNumber;
               const isActive = activeIdx === day.dayNumber;
               const region = day.region;
-              const dot =
+              const regionRing =
                 region === "south"
-                  ? "bg-gold-500"
+                  ? "ring-gold-500/45"
                   : region === "transit"
-                  ? "bg-terracotta-500"
-                  : "bg-olive-500";
+                  ? "ring-terracotta-500/45"
+                  : "ring-olive-500/45";
               return (
-                <li key={day.dayNumber}>
+                <li key={day.dayNumber} className="flex items-center">
                   <button
                     data-pill={day.dayNumber}
                     onClick={() => jumpTo(day.dayNumber)}
-                    className={`group relative inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] font-medium transition-all whitespace-nowrap min-h-9 ${
-                      isActive
-                        ? "bg-ink-900 text-cream-50 shadow-[0_4px_14px_rgba(58,28,15,0.25)]"
-                        : isToday
-                        ? "bg-terracotta-500/10 text-terracotta-700 ring-1 ring-terracotta-500/30 hover:bg-terracotta-500/20"
-                        : "bg-cream-50 text-ink-700 ring-1 ring-cream-300 hover:bg-cream-100"
-                    }`}
                     title={localDay.title}
+                    aria-current={isActive ? "true" : undefined}
+                    aria-label={`${localizeWeekday(day.weekday, lang)} ${day.date.slice(8)} — ${localDay.title}`}
+                    className={`relative flex flex-col items-center justify-center w-[52px] h-[52px] shrink-0 rounded-full transition-all ${
+                      isActive
+                        ? "bg-ink-900 text-cream-50 shadow-[0_5px_16px_rgba(58,28,15,0.3)] scale-[1.06]"
+                        : isToday
+                        ? "bg-terracotta-500/10 text-terracotta-700 ring-2 ring-terracotta-500/40 hover:bg-terracotta-500/20"
+                        : `bg-cream-50 text-ink-700 ring-1 ${regionRing} hover:bg-cream-100`
+                    }`}
                   >
-                    <span className={`w-1.5 h-1.5 rounded-full ${dot}`} aria-hidden />
-                    <span className="font-serif text-[13px] leading-none">
-                      {ROMAN[day.dayNumber]}
+                    <span
+                      className={`text-[9px] uppercase tracking-[0.06em] font-semibold leading-none ${
+                        isActive ? "text-cream-50/75" : "opacity-55"
+                      }`}
+                    >
+                      {localizeWeekday(day.weekday, lang, true)}
                     </span>
-                    <span className="hidden sm:inline opacity-80">
-                      {localizeWeekday(day.weekday, lang, true)} {day.date.slice(8)}
+                    <span className="font-latin-serif text-[17px] leading-none mt-1">
+                      {day.date.slice(8)}
                     </span>
-                    {isToday && (
-                      <span className="text-[8px] uppercase tracking-[0.2em] font-bold ms-0.5">
-                        {t("today")}
-                      </span>
+                    {isToday && !isActive && (
+                      <span
+                        className="absolute -top-0.5 -end-0.5 w-2 h-2 rounded-full bg-terracotta-500 ring-2 ring-cream-100"
+                        aria-hidden
+                      />
                     )}
                   </button>
+                  {i < itinerary.length - 1 && (
+                    <span className="mx-[3px] text-ink-700/25 shrink-0" aria-hidden>
+                      {isRTL ? <ChevronLeft size={13} /> : <ChevronRight size={13} />}
+                    </span>
+                  )}
                 </li>
               );
             })}

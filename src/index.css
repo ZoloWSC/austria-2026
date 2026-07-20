@@ -86,7 +86,10 @@ html {
    own overflow containers, so clipping here doesn't affect them. */
 html,
 body {
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) stops sideways scroll WITHOUT turning the page
+     into a scroll container — `hidden` computes overflow-y to `auto`, which
+     breaks `position: sticky` for descendants like the day strip. */
+  overflow-x: clip;
   max-width: 100%;
 }
 

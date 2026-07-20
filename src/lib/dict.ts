@@ -78,12 +78,12 @@ export const DICT = {
   /* ---------- Itinerary section ---------- */
   plan_eyebrow: { en: "The plan · day by day", he: "התוכנית · יום אחר יום" },
   plan_kicker: {
-    en: "Swipe through the chapters · click Read more for the full chapter",
-    he: "החליקו בין הפרקים · לחצו על 'קרא עוד' לפרק המלא"
+    en: "Swipe through the days · tap Read more for the full day",
+    he: "החליקו בין הימים · הקישו על 'קרא עוד' ליום המלא"
   },
   plan_chapter_x_of_y: {
-    en: "Chapter {x} / {y}",
-    he: "פרק {x} / {y}"
+    en: "Day {x} / {y}",
+    he: "יום {x} / {y}"
   },
   read_more: { en: "Read more", he: "קרא עוד" },
   more_about_place: {
@@ -107,10 +107,10 @@ export const DICT = {
     he: "ממוספרות לפי סדר הביקור"
   },
   things_to_know: { en: "Things to know", he: "טוב לדעת" },
-  tips_for_chapter: { en: "Tips for this chapter", he: "טיפים לפרק הזה" },
+  tips_for_chapter: { en: "Tips for this day", he: "טיפים ליום הזה" },
   no_locations_for_chapter: {
-    en: "No locations on the map for this chapter.",
-    he: "אין מיקומים על המפה לפרק הזה."
+    en: "No locations on the map for this day.",
+    he: "אין מיקומים על המפה ליום הזה."
   },
   previous: { en: "Previous", he: "קודם" },
   next: { en: "Next", he: "הבא" },
@@ -305,7 +305,7 @@ export const DICT = {
   /* ---------- TripStats ---------- */
   trip_stats_eyebrow: { en: "By the numbers", he: "במספרים" },
   trip_stats_days: { en: "Days", he: "ימים" },
-  trip_stats_chapters: { en: "Chapters", he: "פרקים" },
+  trip_stats_chapters: { en: "Days", he: "ימים" },
   trip_stats_attractions: { en: "Highlights", he: "נקודות עניין" },
   trip_stats_stays: { en: "Stays", he: "לינות" },
 
@@ -753,14 +753,14 @@ export const DICT = {
 
   /* ---------- TripStrip ---------- */
   scroll_chapters_prev: {
-    en: "Previous chapters",
-    he: "פרקים קודמים"
+    en: "Previous days",
+    he: "ימים קודמים"
   },
   scroll_chapters_next: {
-    en: "Next chapters",
-    he: "פרקים הבאים"
+    en: "Next days",
+    he: "ימים הבאים"
   },
-  chapter_label: { en: "Chapter", he: "פרק" },
+  chapter_label: { en: "Day", he: "יום" },
   month_aug_short: { en: "Aug", he: "באוגוסט" }
 } as const;
 

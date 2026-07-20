@@ -82,7 +82,7 @@ export default function ItinerarySection() {
   return (
     <section
       id="trip"
-      className="relative scroll-mt-20 bg-gradient-to-b from-cream-100/80 via-cream-100/50 to-cream-100/80 pt-2 sm:pt-10 pb-12 sm:pb-20 overflow-hidden"
+      className="relative scroll-mt-20 bg-gradient-to-b from-cream-100/80 via-cream-100/50 to-cream-100/80 pt-2 sm:pt-10 pb-12 sm:pb-20 overflow-x-clip"
     >
       {/* Decorative oversized FEATURE word in the background */}
       <div
@@ -92,14 +92,16 @@ export default function ItinerarySection() {
         {t("brand_short")}
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Sticky compact chapter navigation — controlled by the carousel */}
-        <div className="sticky top-14 sm:top-16 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 py-2 sm:py-2.5 bg-cream-100/85 backdrop-blur-md border-b border-cream-300/60">
-          <div className="max-w-6xl mx-auto">
-            <TripStrip compact activeDay={activeDay} onSelect={handleSelect} />
-          </div>
+      {/* Sticky day nav — a DIRECT child of #trip (not nested in the short
+          eyebrow row) so its containing block spans the whole plan section
+          and it stays pinned to the top while any day card is on screen. */}
+      <div className="sticky top-14 sm:top-16 z-30 px-4 sm:px-6 py-2 sm:py-2.5 bg-cream-100/85 backdrop-blur-md border-b border-cream-300/60">
+        <div className="max-w-6xl mx-auto">
+          <TripStrip compact activeDay={activeDay} onSelect={handleSelect} />
         </div>
+      </div>
 
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         {/* Eyebrow — desktop only, gives context */}
         <motion.div
           initial={{ opacity: 0, y: 6 }}

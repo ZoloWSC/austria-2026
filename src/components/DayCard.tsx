@@ -148,7 +148,7 @@ export default function DayCard({ day }: { day: Day }) {
             </div>
             <div className="hidden sm:block h-px w-16 bg-cream-50/40 mb-1.5" />
             <div className={`text-[9px] sm:text-[10px] uppercase tracking-[0.24em] sm:tracking-[0.28em] font-medium ${accentText}`}>
-              Chapter {String(day.dayNumber).padStart(2, "0")}
+              Day {String(day.dayNumber).padStart(2, "0")}
             </div>
           </div>
           {isToday && (
