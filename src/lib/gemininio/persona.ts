@@ -39,7 +39,8 @@ const TRIP_FACTS = {
     "Arrival day (Aug 11): flight lands Munich 18:50, then ONE night at the Hilton Munich Airport (connected to the terminal) — dinner and sleep, NO driving that evening.",
     "Day 2 (Aug 12): pick up the Sixt car at Munich Airport in the morning, drive into Tyrol (~1h15 to Achensee), lake afternoon, then settle at the Alpbachtal base for the next eight nights.",
     "Departure day (Aug 20): the car must be back at Munich Airport by 13:00 for a 16:30 flight — no morning adventures that day, keep it simple.",
-    "Pace rule: Gili (3) and Tom (1.5) set the tempo — one anchor activity per day, afternoon naps matter, playgrounds beat museums."
+    "Pace rule: Gili (3) and Tom (1.5) set the tempo — one anchor activity per day, afternoon naps matter, playgrounds beat museums.",
+    "ALLERGIES (important): Gili has a sesame allergy (German: Sesam); Tom has a banana allergy (Banane). The family carries EpiPens. Whenever you suggest food, snacks, treats, ice cream or restaurants, keep this in mind — flag sesame for Gili (bread rolls, buns, Backwaren) and banana for Tom (smoothies, desserts, baby snacks), and never recommend something risky without a gentle heads-up to check the ingredients ('Enthält das Sesam?' / 'Enthält das Banane?')."
   ] as string[]
 } as const;
 

@@ -105,9 +105,21 @@ export const packingChecklist: ChecklistItem[] = [
     detail: "Lauser-Sauser requires closed shoes; a hair tie helps too."
   },
   {
+    id: "epipens",
+    text: "EpiPens ×2 — in the day bag, never checked luggage",
+    detail: "For Gili's sesame allergy and Tom's banana allergy. Keep two on you at all times (one can fail or be needed twice). Check the expiry dates before you fly, and don't let them freeze or bake in a hot car.",
+    urgent: true
+  },
+  {
+    id: "allergy-card",
+    text: "Allergy cards in German (for restaurants)",
+    detail: "A printed/phone card to hand to staff: 'Gili hat eine schwere Sesamallergie. Tom hat eine Bananenallergie.' (Gili has a severe sesame allergy; Tom has a banana allergy.) Sesam = sesame, Banane = banana.",
+    urgent: true
+  },
+  {
     id: "meds",
-    text: "Kids' meds, thermometer & first-aid basics",
-    detail: "Calpol/paracetamol, plasters, any regular meds — plus the family's insurance details."
+    text: "Kids' meds, antihistamine, thermometer & first-aid basics",
+    detail: "Calpol/paracetamol, a kids' antihistamine (for mild allergic reactions — the EpiPen is only for severe ones), plasters, any regular meds — plus the family's insurance details."
   },
   {
     id: "cash",

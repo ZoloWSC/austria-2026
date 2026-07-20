@@ -71,7 +71,7 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Kids & poison",
+    title: "Kids — allergies, anaphylaxis & poison",
     items: [
       {
         label: "Poison control (Vergiftungsinformationszentrale)",
@@ -84,6 +84,13 @@ export const emergencyGroups: EmergencyGroup[] = [
         label: "If a child needs urgent care",
         value: "Call 144, or go to Kufstein hospital",
         detail: "For anything serious with Gili or Tom, 144 (ambulance) or the Kufstein emergency department. For minor illness, a GP (Arzt) or pharmacy during the day.",
+        type: "phone",
+        link: "tel:144"
+      },
+      {
+        label: "Allergic reaction — EpiPen, then call 144",
+        value: "144",
+        detail: "Gili is allergic to SESAME (German: Sesam); Tom is allergic to BANANA (Banane). We carry two EpiPens. At the first sign of a severe reaction — swelling, trouble breathing, spreading hives, repeated vomiting — give the EpiPen into the outer thigh and call 144 immediately, even after the EpiPen (say 'Anaphylaxie, Kind' = anaphylaxis, child). To check food before eating, ask 'Enthält das Sesam?' / 'Enthält das Banane?' (does this contain sesame / banana?).",
         type: "phone",
         link: "tel:144"
       }

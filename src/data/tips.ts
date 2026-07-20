@@ -6,6 +6,14 @@ import type { Tip } from "./types";
 // safety; "info" for the rest.
 export const tips: Tip[] = [
   {
+    id: "allergies",
+    title: "Kids' food allergies — Gili (sesame) & Tom (banana)",
+    body:
+      "Gili is allergic to sesame (German: Sesam) and Tom to banana (Banane). We carry two EpiPens at all times — in the day bag, never checked luggage. Helpfully, EU/Austrian law requires the 14 major allergens (sesame is one of them) to be declared, so restaurant staff can tell you what's in a dish — just ask 'Enthält das Sesam?' or 'Enthält das Banane?' ('Does this contain sesame / banana?'). Watch sesame on bread rolls, buns and Backwaren, and banana in smoothies, desserts and baby snacks. At the first sign of a severe reaction — swelling, trouble breathing, spreading hives — give the EpiPen into the outer thigh and call 144 (or 112) immediately, even after the EpiPen.",
+    severity: "critical",
+    icon: "alert-triangle"
+  },
+  {
     id: "vignette",
     title: "Buy the Austrian motorway vignette before you cross the border",
     body:

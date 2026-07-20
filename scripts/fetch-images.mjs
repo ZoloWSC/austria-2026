@@ -52,52 +52,52 @@ async function fetchWithRetry(url, opts = {}, tries = 4) {
 const unsplash = (photoId, w = 1600) =>
   `https://images.unsplash.com/${photoId}?fm=jpg&q=85&w=${w}&auto=format&fit=crop`;
 
+// AUSTRIA 2026 — real, freely-licensed photos from Wikipedia / Wikimedia
+// Commons, keyed to the image paths in src/data/*. Each { wiki } pulls the
+// lead image of that article; failures just leave the card's colour-coded
+// gradient fallback in place.
 const TARGETS = [
-  // ---------- North attractions ----------
-  // Canyon Park Lima gorge — turquoise water between rock walls (Takachiho-style
-  // gorge ref; Luo Jin Hong on Unsplash). Visually suggests the Lima canyon.
-  ["canyon-park.jpg",        { url: unsplash("photo-1773933609524-000b6e72a101") }],
-  ["ponte-del-diavolo.jpg",  { wiki: "Ponte_della_Maddalena" }],
-  // Forest ropes course — rope bridges between tall trees (Unsplash, free)
-  ["selva-buffardello.jpg",  { url: unsplash("photo-1775647423221-ac87d3ec338b") }],
-  // Soft rafting — group on a raft going down a river (Unsplash, free)
-  ["serchio-rafting.jpg",    { url: unsplash("photo-1599443380179-33737c17ca81") }],
-  // Use the actual Leaning Tower (Wikipedia Featured Picture by Saffron Blaze)
-  // instead of a generic Piazza dei Miracoli wide shot.
-  ["pisa.jpg",               { commons: "File:The_Leaning_Tower_of_Pisa_SB.jpeg", width: 2000 }],
-  // Abetone forest scenery (the chestnut forest the village is named for) —
-  // far more evocative than the village street the Wikipedia summary returns.
-  ["abetone.jpg",            { commons: "File:Foresta_piazzale_Abetone.jpg", width: 2000 }],
-  ["sentierelsa.jpg",        { wiki: "Elsa_(river)" }],
-  // Lucca walls — the Wikipedia summary lead is the iconic aerial of the
-  // tree-lined ramparts wrapping the old town.
-  ["lucca-walls.jpg",        { wiki: "Walls_of_Lucca" }],
+  // ---------- Attractions ----------
+  ["achensee.jpg",                 { wiki: "Achensee" }],
+  ["swarovski-kristallwelten.jpg", { wiki: "Swarovski_Kristallwelten" }],
+  ["hall-in-tirol.jpg",            { wiki: "Hall_in_Tirol" }],
+  ["spieljoch-fuegen.jpg",         { wiki: "Fügen" }],
+  ["zillertalbahn.jpg",            { wiki: "Zillertalbahn" }],
+  ["innsbruck-altstadt.jpg",       { wiki: "Golden_Roof" }],
+  ["alpenzoo-innsbruck.jpg",       { wiki: "Alpine_ibex" }],
+  ["nordkette.jpg",                { wiki: "Nordkette" }],
+  ["alpbach-village.jpg",          { wiki: "Alpbach" }],
+  ["juppi-zauberwald.jpg",         { wiki: "Reith_im_Alpbachtal" }],
+  ["lauser-sauser.jpg",            { wiki: "Alpbach" }],
+  ["hexenwasser-soell.jpg",        { wiki: "Hohe_Salve" }],
+  ["kufstein-festung.jpg",         { wiki: "Kufstein" }],
+  ["riedel-glass.jpg",             { wiki: "Glassblowing" }],
+  ["rattenberg.jpg",               { wiki: "Rattenberg (Tirol)", lang: "de" }],
+  ["munich-airport.jpg",           { wiki: "Munich_Airport" }],
 
-  // ---------- South attractions ----------
-  ["porto-santo-stefano.jpg",{ wiki: "Porto_Santo_Stefano" }],
-  ["cala-del-gesso.jpg",     { wiki: "Monte_Argentario" }],
-  // Acqua Village — sweeping aerial view of a colourful water park slide (Unsplash, free)
-  ["acqua-village.jpg",      { url: unsplash("photo-1725758575869-969b8e5783bc") }],
-  ["maremma-horse.jpg",      { wiki: "Maremmano" }],
-  ["pitigliano.jpg",         { wiki: "Pitigliano" }],
-  ["via-cava.jpg",           { wiki: "Vie_Cave" }],
-  ["vitozza.jpg",            { wiki: "Sorano" }],
-  ["saturnia.jpg",           { wiki: "Saturnia" }],
-  ["bolsena.jpg",            { wiki: "Lake_Bolsena" }],
-  ["civita.jpg",             { wiki: "Civita_di_Bagnoregio" }],
+  // ---------- Stays (candidates — representative regional photos) ----------
+  ["stay-alpbacherhof.jpg",        { wiki: "Alpbach" }],
+  ["stay-kramsach-aparthotel.jpg", { wiki: "Kramsach" }],
+  ["stay-innsbruck-ac-hotel.jpg",  { wiki: "Innsbruck" }],
 
-  // ---------- Stays ----------
-  // Both stays use host-supplied photos that live in public/images/ and are
-  // committed directly to the repo (the property CDNs aren't a great fit
-  // for an automated fetcher and the user has higher-resolution originals):
-  //   Larciano:     stay-larciano-sunflowers.png, -vineyard.png,
-  //                 -pool.png, -pool-dusk.png
-  //   Cortevecchia: stay-cortevecchia-poolview.png, -villa.png,
-  //                 -pool-deck.png, -aerial.png
+  // ---------- Food ----------
+  ["food-wiener-schnitzel.jpg",    { wiki: "Wiener_schnitzel" }],
+  ["food-kaiserschmarrn.jpg",      { wiki: "Kaiserschmarrn" }],
+  ["food-tiroler-groestl.jpg",     { wiki: "Gröstl", lang: "de" }],
+  ["food-kaesespaetzle.jpg",       { wiki: "Käsespätzle" }],
+  ["food-speckknoedel.jpg",        { wiki: "Knödel" }],
+  ["food-apfelstrudel.jpg",        { wiki: "Apple_strudel" }],
+  ["food-germknoedel.jpg",         { wiki: "Germknödel" }],
+  ["food-marillenknoedel.jpg",     { wiki: "Marillenknödel" }],
+  ["food-brettljause.jpg",         { wiki: "Brotzeit" }],
+  ["food-graukaese.jpg",           { wiki: "Tiroler_Graukäse" }],
+  ["food-almdudler.jpg",           { wiki: "Almdudler" }],
+  ["food-skiwasser.jpg",           { wiki: "Raspberry" }],
 
-  // ---------- Itinerary lead images ----------
-  // Tel Aviv aerial — used as the "fly home" hero on day 10.
-  ["tel-aviv-skyline.jpg",   { url: unsplash("photo-1547483036-24bc77c79804") }]
+  // ---------- Drinks / "wineries" ----------
+  ["winery-zillertal-bier.jpg",       { wiki: "Zell_am_Ziller" }],
+  ["winery-tyrol-schnaps.jpg",        { wiki: "Obstler", lang: "de" }],
+  ["winery-tyrol-coffee-roaster.jpg", { wiki: "Wiener_Melange" }]
 ];
 
 async function fileExists(p) {
@@ -117,18 +117,21 @@ function widenThumb(url, target = 1200) {
   return url.replace(/\/(\d+)px-([^/]+)$/, `/${target}px-$2`);
 }
 
-async function getWikiLeadImage(title) {
-  const api = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
+async function getWikiLeadImage(title, lang = "en") {
+  // Use the pageimages API for a server-generated 1400px thumbnail — always a
+  // valid URL (unlike hand-widened thumb paths, which 400), and `redirects=1`
+  // follows title redirects (e.g. "Swarovski Kristallwelten" → real article).
+  // `lang` lets us fall back to de.wikipedia for Austrian topics whose English
+  // article has no designated page image.
+  const api =
+    `https://${lang}.wikipedia.org/w/api.php?action=query&format=json&formatversion=2` +
+    `&prop=pageimages&piprop=thumbnail&pithumbsize=1400&redirects=1&origin=*` +
+    `&titles=${encodeURIComponent(title)}`;
   const res = await fetch(api, { headers: { "User-Agent": UA, "Accept": "application/json" } });
-  if (!res.ok) throw new Error(`Wiki summary ${title} HTTP ${res.status}`);
+  if (!res.ok) throw new Error(`Wiki pageimages ${title} HTTP ${res.status}`);
   const data = await res.json();
-  const original = data.originalimage?.source;
-  const thumb = data.thumbnail?.source;
-  // Prefer original if it's not too huge; else widen the thumb
-  if (original && (data.originalimage?.width ?? 0) <= 2400) return original;
-  if (thumb) return widenThumb(thumb, 1200);
-  if (original) return original;
-  return null;
+  const page = data?.query?.pages?.[0];
+  return page?.thumbnail?.source ?? null;
 }
 
 async function getCommonsFile(fileTitle, width) {
@@ -158,6 +161,11 @@ async function downloadTo(url, dest) {
   let res = await fetch(url, {
     headers: { "User-Agent": UA, "Accept": "image/*" }
   });
+  // Wikimedia rate-limits (429) on bursts — back off and retry.
+  for (let i = 0; res.status === 429 && i < 5; i++) {
+    await sleep(2500 * Math.pow(1.7, i));
+    res = await fetch(url, { headers: { "User-Agent": UA, "Accept": "image/*" } });
+  }
   if (res.status === 403 || res.status === 406) {
     res = await fetch(url, {
       headers: { "User-Agent": FALLBACK_UA, "Accept": "image/*,*/*;q=0.8" }
@@ -172,7 +180,7 @@ async function downloadTo(url, dest) {
 async function resolveUrl(spec) {
   if (spec.url) return spec.url;
   if (spec.commons) return await getCommonsFile(spec.commons, spec.width);
-  if (spec.wiki) return await getWikiLeadImage(spec.wiki);
+  if (spec.wiki) return await getWikiLeadImage(spec.wiki, spec.lang);
   return null;
 }
 
@@ -201,7 +209,7 @@ async function main() {
       console.log(`+ saved ${name}  ${(bytes / 1024).toFixed(0)} KB  <- ${url}`);
       ok++;
       // Be polite to Wikimedia
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise(r => setTimeout(r, 500));
     } catch (e) {
       console.log(`! fail  ${name}  ${e.message}`);
       fail++;
