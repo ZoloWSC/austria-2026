@@ -78,6 +78,18 @@ html {
   scroll-padding-top: 5rem;
 }
 
+/* Kill any horizontal scroll. A stray few px of overflow (a scaled hero
+   layer, a coverflow deck, a map tile) makes the whole page pannable
+   sideways on mobile — which shifts the fixed top bar and the bottom
+   install sheet, leaving the right-anchored language toggle and the
+   "Maybe later" button pushed off-screen. Internal carousels use their
+   own overflow containers, so clipping here doesn't affect them. */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Bump the base font size on mobile so all rem-based Tailwind sizes
    (text-xs, text-sm, text-base, text-lg, etc.) get a +12.5% boost.
    Desktop stays at the browser default of 16px. */

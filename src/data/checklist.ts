@@ -10,15 +10,21 @@ export const bookingChecklist: ChecklistItem[] = [
     done: true
   },
   {
+    id: "hilton",
+    text: "First night booked — Hilton Munich Airport",
+    detail: "One night (Aug 11) at the airport so the kids get dinner and sleep before the drive into Tyrol. Confirmation is in the Tickets section (unlock with the family PIN).",
+    done: true
+  },
+  {
     id: "car",
     text: "Sixt rental car booked",
-    detail: "Luxury Elite SUV. Pickup Aug 11 19:30 (MUC Airport Center), return Aug 20 13:00 (Terminalstr. Mitte / Parkhaus P6). Booking ref is in the Tickets section (unlock with the family PIN).",
+    detail: "Luxury Elite SUV. Pickup Aug 12 morning (MUC Airport Center), return Aug 20 13:00 (Terminalstr. Mitte / Parkhaus P6). Booking ref is in the Tickets section (unlock with the family PIN).",
     done: true
   },
   {
     id: "hotel",
     text: "Book the hotel — still open!",
-    detail: "9 nights in the Alpbachtal / Inn valley. Filter for air conditioning + a family room/apartment big enough for 2 adults + 2 kids. See the Stays section for candidates.",
+    detail: "8 nights in the Alpbachtal / Inn valley (Aug 12–20). Filter for air conditioning + a family room/apartment big enough for 2 adults + 2 kids. See the Stays section for candidates.",
     urgent: true
   },
   {

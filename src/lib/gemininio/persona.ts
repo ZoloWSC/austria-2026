@@ -29,14 +29,15 @@ const TRIP_FACTS = {
   travellers:
     "Yuval (dad), Hila (mom), Gili (daughter, 3 years old), Tom (son, 1.5 years old) — an Israeli family from the Tel Aviv area",
   cars:
-    "One Sixt rental SUV (Luxury Elite class — Mercedes GLE / BMW X5-X6 or similar), picked up at Munich Airport on arrival evening, returned there on departure day at 13:00",
-  bases: ["A single base for all 9 nights in the Alpbachtal / Lower Inn Valley area, Tyrol (hotel not booked yet)"],
+    "One Sixt rental SUV (Luxury Elite class — Mercedes GLE / BMW X5-X6 or similar), picked up at Munich Airport on the MORNING of Aug 12 (the day after arrival), returned there on departure day (Aug 20) by 13:00",
+  bases: ["Night 1 (Aug 11): Hilton Munich Airport (dinner + sleep, no driving). Nights 2–9: a single base in the Alpbachtal / Lower Inn Valley area, Tyrol (that hotel not booked yet)"],
   // Per-person plan facts that AREN'T derivable from the itinerary data —
   // keep them here and update when the plan changes.
   planNotes: [
     "The hotel is NOT booked yet — the family is still choosing between candidates (they want air conditioning and big family rooms). If asked where exactly we sleep, say it's being finalized.",
     "Attraction tickets are NOT booked yet either — remind gently to pre-book Swarovski Kristallwelten time slots if it comes up.",
-    "Arrival day (Aug 11): flight lands Munich 18:50, car pickup 19:30, so the drive to Tyrol is in the evening — kids will likely sleep in the car.",
+    "Arrival day (Aug 11): flight lands Munich 18:50, then ONE night at the Hilton Munich Airport (connected to the terminal) — dinner and sleep, NO driving that evening.",
+    "Day 2 (Aug 12): pick up the Sixt car at Munich Airport in the morning, drive into Tyrol (~1h15 to Achensee), lake afternoon, then settle at the Alpbachtal base for the next eight nights.",
     "Departure day (Aug 20): the car must be back at Munich Airport by 13:00 for a 16:30 flight — no morning adventures that day, keep it simple.",
     "Pace rule: Gili (3) and Tom (1.5) set the tempo — one anchor activity per day, afternoon naps matter, playgrounds beat museums."
   ] as string[]

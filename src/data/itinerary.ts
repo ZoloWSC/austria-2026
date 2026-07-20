@@ -2,7 +2,7 @@ import type { Day } from "./types";
 
 // TYROL 2026 — Alpbachtal & the Lower Inn Valley with two toddlers.
 // One anchor activity per day, naps are sacred, no drive over ~40 min
-// except the two airport transfers. Base for all nine nights: the hotel
+// except the two airport transfers. Base for eight of the nine nights: the hotel
 // in the Kramsach–Alpbachtal area.
 export const itinerary: Day[] = [
   {
@@ -10,45 +10,38 @@ export const itinerary: Day[] = [
     date: "2026-08-11",
     weekday: "Tuesday",
     region: "transit",
-    base: "Munich → Kramsach–Alpbachtal",
-    title: "Land in Munich, drive into the Alps",
-    subtitle: "LY351 lands 18:50 · Sixt pickup 19:30 · evening drive to the hotel",
+    base: "Munich Airport (Hilton)",
+    title: "Land in Munich, sleep at the airport",
+    subtitle: "LY351 lands 18:50 · dinner & a soft bed at the Hilton Munich Airport — no driving tonight",
     leadImage: "./images/munich-airport.jpg",
     activities: [
       {
         time: "18:50",
         title: "Land at Munich Airport (MUC)",
         description:
-          "LY351 touches down at 18:50. Passport control with two tired toddlers takes a while — split up: one parent grabs the bags, the other keeps Gili and Tom moving. There's a supermarket (Edeka) in the MAC Forum between the terminals if you want milk, water and breakfast bits for the first morning.",
+          "LY351 touches down at 18:50. Passport control with two tired toddlers takes a while — split up: one parent grabs the bags, the other keeps Gili and Tom moving. No rush and no rental car tonight: the hotel is a two-minute covered walk from the terminal.",
         attractionId: "munich-airport"
       },
       {
-        time: "19:30",
-        title: "Sixt pickup — MUC Airport Center",
+        time: "~19:45",
+        title: "Check in at the Hilton Munich Airport",
         description:
-          "The Sixt desk is in the Airport Center between Terminals 1 and 2. Confirm both child seats are installed and actually fit before you leave the garage — swapping a seat at 20:00 is much easier at the counter than in a dark hotel car park. Set the navigation to the hotel before pulling out.",
-        rideToNext: { duration: "1 h 40", note: "A8 → A93 → A12, ≈ 160 km", departAt: "20:00" }
-      },
-      {
-        time: "~21:45",
-        title: "Arrive at the hotel, everyone straight to bed",
-        description:
-          "Check in, carry the sleeping kids up, unpack only the essentials. Tomorrow starts gently at the lake — no alarm needed beyond the toddlers' built-in one."
+          "The Hilton sits right at the airport, connected to the terminals by a covered walkway — wheel the bags and the kids straight over, no shuttle, no car. Dinner at the hotel, warm baths, everyone into bed. Tonight's whole job is simple: let Gili and Tom sleep off the travel day before the drive into the Alps tomorrow."
       }
     ],
     driveNotes:
-      "Munich Airport → Kramsach ≈ 1 h 40 (160 km) via A8, A93 and the A12 Inntal motorway. You cross into Austria at Kufstein — the Austrian motorway needs a vignette; buy a digital one online before the trip or a sticker at the last German services (the rental almost certainly doesn't include it).",
+      "No driving today — the Hilton is connected to the terminal, so land, walk over, and rest. You pick up the Sixt car tomorrow morning and drive into Tyrol then. Do buy the Austrian digital vignette online tonight so it's already sorted before you cross the border in the morning.",
     gear: [
-      { item: "Passports, driving licence and the Sixt booking confirmation handy in the daypack" },
-      { item: "Snacks, water and a favorite toy each within arm's reach for the night drive" },
-      { item: "Light jackets on top of the carry-on — Alpine evenings run 15 °C cooler than Tel Aviv" },
-      { item: "Pyjamas and toothbrushes packed at the top of one bag for a zero-search bedtime" }
+      { item: "Passports and the Hilton confirmation handy in the daypack" },
+      { item: "Pyjamas, toothbrushes and one comfort toy each at the top of a bag for a zero-search bedtime" },
+      { item: "Light jackets over the carry-on — Munich evenings run cooler than Tel Aviv" },
+      { item: "Milk, water and a few snacks for the room (there's an Edeka in the MAC Forum between the terminals)" }
     ],
     dayTips: [
-      "Buy the Austrian digital vignette (asfinag.at) before you fly — one less stop with sleeping kids in the back",
-      "Keep some euros in coins for the first days — small Tyrolean kiosks and parking machines still love cash",
-      "If the flight is late, don't stress: Sixt airport counters run late into the evening, and the A12 is quiet after 21:00",
-      "Text the hotel your arrival time from the airport so late check-in is ready"
+      "The Hilton is a covered two-minute walk from the terminals — you don't need the car or a shuttle tonight",
+      "Buy the Austrian digital vignette (asfinag.at) tonight so tomorrow's border crossing is one less stop",
+      "Keep some euros in coins for tomorrow — small Tyrolean kiosks and parking machines still love cash",
+      "Eat early at the hotel or order room service — the kids will fade fast after the flight"
     ],
     italianWords: [
       {
@@ -91,7 +84,7 @@ export const itinerary: Day[] = [
       name: "Almdudler",
       type: "other",
       pairing:
-        "Austria's beloved herbal-lemonade — alpine herbs, fizzy, zero alcohol. The right call when one of you just drove a rental across a border in the dark and tomorrow starts early. It's on every menu in Tyrol; consider it your welcome ritual.",
+        "Austria's beloved herbal-lemonade — alpine herbs, fizzy, zero alcohol. The right welcome-to-the-Alps toast after a travel day, with an early night ahead and no car keys to worry about. It's on every menu here; consider it your arrival ritual.",
       servingNote: "Ice-cold from the bottle, or over ice with a lemon slice"
     }
   },
@@ -99,54 +92,63 @@ export const itinerary: Day[] = [
     dayNumber: 2,
     date: "2026-08-12",
     weekday: "Wednesday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "30 min", note: "via Wiesing, then the climb up the Achensee road" },
+    departureTime: "09:00",
+    rideToFirst: { duration: "1 h 15", note: "Sixt pickup at MUC, then A8 → A93 → A12 to Achensee" },
     region: "north",
-    base: "Kramsach–Alpbachtal",
-    title: "Achensee — Tyrol's fjord, from the beach",
-    subtitle: "Lakeside lido and playground in Pertisau, optional boat ride",
+    base: "Munich → Kramsach–Alpbachtal",
+    title: "Into the Alps — pick up the car, then the lake",
+    subtitle: "Morning Sixt pickup at MUC · drive into Tyrol · Achensee afternoon, then settle at the base",
     leadImage: "./images/achensee.jpg",
     activities: [
       {
-        time: "10:00",
+        time: "09:00",
+        title: "Breakfast, then Sixt pickup at MUC Airport Center",
+        description:
+          "Unhurried hotel breakfast, then walk to the Sixt desk in the Airport Center between Terminals 1 and 2. Confirm both child seats are installed and actually fit before you leave the garage. Make sure the Austrian vignette is sorted (buy online now if you didn't last night), set the nav for Pertisau, and roll.",
+        attractionId: "munich-airport",
+        rideToNext: { duration: "1 h 15", note: "A8 → A93 → A12; you cross into Austria at Kufstein", departAt: "10:00" }
+      },
+      {
+        time: "~11:15",
         title: "Strandbad Pertisau — beach, playground, shallow water",
         description:
-          "The lakeside lido on the Pertisau shore is free to enter and built for exactly this crew: a huge lawn, a pirate-ship playground with slide, swings and sandbox, a separate shallow children's pool, and a gently shelving lake entry. The water is drinking-water clear and famously brisk — Gili will be in it anyway. Grab a shaded spot under the sun sails early; the Karwendel peaks across the water do the view work.",
+          "Straight from the airport to the lake. The lakeside lido on the Pertisau shore is built for exactly this crew: a huge lawn, a pirate-ship playground with slide and sandbox, a shallow children's pool, and a gently shelving lake entry. The water is drinking-water clear and famously brisk — Gili will be in it anyway. The kids nap in the car on the drive down, then wake to a beach. Grab a shaded spot under the sun sails; the Karwendel peaks do the view work.",
         attractionId: "achensee",
         tag: "water",
         rideToNext: { duration: "5 min", note: "short hop along the shore to the Pertisau dock" }
       },
       {
-        time: "13:30",
+        time: "14:00",
         title: "Boat ride on the lake",
         description:
-          "The Achensee ships have run since 1887 and sail daily in summer between six docks. Hop on at Pertisau for a short leg (Pertisau → Gaisalm or a round trip) — kids under 6 ride free, and the top deck is toddler-thrilling without being scary. Check the day's timetable at the dock or achenseeschifffahrt.at; sailings are roughly hourly in high season.",
+          "The Achensee ships have run since 1887 and sail daily in summer between six docks. Hop on at Pertisau for a short leg — kids under 6 ride free, and the top deck is toddler-thrilling without being scary. Check the day's timetable at the dock or achenseeschifffahrt.at.",
         attractionId: "achensee",
         tag: "water",
-        optional: true
+        optional: true,
+        rideToNext: { duration: "35 min", note: "down to Wiesing, then to the Kramsach–Alpbachtal base" }
       },
       {
-        time: "15:30",
-        title: "Ice cream, then the nap-drive home",
+        time: "~16:00",
+        title: "Drive to the base and settle in",
         description:
-          "One scoop each on the Pertisau promenade, then let the winding descent do what it does best — both kids asleep before Wiesing. Quiet hotel afternoon."
+          "The winding descent does what it does best — both kids asleep before Wiesing. Check into the hotel that's home for the next eight nights, unpack properly, and have an easy first dinner near base."
       }
     ],
     driveNotes:
-      "Base → Pertisau ≈ 30 min: A12 or the valley road to Wiesing, then the switchback climb up to the Achensee plateau. It's a proper mountain road for ten minutes — smooth but curvy, so time it for after breakfast, not after a big lunch.",
+      "Two legs today: Munich Airport → Achensee (Pertisau) ≈ 1 h 15 via the A8/A93/A12, crossing into Austria at Kufstein (vignette needed); then Achensee → the Kramsach–Alpbachtal base ≈ 35 min. The Achensee approach is a proper mountain road for ten minutes — smooth but curvy.",
     gear: [
+      { item: "Passports, driving licence and the Sixt booking confirmation handy for pickup" },
       { item: "Swim gear, swim diaper for Tom, and a change of clothes for everyone", for: "achensee" },
       { item: "Water shoes — the beach entry is pebbly in places", for: "achensee" },
       { item: "Sun hats and SPF50 — mountain sun at 950 m is stronger than it feels", for: "achensee" },
-      { item: "Picnic blanket for the lido lawn" },
       { item: "Windbreaker layer for the boat deck — it's breezy even in August", for: "achensee" }
     ],
     dayTips: [
-      "Arrive by 10:00 — Pertisau's paid car parks and the shaded lido spots fill by 11 in August",
+      "Buy the Austrian digital vignette before you cross at Kufstein — a German rental doesn't include it",
       "The lake sits at ~950 m: mornings can start at 15 °C even when the afternoon hits 27 °C, so layer the kids",
-      "Afternoon thunderstorms are an Alpine summer classic — do the water stuff early, keep the boat ride flexible",
-      "The lido has a snack bar, but the Pertisau promenade has better lunch — kaiserschmarrn splits nicely four ways",
-      "Kids under 6 sail free on the Achensee ships; buy tickets right at the dock"
+      "Afternoon thunderstorms are an Alpine summer classic — do the water stuff first, keep the boat ride flexible",
+      "Kids under 6 sail free on the Achensee ships; buy tickets right at the dock",
+      "Don't over-plan today — it's a travel-plus-lake day; the base and a quiet dinner are the finish line"
     ],
     italianWords: [
       {
@@ -909,7 +911,7 @@ export const itinerary: Day[] = [
       name: "Weißer Spritzer",
       type: "wine",
       pairing:
-        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a packing night before a driving day, and the most Austrian possible way to toast nine nights in the valley — in a Rattenberg glass, if you bought one.",
+        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a packing night before a driving day, and the most Austrian possible way to toast eight nights in the valley — in a Rattenberg glass, if you bought one.",
       servingNote: "Half dry white wine, half soda water, plenty of ice — 'a G'spritzter' if you want to order like a local"
     }
   },

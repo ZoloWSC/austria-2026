@@ -1,6 +1,6 @@
 import type { Stay } from "./types";
 
-// Austria '26 — NOT BOOKED YET. Three candidate bases for all 9 nights,
+// Austria '26 — NOT BOOKED YET. Three candidate bases for the 8 Tyrol nights,
 // chosen for the family's two must-haves: air conditioning (genuinely
 // rare in the Tyrolean Alps — most hotels rely on cool mountain nights)
 // and big family rooms / apartments for two small kids. Every entry
@@ -21,9 +21,9 @@ export const stays: Stay[] = [
     bookingLink: "https://www.alpbacherhof.at/en/",
     address: "Alpbach 236, 6236 Alpbach, Austria",
     coords: [47.3995, 11.9435],
-    checkIn: "2026-08-11",
+    checkIn: "2026-08-12",
     checkOut: "2026-08-20",
-    nights: 9,
+    nights: 8,
     highlights: [
       "In Alpbach village — central to Lauser-Sauser, Juppi's Zauberwald and Zillertal day trips",
       "Family rooms and suites sized for a family of four",
@@ -49,9 +49,9 @@ export const stays: Stay[] = [
     bookingLink: "https://www.alpbachtal.at/en/search-and-book/accommodation",
     address: "Kramsach (Reintalersee), 6233 Kramsach, Austria",
     coords: [47.4530, 11.8930],
-    checkIn: "2026-08-11",
+    checkIn: "2026-08-12",
     checkOut: "2026-08-20",
-    nights: 9,
+    nights: 8,
     highlights: [
       "Apartment layout — separate kids' bedroom, kitchen and washing machine",
       "Walking distance to the Reintalersee, Tyrol's warmest swimming lake",
@@ -77,9 +77,9 @@ export const stays: Stay[] = [
     bookingLink: "https://www.innsbruck.info/en/accommodation.html",
     address: "Inn valley near Innsbruck, Tyrol, Austria",
     coords: [47.2830, 11.4200],
-    checkIn: "2026-08-11",
+    checkIn: "2026-08-12",
     checkOut: "2026-08-20",
-    nights: 9,
+    nights: 8,
     highlights: [
       "Modern valley-floor hotels here are the most likely to have genuine air conditioning",
       "Family rooms / connecting rooms common in this class of hotel",

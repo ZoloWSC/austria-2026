@@ -26,37 +26,14 @@ interface HeroPhoto {
   dayNumber?: number;
 }
 
-// CC-licensed beauty shots of places we'll actually visit, hosted
-// locally at public/images/hero/ (see scripts/fetch-hero-images.mjs).
+// Pre-trip "screensaver" backdrops — minimalist alpine illustrations
+// (not photos of specific POIs), so they carry a generic Tyrol label.
+// To swap in real CC-licensed photos later, drop them here and use the
+// place name. See scripts/fetch-hero-images.mjs.
 const HERO_PHOTOS: HeroPhoto[] = [
-  {
-    src: "./images/hero/achensee.jpg",
-    place: "Achensee",
-    credit: "",
-    source: "#",
-    dayNumber: 2
-  },
-  {
-    src: "./images/hero/alpbach.jpg",
-    place: "Alpbach",
-    credit: "",
-    source: "#",
-    dayNumber: 6
-  },
-  {
-    src: "./images/hero/innsbruck.jpg",
-    place: "Innsbruck",
-    credit: "",
-    source: "#",
-    dayNumber: 5
-  },
-  {
-    src: "./images/hero/kufstein.jpg",
-    place: "Kufstein",
-    credit: "",
-    source: "#",
-    dayNumber: 8
-  }
+  { src: "./images/hero/dawn.jpg", place: "Tirol", credit: "", source: "#" },
+  { src: "./images/hero/lake.jpg", place: "Tirol", credit: "", source: "#" },
+  { src: "./images/hero/meadow.jpg", place: "Tirol", credit: "", source: "#" }
 ];
 
 const PHOTO_DURATION_MS = 7000;
@@ -273,7 +250,7 @@ export default function Hero() {
   return (
     <header
       id="hero"
-      className="relative min-h-[100svh] flex flex-col overflow-hidden text-cream-50 bg-ink-900"
+      className="relative min-h-[100svh] flex flex-col overflow-hidden text-cream-50 bg-gradient-to-b from-olive-700 via-olive-600 to-ink-800"
       style={{
         paddingTop: "env(safe-area-inset-top)",
         ...(swipeTouchAction ? { touchAction: swipeTouchAction } : {})

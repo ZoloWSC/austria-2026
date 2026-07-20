@@ -161,23 +161,20 @@ export const DICT = {
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },
   map_spokes_off: { en: "Day trips off", he: "טיולי יום מוסתרים" },
   map_seg_arrival: {
-    en: "Arrival · TBD",
-    he: "הגעה · ייקבע"
+    en: "Arrival · Munich → Tyrol",
+    he: "הגעה · מינכן ← טירול"
   },
-  map_seg_arrival_short: { en: "TBD", he: "ייקבע" },
+  map_seg_arrival_short: { en: "Arrival", he: "הגעה" },
   map_seg_transfer: {
-    en: "Transfer between bases · TBD",
-    he: "מעבר בין בסיסים · ייקבע"
+    en: "Day trips from the base",
+    he: "טיולי יום מהבסיס"
   },
-  map_seg_transfer_short: { en: "TBD", he: "ייקבע" },
+  map_seg_transfer_short: { en: "Day trips", he: "טיולי יום" },
   map_seg_departure: {
-    en: "Departure · TBD",
-    he: "יציאה · ייקבע"
+    en: "Departure · Tyrol → Munich",
+    he: "יציאה · טירול ← מינכן"
   },
-  map_seg_departure_short: {
-    en: "TBD",
-    he: "ייקבע"
-  },
+  map_seg_departure_short: { en: "Departure", he: "יציאה" },
   map_zoom_fit: { en: "Zoom to fit all locations", he: "התאם תצוגה לכל המיקומים" },
   map_locate_me: { en: "Show my location", he: "הצג את המיקום שלי" },
   map_you_here: { en: "You are here", he: "אתה כאן" },
@@ -290,8 +287,8 @@ export const DICT = {
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
   stays_title: { en: "Where we'll stay", he: "איפה נלון" },
   stays_kicker: {
-    en: "Candidate bases for our nine nights — not booked yet",
-    he: "מועמדים לבסיס לתשעת הלילות — עדיין לא הוזמן"
+    en: "Candidate bases for our eight Tyrol nights — not booked yet",
+    he: "מועמדים לבסיס לשמונה לילות בטירול — עדיין לא הוזמן"
   },
   stays_intro: {
     en: "Each stay is chosen as the perfect base for the days around it.",
