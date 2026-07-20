@@ -23,7 +23,7 @@ interface CategoryConfig {
   Icon: typeof Home;
 }
 
-/* "Tuscan terra & sea" palette — earth tones throughout with one
+/* Alpine palette — earth + spruce tones throughout with one
    calmed dusk-blue accent for the airport. Designed to sit on top of
    the Stamen Watercolor base without clashing. */
 const CATEGORY_CONFIG: Record<Category, CategoryConfig> = {
@@ -78,17 +78,17 @@ function shade(hex: string, percent: number): string {
   return "#" + (0x1000000 + (R << 16) + (G << 8) + B).toString(16).slice(1);
 }
 
-/* Generous bounding box for "is the device currently in Italy?".
-   Includes the islands (Sicily, Sardinia) and a safety margin so we
-   don't accidentally reject a user near the border. */
-const ITALY_BBOX = { south: 35.4, north: 47.5, west: 6.4, east: 19.0 };
+/* Generous bounding box for "is the device currently in the trip
+   region?". Covers all of Austria plus a margin into southern Bavaria
+   so the dot already snaps at Munich Airport on arrival. */
+const TRIP_BBOX = { south: 46.2, north: 48.8, west: 9.3, east: 17.3 };
 
-function isInItaly(lat: number, lon: number): boolean {
+function isInTripRegion(lat: number, lon: number): boolean {
   return (
-    lat >= ITALY_BBOX.south &&
-    lat <= ITALY_BBOX.north &&
-    lon >= ITALY_BBOX.west &&
-    lon <= ITALY_BBOX.east
+    lat >= TRIP_BBOX.south &&
+    lat <= TRIP_BBOX.north &&
+    lon >= TRIP_BBOX.west &&
+    lon <= TRIP_BBOX.east
   );
 }
 
@@ -138,20 +138,23 @@ function categoryGlyph(cat: Category): string {
 }
 
 const AIRPORT_POI: POI = {
-  id: "fco",
-  name: "Rome Fiumicino — FCO",
+  id: "airport",
+  name: "Munich Airport (MUC)",
   category: "airport",
   region: "transit",
-  description: "Leonardo da Vinci International Airport. Arrival 17 Aug, departure 26 Aug 05:00.",
-  shortDescription: "Arrival & departure airport.",
-  coords: [41.8003, 12.2389]
+  description:
+    "Arrival & departure airport. Landing Aug 11 at 18:50 (LY351), Sixt pickup 19:30 at the Airport Center; on Aug 20 the car goes back at Terminalstr. Mitte / Parkhaus P6 by 13:00 for the 16:30 flight home (LY254).",
+  shortDescription: "Arrival & departure airport — Sixt pickup and return.",
+  address: "Nordallee 25, 85356 München, Germany",
+  coords: [48.3538, 11.7861]
 };
 
 const AIRPORT_POI_HE: POI = {
   ...AIRPORT_POI,
-  name: "רומא פיומיצ'ינו — FCO",
-  description: "נמל התעופה הבינלאומי על שם ליאונרדו דה וינצ'י. נחיתה ב־17.8, המראה ב־26.8 בשעה 05:00.",
-  shortDescription: "שדה התעופה — נחיתה והמראה."
+  name: "שדה התעופה מינכן (MUC)",
+  description:
+    "שדה התעופה של ההגעה והיציאה. נוחתים ב־11 באוגוסט ב־18:50 (LY351), איסוף רכב סיקסט ב־19:30; ב־20 באוגוסט מחזירים את הרכב בחניון P6 עד 13:00 לקראת טיסה ב־16:30 הביתה (LY254).",
+  shortDescription: "שדה התעופה — נחיתה, המראה ורכב שכור."
 };
 
 // The trip's big movements between bases (lat, lon)
@@ -163,6 +166,8 @@ type RouteSegment = {
   coords: [number, number][];
 };
 
+// The trip's big movements: Munich Airport ⇄ the Alpbachtal base.
+// Waypoints roughly follow the A8 → A93 → A12 Inntal corridor.
 const ROUTE_SEGMENTS: RouteSegment[] = [
   {
     id: "arrival",
@@ -170,10 +175,13 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_arrival_short",
     color: "#A23E2A", // brick — matches Stays
     coords: [
-      AIRPORT_POI.coords,
-      [42.30, 12.10],
-      [43.20, 11.40],
-      [43.8267, 10.8978]
+      [48.3538, 11.7861], // Munich Airport
+      [48.20, 11.90],     // A99/A8 east of Munich
+      [47.85, 12.10],     // A8 near Irschenberg
+      [47.75, 12.05],     // A93 turnoff
+      [47.61, 12.06],     // Kiefersfelden border
+      [47.58, 12.17],     // Kufstein
+      [47.44, 11.94]      // Alpbachtal / Kramsach base
     ]
   },
   {
@@ -181,23 +189,14 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     labelKey: "map_seg_transfer",
     dayKey: "map_seg_transfer_short",
     color: "#C68A2A", // bronze — matches Attractions
-    coords: [
-      [43.8267, 10.8978],
-      [43.4720, 11.1700],
-      [42.6919, 11.5378]
-    ]
+    coords: []
   },
   {
     id: "departure",
     labelKey: "map_seg_departure",
     dayKey: "map_seg_departure_short",
     color: "#5C7244", // cypress — matches Restaurants
-    coords: [
-      [42.6919, 11.5378],
-      [42.6275, 11.7989],
-      [42.4234, 12.1053],
-      AIRPORT_POI.coords
-    ]
+    coords: []
   }
 ];
 
@@ -302,7 +301,7 @@ export default function MapView({ registerFocus }: Props) {
   // marker stays current as we drive around during the trip; centering
   // the map on it only happens the first time we detect we're inside
   // Italy (so the pre-trip view from Israel doesn't snap the map away
-  // from Tuscany).
+  // from the trip region).
   const [userLocation, setUserLocation] = useState<[number, number] | null>(
     null
   );
@@ -320,7 +319,7 @@ export default function MapView({ registerFocus }: Props) {
         ];
         setUserLocation(coords);
         setGeolocBlocked(false);
-        if (!hasAutoCentered.current && isInItaly(coords[0], coords[1])) {
+        if (!hasAutoCentered.current && isInTripRegion(coords[0], coords[1])) {
           hasAutoCentered.current = true;
           // Small delay so the map has finished its initial render and
           // isn't fighting our flyTo with its own center transition.
@@ -352,7 +351,7 @@ export default function MapView({ registerFocus }: Props) {
         // Manual button still respects the "only auto-centre in Italy"
         // rule — clicking it from Tel Aviv would otherwise zoom out of
         // the trip area, which isn't useful pre-trip.
-        if (isInItaly(coords[0], coords[1])) {
+        if (isInTripRegion(coords[0], coords[1])) {
           flyRef.current?.flyToCoords(coords, 13);
         }
       },
@@ -505,13 +504,13 @@ export default function MapView({ registerFocus }: Props) {
 
       <div className="relative card-paper overflow-hidden -mx-4 sm:mx-0 rounded-none sm:rounded-2xl">
         <MapContainer
-          center={[42.95, 11.6]}
-          zoom={8}
+          center={[47.42, 11.75]}
+          zoom={9}
           scrollWheelZoom={true}
           className="h-[70svh] sm:h-[600px] w-full"
         >
           {/* CartoDB Voyager — warm, editorial off-cream tiles that pair
-              nicely with the Tuscan palette. Free for low-traffic personal
+              nicely with the alpine palette. Free for low-traffic personal
               use, no API key required (Stadia's Stamen Watercolor blocks
               non-localhost without an account, which is why we moved off it). */}
           <TileLayer

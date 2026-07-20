@@ -8,7 +8,7 @@
  *
  * **Question philosophy** — every template is about one of three
  * things: a real *place* the family is visiting, a real *attraction*
- * (its description, its town, its tag), or a real *Italian word /
+ * (its description, its town, its tag), or a real *German word /
  * phrase* the day teaches. Meta-trip filler ("how many stops does
  * this day have?", "what day of the week is day 2?") is intentionally
  * absent — kids tune out instantly on questions about the data
@@ -21,8 +21,8 @@
  *     selector skips it),
  *   - sources its distractors from OTHER attractions / words / towns
  *     in the trip so wrong answers stay plausibly trip-flavored
- *     (the kid is choosing between four real Italian places, not
- *     between Saturnia and Madagascar).
+ *     (the kid is choosing between four real Austrian places, not
+ *     between Innsbruck and Madagascar).
  *
  * The selector then runs all templates, drops the nulls, deduplicates
  * by question text, and trims to the requested count. If we still
@@ -53,7 +53,7 @@ const OPTIONS_PER_QUESTION = 4;
  *  surfacing it. */
 const COPY = {
   en: {
-    correct: ["Bravissimo!", "Spot on!", "Nailed it!", "Esatto!", "Mamma mia, yes!"],
+    correct: ["Bravo!", "Super!", "Genau!", "Perfekt!", "Jawohl!"],
     wrong: ["Close one!", "Almost!", "Not quite —", "Oof, nope —", "Ah, the answer is"],
     /** Friendly category labels for attraction tags, used to make
      *  questions like "Which of these is great for water adventures?". */
@@ -70,7 +70,7 @@ const COPY = {
     } as Record<string, string>
   },
   he: {
-    correct: ["ברביסימו!", "בדיוק!", "מצוין!", "אֶזָאטוֹ!", "מאמא מיה, כן!"],
+    correct: ["בראבו!", "סופר!", "בדיוק!", "מושלם!", "יופי!"],
     wrong: ["קרוב!", "כמעט!", "לא ממש —", "אופ, לא —", "התשובה היא"],
     tag: {
       water: "הרפתקאות מים מרעננות",
@@ -180,332 +180,316 @@ function buildQ(opts: {
 
 
 /* ------------------------------------------------------------------ */
-/* Italian-culture wildcard bank                                       */
+/* Austria-culture wildcard bank                                       */
 /* ------------------------------------------------------------------ */
 
-/** A small bilingual bank of kid-friendly "general Italy" facts —
- *  flag, food, cars, scooters, geography. Used by `tplItalianCulture`
+/** A small bilingual bank of kid-friendly "general Austria" facts —
+ *  flag, food, mountains, animals, geography. Used by `tplAustriaCulture`
  *  as a controlled wildcard sprinkled into the offline pack so the
  *  deck doesn't feel repetitive on attraction-thin days. The pack is
  *  still primarily about today's attractions; the selector caps how
  *  many of these can fire (see `CULTURE_BUDGET` in `buildFallbackQuiz`).
  *  Keep facts at 8-year-old reading level — no politics, no booze,
  *  no scary detail. */
-const ITALIAN_CULTURE_FACTS: Record<Lang, AttractionQuizFact[]> = {
+const AUSTRIA_CULTURE_FACTS: Record<Lang, AttractionQuizFact[]> = {
   en: [
     {
-      question: "What three colours are on the Italian flag, from left to right?",
-      correctAnswer: "Green, white, and red",
+      question: "What are the colours on the Austrian flag, from top to bottom? (It's one of the oldest flags in the world!)",
+      correctAnswer: "Red, white, and red",
       distractors: [
-        "Red, white, and blue",
-        "Yellow, black, and white",
-        "Blue, white, and red"
+        "Green, white, and red",
+        "Blue, white, and red",
+        "Yellow, black, and white"
       ]
     },
     {
-      question: "Pizza Margherita is named after a real Italian queen and shows off the Italian flag colours. What are the three classic toppings?",
-      correctAnswer: "Tomato (red), mozzarella (white) and basil (green)",
+      question: "What is the capital city of Austria?",
+      correctAnswer: "Vienna (Wien)",
+      distractors: ["Salzburg", "Innsbruck", "Graz"]
+    },
+    {
+      question: "The famous composer Mozart was born in which Austrian city?",
+      correctAnswer: "Salzburg",
+      distractors: ["Vienna", "Berlin", "Rome"]
+    },
+    {
+      question: "What language do most people speak in Austria?",
+      correctAnswer: "German",
+      distractors: ["Italian", "French", "Spanish"]
+    },
+    {
+      question: "Austria is famous for a huge mountain range that stretches across it. What is it called?",
+      correctAnswer: "The Alps",
+      distractors: ["The Andes", "The Rocky Mountains", "The Himalayas"]
+    },
+    {
+      question: "In Austria, people often say 'Grüß Gott' or 'Servus'. What do these words mean?",
+      correctAnswer: "Hello / greetings",
+      distractors: ["Goodbye", "Thank you", "I'm hungry"]
+    },
+    {
+      question: "Wiener Schnitzel is a famous Austrian food. What is it?",
+      correctAnswer: "A thin, breaded and fried slice of meat",
       distractors: [
-        "Pineapple, ham and corn",
-        "Mushrooms, olives and pepperoni",
-        "Sweetcorn, egg and broccoli"
+        "A chocolate cake",
+        "A bowl of noodle soup",
+        "A type of cheese"
       ]
     },
     {
-      question: "Which of these famous foods is NOT actually from Italy?",
-      correctAnswer: "Spaghetti with meatballs (it's American!)",
+      question: "Sachertorte is a world-famous cake from Vienna. What is it made of?",
+      correctAnswer: "Chocolate cake with apricot jam",
       distractors: [
-        "Pizza Margherita",
-        "Gelato (ice cream)",
-        "Lasagna"
+        "Cheese and tomato",
+        "Banana and cream",
+        "Strawberry ice cream"
       ]
     },
     {
-      question: "Italy shares its northern border with a few other countries. Which of these countries does NOT border Italy?",
-      correctAnswer: "Spain",
+      question: "Apfelstrudel is a beloved Austrian treat. What fruit is inside it?",
+      correctAnswer: "Apples",
+      distractors: ["Bananas", "Oranges", "Pineapples"]
+    },
+    {
+      question: "The famous movie 'The Sound of Music' was filmed near which Austrian city?",
+      correctAnswer: "Salzburg",
+      distractors: ["Vienna", "Paris", "London"]
+    },
+    {
+      question: "In the Alps, cows often wear something around their necks that jingles. What is it?",
+      correctAnswer: "A cowbell",
       distractors: [
-        "France",
-        "Switzerland",
-        "Austria"
+        "A scarf",
+        "A necklace of flowers",
+        "A little backpack"
       ]
     },
     {
-      question: "About 2000 years ago, a powerful empire ruled Italy and much of the world. What were the people of this empire called?",
-      correctAnswer: "The Romans",
+      question: "Which furry animal lives high in the Alps and whistles loudly to warn its friends of danger?",
+      correctAnswer: "The marmot",
+      distractors: ["The penguin", "The camel", "The kangaroo"]
+    },
+    {
+      question: "The ibex is a wild animal of the Alps. What is it?",
+      correctAnswer: "A mountain goat with big curved horns",
       distractors: [
-        "The Greeks",
-        "The Egyptians",
-        "The Vikings"
+        "A giant fish",
+        "A colourful parrot",
+        "A tiny mouse"
       ]
     },
     {
-      question: "The Teenage Mutant Ninja Turtles are named after four famous Italian Renaissance artists. Who are they?",
-      correctAnswer: "Leonardo, Michelangelo, Donatello, and Raphael",
+      question: "Austria is one of the best places in the world for which snowy sport?",
+      correctAnswer: "Skiing",
+      distractors: ["Surfing", "Sandcastle building", "Scuba diving"]
+    },
+    {
+      question: "A big, famous river flows through Vienna. What is it called?",
+      correctAnswer: "The Danube",
+      distractors: ["The Nile", "The Amazon", "The Thames"]
+    },
+    {
+      question: "Edelweiss is a famous little white flower that grows in the Alps. Where does it like to grow?",
+      correctAnswer: "High up on rocky mountains",
       distractors: [
-        "Mario, Luigi, Toad, and Bowser",
-        "Romeo, Juliet, Hamlet, and Othello",
-        "Vivaldi, Puccini, Verdi, and Rossini"
+        "At the bottom of the sea",
+        "In hot sandy deserts",
+        "Inside dark caves"
       ]
     },
     {
-      question: "Who painted the world's most famous painting, the Mona Lisa?",
-      correctAnswer: "Leonardo da Vinci, an Italian artist",
+      question: "Yodeling is a special way of singing in the Alps. What does it sound like?",
+      correctAnswer: "Quickly switching between low and very high notes",
       distractors: [
-        "Pablo Picasso",
-        "Vincent van Gogh",
-        "Michelangelo"
+        "Whispering very softly",
+        "Humming with a closed mouth",
+        "Clapping in rhythm"
       ]
     },
     {
-      question: "The main international airport in Rome is named after which famous Italian inventor and artist?",
-      correctAnswer: "Leonardo da Vinci",
+      question: "Kaiserschmarrn is a favourite Austrian dessert. What is it?",
+      correctAnswer: "A fluffy pancake torn into pieces and dusted with sugar",
       distractors: [
-        "Julius Caesar",
-        "Marco Polo",
-        "Christopher Columbus"
+        "A spicy vegetable soup",
+        "A cold fruit salad",
+        "A crunchy potato chip"
       ]
     },
     {
-      question: "Italy is shaped a bit like which everyday object?",
-      correctAnswer: "A boot",
-      distractors: ["A hat", "A spoon", "A football"]
+      question: "The famous energy drink Red Bull was invented in which country?",
+      correctAnswer: "Austria",
+      distractors: ["Brazil", "Japan", "Canada"]
     },
     {
-      question: "What is the capital city of Italy?",
-      correctAnswer: "Rome",
-      distractors: ["Milan", "Florence", "Venice"]
+      question: "In the Austrian mountains, how do people often travel up to the top to ski or enjoy the view?",
+      correctAnswer: "In a cable car (gondola)",
+      distractors: ["In a submarine", "On a camel", "In a hot-air balloon"]
     },
     {
-      question: "What is the name of the famous little Italian scooter, designed in the 1940s?",
-      correctAnswer: "The Vespa (Italian for 'wasp')",
-      distractors: ["The Avocado", "The Tarantula", "The Spaghetti"]
+      question: "The Tyrol region, surrounded by mountains, has a main city that hosted the Winter Olympics twice. What is it?",
+      correctAnswer: "Innsbruck",
+      distractors: ["Vienna", "Venice", "Munich"]
     },
     {
-      question: "Ferrari and Lamborghini are both world-famous Italian makers of what?",
-      correctAnswer: "Fast sports cars",
-      distractors: ["Fizzy lemonade", "Wooden toys", "Pencils and pens"]
+      question: "What is the name of the highest mountain in Austria?",
+      correctAnswer: "The Grossglockner",
+      distractors: ["Mount Everest", "Mount Fuji", "Table Mountain"]
     },
     {
-      question: "What does the Italian word 'gelato' mean in English?",
-      correctAnswer: "Ice cream",
-      distractors: ["A small boat", "A song", "A train"]
-    },
-    {
-      question: "In 2014, the Israeli basketball team Maccabi Tel Aviv won the European Championship. In which Italian city did they play the final?",
-      correctAnswer: "Milan",
-      distractors: ["Rome", "Venice", "Florence"]
-    },
-    {
-      question: "Italy has the most active volcano in Europe. What is its name?",
-      correctAnswer: "Mount Etna (in Sicily)",
-      distractors: ["Mount Everest", "Mount Fuji", "Mount Kilimanjaro"]
-    },
-    {
-      question: "Which of these is a famous big city in Tuscany?",
-      correctAnswer: "Florence",
-      distractors: ["Rome", "Venice", "Naples"]
-    },
-    {
-      question: "Tuscany is famous for its beautiful countryside. What does it look like?",
-      correctAnswer: "Rolling green hills with vineyards and cypress trees",
-      distractors: [
-        "Flat sandy deserts with cactus",
-        "Snowy mountains with pine trees",
-        "Deep jungles with monkeys"
-      ]
-    },
-    {
-      question: "In the Maremma area of Tuscany, you can find 'Butteri'. What are they?",
-      correctAnswer: "Italian cowboys who ride horses",
-      distractors: [
-        "A type of creamy butter",
-        "People who make pizza",
-        "Little green frogs"
-      ]
-    },
-    {
-      question: "What type of thick, hand-rolled pasta is super famous in Tuscany?",
-      correctAnswer: "Pici",
-      distractors: ["Spaghetti", "Macaroni", "Ravioli"]
-    },
-    {
-      question: "Tuscan bread is famous for missing one important ingredient. What is it?",
-      correctAnswer: "Salt (it's completely unsalted!)",
-      distractors: ["Flour", "Water", "Yeast"]
-    },
-    {
-      question: "For which famous Italian soccer team did Cristiano Ronaldo play?",
-      correctAnswer: "Juventus",
-      distractors: ["AC Milan", "Inter Milan", "AS Roma"]
-    },
-    {
-      question: "Which Italian rock band won the Eurovision Song Contest in 2021?",
-      correctAnswer: "Måneskin",
-      distractors: ["ABBA", "The Beatles", "Coldplay"]
-    },
-    {
-      question: "Italy has won the World Cup four times! Which of these is a famous Italian soccer team?",
-      correctAnswer: "Juventus",
-      distractors: ["Real Madrid", "Manchester United", "Bayern Munich"]
+      question: "In Austria, some people wear traditional leather shorts at festivals. What are they called?",
+      correctAnswer: "Lederhosen",
+      distractors: ["Pyjamas", "Raincoats", "Swimming trunks"]
     }
   ],
   he: [
     {
-      question: "אילו שלושה צבעים יש בדגל האיטלקי, משמאל לימין?",
-      correctAnswer: "ירוק, לבן ואדום",
-      distractors: ["אדום, לבן וכחול", "צהוב, שחור ולבן", "כחול, לבן ואדום"]
+      question: "מהם צבעי דגל אוסטריה, מלמעלה למטה? (זהו אחד הדגלים העתיקים בעולם!)",
+      correctAnswer: "אדום, לבן ואדום",
+      distractors: ["ירוק, לבן ואדום", "כחול, לבן ואדום", "צהוב, שחור ולבן"]
     },
     {
-      question: "פיצה מרגריטה נקראת על שם מלכה איטלקית אמיתית, ומציגה את צבעי הדגל האיטלקי. מה שלוש התוספות הקלאסיות?",
-      correctAnswer: "עגבנייה (אדום), מוצרלה (לבן) ובזיליקום (ירוק)",
+      question: "מהי בירת אוסטריה?",
+      correctAnswer: "וינה (Wien)",
+      distractors: ["זלצבורג", "אינסברוק", "גראץ"]
+    },
+    {
+      question: "המלחין המפורסם מוצרט נולד באיזו עיר אוסטרית?",
+      correctAnswer: "זלצבורג",
+      distractors: ["וינה", "ברלין", "רומא"]
+    },
+    {
+      question: "באיזו שפה מדברים רוב האנשים באוסטריה?",
+      correctAnswer: "גרמנית",
+      distractors: ["איטלקית", "צרפתית", "ספרדית"]
+    },
+    {
+      question: "אוסטריה מפורסמת ברכס הרים ענק שחוצה אותה. איך הוא נקרא?",
+      correctAnswer: "האלפים",
+      distractors: ["האנדים", "הרי הרוקי", "ההימלאיה"]
+    },
+    {
+      question: "באוסטריה אומרים לעיתים קרובות 'גְרוּס גוֹט' או 'סֶרְווּס'. מה משמעות המילים האלה?",
+      correctAnswer: "שלום / ברכת שלום",
+      distractors: ["להתראות", "תודה", "אני רעב"]
+    },
+    {
+      question: "שניצל וינאי הוא מאכל אוסטרי מפורסם. מה זה?",
+      correctAnswer: "פרוסת בשר דקה מצופה בפירורי לחם ומטוגנת",
       distractors: [
-        "אננס, אגוזים ותירס",
-        "פטריות, זיתים ופפרוני",
-        "תירס מתוק, ביצה וברוקולי"
+        "עוגת שוקולד",
+        "קערת מרק אטריות",
+        "סוג של גבינה"
       ]
     },
     {
-      question: "איזה מהמאכלים המפורסמים האלה לא באמת הומצא באיטליה?",
-      correctAnswer: "ספגטי עם כדורי בשר (זה אמריקאי!)",
+      question: "זאכרטורטה היא עוגה מפורסמת בעולם מווינה. ממה היא עשויה?",
+      correctAnswer: "עוגת שוקולד עם ריבת משמש",
       distractors: [
-        "פיצה מרגריטה",
-        "גלידה (ג'לאטו)",
-        "לזניה"
+        "גבינה ועגבנייה",
+        "בננה וקצפת",
+        "גלידת תות"
       ]
     },
     {
-      question: "איטליה חולקת את הגבול הצפוני שלה עם כמה מדינות. איזו מהמדינות האלה לא גובלת באיטליה?",
-      correctAnswer: "ספרד",
+      question: "אפפלשטרודל הוא פינוק אוסטרי אהוב. איזה פרי יש בתוכו?",
+      correctAnswer: "תפוחים",
+      distractors: ["בננות", "תפוזים", "אננס"]
+    },
+    {
+      question: "הסרט המפורסם 'צלילי המוזיקה' צולם ליד איזו עיר אוסטרית?",
+      correctAnswer: "זלצבורג",
+      distractors: ["וינה", "פריז", "לונדון"]
+    },
+    {
+      question: "בהרי האלפים, פרות עונדות משהו על הצוואר שמצלצל. מה זה?",
+      correctAnswer: "פעמון פרה",
       distractors: [
-        "צרפת",
-        "שווייץ",
-        "אוסטריה"
+        "צעיף",
+        "שרשרת פרחים",
+        "תיק גב קטן"
       ]
     },
     {
-      question: "לפני כ-2000 שנה, אימפריה חזקה שלטה באיטליה ובחלק גדול מהעולם. איך קראו לאנשי האימפריה הזו?",
-      correctAnswer: "הרומאים",
+      question: "איזו חיה פרוותית חיה גבוה באלפים ושורקת בקול כדי להזהיר את חבריה מסכנה?",
+      correctAnswer: "המרמיטה",
+      distractors: ["הפינגווין", "הגמל", "הקנגורו"]
+    },
+    {
+      question: "היעל (איבֶּקְס) הוא חיית בר של האלפים. מה זה?",
+      correctAnswer: "עז הרים עם קרניים גדולות ומעוקלות",
       distractors: [
-        "היוונים",
-        "המצרים",
-        "הוויקינגים"
+        "דג ענק",
+        "תוכי צבעוני",
+        "עכבר קטנטן"
       ]
     },
     {
-      question: "צבי הנינג׳ה נקראים על שם ארבעה אמנים איטלקים מפורסמים מתקופת הרנסנס. מי הם?",
-      correctAnswer: "לאונרדו, מיכלאנג׳לו, דונטלו ורפאל",
+      question: "אוסטריה היא אחד המקומות הטובים בעולם לאיזה ספורט חורפי?",
+      correctAnswer: "סקי",
+      distractors: ["גלישת גלים", "בניית ארמונות חול", "צלילה"]
+    },
+    {
+      question: "נהר גדול ומפורסם זורם דרך וינה. איך הוא נקרא?",
+      correctAnswer: "הדנובה",
+      distractors: ["הנילוס", "האמזונס", "התמזה"]
+    },
+    {
+      question: "אדלווייס הוא פרח לבן וקטן מפורסם שגדל באלפים. איפה הוא אוהב לגדול?",
+      correctAnswer: "גבוה על הרים סלעיים",
       distractors: [
-        "מריו, לואיג׳י, טואד ובאוזר",
-        "רומיאו, יוליה, המלט ואותלו",
-        "ויוואלדי, פוצ׳יני, ורדי ורוסיני"
+        "בקרקעית הים",
+        "במדבריות חול חמים",
+        "בתוך מערות חשוכות"
       ]
     },
     {
-      question: "מי צייר את הציור המפורסם בעולם, המונה ליזה?",
-      correctAnswer: "לאונרדו דה וינצ׳י, אמן איטלקי",
+      question: "יודל הוא דרך מיוחדת לשיר באלפים. איך זה נשמע?",
+      correctAnswer: "מעבר מהיר בין צלילים נמוכים לגבוהים מאוד",
       distractors: [
-        "פבלו פיקאסו",
-        "וינסנט ואן גוך",
-        "מיכלאנג׳לו"
+        "לחישה חרישית מאוד",
+        "פזמון בפה סגור",
+        "מחיאות כפיים בקצב"
       ]
     },
     {
-      question: "נמל התעופה הבינלאומי המרכזי של רומא נקרא על שם איזה ממציא ואמן איטלקי מפורסם?",
-      correctAnswer: "לאונרדו דה וינצ׳י",
+      question: "קייזרשמארן הוא קינוח אוסטרי אהוב. מה זה?",
+      correctAnswer: "פנקייק אוורירי קרוע לחתיכות ומפוזר בסוכר",
       distractors: [
-        "יוליוס קיסר",
-        "מרקו פולו",
-        "כריסטופר קולומבוס"
+        "מרק ירקות חריף",
+        "סלט פירות קר",
+        "צ'יפס תפוחי אדמה"
       ]
     },
     {
-      question: "צורת איטליה דומה קצת לאיזה חפץ יומיומי?",
-      correctAnswer: "מגף",
-      distractors: ["כובע", "כף", "כדורגל"]
+      question: "משקה האנרגיה המפורסם רד בול הומצא באיזו מדינה?",
+      correctAnswer: "אוסטריה",
+      distractors: ["ברזיל", "יפן", "קנדה"]
     },
     {
-      question: "מהי בירת איטליה?",
-      correctAnswer: "רומא",
-      distractors: ["מילאנו", "פירנצה", "ונציה"]
+      question: "בהרי אוסטריה, איך אנשים נוסעים לעיתים קרובות עד לפסגה כדי לגלוש או ליהנות מהנוף?",
+      correctAnswer: "ברכבל (גונדולה)",
+      distractors: ["בצוללת", "על גב גמל", "בכדור פורח"]
     },
     {
-      question: "מה השם של הקטנוע הקטן והמפורסם של איטליה, שעוצב בשנות הארבעים?",
-      correctAnswer: "ה־וֶספַּה (׳צרעה׳ באיטלקית)",
-      distractors: ["ה־אבוקדו", "ה־טרנטולה", "ה־ספגטי"]
+      question: "אזור טירול, המוקף בהרים, כולל עיר מרכזית שאירחה פעמיים את אולימפיאדת החורף. מהי?",
+      correctAnswer: "אינסברוק",
+      distractors: ["וינה", "ונציה", "מינכן"]
     },
     {
-      question: "פרארי ולמבורגיני הם שני יצרנים איטלקיים מפורסמים בעולם של מה?",
-      correctAnswer: "מכוניות ספורט מהירות",
-      distractors: ["לימונדה תוססת", "צעצועי עץ", "עפרונות ועטים"]
+      question: "מה שמו של ההר הגבוה ביותר באוסטריה?",
+      correctAnswer: "הגרוסגלוקנר",
+      distractors: ["הר אוורסט", "הר פוג'י", "הר השולחן"]
     },
     {
-      question: "מה משמעות המילה האיטלקית ׳ג׳לאטו׳ בעברית?",
-      correctAnswer: "גלידה",
-      distractors: ["סירה קטנה", "שיר", "רכבת"]
-    },
-    {
-      question: "בשנת 2014, מכבי תל אביב בכדורסל זכתה באליפות אירופה. באיזו עיר איטלקית נערך משחק הגמר?",
-      correctAnswer: "מילאנו",
-      distractors: ["רומא", "ונציה", "פירנצה"]
-    },
-    {
-      question: "באיטליה נמצא הוולקן הפעיל ביותר באירופה. מה שמו?",
-      correctAnswer: "הר האטנה (בסיציליה)",
-      distractors: ["הר אוורסט", "הר פוג׳י", "הר קילימנג׳רו"]
-    },
-    {
-      question: "איזו מבין אלו היא עיר גדולה ומפורסמת בטוסקנה?",
-      correctAnswer: "פירנצה",
-      distractors: ["רומא", "ונציה", "נאפולי"]
-    },
-    {
-      question: "טוסקנה מפורסמת באזורי הכפר היפים שלה. איך הם נראים?",
-      correctAnswer: "גבעות ירוקות מתגלגלות עם כרמים ועצי ברוש",
-      distractors: [
-        "מדבריות חול שטוחים עם קקטוסים",
-        "הרים מושלגים עם עצי אורן",
-        "ג'ונגלים עמוקים עם קופים"
-      ]
-    },
-    {
-      question: "באזור המארמה בטוסקנה, אפשר למצוא 'בוּטֶרִי'. מה הם?",
-      correctAnswer: "קאובויס איטלקים שרוכבים על סוסים",
-      distractors: [
-        "סוג של חמאה רכה",
-        "אנשים שמכינים פיצה",
-        "צפרדעים ירוקות קטנות"
-      ]
-    },
-    {
-      question: "איזה סוג של פסטה עבה המגולגלת ביד מפורסמת מאוד בטוסקנה?",
-      correctAnswer: "פיצ'י",
-      distractors: ["ספגטי", "מקרוני", "רביולי"]
-    },
-    {
-      question: "הלחם הטוסקני מפורסם בגלל שחסר בו מרכיב אחד חשוב. מהו?",
-      correctAnswer: "מלח (הוא לגמרי ללא מלח!)",
-      distractors: ["קמח", "מים", "שמרים"]
-    },
-    {
-      question: "באיזו קבוצת כדורגל איטלקית מפורסמת שיחק כריסטיאנו רונאלדו?",
-      correctAnswer: "יובנטוס",
-      distractors: ["מילאן", "אינטר", "רומא"]
-    },
-    {
-      question: "איזו להקת רוק איטלקית זכתה באירוויזיון בשנת 2021?",
-      correctAnswer: "מונסקין",
-      distractors: ["אבבא", "הביטלס", "קולדפליי"]
-    },
-    {
-      question: "איטליה זכתה במונדיאל ארבע פעמים! איזו מבין אלו היא קבוצת כדורגל איטלקית מפורסמת?",
-      correctAnswer: "יובנטוס",
-      distractors: ["ריאל מדריד", "מנצ'סטר יונייטד", "באיירן מינכן"]
+      question: "באוסטריה, יש אנשים שלובשים מכנסי עור קצרים מסורתיים בחגיגות. איך הם נקראים?",
+      correctAnswer: "לֶדֶרְהוֹזֶן",
+      distractors: ["פיג'מה", "מעיל גשם", "בגד ים"]
     }
   ]
 };
 
 /* ------------------------------------------------------------------ */
-/* Templates — ALL substantive (places / attractions / Italian)        */
+/* Templates — ALL substantive (places / attractions / German)         */
 /* ------------------------------------------------------------------ */
 
 interface TemplateContext {
@@ -523,7 +507,7 @@ interface TemplateContext {
   todaysAttractions: POI[];
 }
 
-/** Q: what does the Italian word X mean? */
+/** Q: what does the German word X mean? */
 function tplWordMeaning(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const words: ItalianWord[] = day.italianWords ?? [];
@@ -543,15 +527,15 @@ function tplWordMeaning(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `מה המשמעות של המילה האיטלקית "${w.word}"?`
-        : `What does the Italian word "${w.word}" mean?`,
+        ? `מה המשמעות של המילה הגרמנית "${w.word}"?`
+        : `What does the German word "${w.word}" mean?`,
     correct: w.meaning,
     distractors,
     rng
   });
 }
 
-/** Q: how do you say [meaning] in Italian? — reverse of tplWordMeaning. */
+/** Q: how do you say [meaning] in German? — reverse of tplWordMeaning. */
 function tplWordReverse(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const words: ItalianWord[] = day.italianWords ?? [];
@@ -571,15 +555,15 @@ function tplWordReverse(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `איך אומרים "${w.meaning}" באיטלקית?`
-        : `How do you say "${w.meaning}" in Italian?`,
+        ? `איך אומרים "${w.meaning}" בגרמנית?`
+        : `How do you say "${w.meaning}" in German?`,
     correct: w.word,
     distractors,
     rng
   });
 }
 
-/** Q: which Italian phrase means "[example translation]"? */
+/** Q: which German phrase means "[example translation]"? */
 function tplPhraseExample(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const phrases = (day.italianWords ?? []).filter(
@@ -601,24 +585,24 @@ function tplPhraseExample(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `איזה משפט באיטלקית אומר "${w.exampleMeaning}"?`
-        : `Which Italian phrase means "${w.exampleMeaning}"?`,
+        ? `איזה משפט בגרמנית אומר "${w.exampleMeaning}"?`
+        : `Which German phrase means "${w.exampleMeaning}"?`,
     correct: w.example,
     distractors,
     rng
   });
 }
 
-/** Q: a kid-friendly general "Italy" fact pulled from the
- *  `ITALIAN_CULTURE_FACTS` bank above (flag colours, pizza
- *  Margherita, Vespa, Ferrari, gelato, Italy-shaped-like-a-boot,
- *  …). The selector caps how many of these are allowed per pack
- *  (see `CULTURE_BUDGET`) — the deck stays primarily about the
- *  day's actual attractions, with one or two of these sprinkled
- *  in for variety on attraction-thin days. */
-function tplItalianCulture(ctx: TemplateContext): QuizQuestion | null {
+/** Q: a kid-friendly general "Austria" fact pulled from the
+ *  `AUSTRIA_CULTURE_FACTS` bank above (flag colours, Vienna,
+ *  Mozart, the Alps, Wiener Schnitzel, marmots, skiing, the
+ *  Danube, …). The selector caps how many of these are allowed
+ *  per pack (see `CULTURE_BUDGET`) — the deck stays primarily
+ *  about the day's actual attractions, with one or two of these
+ *  sprinkled in for variety on attraction-thin days. */
+function tplAustriaCulture(ctx: TemplateContext): QuizQuestion | null {
   const { lang, rng } = ctx;
-  const bank = ITALIAN_CULTURE_FACTS[lang];
+  const bank = AUSTRIA_CULTURE_FACTS[lang];
   if (!bank || bank.length === 0) return null;
   const fact = bank[Math.floor(rng() * bank.length)];
   return buildQ({
@@ -663,7 +647,7 @@ function tplAttractionStory(ctx: TemplateContext): QuizQuestion | null {
   // We don't blend in distractors from other facts because the
   // author already tuned these to be plausible-but-clearly-wrong
   // for THIS specific question (e.g. "A dog" vs "A cat / goat /
-  // chicken" — mixing in "Saturnia" would obviously give it away).
+  // chicken" — mixing in an unrelated place would give it away).
   return buildQ({
     lang,
     question: pick.fact.question,
@@ -764,7 +748,7 @@ export function buildFallbackQuiz(
   };
 
   // PASS 1 — Words (Target 2 questions). The user explicitly requested
-  // 1-2 questions about Italian words learned today.
+  // 1-2 questions about German words learned today.
   const MAX_WORDS = todaysAttractions.length < 2 ? 1 : 2;
   let wordsAdded = 0;
   for (let pass = 0; pass < 3 && wordsAdded < MAX_WORDS && collected.length < count; pass++) {
@@ -777,9 +761,9 @@ export function buildFallbackQuiz(
     }
   }
 
-  // PASS 2 — Italian-culture wildcards (Target 4 questions, or more if few attractions).
-  // The user explicitly requested 3-5 questions about general Italy
-  // (flag, pizza Margherita, artists, geography). If there are very few
+  // PASS 2 — Austria-culture wildcards (Target 4 questions, or more if few attractions).
+  // The user explicitly requested 3-5 questions about general Austria
+  // (flag, Vienna, Mozart, the Alps, geography). If there are very few
   // attractions today, fill the rest of the quiz with culture questions.
   const MAX_CULTURE = todaysAttractions.length < 2 ? (count - wordsAdded) : 4;
   let cultureAdded = 0;
@@ -789,7 +773,7 @@ export function buildFallbackQuiz(
     i++
   ) {
     const before = collected.length;
-    tryAdd(tplItalianCulture(ctx));
+    tryAdd(tplAustriaCulture(ctx));
     if (collected.length > before) cultureAdded++;
   }
 

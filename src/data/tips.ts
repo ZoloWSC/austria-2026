@@ -1,67 +1,112 @@
 import type { Tip } from "./types";
 
+// Austria '26 — culture & practical tips filled from the real
+// destination. severity: "warning" for things that cost money or catch
+// you out (vignette, holiday closures); "critical" reserved for genuine
+// safety; "info" for the rest.
 export const tips: Tip[] = [
   {
-    id: "ztl",
-    title: "Beware of ZTL zones — €110 fine, six months later",
+    id: "vignette",
+    title: "Buy the Austrian motorway vignette before you cross the border",
     body:
-      "In Pisa, Lucca, Pitigliano and most Tuscan old towns the historic centre is a Zona a Traffico Limitato (ZTL). The cameras are silent — you only learn you got a ticket when it shows up six months after the trip. Always park outside the walls and walk in. Lucca: Parking Carducci or Cittadella. Pisa: Pietrasantina (free shuttle to the Tower). Pitigliano: Piazzale Gen. Orsini.",
-    severity: "critical"
+      "Austria's motorways (the A-roads, including the A12 you'll live on) require a vignette — and a German rental car does NOT come with one. The moment you cross from Bavaria into Tyrol you're liable. Buy a digital 10-day vignette (about €12.80 for a car in 2026) online at the ASFINAG shop, linked to the number plate — it's valid immediately for the 1- and 10-day options. Driving Austrian motorways without one risks an on-the-spot replacement toll of well over €120.",
+    severity: "warning",
+    icon: "car"
   },
   {
-    id: "saturnia-early",
-    title: "Saturnia hot springs — be there by 07:30",
+    id: "no-german-vignette",
+    title: "No German vignette needed for the airport drive",
     body:
-      "The Cascate del Mulino are free and open 24/7. Show up at 10:00 in August and you'll meet the entire internet, no parking and serious heat on top of warm sulphur water. Show up at 07:30 and you'll have steam-rising-off-the-pools, near-empty terraces and easy parking — for about 30 minutes of pure magic.",
-    severity: "warning"
+      "Germany has no car vignette, so the drive from Munich Airport down the A8/A93 to the Tyrolean border needs no sticker. You only need the Austrian one, from the border onward. (A few Austrian alpine passes and tunnels have their own separate tolls, but you won't need them for this itinerary.)",
+    severity: "info",
+    icon: "info"
   },
   {
-    id: "car-return-night-before",
-    title: "Return the rental car the night before",
+    id: "assumption-day",
+    title: "Aug 15 is a public holiday — shops shut",
     body:
-      "A 5 a.m. flight after a 3 a.m. car return is a recipe for panic — queues at the rental desk, damage inspection in the dark, the constant fear of missing the plane. Drop the car at FCO around 21:00 the night before, sleep close by, and roll up to check-in calmly at 03:30.",
-    severity: "warning"
+      "Mariä Himmelfahrt (Assumption Day), Saturday Aug 15, is a national holiday falling mid-trip: supermarkets and most shops close, like a Sunday. Museums vary, but outdoor attractions, lifts, cafés and restaurants stay open — which is exactly why the Innsbruck zoo-and-old-town day is parked here. Stock up on groceries the day before.",
+    severity: "warning",
+    icon: "calendar"
   },
   {
-    id: "self-service-fuel",
-    title: "Self-service vs servito at gas stations",
+    id: "sunday-closures",
+    title: "Supermarkets close on Sundays",
     body:
-      "At Italian gas stations look for 'fai da te' (self-service) — same fuel, lower price, accepts foreign cards. 'Servito' is staff-pumped and roughly 10–20 cents per litre more. After 19:30 most stations are unmanned anyway and only self-service works.",
-    severity: "info"
+      "Austrian supermarkets (MPreis, SPAR, Billa) are closed on Sundays and public holidays. Petrol-station shops and bakeries have limited Sunday hours. Do the big grocery run on Saturday so you're not caught out with two hungry toddlers on a Sunday morning.",
+    severity: "warning",
+    icon: "shopping-cart"
   },
   {
-    id: "water-shoes",
-    title: "Closed-toe water shoes — non-negotiable",
+    id: "child-seats",
+    title: "Child car seats are the law — sort them with Sixt",
     body:
-      "At Sentierelsa, Saturnia and the Serchio you'll be walking on slick algae-covered river stones. Sandals and flip-flops will hurt and slip. Bring proper closed-toe water shoes for everyone.",
-    severity: "info"
+      "Austria (and Germany) require children under 135 cm and under 14 to travel in an appropriate child restraint. Bringing your own well-fitted seats is often the safest and cheapest option; otherwise reserve them with the Sixt booking in advance (supply on the day isn't guaranteed). Confirm a rear-facing/toddler seat for Tom and a forward seat for Gili.",
+    severity: "warning",
+    icon: "shield"
   },
   {
-    id: "ferragosto-closures",
-    title: "Ferragosto — many shops are still closed for ferie",
+    id: "mountain-weather",
+    title: "Mountain mornings, thunderstorm afternoons",
     body:
-      "Italians take their summer holidays in August, especially the week around Ferragosto (15 Aug). Family-run trattorie, bakeries, butchers, even some petrol stations on smaller roads shut for one or two weeks with a hand-written 'Chiuso per ferie' sign on the door. Our trip starts 17 Aug — most places will be reopening, but check Google Maps the night before for current hours, especially in the smaller villages (Larciano, Pitigliano, Manciano).",
-    severity: "warning"
+      "August in the Alps means warm sunny mornings and a real chance of afternoon thunderstorms. Do gondolas and exposed mountain activities in the morning and keep afternoons flexible or valley-based. Even on a hot valley day it's markedly colder and windier at the top of a lift — pack a warm layer and a rain shell for everyone.",
+    severity: "warning",
+    icon: "cloud"
   },
   {
-    id: "august-crowds",
-    title: "Peak season — time-shift the famous spots",
+    id: "sun-altitude",
+    title: "Alpine sun is fierce — cover the kids",
     body:
-      "August is the busiest month in Italy: locals on holiday plus everyone else. Pisa's Tower square, Saturnia, the Argentario beaches and Civita di Bagnoregio hit maximum density between 10:00 and 17:00. Trick: arrive just before opening or in the last 90 minutes of light. Saturnia by 07:30, Pisa at 08:00 or after 18:00, beaches before 10:00 or after 16:00 — crowds halve and the light turns honey-gold for the photos.",
-    severity: "warning"
-  },
-  {
-    id: "riposo",
-    title: "Riposo — shops and kitchens shut midday",
-    body:
-      "Italians eat lunch at 13:00 sharp, then the country folds for a few hours. Smaller shops and family bakeries close 13:00–16:00 (some until 17:00). Restaurant kitchens close hard at 14:30 — turn up at 14:35 and the answer is 'la cucina è chiusa' even if other diners are still finishing. Dinner kitchens reopen at 19:30. Plan provisioning for 09:00–12:30 and meals for 12:30–14:00 or 19:30–22:00, and the day flows.",
-    severity: "info"
+      "At altitude the UV is strong even when it feels mild. Sun hats, high-factor cream and shade breaks for Gili and Tom, especially on the lake and mountain days. Reapply after water play at Achensee and the Hexenwasser.",
+    severity: "info",
+    icon: "sun"
   },
   {
     id: "tipping",
-    title: "Tipping isn't really a thing — coperto already covers it",
+    title: "Tipping: round up ~5–10%",
     body:
-      "Italian restaurants are not the US or Israel. Most charge a 'coperto' (€2–4 per person bread / cover) printed on the menu, and the bill often says 'servizio incluso'. You don't need to leave 15–20%. Round up to the next euro for a casual lunch; leave €5–10 in cash on the folder for a great dinner you really loved. Tip in cash, after the bill is paid — most card terminals don't even ask, and the staff would rather have the cash anyway.",
-    severity: "info"
+      "Service is included, but it's normal to round up or add about 5–10% for good service. You don't leave it on the table — tell the server the total you want to pay as you hand over cash or card (e.g. the bill is €43.50, say 'make it €47').",
+    severity: "info",
+    icon: "coins"
+  },
+  {
+    id: "cash-huts",
+    title: "Carry cash for huts and small spots",
+    body:
+      "Mountain huts (Almen), small village bakeries and some family cafés are cash-preferred or cash-only, and mobile signal can drop in the valleys. Keep some euros in the day bag — card isn't guaranteed up a mountain.",
+    severity: "info",
+    icon: "wallet"
+  },
+  {
+    id: "quiet-hours",
+    title: "Respect the quiet hours (Ruhezeit)",
+    body:
+      "Austria observes a midday quiet and a night quiet (roughly 22:00–06:00, plus a Sunday/holiday all-day calm). In a family hotel or apartment that means keeping noise down at nap-time and after bedtime — handy actually, since it lines up with the kids' own schedule.",
+    severity: "info",
+    icon: "moon"
+  },
+  {
+    id: "pfand-water",
+    title: "Tap water is excellent; some bottles have a deposit",
+    body:
+      "Austrian (and especially Tyrolean) tap water is superb alpine water — refill bottles freely rather than buying. Note Austria introduced a deposit (Pfand) on many single-use plastic and can drinks in 2025, so return those to the machine for your coins back.",
+    severity: "info",
+    icon: "droplet"
+  },
+  {
+    id: "entry-documents",
+    title: "Passports & EU entry for Israeli travellers",
+    body:
+      "Israeli passport holders enter the Schengen area (Austria/Germany) visa-free for short stays; make sure passports are valid well beyond the trip. ETIAS, the EU's pre-travel authorisation, has been repeatedly delayed — check its status close to departure and register online if it's live by August 2026. Carry travel/health insurance details; Israel has no EHIC.",
+    severity: "warning",
+    icon: "passport"
+  },
+  {
+    id: "language",
+    title: "A little German goes a long way",
+    body:
+      "English is widely understood in tourist Tyrol, but a warm 'Servus' or 'Grüß Gott' (hello) and 'Danke' opens doors. Locals greet with 'Grüß Gott' by day; 'Servus' is the friendly all-purpose hello and goodbye. The word-of-the-day cards will keep you stocked.",
+    severity: "info",
+    icon: "message-circle"
   }
 ];

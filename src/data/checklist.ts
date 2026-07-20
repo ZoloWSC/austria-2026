@@ -1,113 +1,121 @@
 import type { ChecklistItem } from "./types";
 
+// Austria '26 — pre-trip bookings + toddler-in-the-Alps packing.
+// done: true = already sorted; urgent: true = still open and important.
 export const bookingChecklist: ChecklistItem[] = [
   {
-    id: "book-canyon-park",
-    text: "Canyon Park SUP (18 Aug, 10:45)",
-    detail:
-      "6 boards reserved for the 10:45 slot. Payment is cash on site (€168). Confirmation is in Itay's email.",
+    id: "flights",
+    text: "El Al flights booked (LY351 out, LY254 back)",
+    detail: "Out Aug 11 TLV 15:45 → MUC 18:50; back Aug 20 MUC 16:30 → TLV 21:15. Booking code is in the Tickets section (unlock with the family PIN).",
     done: true
   },
   {
-    id: "book-argentario-boat",
-    text: "Argentario catamaran cruise (23 Aug)",
-    detail: "GetYourGuide / DONNINI, 5 adults + 5 kids. Snorkel gear & lunch included on board. Check in at the Porto Santo Stefano pier by 08:30. Confirmation is in Itay's email.",
+    id: "car",
+    text: "Sixt rental car booked",
+    detail: "Luxury Elite SUV. Pickup Aug 11 19:30 (MUC Airport Center), return Aug 20 13:00 (Terminalstr. Mitte / Parkhaus P6). Booking ref is in the Tickets section (unlock with the family PIN).",
     done: true
   },
   {
-    id: "book-rafting",
-    text: "Soft rafting, Serchio (19 Aug, 09:30)",
-    detail: "GetYourGuide / Lucca Rafting, whole group. Guide, gear & wetsuits included. Check in at Chifenti by 09:25. Confirmation is in Itay's email.",
-    done: true
+    id: "hotel",
+    text: "Book the hotel — still open!",
+    detail: "9 nights in the Alpbachtal / Inn valley. Filter for air conditioning + a family room/apartment big enough for 2 adults + 2 kids. See the Stays section for candidates.",
+    urgent: true
   },
   {
-    id: "book-waterpark",
-    text: "Acqua Village waterpark tickets (22 Aug)",
-    detail: "Follonica. Buy online the night before — meaningfully cheaper than at the gate.",
-    link: "https://www.acquavillage.it/"
+    id: "child-seats",
+    text: "Sort child car seats with Sixt (or bring your own)",
+    detail: "Austria requires seats for kids under 135 cm. Reserve a toddler seat for Tom and a forward seat for Gili with the Sixt booking, or bring your own — supply on the day isn't guaranteed.",
+    link: "https://www.sixt.com/",
+    urgent: true
   },
   {
-    id: "book-gondola",
-    text: "Abetone gondola tickets (20 Aug)",
-    detail: "Monte Gomito cable car in the mountains — check the day's opening hours before you drive up."
+    id: "vignette",
+    text: "Buy the Austrian 10-day digital vignette",
+    detail: "~€12.80 for a car (2026), linked to the number plate — buy the moment you have the rental plate, valid immediately. Needed the second you cross into Austria.",
+    link: "https://shop.asfinag.at/en/",
+    urgent: true
   },
   {
-    id: "book-private-chef",
-    text: "Private chef dinner at the villa (optional)",
-    detail: "Chef-at-Home Tuscany / Eatwith / Airbnb Experiences. Pici workshop + dinner. Pick a settled villa evening (22–25 Aug) — not the 21st, that's the hotel-switch day.",
-    link: "https://www.eatwith.com/"
+    id: "swarovski",
+    text: "Pre-book Swarovski Kristallwelten time slot",
+    detail: "Summer slots sell out — reserve a timed entry online for the Wattens crystal-worlds day.",
+    link: "https://kristallwelten.swarovski.com/en"
   },
   {
-    id: "book-horses",
-    text: "Reserve a Maremma horseback hour",
-    detail: "Beginner-friendly ranch near Alberese / Albinia. Early-morning slot is best."
+    id: "passports",
+    text: "Check passports valid well past Aug 2026",
+    detail: "All four passports. Israeli citizens enter Schengen visa-free for short stays.",
+    urgent: true
   },
   {
-    id: "credit-card-on-driver-name",
-    text: "Make sure the rental driver has a credit card in their own name",
-    detail: "Debit cards usually rejected. The deposit hold can be €1,500+."
+    id: "etias",
+    text: "Check ETIAS status before departure",
+    detail: "The EU's pre-travel authorisation has been delayed repeatedly — check close to the trip whether it's live for August 2026 and register online if so.",
+    link: "https://travel-europe.europa.eu/etias_en"
   },
   {
-    id: "esim",
-    text: "Sort out an Italian eSIM",
-    detail: "Airalo / Holafly / Nomad — 10 GB Italy plan is plenty. Activate at the airport."
+    id: "insurance",
+    text: "Travel & health insurance for the family",
+    detail: "Israel has no EHIC — arrange private travel/health insurance and save the policy + emergency number offline.",
+    urgent: true
+  },
+  {
+    id: "checkin",
+    text: "El Al online check-in (from 24h before)",
+    detail: "Check in online the day before each flight; note terminal 3 (TLV) and terminal 1 (MUC).",
+    link: "https://www.elal.com/"
   }
 ];
 
 export const packingChecklist: ChecklistItem[] = [
   {
-    id: "water-shoes",
-    text: "Closed-toe water shoes — for everyone",
-    detail: "Sentierelsa, Saturnia, the Serchio. No sandals, no flip-flops."
+    id: "carrier",
+    text: "Hiking baby carrier for Tom",
+    detail: "Essential for the gondola-top loops (Juppi's Zauberwald, Spieljoch) and cobbled old towns where a stroller struggles."
   },
   {
-    id: "dry-bag",
-    text: "Dry bag (10–20 L)",
-    detail: "Phones, wallets, car keys on the SUP and on the boat at Argentario."
+    id: "stroller",
+    text: "One rugged stroller",
+    detail: "Fine on lake promenades and flat old towns; the carrier covers the rest."
   },
   {
-    id: "swim-goggles",
-    text: "Swim goggles — per person",
-    detail: "For the waterpark pools and any hotel/villa pool. (Snorkel gear is provided on the Argentario catamaran, so no need to pack that.)"
+    id: "warm-layers",
+    text: "Warm layer + rain shell for everyone",
+    detail: "It's 10–15°C colder at the top of a lift than in the valley, and August afternoons bring thunderstorms."
   },
   {
-    id: "uv-shirts",
-    text: "UV / lycra rashguards",
-    detail: "Hours on an open boat in August — sunscreen alone won't do it."
+    id: "water-clothes",
+    text: "Swimwear, water sandals & a full change of clothes",
+    detail: "For Achensee, the Reintalersee and especially the Hexenwasser — the kids WILL come home soaked and muddy."
   },
   {
-    id: "headlamps",
-    text: "Headlamps (small, per person)",
-    detail: "For Vitozza cave dwellings and the Vie Cave at dusk."
+    id: "sun",
+    text: "Sun hats & high-factor sun cream",
+    detail: "Alpine UV is strong; reapply after water play."
   },
   {
-    id: "reef-sunscreen",
-    text: "High-SPF reef-safe sunscreen + after-sun",
-    detail: "The Italian sun in August is brutal."
+    id: "closed-shoes",
+    text: "Closed shoes for Gili (for the alpine coaster)",
+    detail: "Lauser-Sauser requires closed shoes; a hair tie helps too."
   },
   {
-    id: "first-aid",
-    text: "Mini first-aid kit",
-    detail: "Plasters, antiseptic, kids' paracetamol, antihistamine, anti-diarrheal."
+    id: "meds",
+    text: "Kids' meds, thermometer & first-aid basics",
+    detail: "Calpol/paracetamol, plasters, any regular meds — plus the family's insurance details."
   },
   {
-    id: "swim-towels",
-    text: "Quick-dry microfibre towels",
-    detail: "One per person — for river walks and beach stops."
+    id: "cash",
+    text: "Some euros in cash",
+    detail: "Mountain huts and small bakeries are often cash-only, and signal drops in the valleys."
   },
   {
-    id: "reusable-bottles",
-    text: "Reusable water bottles",
-    detail: "Tap water is fine almost everywhere; refill at fountains."
+    id: "offline-maps",
+    text: "Download offline maps of Tyrol",
+    detail: "Google Maps offline area for Tyrol/Bavaria — data and signal are patchy in the mountains."
   },
   {
-    id: "power-adapter",
-    text: "EU power adapters + multi-port USB charger",
-    detail: "Italian sockets are mostly type F/L."
-  },
-  {
-    id: "kids-snacks",
-    text: "Kids' snack stash",
-    detail: "First night arrival is late; no time for proper shopping."
+    id: "snacks",
+    text: "Toddler snacks & refillable water bottles",
+    detail: "Tyrolean tap water is superb — refill freely. Snacks keep the peace between meals."
   }
 ];

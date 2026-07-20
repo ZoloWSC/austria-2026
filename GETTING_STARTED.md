@@ -25,7 +25,7 @@ for you. You don't need to know the code.
 
 1. **Clone it** (or "Use this template" on GitHub, then clone your copy):
    ```bash
-   git clone https://github.com/tikel1/tuscany-2026.git my-trip
+   git clone <this-repo-url> my-trip
    cd my-trip
    npm install
    ```

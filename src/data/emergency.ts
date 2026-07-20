@@ -1,112 +1,129 @@
 import type { EmergencyGroup } from "./types";
 
+// Austria '26 — verified emergency contacts for Tyrol. 112 works
+// everywhere in the EU; Austria's dedicated numbers are 133 (police),
+// 122 (fire), 144 (ambulance) and 140 (alpine/mountain rescue).
 export const emergencyGroups: EmergencyGroup[] = [
   {
-    title: "Italy — emergency numbers",
-    items: [
-      { label: "Single emergency number (EU)", value: "112", type: "phone", detail: "Police, ambulance, fire — English available" },
-      { label: "Carabinieri (police)", value: "113", type: "phone" },
-      { label: "Fire brigade", value: "115", type: "phone" },
-      { label: "Medical emergency / ambulance", value: "118", type: "phone" },
-      { label: "Coast guard", value: "1530", type: "phone", detail: "Boat day at Argentario" },
-      { label: "Roadside assistance (ACI)", value: "803.116", type: "phone", detail: "From Italian mobile or landline" }
-    ]
-  },
-  {
-    title: "Hospitals & clinics — North base (Larciano)",
+    title: "Emergency numbers (Austria)",
     items: [
       {
-        label: "Ospedale San Jacopo — Pistoia",
-        value: "Via Ciliegiole 97, 51100 Pistoia",
-        detail: "Main hospital, full ER. ≈ 25 min from Larciano",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.9285,10.9203"
-      },
-      {
-        label: "Ospedale San Luca — Lucca",
-        value: "Via Lippi-Francesconi, 55100 Lucca",
-        detail: "Major hospital with pediatric ER. ≈ 45 min west",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8456,10.5394"
-      },
-      {
-        label: "Pronto Soccorso Pediatrico — Meyer (Florence)",
-        value: "Viale Pieraccini 24, 50139 Firenze",
-        detail: "Top pediatric hospital in central Italy. ≈ 1 h",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8016,11.2486"
-      }
-    ]
-  },
-  {
-    title: "Hospitals & clinics — South base (Manciano / Pitigliano)",
-    items: [
-      {
-        label: "Ospedale di Pitigliano — Petruccioli",
-        value: "Via Nicola Ciacci 340, 58017 Pitigliano (GR)",
-        detail: "Closest hospital to Cortevecchia. Has ER. ≈ 35 min",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.6383,11.6664"
-      },
-      {
-        label: "Ospedale Misericordia — Grosseto",
-        value: "Via Senese 161, 58100 Grosseto",
-        detail: "Main hospital of the province, full services. ≈ 1 h",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.7747,11.1086"
-      },
-      {
-        label: "Guardia Medica Turistica",
-        value: "118 (ask)",
-        detail: "Tourist medical service in summer — call 118 to be redirected",
-        type: "phone"
-      }
-    ]
-  },
-  {
-    title: "Pharmacies (24h-rotation)",
-    items: [
-      {
-        label: "Farmacia Comunale — Manciano",
-        value: "Via Marsala, 58014 Manciano (GR)",
-        detail: "Closest pharmacy to Cortevecchia. Night-shift rotation posted on door.",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.5897,11.5161"
-      },
-      {
-        label: "Farmacia di Larciano",
-        value: "Via Marx, Larciano (PT)",
-        detail: "Closest to the northern base. Night-shift rotation posted on door.",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8200,10.9050"
-      }
-    ]
-  },
-  {
-    title: "Israeli embassy & consular help (Rome)",
-    items: [
-      {
-        label: "Embassy of Israel in Rome",
-        value: "Via Michele Mercati 14, 00197 Roma",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=41.9241,12.4856"
-      },
-      {
-        label: "Embassy phone",
-        value: "+39 06 3619 8500",
-        type: "phone"
-      },
-      {
-        label: "After-hours emergency (Israelis abroad)",
-        value: "+972 3 6953 0123",
+        label: "Europe-wide emergency",
+        value: "112",
+        detail: "Works from any phone anywhere in the EU — connects to police/ambulance/fire.",
         type: "phone",
-        detail: "MFA Situation Room — 24/7"
+        link: "tel:112"
       },
       {
-        label: "Embassy website",
-        value: "embassies.gov.il/rome",
+        label: "Ambulance (Rettung)",
+        value: "144",
+        detail: "Medical emergencies in Austria.",
+        type: "phone",
+        link: "tel:144"
+      },
+      {
+        label: "Police (Polizei)",
+        value: "133",
+        detail: "Austrian police.",
+        type: "phone",
+        link: "tel:133"
+      },
+      {
+        label: "Fire (Feuerwehr)",
+        value: "122",
+        detail: "Fire service.",
+        type: "phone",
+        link: "tel:122"
+      },
+      {
+        label: "Alpine / mountain rescue",
+        value: "140",
+        detail: "Bergrettung — for emergencies in the mountains.",
+        type: "phone",
+        link: "tel:140"
+      }
+    ]
+  },
+  {
+    title: "Medical near the base",
+    items: [
+      {
+        label: "Bezirkskrankenhaus Kufstein (district hospital)",
+        value: "+43 5372 6966-0",
+        detail: "Endach 27, 6330 Kufstein — the main hospital with an emergency department on the east side, ~25–30 min from the Alpbachtal base.",
+        type: "phone",
+        link: "tel:+4353726966"
+      },
+      {
+        label: "Hospital address (for the sat-nav)",
+        value: "Endach 27, 6330 Kufstein",
+        detail: "Bezirkskrankenhaus Kufstein.",
+        type: "address",
+        link: "https://www.google.com/maps/search/?api=1&query=Bezirkskrankenhaus+Kufstein+Endach+27"
+      },
+      {
+        label: "Pharmacy (Apotheke)",
+        value: "Look for the green 'Apotheke' cross",
+        detail: "Pharmacies rotate a night/weekend duty roster (Bereitschaftsdienst) posted on every pharmacy door and at apotheker.at. For urgent medicine advice, staff are excellent.",
         type: "website",
-        link: "https://embassies.gov.il/rome"
+        link: "https://www.apotheker.at/apothekensuche"
+      }
+    ]
+  },
+  {
+    title: "Kids & poison",
+    items: [
+      {
+        label: "Poison control (Vergiftungsinformationszentrale)",
+        value: "+43 1 406 43 43",
+        detail: "24/7 Austrian poison information centre in Vienna — call if a child swallows something they shouldn't.",
+        type: "phone",
+        link: "tel:+43140643 43"
+      },
+      {
+        label: "If a child needs urgent care",
+        value: "Call 144, or go to Kufstein hospital",
+        detail: "For anything serious with Gili or Tom, 144 (ambulance) or the Kufstein emergency department. For minor illness, a GP (Arzt) or pharmacy during the day.",
+        type: "phone",
+        link: "tel:144"
+      }
+    ]
+  },
+  {
+    title: "Car & roadside",
+    items: [
+      {
+        label: "ÖAMTC roadside assistance",
+        value: "120",
+        detail: "Austria's main breakdown service (dial 120 in Austria). For a rental, also call Sixt first — breakdown handling goes through them.",
+        type: "phone",
+        link: "tel:120"
+      },
+      {
+        label: "Sixt (rental car)",
+        value: "Check your Sixt rental agreement",
+        detail: "The 24h roadside/assistance number is printed on the Sixt rental contract and key-tag you get at pickup. Programme it into your phone on day one. Your booking ref is in the Tickets section. Return: Aug 20, 13:00, Terminalstr. Mitte / Parkhaus P6, Munich Airport.",
+        type: "website",
+        link: "https://www.sixt.com/php/contact/"
+      }
+    ]
+  },
+  {
+    title: "Israeli travellers",
+    items: [
+      {
+        label: "Embassy of Israel, Vienna",
+        value: "+43 1 476 46-0",
+        detail: "Anton-Frank-Gasse 20, 1180 Vienna. Consular line +43 1 476 46-587. For lost passports or emergencies affecting Israeli citizens.",
+        type: "phone",
+        link: "tel:+43147646 0"
+      },
+      {
+        label: "Embassy address",
+        value: "Anton-Frank-Gasse 20, 1180 Wien",
+        detail: "Embassy of Israel in Austria.",
+        type: "address",
+        link: "https://www.google.com/maps/search/?api=1&query=Israeli+Embassy+Vienna+Anton-Frank-Gasse+20"
       }
     ]
   }

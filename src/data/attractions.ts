@@ -1,740 +1,430 @@
-import type { POI, ImageCredit } from "./types";
+import type { POI } from "./types";
 
-const wmCredit = (article: string): ImageCredit => ({
-  author: `Wikipedia/Wikimedia Commons contributors`,
-  license: "CC BY-SA",
-  source: `https://en.wikipedia.org/wiki/${article}`,
-  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
-});
-
+// Austria '26 — the sights, in trip order. Coords are [lat, lon].
+// "north" = Inn valley + Innsbruck side + Achensee; "south" = the east
+// side (Zillertal, Alpbachtal, Söll, Kufstein, Rattenberg); "transit"
+// = the Munich Airport bookends. Toddler lens throughout — Gili is 3,
+// Tom is 1.5.
 export const attractions: POI[] = [
-  // ---------- NORTH ----------
   {
-    id: "canyon-park",
-    name: "Canyon Park",
+    id: "achensee",
+    name: "Achensee",
     category: "attraction",
     region: "north",
-    shortDescription: "SUP and gorge-side adventure on the Lima",
     description:
-      "An adventure park built into a gorge on the river Lima outside Bagni di Lucca. Between the wooded cliffs are mellow options (paddleboard hire through turquoise narrows, a pebble beach, soft rafting) and full-throttle canyon routes with aerial bridges and zip lines. Your plan is the easy family stand-up paddle through the gorge. Separate canyon / zip routes usually enforce a minimum age and height (about ten years old, roughly 140 cm).",
-    image: "./images/canyon-park.jpg",
-    imageCredit: {
-      author: "Luo Jin Hong (Unsplash)",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1qJ_l5O4OXo",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.canyonpark.it/en/",
-    address: "Località il Pianello, Bagni di Lucca (LU)",
-    coords: [44.0167, 10.5833],
-    tags: ["water", "extreme", "family"],
+      "Tyrol's largest lake, a five-kilometre ribbon of turquoise held between the Karwendel and Rofan walls — locals call it 'the Tyrolean fjord.' The Pertisau shore on the west side is the family end: a gentle grassy lido (Strandbad), shallow water that warms up in August, a lakeside playground, and the Achensee steamers that putter across from the same dock. No climbing required — just a beach day at 930 m with mountains for a backdrop.",
+    shortDescription: "Tyrol's 'fjord' — a turquoise lake with a family beach at Pertisau.",
+    image: "./images/achensee.jpg",
+    website: "https://www.achensee.com/en/",
+    address: "Strandbad Pertisau, 6213 Pertisau, Austria",
+    coords: [47.4392, 11.7086],
+    tags: ["water", "nature", "family", "view"],
+    difficulty: "easy",
+    openingNote:
+      "Strandbad open in summer; the Achensee steamers run daily May–Oct — check the day's sailing times at the Pertisau dock.",
+    tips: [
+      "Park at the Strandbad Pertisau lot; the beach, playground and boat dock are all a short flat walk apart.",
+      "Water is snow-fed but the shallow Pertisau bay is the warmest corner — still bracing, bring a towel.",
+      "The boat ride is short and stroller-friendly; sit on the sunny side for the Karwendel views.",
+      "Shade is limited on the grass lido — claim a spot under a tree early and bring sun hats."
+    ],
+    quizFacts: [
+      {
+        question: "What nickname do locals give Achensee because of its long, deep shape between the mountains?",
+        correctAnswer: "The Tyrolean fjord",
+        distractors: ["The Tyrolean sea", "The blue mirror", "The giant's bathtub"]
+      }
+    ]
+  },
+  {
+    id: "swarovski-kristallwelten",
+    name: "Swarovski Kristallwelten",
+    category: "attraction",
+    region: "north",
+    description:
+      "A crystal wonderland built into a grassy hillside in Wattens, guarded by the Giant — a moss-covered face in the hill with water pouring from its mouth and glittering eyes. Inside are the Chambers of Wonder (mirror rooms, a crystal dome, art installations that delight small kids as much as adults); outside is one of Austria's best playgrounds — a four-storey play tower, a slide, and a crystal cloud you can walk under. Easily the most toddler-friendly 'museum' of the trip.",
+    shortDescription: "The Giant's crystal chambers plus a huge outdoor play tower.",
+    image: "./images/swarovski-kristallwelten.jpg",
+    website: "https://kristallwelten.swarovski.com/en",
+    address: "Kristallweltenstraße 1, 6112 Wattens, Austria",
+    coords: [47.2988, 11.6003],
+    tags: ["culture", "family", "view"],
+    difficulty: "easy",
     bookingNote:
-      "Booked — SUP on 18 Aug, 10:45, 6 boards (€168 cash on site).",
+      "Not booked yet — pre-book a timed entry slot online; summer days sell out, especially mid-morning.",
+    openingNote: "Open daily, generally 09:00–19:00 in summer (last entry earlier).",
+    tips: [
+      "Do the indoor Chambers of Wonder first while the kids are fresh, then let them loose in the outdoor playground.",
+      "The play tower has age zones — Gili is fine in the lower levels; keep Tom to the toddler area.",
+      "Strollers are fine on the outdoor paths; there's a garden restaurant for lunch.",
+      "Allow 2.5–3 hours to enjoy both worlds without rushing."
+    ],
+    quizFacts: [
+      {
+        question: "What is the giant guarding the entrance to Swarovski Kristallwelten doing with the water?",
+        correctAnswer: "A waterfall pours out of his mouth",
+        distractors: ["He blows bubbles from his nose", "He cries crystal tears", "He sprays it from his hands"]
+      }
+    ]
+  },
+  {
+    id: "hall-in-tirol",
+    name: "Hall in Tirol",
+    category: "attraction",
+    region: "north",
+    description:
+      "A medieval salt town on the Inn with one of the largest preserved old towns in the western Alps — a tangle of pastel houses, arched lanes and quiet squares climbing to the Stadtturm and the Mint tower. Once richer than Innsbruck thanks to salt and its coin mint, it's now a calm, uncommercial place to wander after Swarovski. Car-free lanes mean the stroller rolls and the kids can toddle.",
+    shortDescription: "A calm, car-free medieval salt-and-mint town on the Inn.",
+    image: "./images/hall-in-tirol.jpg",
+    website: "https://www.hall-wattens.at/en",
+    address: "Oberer Stadtplatz, 6060 Hall in Tirol, Austria",
+    coords: [47.2814, 11.5106],
+    tags: ["culture", "village", "food"],
     difficulty: "easy",
     tips: [
-      "Life jackets are provided; ask the crew to snug them up for smaller kids",
-      "Keep phone and cash in a dry bag — most water lines are splash zones",
-      "Quick-dry layers and closed-toe water shoes; expect to get properly wet"
-    ],
-    quizFacts: [
-      {
-        question: "What kind of place is Canyon Park built into?",
-        correctAnswer: "A deep river canyon",
-        distractors: ["A volcano crater", "An old castle", "A giant cave"]
-      },
-      {
-        question: "How does lunch sometimes reach the pebble beach at Canyon Park?",
-        correctAnswer: "Down a zip-line!",
-        distractors: ["By helicopter", "On a trained dog", "On a boat"]
-      },
-      {
-        question: "What do most visitors stand on to paddle the Lima through the gorge?",
-        correctAnswer: "Stand-up paddleboards (SUP)",
-        distractors: ["Wooden gondolas", "Inflatable unicorns", "Motorboats only"]
-      }
+      "Park in one of the garages below the old town (the lanes are pedestrian) and walk up.",
+      "The upper Stadtplatz has cafés with terraces — good for a relaxed lunch with a stroller.",
+      "Cobbles are uneven; a stroller works but a carrier is smoother for the steep bits.",
+      "Half a day is plenty — pair it with Swarovski for a full but gentle day."
     ]
   },
   {
-    id: "ponte-del-diavolo",
-    name: "Ponte del Diavolo (Devil's Bridge)",
-    category: "attraction",
-    region: "north",
-    shortDescription: "A medieval humpback bridge wrapped in legend",
-    description:
-      "A dramatic 11th-century bridge arching impossibly over the Serchio river just outside Borgo a Mozzano. Local legend says the devil himself finished it overnight in exchange for the first soul to cross — outsmarted by the villagers, who sent a dog. A short photo stop with great folklore for the kids.",
-    image: "./images/ponte-del-diavolo.jpg",
-    imageCredit: wmCredit("Ponte_della_Maddalena"),
-    website: "https://www.visittuscany.com/en/attractions/ponte-della-maddalena-devils-bridge/",
-    address: "Borgo a Mozzano (LU)",
-    coords: [43.9869, 10.5475],
-    tags: ["culture", "view", "family"],
-    difficulty: "easy",
-    tips: [
-      "Free, open 24/7 — a 10-minute photo stop is plenty",
-      "Tiny lay-by just north of the bridge; arrive early or late",
-      "Best photo from the river bank, not the bridge itself"
-    ],
-    quizFacts: [
-      {
-        question: "What animal did the villagers use to trick the devil at the bridge?",
-        correctAnswer: "A dog",
-        distractors: ["A goat", "A chicken", "A cat"]
-      },
-      {
-        question: "Why does the Devil's Bridge look so wonky?",
-        correctAnswer: "The devil built it in one night!",
-        distractors: ["An earthquake bent it", "Blindfolded builders made it", "A giant sat on it"]
-      },
-      {
-        question: "What kind of ghost might you see at the bridge in October?",
-        correctAnswer: "A glowing white dog",
-        distractors: ["A headless knight", "A grumpy troll", "A flying pizza"]
-      }
-    ]
-  },
-  {
-    id: "selva-buffardello",
-    name: "Parco Avventura Selva del Buffardello",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Shaded forest ropes course with kid-friendly heights",
-    description:
-      "A professional adventure park in a cool chestnut forest above the Garfagnana. Multiple ropes courses and zip lines are graded by height — including dedicated routes from 100 cm so younger kids can do the real thing safely. A welcome shaded escape on a hot August day.",
-    image: "./images/selva-buffardello.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/jKVfhe-z8U4",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.selvadelbuffardello.it/",
-    address: "Loc. Buffardello, Villa Collemandina (LU)",
-    coords: [44.1644, 10.4339],
-    tags: ["extreme", "family", "nature"],
-    difficulty: "moderate",
-    tips: [
-      "100 cm minimum for the dedicated kid course; 140 cm for the high routes",
-      "Closed-toe shoes are mandatory — no sandals",
-      "Helmet, harness and safety briefing included in the ticket",
-      "Shaded chestnut forest — bring a long-sleeve top, can be cool"
-    ],
-    quizFacts: [
-      {
-        question: "What is the Buffardello elf's favourite night prank?",
-        correctAnswer: "Tangling people's hair",
-        distractors: ["Stealing left shoes", "Eating all the cheese", "Painting doors blue"]
-      },
-      {
-        question: "What did people leave by the door to stop the Buffardello elf?",
-        correctAnswer: "Juniper berries",
-        distractors: ["Spicy soup", "A scary mirror", "A mousetrap"]
-      },
-      {
-        question: "What two things must you wear for the tree-climbing courses?",
-        correctAnswer: "A harness and a helmet",
-        distractors: ["A cape and a sword", "Goggles and flippers", "Heavy snow boots"]
-      }
-    ]
-  },
-  {
-    id: "soft-rafting-serchio",
-    name: "Soft Rafting — Serchio River",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Gentle white-water rafting suited for families",
-    description:
-      "A relaxed, splashy float down the Serchio with calm stretches, a few playful rapids, and chances to jump in and swim. Your booked family trip runs about 1.5 hours with Lucca Rafting in Chifenti — wet, cool, and a perfect contrast to the August heat.",
-    image: "./images/serchio-rafting.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/ayhiuTdcUEk",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.getyourguide.com/bagni-di-lucca-l160058/lucca-family-friendly-rafting-soft-t513269/",
-    address: "Chifenti, Bagni di Lucca (LU)",
-    coords: [44.0742, 10.4853],
-    tags: ["water", "family", "nature"],
-    difficulty: "easy",
-    tips: [
-      "About 1.5 hours including swim breaks",
-      "Min age usually 6; under-12s wear life vests the whole way",
-      "Wear swimwear, bring a dry change of clothes for the drive home",
-      "August water levels are gentle — splashy, not scary"
-    ]
-  },
-  {
-    id: "pisa",
-    name: "Pisa — Piazza dei Miracoli",
-    category: "attraction",
-    region: "north",
-    shortDescription: "The leaning tower and the cathedral square — a quick wow stop",
-    description:
-      "Skip the city centre and aim straight for Piazza dei Miracoli. The Leaning Tower, the cathedral, and the baptistery sit together on bright green lawn — one of the most photogenic 30-minute stops in Italy. Park outside the walls (the area is full ZTL) and walk in. Excellent gelato just off the square.",
-    image: "./images/pisa.jpg",
-    imageCredit: {
-      author: "Saffron Blaze",
-      license: "CC BY-SA 3.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa_SB.jpeg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
-    },
-    website: "https://www.opapisa.it/en/",
-    address: "Piazza del Duomo, 56126 Pisa (PI)",
-    coords: [43.7229, 10.3966],
-    tags: ["culture", "view", "family"],
-    openingNote: "ZTL all around the square — park outside the walls and walk.",
-    difficulty: "easy",
-    tips: [
-      "Park at 'Via Pietrasantina' (€2/hr) — free shuttle bus to the square",
-      "30–45 min is enough for the photo + gelato",
-      "Tower climb is timed-ticket only — book online before you go",
-      "Best 'leaning hand' photo from the lawn opposite the cathedral"
-    ],
-    quizFacts: [
-      {
-        question: "What did the scientist Galileo drop from the Leaning Tower?",
-        correctAnswer: "Two heavy cannonballs",
-        distractors: ["Two watermelons", "A feather and a hammer", "Two giant pizzas"]
-      },
-      {
-        question: "Why does the Leaning Tower of Pisa lean?",
-        correctAnswer: "The soft ground sank",
-        distractors: ["An earthquake tilted it", "It was a joke", "A strong wind blew it"]
-      },
-      {
-        question: "How many bells are at the top of the Leaning Tower?",
-        correctAnswer: "Seven",
-        distractors: ["Just one massive bell", "Fifty tiny bells", "None at all"]
-      }
-    ]
-  },
-  {
-    id: "abetone-monte-gomito",
-    name: "Abetone — Monte Gomito Cable Car",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Modern cable car to a cool ridge near 2,000 m",
-    description:
-      "Abetone is the Apennine ski village that turns into a high-altitude playground in summer. Ride the new gondola to Monte Gomito (about 1,892 m) for cool air, panoramic ridge walks, and easy family trails through pine forest. A perfect midday escape from the heat below.",
-    image: "./images/abetone.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons contributors",
-      license: "CC BY-SA 4.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:Foresta_piazzale_Abetone.jpg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
-    },
-    website: "https://www.abetonefuniviaombrellino.it/",
-    address: "Abetone Cutigliano (PT)",
-    coords: [44.1344, 10.6717],
-    tags: ["nature", "view", "family"],
-    difficulty: "easy",
-    tips: [
-      "Bring a light jacket — 12–15 °C cooler at the top, even in August",
-      "First gondola ~09:30, last descent ~17:00 — don't miss it",
-      "Round-trip ticket ~€18 adult / cheaper for kids; cash works",
-      "Pack a picnic — mountain restaurants close mid-afternoon"
-    ],
-    quizFacts: [
-      {
-        question: "At the top of Monte Gomito, what happens to the temperature?",
-        correctAnswer: "It gets much colder",
-        distractors: ["It gets boiling hot", "It stays exactly the same", "It changes every five minutes"]
-      },
-      {
-        question: "What do the twin stone pyramids at Abetone mark?",
-        correctAnswer: "An old kingdom border",
-        distractors: ["A buried treasure", "The highest point in Italy", "An alien landing spot"]
-      }
-    ]
-  },
-  {
-    id: "lucca-walls",
-    name: "Lucca City Walls — Bike Loop",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Cycle the 4 km tree-lined Renaissance wall ring around old Lucca",
-    description:
-      "Lucca's massive 16th-century walls were never tested in battle and were turned into a leafy public promenade in the 19th century. Today the 4.2 km grass-and-tree-shaded ring on top of the walls is one of Tuscany's signature family bike rides — completely flat, completely traffic-free, with rampart views into the old city on one side and the Tuscan plain on the other. Rental shops cluster around Porta San Pietro and Piazzale Verdi (Tourist Center Lucca, Cicli Bizzarri, Poli Antonio Bici); kids' bikes, child seats and trailers are all standard. Loop the walls in 30–45 min, then drop the bikes and disappear into the old town for gelato.",
-    image: "./images/lucca-walls.jpg",
-    imageCredit: wmCredit("Walls_of_Lucca"),
-    website: "https://en.wikipedia.org/wiki/Walls_of_Lucca",
-    address: "Mura Urbane di Lucca, Piazzale Verdi (LU)",
-    coords: [43.8443, 10.5050],
-    tags: ["family", "culture", "nature", "view"],
-    difficulty: "easy",
-    tips: [
-      "Rentals from ~€4/hr near Porta San Pietro & Piazzale Verdi",
-      "Whole 4.2 km loop ~30–45 min easy pedalling, totally flat",
-      "Child seats, tagalongs and trailers are standard at every shop",
-      "Park outside the walls — the historic centre is full ZTL"
-    ],
-    quizFacts: [
-      {
-        question: "Lucca's walls were never attacked, but they saved the city from what in 1812?",
-        correctAnswer: "A massive river flood",
-        distractors: ["Angry elephants", "A terrible fire", "Giant bees"]
-      },
-      {
-        question: "How long did it take to build the walls of Lucca?",
-        correctAnswer: "About 140 years!",
-        distractors: ["Just 3 weeks", "About 5 years", "Over 1000 years"]
-      },
-      {
-        question: "What covers the top of the Lucca city wall today?",
-        correctAnswer: "Green grass and big trees",
-        distractors: ["Sharp spikes", "Shiny gold coins", "A fast rollercoaster"]
-      }
-    ]
-  },
-  {
-    id: "sentierelsa",
-    name: "Sentierelsa — Diborrato Waterfall",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Walk a turquoise river to a hidden waterfall",
-    description:
-      "A short, magical river walk along the Elsa near Colle di Val d'Elsa. The path crosses small wooden bridges and lets you wade through pools of impossibly turquoise water on the way to the Diborrato waterfall — a cliff-rimmed swimming hole where the brave cliff-jump from above. Closed-toe water shoes are essential.",
-    image: "./images/sentierelsa.jpg",
-    imageCredit: wmCredit("Elsa_(river)"),
-    website: "https://www.sentierelsa.it/",
-    address: "Colle di Val d'Elsa (SI)",
-    coords: [43.4197, 11.1289],
-    tags: ["water", "nature", "family"],
-    difficulty: "moderate",
-    tips: [
-      "Closed-toe water shoes are mandatory — barefoot is dangerous on the rocks",
-      "Free entry; no toilets at the trailhead — go in town first",
-      "Cliff-jumping at Diborrato is for strong swimmers only",
-      "Bring a dry bag for phones — there's no totally dry stretch"
-    ],
-    quizFacts: [
-      {
-        question: "What happens if a branch stays in the Elsa river for a long time?",
-        correctAnswer: "It slowly turns to stone!",
-        distractors: ["It turns bright pink", "It melts into jelly", "It catches on fire"]
-      },
-      {
-        question: "How deep is the pool under the Diborrato waterfall?",
-        correctAnswer: "About 15 metres deep!",
-        distractors: ["Only up to your knees", "About 2 metres", "Over 1000 metres deep"]
-      },
-      {
-        question: "Why is the Elsa river so bright turquoise?",
-        correctAnswer: "Tiny bits of white calcium",
-        distractors: ["Someone pours blue dye in", "It reflects the green trees", "Glow-in-the-dark fish"]
-      }
-    ]
-  },
-
-  // ---------- SOUTH ----------
-  {
-    id: "porto-santo-stefano",
-    name: "Porto Santo Stefano — Catamaran Cruise",
+    id: "spieljoch-fuegen",
+    name: "Spieljoch Fügen",
     category: "attraction",
     region: "south",
-    shortDescription: "Guided catamaran cruise around Monte Argentario, with snorkelling & lunch",
     description:
-      "The harbour town on Monte Argentario, and the departure pier for the booked catamaran cruise. Sail the peninsula with the crew, drop anchor in glassy coves to swim and snorkel right off the boat (gear provided), and enjoy a full lunch served on deck as you go.",
-    image: "./images/porto-santo-stefano.jpg",
-    imageCredit: wmCredit("Porto_Santo_Stefano"),
-    website: "https://www.getyourguide.com/porto-santo-stefano-l169819/argentario-catamaran-cruise-with-snorkeling-lunch-t1229195/",
-    address: "Porto Santo Stefano, Monte Argentario (GR)",
-    coords: [42.4361, 11.1167],
-    tags: ["water", "family", "view"],
-    bookingNote: "Booked via GetYourGuide (operator DONNINI) for 23 Aug — check in at the pier by 08:30.",
+      "The family mountain at the mouth of the Zillertal. A gondola from Fügen lifts you to about 1,860 m, where the summit plateau has a big adventure playground, easy stroller-friendly paths, marmots in the meadows, and huge views down the valley. There's a summer toboggan run for older kids and plenty of hut terraces for a leisurely lunch. The mountain does the climbing so the family doesn't have to.",
+    shortDescription: "A gondola to a 1,860 m summit playground with easy meadow paths.",
+    image: "./images/spieljoch-fuegen.jpg",
+    website: "https://www.spieljochbahn.at/",
+    address: "Bahnweg 2, 6263 Fügen, Austria",
+    coords: [47.3636, 11.8497],
+    tags: ["nature", "family", "view"],
     difficulty: "easy",
+    openingNote:
+      "Gondola runs daily in summer, roughly 08:30–17:00 — check the day's first-up / last-down times at the valley station.",
     tips: [
-      "Meeting point is the Porto Santo Stefano pier — arrive 08:30, 30 min before the 09:00 departure",
-      "Snorkel gear, lunch and an open bar (water, soft drinks, wine) are all included on board",
-      "No pets on board; not recommended if pregnant",
-      "Free cancellation up to 09:00 on 22 Aug — worth a forecast check the night before"
+      "Ride the gondola early; mountain weather in August turns to thunderstorms by mid-afternoon.",
+      "The summit playground and the shortest meadow loop are stroller-manageable; bring the carrier for anything further.",
+      "Warm layer + rain shell for the top even on a hot valley day — it's 900 m higher and windier.",
+      "Lunch on a hut terrace is half the point — the Kaiserschmarrn up here is a reward in itself."
     ],
     quizFacts: [
       {
-        question: "Who built the big stone fortress above the harbour?",
-        correctAnswer: "The Spanish",
-        distractors: ["The Vikings", "The Egyptians", "The British"]
-      },
-      {
-        question: "Every August, the town has a big race. What do they race in?",
-        correctAnswer: "Wooden rowing boats",
-        distractors: ["Speedboats", "Bathtubs", "Swimming with flippers"]
+        question: "Which whistling animal lives in the mountain meadows around the Spieljoch summit?",
+        correctAnswer: "The marmot",
+        distractors: ["The penguin", "The kangaroo", "The camel"]
       }
     ]
   },
   {
-    id: "cala-del-gesso",
-    name: "Cala del Gesso",
+    id: "zillertalbahn",
+    name: "Zillertalbahn Steam Train",
     category: "attraction",
     region: "south",
-    shortDescription: "A turquoise pocket cove on the wild side of Argentario",
     description:
-      "Often called the most beautiful cove on Monte Argentario — a small white-pebble beach below sheer cliffs, a tiny Spanish watchtower, and water so clear it looks fake. Reachable on foot via a steep path, or from the water on a boat day.",
-    image: "./images/cala-del-gesso.jpg",
-    imageCredit: {
-      author: "Cristina Gottardi (Unsplash)",
-      license: "CC0 / Public Domain",
-      source: "https://unsplash.com/photos/7_APbY7Afsg",
-      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
-    },
-    address: "Monte Argentario (GR)",
-    coords: [42.3642, 11.1233],
-    tags: ["water", "nature", "view"],
-    difficulty: "moderate",
+      "A narrow-gauge railway that has puffed up and down the Zillertal since 1902, with genuine steam locomotives hauling old wooden carriages on select summer days. For a toddler obsessed with 'choo-choo,' the hiss and whistle of a real steam engine is pure magic; for parents it's a slow, scenic, no-driving hour through valley villages and hay meadows. Regular diesel trains run the same line all day if the steam timetable doesn't fit.",
+    shortDescription: "A real 1900s steam train chugging through the Zillertal.",
+    image: "./images/zillertalbahn.jpg",
+    website: "https://www.zillertalbahn.at/en",
+    address: "Bahnhofstraße 8, 6200 Jenbach, Austria",
+    coords: [47.3879, 11.7784],
+    tags: ["family", "culture", "view"],
+    difficulty: "easy",
+    bookingNote:
+      "Steam departures run on limited days and sell out — check the summer steam timetable and reserve; regular trains need no booking.",
     tips: [
-      "Reachable from the water, or on foot",
-      "Land path is steep, ~30 min down and a sweaty 40 min back up",
-      "White pebbles, no sand — water shoes save your feet",
-      "No facilities of any kind: bring your own water and snacks"
+      "Jenbach is the northern terminus and easiest to park at; you can ride a leg and come back.",
+      "Even a short one- or two-stop hop is enough of an event for little kids.",
+      "The steam service is seasonal and dated — confirm it actually runs your day before planning around it.",
+      "Bring a snack; the wooden carriages are charming but not built for toddler patience beyond ~40 min."
+    ]
+  },
+  {
+    id: "innsbruck-altstadt",
+    name: "Innsbruck Old Town & Golden Roof",
+    category: "attraction",
+    region: "north",
+    description:
+      "Tyrol's capital wears its Alps like a crown — the Nordkette wall of rock rises straight off the end of the pastel old-town lanes. The centrepiece is the Goldenes Dachl, a late-Gothic balcony roofed with 2,657 gilded copper tiles, built so Emperor Maximilian could watch the square below. Car-free Herzog-Friedrich-Straße and Maria-Theresien-Straße are all cafés, gelato and stroller-smooth cobbles.",
+    shortDescription: "Pastel car-free lanes under the Nordkette, capped by the Golden Roof.",
+    image: "./images/innsbruck-altstadt.jpg",
+    website: "https://www.innsbruck.info/en",
+    address: "Herzog-Friedrich-Straße 15, 6020 Innsbruck, Austria",
+    coords: [47.2686, 11.3933],
+    tags: ["culture", "family", "food", "view"],
+    difficulty: "easy",
+    tips: [
+      "Park once at the Congress / Hungerburgbahn garage and do the old town, the zoo and the Nordkette from there.",
+      "The lanes are pedestrian and flat — ideal stroller territory, plenty of gelato stops for Gili.",
+      "On Assumption Day (Aug 15) shops shut but cafés, restaurants and the lifts run.",
+      "Two minutes' walk from the Golden Roof gets you river views of the Inn with the mountains behind."
     ],
     quizFacts: [
       {
-        question: "Why is this beach called 'Cala del Gesso' (Chalk Cove)?",
-        correctAnswer: "Chalky rocks were mined there",
-        distractors: ["Artists painted there with chalk", "The water tastes like chalk", "Kids use it as a chalkboard"]
-      },
-      {
-        question: "What is the beach at Cala del Gesso made of?",
-        correctAnswer: "Small white pebbles",
-        distractors: ["Black volcanic sand", "Soft yellow mud", "Wooden planks"]
+        question: "The Golden Roof is covered in 2,657 shiny tiles. What are they really made of?",
+        correctAnswer: "Gilded (gold-plated) copper",
+        distractors: ["Solid gold", "Painted wood", "Yellow glass"]
       }
     ]
   },
   {
-    id: "acqua-village-follonica",
-    name: "Acqua Village Follonica",
+    id: "alpenzoo-innsbruck",
+    name: "Alpenzoo Innsbruck",
     category: "attraction",
-    region: "south",
-    shortDescription: "Hawaiian-themed water park with serious slides",
+    region: "north",
     description:
-      "The biggest, most polished water park in southern Tuscany — Polynesian theming, multi-lane slides, a wave pool, and a lazy river. A full-day, all-ages adrenaline reset between cultural and outdoor days.",
-    image: "./images/acqua-village.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1-P3CP8Z1Qg",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.acquavillage.it/follonica/",
-    address: "Via Sanzio, 58022 Follonica (GR)",
-    coords: [42.9183, 10.7717],
-    tags: ["water", "extreme", "family"],
-    difficulty: "easy",
-    tips: [
-      "Buy tickets online — meaningfully cheaper than at the gate",
-      "Lockers ~€5 with key deposit; bring a €1 coin",
-      "Outside food is allowed in the picnic area — pack a cooler",
-      "Arrive at opening (10:00) — slide queues triple after lunch"
-    ]
-  },
-  {
-    id: "maremma-horseback",
-    name: "Maremma Horseback Riding",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Ride with the butteri (Maremma cowboys) through dunes and pine forest",
-    description:
-      "The Maremma is Italy's old cowboy country, and several family-run agriturismi offer guided beginner rides through umbrella-pine forests and back-country dunes. Cool early-morning slot is the best — book a 1-hour family pony / horse experience at a ranch near Alberese or Albinia.",
-    image: "./images/maremma-horse.jpg",
-    imageCredit: wmCredit("Maremmano"),
-    website: "https://www.parco-maremma.it/en/",
-    address: "Parco della Maremma, Alberese (GR)",
-    coords: [42.6647, 11.0883],
+      "Europe's highest-altitude zoo, set on a hillside above Innsbruck and stocked entirely with animals of the Alps: ibex and chamois, brown bears, wolves, lynx, otters, bearded vultures, and a cold-water aquarium of Alpine fish. Around 2,000 animals across 150 species, on a compact but hilly site. Open 365 days a year — which is exactly why it works on Assumption Day when much of the city is shut.",
+    shortDescription: "Europe's highest zoo — bears, wolves, ibex and otters above Innsbruck.",
+    image: "./images/alpenzoo-innsbruck.jpg",
+    website: "https://www.alpenzoo.at/en/",
+    address: "Weiherburggasse 37, 6020 Innsbruck, Austria",
+    coords: [47.2831, 11.3901],
     tags: ["nature", "family"],
-    difficulty: "easy",
-    tips: [
-      "Long pants (jeans) and closed-toe shoes are non-negotiable",
-      "Min age usually 6 for trail rides; younger kids get a led pony",
-      "Book the 09:00 slot — by 11 it's brutally hot in the open",
-      "Helmets always provided; bring a wide-brim hat for after"
-    ],
-    quizFacts: [
-      {
-        question: "Which famous American cowboy did the Italian cowboys beat in 1890?",
-        correctAnswer: "Buffalo Bill",
-        distractors: ["John Wayne", "Wild Bill Hickok", "Indiana Jones"]
-      },
-      {
-        question: "What are the Maremma cowboys called?",
-        correctAnswer: "Butteri",
-        distractors: ["Vaqueros", "Gauchos", "Banditos"]
-      }
-    ]
-  },
-  {
-    id: "pitigliano",
-    name: "Pitigliano",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The 'Little Jerusalem' carved out of a tufa cliff",
-    description:
-      "An Etruscan-Jewish hill town that grows straight out of the volcanic tufa rock — best photographed from the viewpoint on the road in. Wander the old Jewish quarter, ducking into the synagogue, kosher bakery and rock-cut wine cellars. Plenty of cool, shaded alleys for an afternoon walk.",
-    image: "./images/pitigliano.jpg",
-    imageCredit: wmCredit("Pitigliano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6353, 11.6700],
-    tags: ["culture", "village", "view"],
-    difficulty: "easy",
-    tips: [
-      "Park at the big lot opposite the panorama viewpoint",
-      "Synagogue + Jewish quarter combo ticket ~€6 — closes early Friday",
-      "Don't leave without a slice of 'sfratto dei Goym' (local Jewish-Italian dessert)",
-      "Cool, shaded alleys make this the ideal late-afternoon walk"
-    ],
-    quizFacts: [
-      {
-        question: "What is Pitigliano's famous nickname?",
-        correctAnswer: "Little Jerusalem",
-        distractors: ["Little Athens", "The Roman Ruin", "The Pearl of the Sea"]
-      },
-      {
-        question: "What kind of rock is Pitigliano carved out of?",
-        correctAnswer: "Tufa, a soft volcanic rock",
-        distractors: ["Solid white marble", "Clear ice", "Shiny black coal"]
-      },
-      {
-        question: "What is the famous stick-shaped pastry from Pitigliano called?",
-        correctAnswer: "Sfratto",
-        distractors: ["Cannolo", "Tiramisu", "Panettone"]
-      }
-    ]
-  },
-  {
-    id: "via-cava-san-giuseppe",
-    name: "Via Cava di San Giuseppe",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Etruscan rock corridors carved up to 20 m deep",
-    description:
-      "The Vie Cave are mysterious Etruscan trenches sliced into the soft tufa, in places more than 20 m deep, threading the woods between Pitigliano, Sovana and Sorano. The San Giuseppe path is the most accessible — cool, shaded, dramatic, and feels like walking through a natural maze.",
-    image: "./images/via-cava.jpg",
-    imageCredit: wmCredit("Vie_Cave"),
-    website: "https://www.parcodeglietruschi.it/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6313, 11.6722],
-    tags: ["culture", "cave", "nature"],
     difficulty: "moderate",
+    openingNote: "Open daily 09:00–18:00 in summer, public holidays included.",
     tips: [
-      "Free, no ticket — trailhead just below the old town",
-      "Wear grippy shoes — the tufa is shaded but slick when damp",
-      "1-hour comfortable loop; longer if you take the Sovana extension",
-      "Surprisingly cool down inside — bring a light layer"
+      "Ride the Hungerburgbahn funicular one stop from the Congress station up to the zoo — the space-age stations thrill little kids.",
+      "The site is on a hill — bring the carrier for Tom; a stroller works but there are slopes.",
+      "Go at opening: animals are most active in the morning cool and it beats the holiday crowds.",
+      "Allow about two hours; there's a small café and picnic spots inside."
     ],
     quizFacts: [
       {
-        question: "Who carved the deep 'Via Cava' rock roads?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Romans", "The Vikings", "Aliens"]
-      },
-      {
-        question: "Why were these roads carved so deep into the rock?",
-        correctAnswer: "It's an ancient mystery!",
-        distractors: ["To hide from dinosaurs", "To find gold", "As swimming pools"]
+        question: "What is special about the Alpenzoo compared with other zoos in Europe?",
+        correctAnswer: "It is the highest zoo in Europe and only keeps Alpine animals",
+        distractors: ["It has the most lions", "It is entirely underwater", "It only opens at night"]
       }
     ]
   },
   {
-    id: "vitozza",
-    name: "Vitozza Cave City",
+    id: "nordkette",
+    name: "Nordkette (Seegrube)",
     category: "attraction",
-    region: "south",
-    shortDescription: "Abandoned medieval cave dwellings in the woods",
+    region: "north",
     description:
-      "Over 200 cave dwellings hollowed into the tufa cliffs of a forested ravine near San Quirico di Sorano — a wild, atmospheric site you mostly explore alone. Great backup or alternative to the Vie Cave, especially if the kids love crawling into rock-cut rooms with a headlamp.",
-    image: "./images/vitozza.jpg",
-    imageCredit: wmCredit("Sorano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "San Quirico, Sorano (GR)",
-    coords: [42.6864, 11.7464],
-    tags: ["cave", "nature", "culture"],
-    difficulty: "challenging",
+      "The mountain wall that towers over Innsbruck, reachable in minutes: the Hungerburgbahn funicular then the Nordkettenbahn cable car lift you to Seegrube at 1,905 m, straight from the city centre. Up top it's coffee-with-a-view height — a hut terrace, easy strolls along the ridge, and the whole Inn valley laid out below. A quick 'top of the world' hit for a family, entirely optional and skippable when nap o'clock calls.",
+    shortDescription: "City-centre cable car to a 1,905 m terrace over Innsbruck.",
+    image: "./images/nordkette.jpg",
+    website: "https://www.nordkette.com/en",
+    address: "Höhenstraße 145, 6020 Innsbruck, Austria",
+    coords: [47.3078, 11.3841],
+    tags: ["view", "nature", "family"],
+    difficulty: "easy",
+    openingNote:
+      "Funicular + cable cars run daily including holidays — check the last descent time at the station before going up.",
     tips: [
-      "Bring a head-lamp per person — the chambers are properly dark",
-      "1.5–2 hr round trip on uneven, sometimes overgrown ground",
-      "Wild, atmospheric, almost no signage — keep close to the trail",
-      "Wear long pants & closed shoes; brambles & rough stone"
-    ],
-    quizFacts: [
-      {
-        question: "Roughly how many cave dwellings are there at Vitozza?",
-        correctAnswer: "Over 200",
-        distractors: ["Just 5", "Exactly 10", "More than 5,000"]
-      },
-      {
-        question: "Until roughly when did people actually still live inside the caves of Vitozza?",
-        correctAnswer: "Until the late 1700s",
-        distractors: [
-          "Only during the Stone Age",
-          "Only in ancient Roman times",
-          "All the way until last year"
-        ]
-      },
-      {
-        question: "Many of the caves at Vitozza have shapes carved into the rock walls inside. What were they used as?",
-        correctAnswer: "As wardrobes and shelves for everyday things",
-        distractors: [
-          "As secret slides for kids",
-          "As fish tanks for goldfish",
-          "As frozen-food drawers"
-        ]
-      }
+      "It's genuinely cold and windy at Seegrube even in August — proper jackets for everyone.",
+      "The Seegrube terrace is a short walk from the top station; going higher to Hafelekar needs more effort.",
+      "Only add this if the kids still have energy after the zoo and old town — it's the day's garnish, not the main course.",
+      "Last cable car down is early evening; don't get caught planning dinner up there with tired toddlers."
     ]
   },
   {
-    id: "saturnia",
-    name: "Cascate del Mulino — Saturnia Hot Springs",
+    id: "alpbach-village",
+    name: "Alpbach",
     category: "attraction",
     region: "south",
-    shortDescription: "Free, 24/7 turquoise hot waterfalls — best at sunrise",
     description:
-      "A natural staircase of warm sulphur pools and the iconic milky-blue waterfall. Free and open 24/7. The trick is timing: arrive by 07:30 to enjoy steam rising off cool morning water in near-empty pools. By 10 am it's packed and parking disappears.",
-    image: "./images/saturnia.jpg",
-    imageCredit: wmCredit("Saturnia"),
-    website: "https://www.termedisaturnia.it/en/",
-    address: "Cascate del Mulino, Saturnia, Manciano (GR)",
-    coords: [42.6483, 11.5089],
-    tags: ["water", "nature", "view"],
-    openingNote: "Free, open 24/7. Arrive by 07:30 to beat crowds and heat.",
+      "Repeatedly crowned Austria's most beautiful village — a cluster of dark-timber farmhouses on a sunny shelf above the valley, every balcony spilling red geraniums in August. There's nothing to 'do' in the ticketed sense, which is the point: you wander the flower-decked lanes, let the kids run the meadow playground by the school, and have a long lunch on a gasthof terrace. This is where the trip's framed photo gets taken.",
+    shortDescription: "Austria's prettiest village — geranium balconies and a meadow playground.",
+    image: "./images/alpbach-village.jpg",
+    website: "https://www.alpbachtal.at/en/village/alpbach",
+    address: "Alpbach 415, 6236 Alpbach, Austria",
+    coords: [47.3990, 11.9430],
+    tags: ["village", "view", "food", "family"],
     difficulty: "easy",
     tips: [
-      "100 % free, 24/7, no facilities, no lockers — leave valuables in the car",
-      "Sulphur stains light fabrics — wear darker swimwear and rinse after",
-      "Bring sandals you don't mind smelling of eggs for a few days",
-      "Arrive by 07:30; by 10 it's elbow-to-elbow and parking is gone"
+      "There's a playground by the school in the village centre — a good reward mid-wander.",
+      "Lunch on a terrace; portions are big and kids are welcome everywhere.",
+      "Only 15–20 min from the base — an easy morning or afternoon, no rush.",
+      "The light is best late afternoon when the timber glows — good for photos if naps allow."
     ],
     quizFacts: [
       {
-        question: "In Roman legend, how were the Saturnia hot springs created?",
-        correctAnswer: "Jupiter threw a lightning bolt",
-        distractors: ["A dragon sneezed fire", "A giant dropped hot soup", "The sun got too close"]
-      },
-      {
-        question: "Why does the warm water at Saturnia smell like rotten eggs?",
-        correctAnswer: "It has a mineral called sulphur",
-        distractors: ["People drop old eggs in it", "Frogs live at the bottom", "A magic spell"]
-      },
-      {
-        question: "How warm is the water at Saturnia?",
-        correctAnswer: "37 degrees, like a warm bath!",
-        distractors: ["10 degrees, freezing!", "100 degrees, boiling!", "It changes every day"]
+        question: "Alpbach is famous for winning which title?",
+        correctAnswer: "The most beautiful village in Austria",
+        distractors: ["The biggest city in Austria", "The tallest mountain in Austria", "The oldest castle in Austria"]
       }
     ]
   },
   {
-    id: "lago-di-bolsena",
-    name: "Lago di Bolsena",
+    id: "juppi-zauberwald",
+    name: "Juppi's Zauberwald (Reither Kogel)",
     category: "attraction",
     region: "south",
-    shortDescription: "Europe's largest volcanic lake — calm, clean, swimmable",
     description:
-      "A vast volcanic crater lake with cool, clean fresh water — a far easier swim than the crowded Tuscan coast in August. The little towns of Bolsena and Capodimonte have shaded grassy beaches, gelato and pedalos. A perfect midday cool-down on the way back from the south.",
-    image: "./images/bolsena.jpg",
-    imageCredit: wmCredit("Lake_Bolsena"),
-    website: "https://www.comune.bolsena.vt.it/",
-    address: "Bolsena (VT)",
-    coords: [42.6447, 11.9847],
-    tags: ["water", "family", "nature"],
+      "An enchanted-forest play trail on top of the Reither Kogel, reached by the Reitherkogelbahn gondola from Reith im Alpbachtal. A 2.5 km shaded loop is dotted with wooden play stations built around Juppi the mascot — a witch's house, giant xylophones, balance trails, water wheels and animal carvings — pitched exactly at a three-year-old's pace. Entry is included in the lift ticket. Take it slowly with snack stops and it fills a whole gentle morning.",
+    shortDescription: "A gondola-top enchanted-forest play loop, perfect for a 3-year-old.",
+    image: "./images/juppi-zauberwald.jpg",
+    website: "https://www.alpbachtal.at/en/reitherkogelbahn",
+    address: "Talstation Reitherkogelbahn, 6235 Reith im Alpbachtal, Austria",
+    coords: [47.4356, 11.8748],
+    tags: ["family", "nature", "view"],
     difficulty: "easy",
+    openingNote:
+      "Reitherkogelbahn runs daily except its Wednesday rest day; first ascent ~09:00, last descent ~16:30–17:00 — verify at the valley station.",
     tips: [
-      "Free public beaches at Bolsena & Capodimonte; pay loungers also available",
-      "Lake water is cooler than the August coast — refreshing, not freezing",
-      "Pedalo & SUP rental at the marina; ice-cream & snack bars right there",
-      "Lake-fish 'coregone' is the local specialty — try at a marina trattoria"
-    ],
-    quizFacts: [
-      {
-        question: "What kind of crater formed Lake Bolsena a long time ago?",
-        correctAnswer: "An old volcano collapsing into itself",
-        distractors: [
-          "A meteor that landed yesterday",
-          "A giant whale's footprint",
-          "An abandoned diamond mine"
-        ]
-      },
-      {
-        question: "Lake Bolsena is the largest lake in Europe of which kind?",
-        correctAnswer: "The largest volcanic lake",
-        distractors: [
-          "The largest salt lake",
-          "The largest underground lake",
-          "The largest pink lake"
-        ]
-      },
-      {
-        question: "Which fish is the local specialty of Lake Bolsena?",
-        correctAnswer: "Coregone",
-        distractors: ["Salmon", "Tuna", "Shark"]
-      },
-      {
-        question: "How many islands sit in the southern part of Lake Bolsena?",
-        correctAnswer: "Two — Bisentina and Martana",
-        distractors: ["None at all", "About a dozen", "More than a hundred"]
-      }
+      "Note the Wednesday closure — plan the enchanted forest for any other day.",
+      "The loop is shaded (good on a hot day) but has forest-path sections — carrier for Tom, Gili walks.",
+      "Lift ticket covers the trail; there's a hut at the top for lunch.",
+      "Budget the whole morning — with a toddler the 2.5 km loop plus play stops is a leisurely 2–3 hours."
     ]
   },
   {
-    id: "civita-di-bagnoregio",
-    name: "Civita di Bagnoregio",
+    id: "lauser-sauser",
+    name: "Lauser-Sauser Alpine Coaster",
     category: "attraction",
     region: "south",
-    shortDescription: "The 'dying city' on a tufa pedestal, reached by footbridge",
     description:
-      "An impossibly photogenic medieval village perched on a crumbling tufa column, accessible only by a long pedestrian bridge over a canyon of badlands. Tiny ticket fee, then a short steep walk into a tiny stone village frozen in time. Best in late afternoon light.",
-    image: "./images/civita.jpg",
-    imageCredit: wmCredit("Civita_di_Bagnoregio"),
-    website: "https://www.civitadibagnoregio.cloud/en/",
-    address: "Civita di Bagnoregio, Bagnoregio (VT)",
-    coords: [42.6275, 12.1131],
-    tags: ["culture", "village", "view"],
+      "A year-round rail toboggan at the Wiedersbergerhorn gondola in Alpbach: 1.4 km of track dropping 134 m, including what's billed as Austria's highest loop-carousel, with a hand brake so you control the speed. Children may ride as a front passenger with an adult from age 3, so Gili qualifies squealing with a parent; solo riding starts at age 8 and 1.30 m. Tom is too small, so parents take turns — one rides with Gili, the other has a coffee at the valley station.",
+    shortDescription: "A brake-your-own alpine coaster; Gili rides in front of a parent (age 3+).",
+    image: "./images/lauser-sauser.jpg",
+    website: "https://www.alpbachtal.at/en/wiedersbergerhornbahn",
+    address: "Talstation Wiedersbergerhornbahn, 6236 Alpbach, Austria",
+    coords: [47.3930, 11.9250],
+    tags: ["extreme", "family", "view"],
     difficulty: "moderate",
+    openingNote:
+      "Runs in summer with the Wiedersbergerhornbahn gondola — check the day's operating hours at the base before riding up.",
     tips: [
-      "Footbridge ticket ~€5/adult, cash only — kids under 6 free",
-      "The walk back is properly steep — strollers will struggle",
-      "Best light & cooler temps in late afternoon; village glows at golden hour",
-      "Tiny grocery on the bridge side — BYO water for the climb"
+      "Age rule: from 3, a child rides in front of an adult; from 8 and 1.30 m they ride alone. Tom can't ride.",
+      "Closed shoes and a hair tie for Gili — it gets quick on the second run.",
+      "Control the speed with the brake lever; take the first run gentle, then let her ask for 'schneller!'.",
+      "Plan for parents to alternate so one is always with Tom at the valley station."
+    ]
+  },
+  {
+    id: "hexenwasser-soell",
+    name: "Hexenwasser Söll",
+    category: "attraction",
+    region: "south",
+    description:
+      "A 'witch's water' adventure world on the Hohe Salve above Söll, built entirely around water and bare feet: barefoot trails through mud and streams, water channels and dams to build, mills, a giant's chair, beehives, and dozens of hands-on stations spread across the mountainside. Reached by the Söll gondola, it's the single most three-year-old-perfect place on the whole trip — the kind of day where kids come home soaked, filthy and blissed out.",
+    shortDescription: "A barefoot 'witch's water' park of streams, dams and mud — toddler heaven.",
+    image: "./images/hexenwasser-soell.jpg",
+    website: "https://www.hexenwasser.at/en/",
+    address: "Hochsöll, 6306 Söll, Austria",
+    coords: [47.4880, 12.2010],
+    tags: ["water", "nature", "family"],
+    difficulty: "easy",
+    openingNote:
+      "Open through the summer season; reached via the Söll gondola — check the day's gondola and park hours.",
+    tips: [
+      "Full change of clothes for both kids plus a towel — they WILL get soaked and muddy.",
+      "Barefoot is the whole idea; bring water sandals for the rockier stretches.",
+      "It's a mountain — sun cream and a warm layer for when clouds roll in; storms build by afternoon.",
+      "Go in the morning and plan a long stay; this is a full anchor day, not a quick stop."
     ],
     quizFacts: [
       {
-        question: "What is Civita di Bagnoregio's famous nickname?",
-        correctAnswer: "The Dying City",
-        distractors: ["The Singing City", "The Sleeping Castle", "The Twin City"]
-      },
-      {
-        question: "How do visitors reach the village of Civita di Bagnoregio?",
-        correctAnswer: "Across a long pedestrian footbridge over a canyon",
-        distractors: [
-          "By cable car",
-          "By small submarine",
-          "Through a long underground tunnel"
-        ]
-      },
-      {
-        question: "Why is Civita called the 'Dying City'?",
-        correctAnswer: "The tufa pedestal it sits on is slowly crumbling away",
-        distractors: [
-          "All of its people are very, very old",
-          "It is haunted by a friendly ghost",
-          "The mayor wants a new, snappier name"
-        ]
-      },
-      {
-        question: "How many people actually live in Civita di Bagnoregio today?",
-        correctAnswer: "Only about a dozen",
-        distractors: ["Over a thousand", "About 50,000", "Half the country"]
-      },
-      {
-        question: "Civita di Bagnoregio also has a famous animal population. Roughly how many of these live in the village?",
-        correctAnswer: "About 20 cats",
-        distractors: ["Around 200 elephants", "About 1,000 pigeons", "Exactly 10 sharks"]
-      },
-      {
-        question: "Civita di Bagnoregio was first founded by which ancient Italian people, more than 2,500 years ago?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Vikings", "The Egyptians", "The Aztecs"]
+        question: "At the Hexenwasser, how are you meant to explore the water trails?",
+        correctAnswer: "Barefoot",
+        distractors: ["In ski boots", "In a boat", "Wearing gloves"]
       }
+    ]
+  },
+  {
+    id: "kufstein-festung",
+    name: "Kufstein Fortress",
+    category: "attraction",
+    region: "south",
+    description:
+      "A mighty medieval fortress on a rock over the Inn, guarding the old border with Bavaria. Inside are ramparts to explore, a deep well, museum rooms, and the Heldenorgel — the 'Heroes' Organ,' one of the world's largest open-air organs, whose booming daily noon recital carries across the whole town. A cliff lift (the Kaiserlift/Panoramabahn) or a walk up the ramp gets you inside; from the walls the views run up and down the valley.",
+    shortDescription: "A clifftop fortress with a giant open-air organ that booms at noon.",
+    image: "./images/kufstein-festung.jpg",
+    website: "https://www.festung.kufstein.at/en/",
+    address: "Festung 2, 6330 Kufstein, Austria",
+    coords: [47.5836, 12.1735],
+    tags: ["culture", "view", "family"],
+    difficulty: "moderate",
+    openingNote:
+      "The Heldenorgel plays daily at 12:00 (and often a second time in season). Fortress open daily in summer — check hours.",
+    tips: [
+      "Take the inclined fortress lift up rather than the steep ramp with a stroller and toddlers.",
+      "Time your visit around the 12:00 organ recital — you can hear it from the old town too.",
+      "Inside there are cobbles, steps and ramparts — carrier for Tom is easier than a stroller.",
+      "Pair with a wander through Kufstein's riverside old town for lunch."
+    ],
+    quizFacts: [
+      {
+        question: "Every day at noon, what famous thing happens at Kufstein Fortress?",
+        correctAnswer: "A giant open-air organ plays and can be heard across the town",
+        distractors: ["A cannon fires into the river", "Knights have a sword fight", "The drawbridge falls down"]
+      }
+    ]
+  },
+  {
+    id: "riedel-glass",
+    name: "Riedel Glass (Kufstein)",
+    category: "attraction",
+    region: "south",
+    description:
+      "The Kufstein home of Riedel, the Tyrolean family firm that has made fine wine glasses for 11 generations. On weekday factory tours you watch glassblowers gather molten glass on the blowpipe and shape stemware by hand — a mesmerising, fiery bit of theatre for kids and adults alike — with a shop and café attached. A short, optional add-on to the Kufstein fortress day rather than a full outing on its own.",
+    shortDescription: "Watch Tyrolean glassblowers shape wine glasses by hand.",
+    image: "./images/riedel-glass.jpg",
+    website: "https://www.riedel.com/",
+    address: "Weißachstraße 28, 6330 Kufstein, Austria",
+    coords: [47.5790, 12.1590],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    openingNote:
+      "Glassblowing tours are weekday-only and closed Sundays/holidays — check the day's tour times before driving over.",
+    tips: [
+      "It's an add-on to the Kufstein day, not a standalone trip — keep it short with little kids.",
+      "The molten-glass demonstration is the highlight; the shop is fragile-toddler territory, hold hands.",
+      "Confirm the tour schedule the morning of — times are limited.",
+      "Skip if the fortress and old town already filled the day; toddlers tire."
+    ]
+  },
+  {
+    id: "rattenberg",
+    name: "Rattenberg",
+    category: "attraction",
+    region: "south",
+    description:
+      "Austria's smallest town, squeezed onto a sliver between the Inn and a steep hill that keeps it in shadow half the winter — which is precisely why it became a glassmaking town, its workshops needing artificial light. Today the tiny medieval centre is a warren of glass studios and shops where you can watch cutters and blowers at work, all walkable in under an hour. A charming, low-effort morning before an afternoon by the lake.",
+    shortDescription: "Austria's smallest town — a medieval warren of glassmakers' studios.",
+    image: "./images/rattenberg.jpg",
+    website: "https://www.alpbachtal.at/en/village/rattenberg",
+    address: "Südtiroler Straße, 6240 Rattenberg, Austria",
+    coords: [47.4443, 11.8928],
+    tags: ["culture", "village", "family"],
+    difficulty: "easy",
+    tips: [
+      "Park just outside the centre and walk in — the whole town is a few pedestrian lanes.",
+      "Watch a glassblowing/cutting demo in one of the studios; kids are welcome to look.",
+      "It's genuinely small — an hour or two, ideal paired with the Reintalersee swim afterward.",
+      "Cobbles again — carrier over stroller for the smoothest visit."
+    ],
+    quizFacts: [
+      {
+        question: "Rattenberg is famous for being what?",
+        correctAnswer: "The smallest town in Austria",
+        distractors: ["The tallest town in Austria", "The oldest town in the world", "The only town with no roads"]
+      }
+    ]
+  },
+  {
+    id: "munich-airport",
+    name: "Munich Airport (MUC)",
+    category: "airport",
+    region: "transit",
+    description:
+      "The trip's arrival and departure point in Bavaria, about 90 minutes' drive north of the Tyrolean base. Landing here on Aug 11 at 18:50 ( El Al LY351), the Sixt SUV is collected at 19:30 from the Airport Center for an evening drive into the Alps; on Aug 20 the car returns to Terminalstr. Mitte / Parkhaus P6 by 13:00 ahead of the 16:30 flight home (LY254).",
+    shortDescription: "Arrival & departure airport, ~90 min from the base — Sixt pickup and return.",
+    image: "./images/munich-airport.jpg",
+    website: "https://www.munich-airport.com/",
+    address: "Nordallee 25, 85356 München, Germany",
+    coords: [48.3538, 11.7861],
+    tags: [],
+    difficulty: "easy",
+    tips: [
+      "No German motorway vignette is needed to drive from MUC to Tyrol, but you need an Austrian one the moment you cross the border.",
+      "Sixt pickup is at the Airport Center; return is at Terminalstr. Mitte / Parkhaus P6 — different spot, allow time to find it.",
+      "Fuel up just before the airport on return day; Sixt expects the tank full.",
+      "Build in a buffer on Aug 20: car back by 13:00, then check-in and security for the 16:30 flight."
     ]
   }
 ];

@@ -62,14 +62,16 @@ export default function App() {
       <SectionOrnament />
       <AttractionsGrid />
 
+      {/* Stays sits high because the hotel is still unbooked — it's an
+          open decision the family needs to act on. */}
+      <SectionOrnament />
+      <StaysSection />
+
       <SectionOrnament />
       <ServicesSection />
 
       <SectionOrnament />
       <FoodAndWineSection />
-
-      <SectionOrnament />
-      <StaysSection />
 
       <SectionOrnament />
       <TipsSection />

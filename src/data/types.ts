@@ -186,10 +186,10 @@ export type DrinkType =
 
 /** An adults-only "what to pour tonight" suggestion that closes each
  *  chapter — picked to match the day's mood and to lean into local
- *  Tuscan / Maremmano grapes & rituals where possible. */
+ *  drinks & rituals where possible. */
 export interface DayDrink {
-  /** The drink's name — "Aperol Spritz", "Chianti Classico DOCG". The
-   *  Italian / proper-noun part stays universal across languages. */
+  /** The drink's name — "Aperol Spritz", "Grüner Veltliner". The
+   *  proper-noun part stays universal across languages. */
   name: string;
   /** Italian-friendly category — drives icon + chip color. */
   type: DrinkType;
@@ -250,12 +250,13 @@ export interface Dish {
   id: string;
   /** English name of the dish. */
   name: string;
-  /** The original Italian name (rendered in italics on the card). */
+  /** The original local name (rendered in italics on the card). */
   italianName?: string;
-  /** "north" = best in the Larciano / Garfagnana zone,
-   *  "south" = best in the Maremma / Pitigliano zone,
-   *  "tuscany" = found everywhere we travel. */
-  region: "north" | "south" | "tuscany";
+  /** "north" = best around the Inn-valley / Innsbruck side,
+   *  "south" = best around the Alpbachtal / east side,
+   *  "tyrol" = found everywhere we travel (the "everywhere"
+   *  bucket used by the Food & Wine filter). */
+  region: "north" | "south" | "tyrol";
   category: DishCategory;
   description: string;
   /** Short hint at where to try it — "Trattoria Verdi in Manciano". */

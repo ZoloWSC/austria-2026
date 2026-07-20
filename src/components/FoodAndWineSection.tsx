@@ -20,12 +20,12 @@ import { useLocalizeDish, useLocalizeWinery } from "../data/i18n";
 import NavigateLinks from "./NavigateLinks";
 import type { DishCategory } from "../data/types";
 
-type RegionFilter = "north" | "south" | "tuscany";
+type RegionFilter = "north" | "south" | "tyrol";
 
 const REGION_TABS: { id: RegionFilter; key: DictKey }[] = [
   { id: "north", key: "food_filter_north" },
   { id: "south", key: "food_filter_south" },
-  { id: "tuscany", key: "food_filter_tuscany" }
+  { id: "tyrol", key: "food_filter_tyrol" }
 ];
 
 const CATEGORY_META: Record<
@@ -48,14 +48,14 @@ export default function FoodAndWineSection() {
 
   const visibleDishes = useMemo(() => {
     // For "north" / "south" we surface dishes flagged for that region
-    // *plus* the "tuscany" all-rounders, since they're served everywhere.
-    // For "tuscany", show only the all-rounders.
-    if (region === "tuscany") return dishes.filter(d => d.region === "tuscany");
-    return dishes.filter(d => d.region === region || d.region === "tuscany");
+    // *plus* the "tyrol" all-rounders, since they're served everywhere.
+    // For "tyrol", show only the all-rounders.
+    if (region === "tyrol") return dishes.filter(d => d.region === "tyrol");
+    return dishes.filter(d => d.region === region || d.region === "tyrol");
   }, [region]);
 
   const visibleWineries = useMemo(
-    () => wineries.filter(w => region === "tuscany" || w.region === region),
+    () => wineries.filter(w => region === "tyrol" || w.region === region),
     [region]
   );
 
@@ -118,7 +118,7 @@ export default function FoodAndWineSection() {
                       <PoiImage
                         src={dish.image}
                         alt={dish.name}
-                        region={dish.region === "tuscany" ? "north" : dish.region}
+                        region={dish.region === "tyrol" ? "north" : dish.region}
                       />
                       {/* tiny gradient so the category chip stays legible */}
                       <div

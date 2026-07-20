@@ -1,265 +1,136 @@
 import type { Service } from "./types";
 
+// Austria '26 — supermarkets, fuel and family-friendly eats near the
+// Alpbachtal base and along the day-trip routes. `base: "north"` =
+// base-area / Inn valley west; `base: "south"` = east side. Austrian
+// supermarkets close on Sundays and public holidays (incl. Aug 15) —
+// stock up on Saturday. Hours are typical patterns; confirm on the day.
 export const services: Service[] = [
-  // ==================== NORTH BASE — Larciano area ====================
-
-  // Restaurants
+  // ---- Supermarkets ----
   {
-    id: "rest-n-pizzeria-da-paolo",
-    name: "Pizzeria Ristorante Da Paolo",
-    category: "restaurant",
+    id: "mpreis-brixlegg",
+    name: "MPreis Brixlegg",
+    category: "supermarket",
     region: "north",
     base: "north",
-    shortDescription: "Local family pizzeria, classic wood-fired pies",
     description:
-      "An everyday neighbourhood spot in Larciano village — wood-fired pizza, simple pasta, friendly service, kids welcome. The easy go-to on a tired evening.",
-    address: "Larciano (PT)",
-    coords: [43.8265, 10.8985],
-    hours: "Dinner; closed Mon"
+      "MPreis is the beloved Tyrolean supermarket chain, most branches with a 'Baguette' café-bakery attached. The Brixlegg store is the closest full shop to the Alpbachtal base — good for breakfast supplies, toddler snacks, nappies and a quick coffee.",
+    shortDescription: "Closest full supermarket to the base, with a bakery-café.",
+    coords: [47.4310, 11.8790],
+    address: "Brixlegg, 6230, Austria",
+    hours: "Mon–Fri ~07:15–19:30, Sat ~07:15–18:00, closed Sun & holidays",
+    website: "https://www.mpreis.at/"
   },
   {
-    id: "rest-n-osteria-larciano",
-    name: "Trattoria del Castello",
+    id: "spar-woergl",
+    name: "SPAR / EUROSPAR Wörgl",
+    category: "supermarket",
+    region: "south",
+    base: "south",
+    description:
+      "A larger EUROSPAR in Wörgl on the east side — handy to stock up before or after the Söll/Kufstein day trips. Wider range than the village shops, with fresh produce, baby items and a deli counter.",
+    shortDescription: "Bigger supermarket on the east side, good for a proper stock-up.",
+    coords: [47.4930, 12.0630],
+    address: "Wörgl, 6300, Austria",
+    hours: "Mon–Fri ~07:30–19:30, Sat ~07:30–18:00, closed Sun & holidays",
+    website: "https://www.spar.at/"
+  },
+  {
+    id: "mpreis-jenbach",
+    name: "MPreis Jenbach",
+    category: "supermarket",
+    region: "north",
+    base: "north",
+    description:
+      "On the way to Achensee, the Zillertal and Innsbruck — a convenient MPreis to grab picnic supplies before a mountain or lake day when the huts are pricey and toddler patience is short.",
+    shortDescription: "West-side MPreis, good for picnic supplies en route.",
+    coords: [47.3880, 11.7770],
+    address: "Jenbach, 6200, Austria",
+    hours: "Mon–Fri ~07:15–19:30, Sat ~07:15–18:00, closed Sun & holidays",
+    website: "https://www.mpreis.at/"
+  },
+  // ---- Fuel ----
+  {
+    id: "fuel-a12-kramsach",
+    name: "Petrol station — A12 near Kramsach/Brixlegg",
+    category: "gas",
+    region: "north",
+    base: "north",
+    description:
+      "The everyday fill-up near the base by the A12 junction. Diesel is common on Austrian rental SUVs — check which the Sixt car takes before the first fill. Fuel is cheaper in Austria than at the German motorway stations, so tank up this side.",
+    shortDescription: "Everyday fuel stop near the base by the A12.",
+    coords: [47.4360, 11.8850],
+    address: "Near Kramsach/Brixlegg A12 junction, Austria",
+    hours: "Daily, long hours"
+  },
+  {
+    id: "fuel-muc-return",
+    name: "Fuel before Munich Airport return",
+    category: "gas",
+    region: "transit",
+    base: "north",
+    description:
+      "Fill the tank on Aug 20 before returning the Sixt car — the rental is expected back full. Use a station on the A8/near the airport before the P6 return garage; leave a buffer for the 13:00 return and the 16:30 flight.",
+    shortDescription: "Top-up before the Sixt return — return the car full.",
+    coords: [48.3400, 11.7600],
+    address: "Near Munich Airport, Germany",
+    hours: "Daily, long hours"
+  },
+  // ---- Restaurants ----
+  {
+    id: "restaurant-alpbach-gasthof",
+    name: "Gasthof terrace, Alpbach village",
+    category: "restaurant",
+    region: "south",
+    base: "south",
+    description:
+      "A classic Tyrolean gasthof on Alpbach's flower-decked main lane — schnitzel, Kaspressknödel soup, Kaiserschmarrn, big terraces and high chairs. Kids are welcome everywhere in Tyrol; portions are generous and a plate of Pommes keeps a toddler happy. The relaxed lunch on the slow village day.",
+    shortDescription: "Classic village gasthof — schnitzel, dumplings, terrace, kid-friendly.",
+    coords: [47.3990, 11.9430],
+    address: "Alpbach village centre, 6236 Alpbach, Austria",
+    hours: "Lunch & dinner; some kitchens close mid-afternoon"
+  },
+  {
+    id: "restaurant-reintalersee",
+    name: "Lakeside restaurant, Reintalersee (Kramsach)",
+    category: "restaurant",
+    region: "south",
+    base: "north",
+    description:
+      "A lake-terrace spot by the warm Reintalersee near the base — easy for a swim-then-lunch on the Rattenberg day, with space for the kids to potter and a menu of grilled fish, salads and the usual Tyrolean staples.",
+    shortDescription: "Lakeside terrace by the Reintalersee — swim then lunch.",
+    coords: [47.4540, 11.8940],
+    address: "Reintalersee, 6233 Kramsach, Austria",
+    hours: "Daytime & dinner in summer season"
+  },
+  {
+    id: "restaurant-hall-altstadt",
+    name: "Café / restaurant, Hall in Tirol old town",
     category: "restaurant",
     region: "north",
     base: "north",
-    shortDescription: "Tuscan trattoria up in Larciano Castello with a view",
     description:
-      "Up in the medieval upper village, classic Tuscan plates — pappardelle al cinghiale, bistecca, local Chianti — on a small terrace looking over the valley.",
-    address: "Larciano Castello (PT)",
-    coords: [43.8400, 10.8956],
+      "A terrace café on Hall's upper Stadtplatz for a relaxed lunch after Swarovski — coffee and cake, light lunches, and a car-free square where a stroller parks easily and the kids can wander safely.",
+    shortDescription: "Old-town terrace café in Hall — relaxed post-Swarovski lunch.",
+    coords: [47.2816, 11.5108],
+    address: "Oberer Stadtplatz, 6060 Hall in Tirol, Austria",
+    hours: "Daytime; café hours"
+  },
+  {
+    id: "restaurant-kufstein-inn",
+    name: "Riverside restaurant, Kufstein old town",
+    category: "restaurant",
+    region: "south",
+    base: "south",
+    description:
+      "A riverside terrace in Kufstein's old town below the fortress — a natural lunch stop around the noon organ recital. Tyrolean and Italian-leaning menus (the border is close), gelato nearby for Gili, and views up to the fortress rock.",
+    shortDescription: "Riverside old-town lunch under the Kufstein fortress.",
+    coords: [47.5830, 12.1700],
+    address: "Unterer Stadtplatz, 6330 Kufstein, Austria",
     hours: "Lunch & dinner"
-  },
-  {
-    id: "rest-n-vinci",
-    name: "Ristorante La Torre — Vinci",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Tuscan classics in Leonardo's hometown",
-    description:
-      "Just across the valley in Vinci (Leonardo's birthplace), a reliable Tuscan kitchen — handmade pasta, grilled meats, good wine list. Pair with a quick walk to the Leonardo museum.",
-    address: "Via della Torre 19, Vinci (FI)",
-    coords: [43.7861, 10.9261],
-    hours: "Lunch & dinner; check Mon"
-  },
-  {
-    id: "rest-n-bagni-lucca",
-    name: "Circolo dei Forestieri — Bagni di Lucca",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Belle-époque dining hall on the river",
-    description:
-      "A historic former gentlemen's club turned restaurant, right on the Lima river in Bagni di Lucca. Big shaded terrace — perfect lunch after Canyon Park or rafting.",
-    address: "Piazza Jean Varraud 10, Bagni di Lucca (LU)",
-    coords: [44.0103, 10.5969],
-    hours: "Lunch & dinner"
-  },
-  {
-    id: "rest-n-pisa",
-    name: "Osteria dei Cavalieri — Pisa",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Long-standing Pisan osteria, walking distance from the Tower",
-    description:
-      "A solid Pisa stop a short walk from Piazza dei Miracoli — Tuscan classics, bean soups, fresh pasta, fair prices. Reserve for lunch.",
-    address: "Via San Frediano 16, Pisa (PI)",
-    coords: [43.7180, 10.4011],
-    hours: "Lunch & dinner; closed Sun"
-  },
-
-  // Supermarkets
-  {
-    id: "sup-n-conad-larciano",
-    name: "Conad — Larciano",
-    category: "supermarket",
-    region: "north",
-    base: "north",
-    shortDescription: "Full-size local supermarket",
-    description:
-      "Closest large supermarket to the Larciano stay — water, fresh produce, breakfast supplies, baby/sun gear. Open every day.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8181, 10.9072],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
-  },
-  {
-    id: "sup-n-coop-monsummano",
-    name: "Coop — Monsummano Terme",
-    category: "supermarket",
-    region: "north",
-    base: "north",
-    shortDescription: "Larger Coop hypermarket nearby",
-    description:
-      "If Conad is missing something, the Coop in Monsummano (10 min drive) is bigger — full deli, bakery, household, kids' stuff.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8625, 10.8164],
-    hours: "Mon–Sat 08:00–21:00, Sun 09:00–20:00"
-  },
-
-  // Gas stations
-  {
-    id: "gas-n-eni-larciano",
-    name: "Eni Station — Larciano",
-    category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Closest fuel stop to the Larciano house",
-    description:
-      "Standard Eni station on the main road through Larciano — 24/7 self-service via card. Tip: in Italy, 'servito' is staff-served and costs more; use 'fai da te' / self-service.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8198, 10.9051],
-    hours: "Self-service 24/7"
-  },
-  {
-    id: "gas-n-q8-monsummano",
-    name: "Q8 — Monsummano Terme",
-    category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Backup station on the SS-436 road",
-    description:
-      "Backup option en route to/from the A11 motorway — accepts foreign cards reliably.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8639, 10.8189],
-    hours: "Self-service 24/7"
-  },
-
-  // ==================== SOUTH BASE — Manciano / Semproniano area ====================
-
-  // Restaurants
-  {
-    id: "rest-s-trattoria-verdi",
-    name: "Trattoria Verdi — Manciano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Down-to-earth Maremma cooking in town",
-    description:
-      "A long-running family trattoria in Manciano — handmade pici, wild boar ragù, grilled lamb, good house wine. Closest 'real meal' option to Tenuta Cortevecchia.",
-    address: "Via Cavour, 58014 Manciano (GR)",
-    coords: [42.5886, 11.5158],
-    hours: "Lunch & dinner; check closure day"
-  },
-  {
-    id: "rest-s-i-due-cippi",
-    name: "I Due Cippi da Michele — Saturnia",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Saturnia village classic — meats and pici",
-    description:
-      "On the main square of Saturnia village (the hilltop town above the hot springs). Strong on grilled meats and traditional Maremma pasta. Nice shaded terrace.",
-    address: "Piazza Vittorio Veneto 26/A, Saturnia (GR)",
-    coords: [42.6644, 11.5081],
-    hours: "Lunch & dinner"
-  },
-  {
-    id: "rest-s-hostaria-ceccottino",
-    name: "Hostaria del Ceccottino — Pitigliano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Refined Pitigliano cooking with kosher tradition",
-    description:
-      "In the heart of Pitigliano's old town — modern takes on Maremma and local Jewish-Italian dishes (sfratto dessert), good wine list, lovely small dining room.",
-    address: "Piazza San Gregorio VII, 58017 Pitigliano (GR)",
-    coords: [42.6358, 11.6694],
-    hours: "Lunch & dinner; closed Tue"
-  },
-  {
-    id: "rest-s-trattoria-sovana",
-    name: "Taverna Etrusca — Sovana",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Atmospheric stone-vaulted tavern in tiny Sovana",
-    description:
-      "Sovana is a postcard-perfect single-street Etruscan village near Pitigliano — Taverna Etrusca's vaulted dining room is the dinner stop after a day at the Vie Cave.",
-    address: "Piazza del Pretorio 16, Sovana, Sorano (GR)",
-    coords: [42.6561, 11.6322],
-    hours: "Lunch & dinner; closed Wed"
-  },
-  {
-    id: "rest-s-porto-santo-stefano",
-    name: "Dal Greco — Porto Santo Stefano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Fresh fish in the harbour where the catamaran departs",
-    description:
-      "Right on the harbour at Porto Santo Stefano — daily catch, classic spaghetti allo scoglio, sea-view terrace. Perfect end to the boat day before driving back.",
-    address: "Via del Molo 1, Porto Santo Stefano (GR)",
-    coords: [42.4344, 11.1183],
-    hours: "Lunch & dinner; high season daily"
-  },
-
-  // Supermarkets
-  {
-    id: "sup-s-conad-manciano",
-    name: "Conad — Manciano",
-    category: "supermarket",
-    region: "south",
-    base: "south",
-    shortDescription: "Main supermarket for the southern base",
-    description:
-      "The main grocery for the Manciano / Semproniano area — stock up here on the way in to Tenuta Cortevecchia. Water, breakfast, fresh produce, pool snacks.",
-    address: "Via Roma, 58014 Manciano (GR)",
-    coords: [42.5897, 11.5142],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
-  },
-  {
-    id: "sup-s-coop-pitigliano",
-    name: "Coop — Pitigliano",
-    category: "supermarket",
-    region: "south",
-    base: "south",
-    shortDescription: "Backup supermarket near Pitigliano",
-    description:
-      "Convenient if you're already in Pitigliano for the Vie Cave — solid full-size supermarket on the way out of town.",
-    address: "Via Generale Orsini, 58017 Pitigliano (GR)",
-    coords: [42.6361, 11.6753],
-    hours: "Mon–Sat 08:00–20:00, Sun 09:00–13:00"
-  },
-
-  // Gas stations
-  {
-    id: "gas-s-eni-manciano",
-    name: "Eni Station — Manciano",
-    category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "Closest fuel stop to the southern base",
-    description:
-      "Eni station on the SR74 through Manciano — easy stop on every drive in/out of Cortevecchia. Self-service 24/7 with card.",
-    address: "SR74 — Manciano (GR)",
-    coords: [42.5872, 11.5125],
-    hours: "Self-service 24/7"
-  },
-  {
-    id: "gas-s-q8-albinia",
-    name: "Q8 — Albinia (Aurelia)",
-    category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "On the SS-1 Aurelia — fill up before/after Argentario",
-    description:
-      "On the Aurelia coastal highway near Albinia — natural fuel stop on the way to/from the Porto Santo Stefano boat day or the Argentario lagoon.",
-    address: "SS-1 Aurelia, Albinia (GR)",
-    coords: [42.5044, 11.2122],
-    hours: "Self-service 24/7"
   }
 ];
 
-/** Fast id → Service lookup used by the chapter detail page when it
- *  renders a curated list of restaurants for a given day. Built lazily
- *  on first call and cached at module level — repeated lookups are O(1). */
-let _serviceById: Map<string, Service> | null = null;
-
 export function getService(id: string): Service | undefined {
-  if (!_serviceById) {
-    _serviceById = new Map(services.map(s => [s.id, s]));
-  }
-  return _serviceById.get(id);
+  return services.find(s => s.id === id);
 }

@@ -57,6 +57,9 @@ export async function decryptBookings<T>(
   cipher: BookingsCipher,
   pin: string
 ): Promise<T | null> {
+  // Blank-trip guard: an empty ciphertext means "no bookings packet yet" —
+  // treat every PIN as wrong instead of attempting to decrypt nothing.
+  if (!cipher.data || !cipher.salt || !cipher.iv) return null;
   try {
     const key = await deriveKey(pin, b64ToBuf(cipher.salt), cipher.iterations);
     const plain = await crypto.subtle.decrypt(

@@ -26,95 +26,36 @@ interface HeroPhoto {
   dayNumber?: number;
 }
 
-// All photos are CC-licensed beauty shots of places we'll actually visit
-// (or the iconic Tuscan landscapes that surround them). Hosted locally
-// at public/images/hero/ — fetched once via scripts/fetch-hero-images.mjs.
+// CC-licensed beauty shots of places we'll actually visit, hosted
+// locally at public/images/hero/ (see scripts/fetch-hero-images.mjs).
 const HERO_PHOTOS: HeroPhoto[] = [
   {
-    src: "./images/hero/cypresses-sunset.jpg",
-    place: "Cipressi di San Quirico d'Orcia",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Cipressi_di_S.Quirico_d'Orcia_al_tramonto.jpg"
+    src: "./images/hero/achensee.jpg",
+    place: "Achensee",
+    credit: "",
+    source: "#",
+    dayNumber: 2
   },
   {
-    src: "./images/hero/saturnia-falls.jpg",
-    place: "Saturnia · Cascate del Mulino",
-    credit: "Raimond Spekking · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Terme_di_Saturnia_-_Cascate_del_Mulino-0518.jpg",
+    src: "./images/hero/alpbach.jpg",
+    place: "Alpbach",
+    credit: "",
+    source: "#",
+    dayNumber: 6
+  },
+  {
+    src: "./images/hero/innsbruck.jpg",
+    place: "Innsbruck",
+    credit: "",
+    source: "#",
+    dayNumber: 5
+  },
+  {
+    src: "./images/hero/kufstein.jpg",
+    place: "Kufstein",
+    credit: "",
+    source: "#",
     dayNumber: 8
-  },
-  {
-    src: "./images/hero/pitigliano-panorama.jpg",
-    place: "Pitigliano · viewpoint at golden hour",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:01665_ITA_Tuscany_Pitigliano_S_from_viewpoint_V-P.jpg",
-    dayNumber: 9
-  },
-  {
-    src: "./images/hero/val-dorcia-hills.jpg",
-    place: "Endless hills of Pienza · Val d'Orcia",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Endless_hills_of_Pienza1.jpg"
-  },
-  {
-    src: "./images/hero/maremma-aerial.jpg",
-    place: "Parco della Maremma · Torre di Collelungo",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Toscana_-_Maremma_Regional_Park_-_aerial_photo_with_Torre_di_Collelungo.jpg",
-    dayNumber: 9
-  },
-  {
-    src: "./images/cala-del-gesso.jpg",
-    place: "Cala del Gesso · Argentario",
-    credit: "Cristina Gottardi (Unsplash) · CC0",
-    source: "https://unsplash.com/photos/7_APbY7Afsg",
-    dayNumber: 7
-  },
-  {
-    src: "./images/hero/sorano-blue-hour.jpg",
-    place: "Sorano · blue hour",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:01844b_ITA_Tuscany_Sorano_blue_hour_3_to_1_V-P.jpg"
-  },
-  {
-    src: "./images/hero/val-dorcia-lonely-tree.jpg",
-    place: "Tuscan landscape · the lonely tree",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Tuscan_landscape_with_lonely_tree.jpg"
-  },
-  {
-    src: "./images/hero/crete-orcia-sunrise.jpg",
-    place: "Sunrise on the Crete dell'Orcia",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Sunrise_in_Crete_dell'Orcia.jpg"
-  },
-  {
-    src: "./images/civita.jpg",
-    place: "Civita di Bagnoregio · the dying city",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source: "https://en.wikipedia.org/wiki/Civita_di_Bagnoregio",
-    dayNumber: 8
-  },
-  {
-    src: "./images/hero/coast-sunset.jpg",
-    place: "Tramonto al Castello del Boccale · Tyrrhenian coast",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Tramonto_al_Castello_del_Boccale.jpg"
-  },
-  {
-    src: "./images/hero/tuscan-landscape-pano.jpg",
-    place: "Tuscan countryside · the long view",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source: "https://commons.wikimedia.org/wiki/File:Tuscan_Landscape_6.JPG"
   }
 ];
 
@@ -133,7 +74,7 @@ function useTripStateLive() {
  * every attraction with a photo (in itinerary order), plus the day's
  * explicit `leadImage` if it's not already in the set. Used during the
  * trip so the hero shows what the family is *actually doing today /
- * tomorrow* rather than the generic Tuscany screensavers used pre-trip. */
+ * tomorrow* rather than the generic screensavers used pre-trip. */
 function buildDayHeroPhotos(day: Day, getPoi: (p: POI) => POI): HeroPhoto[] {
   const out: HeroPhoto[] = [];
   const seen = new Set<string>();

@@ -27,17 +27,12 @@ import { useT } from "../lib/dict";
 import PoiImage from "./PoiImage";
 
 /** All orders are under the trip owner's name — printed on each pass. */
-const CARDHOLDER = "Itay Kaplan";
+const CARDHOLDER = "Zolotushko Family";
 
-/** A distinct colour identity per ticket (semi-transparent over the photo). */
-const THEMES: Record<string, string> = {
-  "canyon-park-sup":
-    "linear-gradient(150deg, rgba(58,90,74,0.66) 0%, rgba(14,40,30,0.94) 100%)",
-  "soft-rafting":
-    "linear-gradient(150deg, rgba(42,74,104,0.66) 0%, rgba(12,32,58,0.94) 100%)",
-  "argentario-catamaran":
-    "linear-gradient(150deg, rgba(196,90,61,0.68) 0%, rgba(66,22,36,0.94) 100%)"
-};
+/** A distinct colour identity per ticket (semi-transparent over the photo).
+ *  Key by booking id when configuring a trip; unkeyed bookings cycle
+ *  through FALLBACKS. */
+const THEMES: Record<string, string> = {};
 const FALLBACKS = [
   "linear-gradient(150deg, rgba(196,90,61,0.68) 0%, rgba(66,22,36,0.94) 100%)",
   "linear-gradient(150deg, rgba(58,90,74,0.66) 0%, rgba(14,40,30,0.94) 100%)",

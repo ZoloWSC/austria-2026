@@ -1,969 +1,1018 @@
 import type { Day } from "./types";
 
+// TYROL 2026 — Alpbachtal & the Lower Inn Valley with two toddlers.
+// One anchor activity per day, naps are sacred, no drive over ~40 min
+// except the two airport transfers. Base for all nine nights: the hotel
+// in the Kramsach–Alpbachtal area.
 export const itinerary: Day[] = [
   {
     dayNumber: 1,
-    date: "2026-08-17",
-    weekday: "Monday",
-    region: "north",
-    base: "Larciano",
-    title: "Land in Rome, drive north",
-    subtitle: "Arrive FCO 14:00, pick up the rental car, head to Tuscany",
-    leadImage: "./images/stay-larciano-sunflowers.png",
-    leadImageCredit: {
-      author: "Host photo",
-      license: "Airbnb listing",
-      source: "https://www.airbnb.com/rooms/1554711",
-      licenseUrl: "https://www.airbnb.com/help/article/2855"
-    },
+    date: "2026-08-11",
+    weekday: "Tuesday",
+    region: "transit",
+    base: "Munich → Kramsach–Alpbachtal",
+    title: "Land in Munich, drive into the Alps",
+    subtitle: "LY351 lands 18:50 · Sixt pickup 19:30 · evening drive to the hotel",
+    leadImage: "./images/munich-airport.jpg",
     activities: [
       {
-        time: "14:00",
-        title: "Land at Rome Fiumicino (FCO)",
-        description: "Pick up the rental car. International driving permit required. Confirm a credit card on the driver's name.",
-        rideToNext: { duration: "3 h 30", note: "via A1 + A11 · ≈ 280 km", departAt: "15:30" }
+        time: "18:50",
+        title: "Land at Munich Airport (MUC)",
+        description:
+          "LY351 touches down at 18:50. Passport control with two tired toddlers takes a while — split up: one parent grabs the bags, the other keeps Gili and Tom moving. There's a supermarket (Edeka) in the MAC Forum between the terminals if you want milk, water and breakfast bits for the first morning.",
+        attractionId: "munich-airport"
       },
       {
-        time: "Evening",
-        title: "Arrive in Larciano, settle in",
-        description: "Around 3.5 h drive. Late swim in the pool, light dinner, early to bed."
+        time: "19:30",
+        title: "Sixt pickup — MUC Airport Center",
+        description:
+          "The Sixt desk is in the Airport Center between Terminals 1 and 2. Confirm both child seats are installed and actually fit before you leave the garage — swapping a seat at 20:00 is much easier at the counter than in a dark hotel car park. Set the navigation to the hotel before pulling out.",
+        rideToNext: { duration: "1 h 40", note: "A8 → A93 → A12, ≈ 160 km", departAt: "20:00" }
+      },
+      {
+        time: "~21:45",
+        title: "Arrive at the hotel, everyone straight to bed",
+        description:
+          "Check in, carry the sleeping kids up, unpack only the essentials. Tomorrow starts gently at the lake — no alarm needed beyond the toddlers' built-in one."
       }
     ],
-    driveNotes: "FCO → Larciano ≈ 3 h 30 min via A1 + A11",
-    restaurants: ["rest-n-pizzeria-da-paolo"],
-    drinkOfTheDay: {
-      name: "Aperol Spritz",
-      type: "aperitif",
-      pairing: "The official 'you made it' drink of Italy. Bittersweet, low-strength, fizzy — exactly what tired travellers need on a poolside lounger before a light dinner.",
-      servingNote: "Tall glass packed with ice · 3 parts Prosecco · 2 parts Aperol · 1 splash of soda · orange wheel"
-    },
+    driveNotes:
+      "Munich Airport → Kramsach ≈ 1 h 40 (160 km) via A8, A93 and the A12 Inntal motorway. You cross into Austria at Kufstein — the Austrian motorway needs a vignette; buy a digital one online before the trip or a sticker at the last German services (the rental almost certainly doesn't include it).",
     gear: [
-      { item: "Comfortable travel layers (FCO is air-conditioned, the car will be hot)" },
-      { item: "Slip-on shoes for security" },
-      { item: "Refillable water bottles (empty for security, fill at FCO)" },
-      { item: "Sunglasses & a hat — late August sun is brutal at the rest stops" },
-      { item: "Swimwear in the carry-on, not the hold (in case bags arrive late)" }
+      { item: "Passports, driving licence and the Sixt booking confirmation handy in the daypack" },
+      { item: "Snacks, water and a favorite toy each within arm's reach for the night drive" },
+      { item: "Light jackets on top of the carry-on — Alpine evenings run 15 °C cooler than Tel Aviv" },
+      { item: "Pyjamas and toothbrushes packed at the top of one bag for a zero-search bedtime" }
     ],
     dayTips: [
-      "Keep €40–50 cash for autostrada tolls (A1 + A11)",
-      "Confirm with the rental whether the tank policy is full-to-full or full-to-empty",
-      "Italian rentals require an International Driving Permit — keep it with the licence",
-      "Aim to clear the FCO area before 16:00 to dodge Friday rush southbound"
+      "Buy the Austrian digital vignette (asfinag.at) before you fly — one less stop with sleeping kids in the back",
+      "Keep some euros in coins for the first days — small Tyrolean kiosks and parking machines still love cash",
+      "If the flight is late, don't stress: Sixt airport counters run late into the evening, and the A12 is quiet after 21:00",
+      "Text the hotel your arrival time from the airport so late check-in is ready"
     ],
     italianWords: [
       {
-        word: "Andiamo!",
-        pronounce: "ahn-DYAH-moh",
-        meaning: "Let's go!",
-        example: "Andiamo in Toscana!",
-        exampleMeaning: "Let's go to Tuscany!"
+        word: "Servus",
+        pronounce: "SER-voos",
+        meaning: "Hi / hello (the all-purpose friendly greeting in Tyrol and Bavaria)",
+        example: "Servus, wir sind die Familie aus Israel!",
+        exampleMeaning: "Hi, we're the family from Israel!"
       },
       {
-        word: "Autostrada",
-        pronounce: "ow-toh-STRAH-dah",
-        meaning: "Motorway",
-        example: "Sull'autostrada verso Firenze.",
-        exampleMeaning: "On the motorway toward Florence."
+        word: "Grüß Gott",
+        pronounce: "gruess GOT",
+        meaning: "Hello (the polite Austrian greeting — literally 'greet God')",
+        example: "Grüß Gott, wir haben eine Reservierung.",
+        exampleMeaning: "Hello, we have a reservation."
       },
       {
-        word: "Bagaglio",
-        pronounce: "bah-GAH-lyoh",
-        meaning: "Luggage",
-        example: "Il bagaglio è nel bagagliaio.",
-        exampleMeaning: "The luggage is in the boot."
+        word: "Auto",
+        pronounce: "OW-toh",
+        meaning: "Car",
+        example: "Unser Auto ist blau.",
+        exampleMeaning: "Our car is blue."
       },
       {
-        word: "Dai!",
-        pronounce: "dye",
-        meaning: "Come on! (sounds like 'dye', not 'day')",
-        example: "Dai, facciamo le valigie!",
-        exampleMeaning: "Come on, let's pack the bags!"
+        word: "Los geht's!",
+        pronounce: "lohs GAYTS",
+        meaning: "Let's go! Off we go!",
+        example: "Los geht's in die Berge!",
+        exampleMeaning: "Off we go into the mountains!"
       },
       {
-        word: "Forza!",
-        pronounce: "FOR-tzah",
-        meaning: "You can do it! (literally 'strength')",
-        example: "Forza, siamo quasi arrivati!",
-        exampleMeaning: "Hang in there — we're almost there!"
-      },
-      {
-        word: "Riposo",
-        pronounce: "ree-POH-zoh",
-        meaning: "A rest (not the English word 'repose')",
-        example: "Un piccolo riposo in macchina.",
-        exampleMeaning: "A little rest in the car."
+        word: "Gute Nacht",
+        pronounce: "GOO-teh NAHKHT",
+        meaning: "Good night",
+        example: "Gute Nacht, Gili und Tom!",
+        exampleMeaning: "Good night, Gili and Tom!"
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Almdudler",
+      type: "other",
+      pairing:
+        "Austria's beloved herbal-lemonade — alpine herbs, fizzy, zero alcohol. The right call when one of you just drove a rental across a border in the dark and tomorrow starts early. It's on every menu in Tyrol; consider it your welcome ritual.",
+      servingNote: "Ice-cold from the bottle, or over ice with a lemon slice"
+    }
   },
   {
     dayNumber: 2,
-    date: "2026-08-18",
-    weekday: "Tuesday",
+    date: "2026-08-12",
+    weekday: "Wednesday",
     departureTime: "09:30",
-    rideToFirst: { duration: "1 h", note: "Larciano → Bagni di Lucca" },
+    rideToFirst: { duration: "30 min", note: "via Wiesing, then the climb up the Achensee road" },
     region: "north",
-    base: "Larciano",
-    title: "Turquoise canyon, Devil's Bridge & forest ropes",
+    base: "Kramsach–Alpbachtal",
+    title: "Achensee — Tyrol's fjord, from the beach",
+    subtitle: "Lakeside lido and playground in Pertisau, optional boat ride",
+    leadImage: "./images/achensee.jpg",
     activities: [
       {
-        time: "10:45",
-        title: "Canyon Park — SUP inside the canyon (booked)",
+        time: "10:00",
+        title: "Strandbad Pertisau — beach, playground, shallow water",
         description:
-          "Booked: 6 stand-up paddleboards for the 10:45 slot, gliding the emerald Lima through the gorge. Get there by 10:30 to sort boards and life vests — payment is cash on site (€168). Aerial canyon routes are a separate ticket and usually need a taller child.",
-        attractionId: "canyon-park",
+          "The lakeside lido on the Pertisau shore is free to enter and built for exactly this crew: a huge lawn, a pirate-ship playground with slide, swings and sandbox, a separate shallow children's pool, and a gently shelving lake entry. The water is drinking-water clear and famously brisk — Gili will be in it anyway. Grab a shaded spot under the sun sails early; the Karwendel peaks across the water do the view work.",
+        attractionId: "achensee",
         tag: "water",
-        rideToNext: { duration: "10 min", note: "Bagni di Lucca → Borgo a Mozzano", departAt: "13:00" }
+        rideToNext: { duration: "5 min", note: "short hop along the shore to the Pertisau dock" }
       },
       {
-        time: "Lunch",
-        title: "Ponte del Diavolo photo stop",
-        description: "Climb the medieval humpback bridge, tell the kids the devil legend. Grab a quick, early lunch in Borgo a Mozzano with the 3 families.",
-        attractionId: "ponte-del-diavolo",
-        tag: "culture",
-        rideToNext: { duration: "30 min", note: "winding climb to 850 m", departAt: "14:30" }
+        time: "13:30",
+        title: "Boat ride on the lake",
+        description:
+          "The Achensee ships have run since 1887 and sail daily in summer between six docks. Hop on at Pertisau for a short leg (Pertisau → Gaisalm or a round trip) — kids under 6 ride free, and the top deck is toddler-thrilling without being scary. Check the day's timetable at the dock or achenseeschifffahrt.at; sailings are roughly hourly in high season.",
+        attractionId: "achensee",
+        tag: "water",
+        optional: true
       },
       {
-        time: "Afternoon",
-        title: "Selva del Buffardello ropes course",
-        description: "Shaded forest adventure park with kid-height routes (from 100 cm) — the kids get the real ropes experience.",
-        attractionId: "selva-buffardello",
-        tag: "extreme",
-        // Day 2's title literally calls out "forest ropes" — the ropes
-        // course is the headline finale, not a "skip if tired" extra.
-        // Opt out of the auto-rule that would mark the 3rd attraction optional.
-        optional: false
+        time: "15:30",
+        title: "Ice cream, then the nap-drive home",
+        description:
+          "One scoop each on the Pertisau promenade, then let the winding descent do what it does best — both kids asleep before Wiesing. Quiet hotel afternoon."
       }
     ],
-    driveNotes: "Larciano ↔ Bagni di Lucca ≈ 1 h",
-    restaurants: ["rest-n-bagni-lucca", "rest-n-osteria-larciano"],
-    drinkOfTheDay: {
-      name: "Vermentino di Toscana IGT",
-      type: "wine",
-      pairing: "After a wet morning in the canyon and a forest afternoon, this crisp white from the Tuscan coast is the perfect cool-down — citrus, sea-breeze and a flinty edge.",
-      servingNote: "Served well-chilled (8–10 °C), in a tall white-wine glass"
-    },
+    driveNotes:
+      "Base → Pertisau ≈ 30 min: A12 or the valley road to Wiesing, then the switchback climb up to the Achensee plateau. It's a proper mountain road for ten minutes — smooth but curvy, so time it for after breakfast, not after a big lunch.",
     gear: [
-      { item: "Quick-dry swimwear under clothes — skips a cramped changing hut", for: "canyon-park" },
-      { item: "Closed-toe water shoes for SUP and slippery rocks", for: "canyon-park" },
-      { item: "Dry bag for phone, keys & wallet", for: "canyon-park" },
-      { item: "Closed-toe trainers for the ropes course (no sandals!)", for: "selva-buffardello" },
-      { item: "A change of dry clothes for the drive home" },
-      { item: "Reef-safe sunscreen & a wide-brim hat" }
+      { item: "Swim gear, swim diaper for Tom, and a change of clothes for everyone", for: "achensee" },
+      { item: "Water shoes — the beach entry is pebbly in places", for: "achensee" },
+      { item: "Sun hats and SPF50 — mountain sun at 950 m is stronger than it feels", for: "achensee" },
+      { item: "Picnic blanket for the lido lawn" },
+      { item: "Windbreaker layer for the boat deck — it's breezy even in August", for: "achensee" }
     ],
     dayTips: [
-      "Eat early-ish lunch in Borgo a Mozzano: most kitchens close at 14:30",
-      "Selva del Buffardello is in chestnut forest at 850 m — bring a long sleeve",
-      "Cash for the small adventure-park snack bar"
+      "Arrive by 10:00 — Pertisau's paid car parks and the shaded lido spots fill by 11 in August",
+      "The lake sits at ~950 m: mornings can start at 15 °C even when the afternoon hits 27 °C, so layer the kids",
+      "Afternoon thunderstorms are an Alpine summer classic — do the water stuff early, keep the boat ride flexible",
+      "The lido has a snack bar, but the Pertisau promenade has better lunch — kaiserschmarrn splits nicely four ways",
+      "Kids under 6 sail free on the Achensee ships; buy tickets right at the dock"
     ],
     italianWords: [
       {
-        word: "Acqua",
-        pronounce: "AH-kwah",
+        word: "Wasser",
+        pronounce: "VAH-ser",
         meaning: "Water",
-        example: "L'acqua è fresca!",
-        exampleMeaning: "The water is cool!"
+        example: "Das Wasser ist kalt!",
+        exampleMeaning: "The water is cold!"
       },
       {
-        word: "Coraggio",
-        pronounce: "kor-AH-joh",
-        meaning: "Courage",
-        example: "Hai coraggio sul ponte!",
-        exampleMeaning: "You've got courage on the bridge!"
+        word: "See",
+        pronounce: "zay",
+        meaning: "Lake (der See — not 'sea'!)",
+        example: "Der Achensee ist der größte See in Tirol.",
+        exampleMeaning: "The Achensee is the biggest lake in Tyrol."
       },
       {
-        word: "Sole",
-        pronounce: "SOH-leh",
-        meaning: "Sun",
-        example: "Che sole oggi!",
-        exampleMeaning: "What sun today!"
+        word: "Schiff",
+        pronounce: "shif",
+        meaning: "Ship, boat",
+        example: "Schau, das Schiff kommt!",
+        exampleMeaning: "Look, the boat is coming!"
       },
       {
-        word: "Spruzzo",
-        pronounce: "SPROOT-tzoh",
-        meaning: "Splash, spray",
-        example: "Che bello lo spruzzo dell'acqua!",
-        exampleMeaning: "How fun the water splash is!"
+        word: "Schwimmen",
+        pronounce: "SHVIM-men",
+        meaning: "To swim",
+        example: "Gili will schwimmen gehen.",
+        exampleMeaning: "Gili wants to go swimming."
       },
       {
-        word: "Freddo",
-        pronounce: "FREHD-doh",
-        meaning: "Cold (double 'd' in the middle)",
-        example: "L'acqua non è freddissima.",
-        exampleMeaning: "The water isn't freezing cold."
+        word: "Kalt",
+        pronounce: "kahlt",
+        meaning: "Cold",
+        example: "Brrr, das ist kalt!",
+        exampleMeaning: "Brrr, that's cold!"
       },
       {
-        word: "Attento!",
-        pronounce: "ah-TEN-toh",
-        meaning: "Watch out! Careful!",
-        example: "Attento, è scivoloso!",
-        exampleMeaning: "Careful, it's slippery!"
+        word: "Berg",
+        pronounce: "behrk",
+        meaning: "Mountain",
+        example: "Die Berge sind so hoch!",
+        exampleMeaning: "The mountains are so tall!"
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Hugo",
+      type: "cocktail",
+      pairing:
+        "The Alps' summer spritz — prosecco, elderflower syrup, mint and soda. Elderflower grows on the meadows you drove past today, and after a day of lake wind and toddler-lifeguarding, its light floral fizz is exactly right.",
+      servingNote: "Big wine glass, lots of ice, a mint sprig and a squeeze of lime"
+    }
   },
   {
     dayNumber: 3,
-    date: "2026-08-19",
-    weekday: "Wednesday",
-    departureTime: "08:00",
-    rideToFirst: { duration: "1 h", note: "Larciano → Chifenti (Lucca Rafting)" },
+    date: "2026-08-13",
+    weekday: "Thursday",
+    departureTime: "09:00",
+    rideToFirst: { duration: "30 min", note: "A12 west to the Wattens exit" },
     region: "north",
-    base: "Larciano",
-    title: "Soft rafting + a quick wave at Pisa",
+    base: "Kramsach–Alpbachtal",
+    title: "Crystal worlds & a medieval old town",
+    subtitle: "Swarovski Kristallwelten in Wattens, then Hall in Tirol",
+    leadImage: "./images/swarovski-kristallwelten.jpg",
     activities: [
       {
-        time: "09:30 (check-in 09:25)",
-        title: "Soft Rafting with Lucca Rafting (booked)",
-        description: "Booked: family soft-rafting float on the Serchio, ~1.5 h, for the whole group (6 adults + 6 kids). Check in at Lucca Rafting in Chifenti. Guide, gear and wetsuits are provided, plus free souvenir photos — with dives, slides and a group photo under the Devil's Bridge. Just wear swimwear under your clothes.",
-        attractionId: "soft-rafting-serchio",
-        tag: "water",
-        rideToNext: { duration: "45 min", note: "Chifenti → Pisa", departAt: "13:00" }
+        time: "09:30",
+        title: "Swarovski Kristallwelten — the Giant's garden",
+        description:
+          "Open daily 09:00–19:00 (last entry 18:00), so an early start beats the tour buses. Inside, the Chambers of Wonder are a dim, sparkly 45 minutes that both kids will treat as fireworks; outside is the real toddler gold — the crystal cloud over the mirror pool, the huge playground tower with slides and nets, and the carousel. Gili gets the play tower, Tom gets the water-spitting Giant's head. Do the chambers first, then release them into the garden.",
+        attractionId: "swarovski-kristallwelten",
+        tag: "family",
+        rideToNext: { duration: "15 min", note: "back roads along the Inn to Hall", departAt: "13:00" }
       },
       {
-        time: "Afternoon",
-        title: "Pisa — Leaning Tower & gelato",
-        description: "Park outside the walls (ZTL!), walk into Piazza dei Miracoli, take the silly photos.",
-        attractionId: "pisa",
-        tag: "culture",
-        rideToNext: { duration: "30 min", note: "Pisa → Lucca, mostly motorway", departAt: "16:00" }
+        time: "13:15",
+        title: "Hall in Tirol — lunch and an old-town wander",
+        description:
+          "Hall has one of the best-preserved medieval old towns in Austria — bigger than Innsbruck's, and blissfully uncrowded. Park at the edge (the old town is largely car-free), find a gasthaus table on the Oberer Stadtplatz, then let the kids run the cobbled lanes. The mint tower (Münzerturm) is the postcard; the ice cream on the square is the actual goal.",
+        attractionId: "hall-in-tirol",
+        tag: "village"
       },
       {
-        time: "Late afternoon",
-        title: "Lucca city walls bike loop",
-        description: "On the way back, rent bikes near Porta San Pietro or Piazzale Verdi and ride the 4 km tree-lined ring on top of Lucca's Renaissance walls. Flat, traffic-free, glorious in the late-afternoon light. Drop the bikes and disappear into the old town for gelato.",
-        attractionId: "lucca-walls",
-        tag: "family"
+        time: "15:00",
+        title: "Home for naps",
+        description:
+          "Thirty easy minutes back on the A12. If the kids are asleep, take the scenic valley road and stretch the drive."
       }
     ],
-    driveNotes: "Larciano → Chifenti ≈ 1 h · Chifenti → Pisa ≈ 45 min · Pisa → Lucca ≈ 30 min · Lucca → Larciano ≈ 35 min",
-    restaurants: ["rest-n-pisa", "rest-n-osteria-larciano"],
-    drinkOfTheDay: {
-      name: "Chianti Classico DOCG",
-      type: "wine",
-      pairing: "After a day that ends in Pisa and Lucca, you owe yourself the most iconic Tuscan red — black cherry, dried herbs and that signature Sangiovese acidity that loves a wood-fired pizza.",
-      servingNote: "Served at cellar temperature (16–18 °C), opened 30 minutes before pouring"
-    },
+    driveNotes:
+      "Base → Wattens ≈ 30 min on the A12, Wattens → Hall in Tirol ≈ 15 min, Hall → base ≈ 30 min. All flat valley motorway — the easiest driving day of the trip.",
     gear: [
-      { item: "Swimwear under your clothes for the rafting", for: "soft-rafting-serchio" },
-      { item: "Water shoes; dry change of clothes & towels in a sealed bag", for: "soft-rafting-serchio" },
-      { item: "Light cycling-friendly shoes for the Lucca walls", for: "lucca-walls" },
-      { item: "Sun hats (zero shade in Piazza dei Miracoli at midday)", for: "pisa" },
-      { item: "Cash for parking, bike rental & gelato" }
+      { item: "Stroller for Tom — the whole Kristallwelten garden is smooth and stroller-friendly", for: "swarovski-kristallwelten" },
+      { item: "A spare shirt for the Giant's water features — someone will get sprayed", for: "swarovski-kristallwelten" },
+      { item: "Comfortable shoes for Hall's cobbles — stroller wheels rattle but manage", for: "hall-in-tirol" },
+      { item: "Sun hats for the playground tower — it's in full sun at midday", for: "swarovski-kristallwelten" }
     ],
     dayTips: [
-      "Rafting is booked for 09:30 — leave Larciano by 08:00 to check in at Lucca Rafting (Chifenti) by 09:25",
-      "Park Pisa at 'Via Pietrasantina' (€2/hr) — free shuttle to the square",
-      "Lucca walls bike rentals from €4/hr; bring an ID for the deposit",
-      "Tower climb at Pisa is timed — only book if you actually want the climb",
-      "Late-afternoon light on the walls is the postcard moment — aim for 17:00"
+      "Book Kristallwelten tickets online the night before — you skip the ticket line and August mornings get busy by 10:30",
+      "The indoor chambers are dark and a bit loud in places — Tom in the carrier, Gili by the hand, and it's magic rather than scary",
+      "Kristallwelten's café is fine but Hall's old-town gasthäuser are better and half the price — hold out for lunch",
+      "Most Hall shops close for a quiet hour after lunch; the square and ice cream don't",
+      "Keep the receipt-sized garden map — the play tower and carousel are at the far end and easy to miss"
     ],
     italianWords: [
       {
-        word: "Pendente",
-        pronounce: "pen-DEN-teh",
-        meaning: "Leaning, slanted",
-        example: "La torre pendente di Pisa.",
-        exampleMeaning: "The leaning tower of Pisa."
+        word: "Kristall",
+        pronounce: "kris-TAHL",
+        meaning: "Crystal",
+        example: "So viele Kristalle!",
+        exampleMeaning: "So many crystals!"
       },
       {
-        word: "Gelato",
-        pronounce: "jeh-LAH-toh",
-        meaning: "Ice cream",
-        example: "Un gelato in piazza.",
-        exampleMeaning: "An ice cream in the square."
+        word: "Glitzern",
+        pronounce: "GLIT-sern",
+        meaning: "To sparkle, glitter",
+        example: "Alles glitzert hier!",
+        exampleMeaning: "Everything sparkles here!"
       },
       {
-        word: "Bicicletta",
-        pronounce: "bee-chee-keh-TEH-tah",
-        meaning: "Bicycle",
-        example: "In bicicletta sulle mura.",
-        exampleMeaning: "By bike on the walls."
+        word: "Riese",
+        pronounce: "REE-zeh",
+        meaning: "Giant (the big grass-covered head at Kristallwelten)",
+        example: "Der Riese spuckt Wasser!",
+        exampleMeaning: "The giant spits water!"
       },
       {
-        word: "Campanile",
-        pronounce: "kahm-pah-NEE-leh",
-        meaning: "Bell tower (not 'campanile' in English)",
-        example: "Il campanile suona a mezzogiorno.",
-        exampleMeaning: "The bell tower rings at noon."
+        word: "Schau mal!",
+        pronounce: "SHOW mahl",
+        meaning: "Look! (the phrase you'll hear Gili copy first)",
+        example: "Schau mal, ein Karussell!",
+        exampleMeaning: "Look, a carousel!"
       },
       {
-        word: "Squisito",
-        pronounce: "skwee-ZEE-toh",
-        meaning: "Delicious (nothing like 'squirrel')",
-        example: "Questo gelato è squisito!",
-        exampleMeaning: "This gelato is delicious!"
+        word: "Eis",
+        pronounce: "ice",
+        meaning: "Ice cream (also 'ice')",
+        example: "Ein Eis für Gili, bitte.",
+        exampleMeaning: "One ice cream for Gili, please."
       },
       {
-        word: "Torcia",
-        pronounce: "TOR-chah",
-        meaning: "Torch / flashlight (UK 'torch')",
-        example: "Metti la torcia nello zaino.",
-        exampleMeaning: "Put the torch in the backpack."
+        word: "Stadt",
+        pronounce: "shtaht",
+        meaning: "Town, city",
+        example: "Hall ist eine alte Stadt.",
+        exampleMeaning: "Hall is an old town."
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Grüner Veltliner",
+      type: "wine",
+      pairing:
+        "Austria's signature white — white pepper, green apple, crystal-crisp acidity. On the day you spent inside a giant crystal, pour the wine that tastes like one. Any Tyrolean gasthaus lists a good one from the Wachau or Weinviertel.",
+      servingNote: "Well-chilled (8–10 °C); a Grüner from a 'DAC' region is a safe pick"
+    }
   },
   {
     dayNumber: 4,
-    date: "2026-08-20",
-    weekday: "Thursday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "1 h", note: "Larciano → Abetone" },
-    region: "north",
-    base: "Larciano",
-    title: "Above the clouds — Abetone gondola",
+    date: "2026-08-14",
+    weekday: "Friday",
+    departureTime: "08:45",
+    rideToFirst: { duration: "20 min", note: "A12 to Wiesing, then into the Zillertal to Fügen" },
+    region: "south",
+    base: "Kramsach–Alpbachtal",
+    title: "Zillertal family mountain day",
+    subtitle: "Spieljoch Fügen gondola — play areas at 1,860 m; steam train optional",
+    leadImage: "./images/spieljoch-fuegen.jpg",
     activities: [
       {
-        time: "Morning",
-        title: "Drive to Abetone, ride to Monte Gomito",
-        description: "Modern gondola to nearly 1,900 m — cool air, wide views.",
-        attractionId: "abetone-monte-gomito",
-        tag: "view"
-      },
-      {
-        time: "Midday",
-        title: "Family ridge walk",
-        description: "Easy, breezy walk along the open ridgeline. Picnic with a view."
+        time: "09:15",
+        title: "Spieljochbahn up the family mountain",
+        description:
+          "Fügen's certified family mountain: the gondola runs daily in peak season (first ascent 09:00, last descent 17:00 through late August). At the top station you get a toddler jackpot — a water play area, barefoot path, a walk-in show mine, and a big adventure playground, all within a hundred meters of the lift and the Mountain Loft restaurant. Gili roams free, Tom paddles at the water channels; nobody has to hike anywhere.",
+        attractionId: "spieljoch-fuegen",
+        tag: "family",
+        rideToNext: { duration: "10 min", note: "down the valley road to Jenbach station", departAt: "14:00" }
       },
       {
         time: "Afternoon",
-        title: "Pine forest picnic, then home to pack",
-        description: "Descend, stretch out in the woods at the bottom, head back to Larciano to pack for the south.",
-        rideToNext: { duration: "1 h", note: "Abetone → Larciano, the long descent", departAt: "16:00" }
+        title: "Zillertalbahn steam train",
+        description:
+          "The narrow-gauge Zillertalbahn still runs a real steam locomotive with wooden carriages between Jenbach and Mayrhofen — in summer it operates Tuesday to Saturday, so today qualifies. A short hop (Jenbach → Fügen or one stop further) is plenty for the kids: whistle, smoke, clickety-clack, done in half an hour. Check the day's departure times at Jenbach station or zillertalbahn.at rather than building the day around it.",
+        attractionId: "zillertalbahn",
+        tag: "family",
+        optional: true
+      },
+      {
+        time: "15:30",
+        title: "Back to base, playground and dinner",
+        description:
+          "Twenty minutes home. If naps happened on the mountain, the hotel playground closes out the day."
       }
     ],
-    driveNotes: "Larciano ↔ Abetone ≈ 1 h",
-    restaurants: ["rest-n-pizzeria-da-paolo", "rest-n-vinci"],
-    drinkOfTheDay: {
-      name: "Negroni",
-      type: "cocktail",
-      pairing: "Tuscany invented the Negroni in Florence — equal parts gin, Campari and sweet vermouth, bracing and bitter. The right drink after a long day at altitude and a packing-night to come.",
-      servingNote: "Old-fashioned glass · big ice cube · half-orange peel, pinched over the surface"
-    },
+    driveNotes:
+      "Base → Fügen (Spieljochbahn valley station) ≈ 20 min: A12 one junction to Wiesing, then the B169 into the Zillertal. Jenbach station is ≈ 10 min from Fügen on the way home. Zero mountain-road driving — the gondola does the climbing.",
     gear: [
-      { item: "Long sleeves & a light jacket — 12–15 °C cooler at 1,900 m", for: "abetone-monte-gomito" },
-      { item: "Long trousers for the ridge walk (sunburn at altitude is real)", for: "abetone-monte-gomito" },
-      { item: "Hiking-grade trail shoes, not sandals", for: "abetone-monte-gomito" },
-      { item: "A proper picnic kit: bread, cheese, fruit, water, a knife" },
-      { item: "Sunscreen, sunglasses & a windbreaker for the gondola ride", for: "abetone-monte-gomito" }
+      { item: "Change of clothes and a small towel for the summit water play area", for: "spieljoch-fuegen" },
+      { item: "Carrier for Tom — paths at the top are gravel; a stroller works around the play area but the carrier is freer", for: "spieljoch-fuegen" },
+      { item: "Fleece layers — it's 10 °C cooler at 1,860 m than in the valley", for: "spieljoch-fuegen" },
+      { item: "Closed shoes for the show mine (it's cool and dim inside)", for: "spieljoch-fuegen" },
+      { item: "Sunscreen — alpine sun above the treeline is fierce even at 20 °C" }
     ],
     dayTips: [
-      "First gondola ~09:30, last descent ~17:00 — set a phone alarm",
-      "Mountain restaurants close mid-afternoon; pack the picnic instead",
-      "Cash for the gondola — card sometimes flaky at the booth",
-      "Use the cool half of the day for the ridge walk; descend by 15:00 to start packing"
+      "Ride up before 09:30 — clear morning views, empty playground, and you're eating lunch at the Mountain Loft while the crowds arrive",
+      "The gondola cabins take strollers, no problem — no folding gymnastics required",
+      "If clouds sit low on the peaks in the morning, flip the day: steam train first, mountain after lunch",
+      "The steam train is the nostalgia option, not the schedule backbone — regular modern trains run the same line hourly if the timing doesn't work",
+      "Friday afternoon traffic into the Zillertal is inbound tourists — you'll be driving out against it, smug and on time for naps"
     ],
     italianWords: [
       {
-        word: "Montagna",
-        pronounce: "mon-TAH-nyah",
-        meaning: "Mountain",
-        example: "Andiamo in montagna.",
-        exampleMeaning: "We're heading to the mountains."
+        word: "Gondel",
+        pronounce: "GON-del",
+        meaning: "Gondola, cable car cabin",
+        example: "Wir fahren mit der Gondel!",
+        exampleMeaning: "We're riding the gondola!"
       },
       {
-        word: "Nuvola",
-        pronounce: "NOO-voh-lah",
-        meaning: "Cloud",
-        example: "Sopra le nuvole.",
-        exampleMeaning: "Above the clouds."
+        word: "Zug",
+        pronounce: "tsook",
+        meaning: "Train",
+        example: "Der Zug macht tschu-tschu!",
+        exampleMeaning: "The train goes choo-choo!"
       },
       {
-        word: "Fresco",
-        pronounce: "FREH-skoh",
-        meaning: "Cool, fresh",
-        example: "Che aria fresca!",
-        exampleMeaning: "What cool air!"
+        word: "Dampf",
+        pronounce: "dahmpf",
+        meaning: "Steam",
+        example: "Schau, der Dampf von der Lokomotive!",
+        exampleMeaning: "Look, the steam from the locomotive!"
       },
       {
-        word: "Berretto",
-        pronounce: "behr-REHT-toh",
-        meaning: "Beanie / woolly hat",
-        example: "Metti il berretto, c'è vento!",
-        exampleMeaning: "Put your hat on — it's windy!"
+        word: "Hoch",
+        pronounce: "hohkh",
+        meaning: "High, tall",
+        example: "Wir sind so hoch oben!",
+        exampleMeaning: "We're so high up!"
       },
       {
-        word: "Stella",
-        pronounce: "STEHL-lah",
-        meaning: "Star (say STEH-lla, not 'stella' like English Stella)",
-        example: "Contiamo le stelle stasera.",
-        exampleMeaning: "Let's count the stars tonight."
-      },
-      {
-        word: "Eco",
-        pronounce: "EH-koh",
-        meaning: "Echo (two short snaps)",
-        example: "Senti l'eco tra gli alberi!",
-        exampleMeaning: "Listen to the echo among the trees!"
+        word: "Kuh",
+        pronounce: "koo",
+        meaning: "Cow (you'll hear the bells before you see them)",
+        example: "Die Kuh hat eine Glocke.",
+        exampleMeaning: "The cow has a bell."
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Zillertal Bier",
+      type: "beer",
+      pairing:
+        "Brewed in Zell am Ziller since 1500, a few kilometers up the valley you played in today. The Zillertal Weißbier after a mountain morning — banana-y, cloudy, cold — is as local as a beer pairing gets on this trip.",
+      servingNote: "Weißbier glass, poured slowly, yeast swirled in at the end"
+    }
   },
   {
     dayNumber: 5,
-    date: "2026-08-21",
-    weekday: "Friday",
-    departureTime: "10:00",
-    rideToFirst: { duration: "1 h 15 min", note: "Larciano → Sentierelsa" },
-    region: "transit",
-    base: "Larciano → Cortevecchia",
-    title: "River walk south, settle into the villa",
-    subtitle: "Transfer day — the Sentierelsa river walk on the way",
+    date: "2026-08-15",
+    weekday: "Saturday",
+    departureTime: "09:00",
+    rideToFirst: { duration: "40 min", note: "A12 west to Innsbruck" },
+    region: "north",
+    base: "Kramsach–Alpbachtal",
+    title: "Innsbruck — alpine animals & the Golden Roof",
+    subtitle: "Assumption Day: shops shut, but the zoo, the funicular and the old town don't care",
+    leadImage: "./images/alpenzoo-innsbruck.jpg",
     activities: [
       {
-        time: "Morning",
-        title: "Drive south, stop at Sentierelsa",
-        description: "Wade the turquoise Elsa river to the Diborrato waterfall — closed-toe water shoes mandatory.",
-        attractionId: "sentierelsa",
-        tag: "water",
-        rideToNext: { duration: "30 min", note: "Sentierelsa → Siena", departAt: "13:30" }
+        time: "09:45",
+        title: "Alpenzoo — every animal of the Alps, on a hillside",
+        description:
+          "Europe's highest-altitude zoo is open 365 days a year, 09:00–18:00 in summer — public holiday included, which is exactly why it anchors today. Around 2,000 alpine animals: ibex, brown bears, wolves, lynx, otters, and a fish-filled aquarium. It's compact enough for toddler legs (with a hill — bring the carrier), and morning is feeding-and-activity time for the animals. Park at the Hungerburgbahn's Congress garage and ride the funicular one stop up to the zoo — for Gili, the space-ship stations are half the attraction.",
+        attractionId: "alpenzoo-innsbruck",
+        tag: "family",
+        rideToNext: { duration: "15 min", note: "funicular down + a short walk into the Altstadt", departAt: "12:30" }
       },
       {
-        time: "Late Lunch",
-        title: "Late lunch & wandering in Siena",
-        description: "Drive 30 minutes to Siena. Have a late lunch, stretch the kids' legs around Piazza del Campo, and stock up at a supermarket for the villa's first morning.",
-        attractionId: "siena",
-        tag: "culture",
-        rideToNext: { duration: "2 h", note: "Siena → Cortevecchia", departAt: "16:30" }
+        time: "12:45",
+        title: "Altstadt stroll & the Golden Roof",
+        description:
+          "Lunch in the old town, then the two-minute sightseeing hit: the Goldenes Dachl with its 2,657 gilded copper tiles, Maria-Theresien-Straße's pastel facades, and the Nordkette wall of rock looming over everything. It's a holiday, so shops are shuttered — but cafés, restaurants and gelato are open and the car-free lanes are perfect stroller territory.",
+        attractionId: "innsbruck-altstadt",
+        tag: "culture"
       },
       {
-        time: "Late afternoon",
-        title: "Arrive at Tenuta Cortevecchia",
-        description: "Settle into the villa, unpack, swim in the private pool, decompress."
+        time: "14:30",
+        title: "Nordkette — up the mountain in a moving postcard",
+        description:
+          "If the kids are still charged, ride the Hungerburgbahn onward and take the cable car to Seegrube at 1,905 m — coffee-with-a-view height, twenty minutes above the city. Cable cars run daily including holidays; check the last descent time at the station. Skip guilt-free if nap o'clock is calling.",
+        attractionId: "nordkette",
+        tag: "view",
+        optional: true
       }
     ],
-    driveNotes: "Larciano → Sentierelsa ≈ 1 h 15 min · Sentierelsa → Siena ≈ 30 min · Siena → Cortevecchia ≈ 2 h",
-    restaurants: ["rest-s-trattoria-verdi"],
-    drinkOfTheDay: {
-      name: "Vernaccia di San Gimignano DOCG",
-      type: "wine",
-      pairing: "You drove past its hills today. A crisp, mineral white with notes of green apple and almond — Tuscany's first DOC, and the perfect 'we made it south' pour after the long transfer.",
-      servingNote: "Well-chilled · the slim white-wine glass keeps the aromatics tight"
-    },
+    driveNotes:
+      "Base → Innsbruck ≈ 40 min on the A12 — the longest day-trip drive of the week, timed against morning energy. Park once at the Congress/Hungerburgbahn garage and let the funicular handle the hill; driving up to the zoo directly is possible but the small lot fills fast on holidays.",
     gear: [
-      { item: "Closed-toe water shoes — mandatory at Sentierelsa", for: "sentierelsa" },
-      { item: "Swimwear under your clothes; quick-change towel", for: "sentierelsa" },
-      { item: "Dry bag for phones (the river is the trail)", for: "sentierelsa" },
-      { item: "Light hiking shoes for the trail back from the river", for: "sentierelsa" },
-      { item: "Snacks & water for the long drive south" }
+      { item: "Carrier for Tom — the zoo is built on a slope and some paths are stepped", for: "alpenzoo-innsbruck" },
+      { item: "Stroller for the flat, car-free Altstadt — swap at the car if you can", for: "innsbruck-altstadt" },
+      { item: "Layers for Seegrube — it can be 12 °C up there in August", for: "nordkette" },
+      { item: "Water bottles — refill at Innsbruck's public fountains, the water is straight off the mountain" },
+      { item: "Coins/card for the parking garage — holiday rates apply all day" }
     ],
     dayTips: [
-      "Fuel up before the A1 entry — autostrada gas is +20–30 c/L",
-      "Confirm Cortevecchia check-in window with the host before you leave",
-      "No public toilets at Sentierelsa trailhead — go in Colle di Val d'Elsa first",
-      "Plan an early-evening arrival; you don't want to discover the gravel road in the dark"
+      "August 15 is Mariä Himmelfahrt — a national holiday. Shops closed, museums vary, but the zoo, lifts, cafés and restaurants all run. Expect locals out in force",
+      "Combi tickets covering Hungerburgbahn + Alpenzoo entry are sold at the funicular — cheaper than paying each separately",
+      "Be at the zoo when it's freshest — animals are active in the morning cool, and holiday crowds peak after 11",
+      "Reserve nothing for lunch, just walk one lane off the Golden Roof drag and pick a gasthaus with a free table outside",
+      "If the holiday crowds feel like too much, bail after the zoo — it's the anchor; everything else is garnish"
     ],
     italianWords: [
       {
-        word: "Sentiero",
-        pronounce: "sen-TYAIR-oh",
-        meaning: "Trail, path",
-        example: "Il sentiero passa nel fiume.",
-        exampleMeaning: "The trail runs through the river."
+        word: "Zoo",
+        pronounce: "tsoh",
+        meaning: "Zoo (Germans say 'tso', not 'zoo')",
+        example: "Der Alpenzoo hat Bären!",
+        exampleMeaning: "The alpine zoo has bears!"
       },
       {
-        word: "Valigia",
-        pronounce: "vah-LEE-jah",
-        meaning: "Suitcase",
-        example: "Chiudi la valigia.",
-        exampleMeaning: "Close the suitcase."
+        word: "Tier",
+        pronounce: "teer",
+        meaning: "Animal",
+        example: "Welches Tier ist das?",
+        exampleMeaning: "Which animal is that?"
       },
       {
-        word: "Sud",
-        pronounce: "sood",
-        meaning: "South",
-        example: "Andiamo verso sud.",
-        exampleMeaning: "We're heading south."
+        word: "Adler",
+        pronounce: "AHD-ler",
+        meaning: "Eagle (Tyrol's symbol — it's on the flag)",
+        example: "Der Adler fliegt hoch.",
+        exampleMeaning: "The eagle flies high."
       },
       {
-        word: "Saltellare",
-        pronounce: "sahl-tehl-LAH-reh",
-        meaning: "To hop, skip (fun bouncy verb)",
-        example: "Saltelliamo sui sassi!",
-        exampleMeaning: "Let's hop on the stones!"
+        word: "Murmeltier",
+        pronounce: "MOOR-mel-teer",
+        meaning: "Marmot (the whistling fluffball of the Alps)",
+        example: "Das Murmeltier pfeift!",
+        exampleMeaning: "The marmot whistles!"
       },
       {
-        word: "Fango",
-        pronounce: "FAHN-goh",
-        meaning: "Mud (hard 'g', not 'fang')",
-        example: "Attenti al fango vicino al fiume.",
-        exampleMeaning: "Watch the mud near the river."
+        word: "Gold",
+        pronounce: "golt",
+        meaning: "Gold",
+        example: "Das Dach ist aus Gold!",
+        exampleMeaning: "The roof is made of gold!"
       },
       {
-        word: "Onda",
-        pronounce: "OHN-dah",
-        meaning: "Wave (in water — not 'under')",
-        example: "Piccola onda, grande divertimento!",
-        exampleMeaning: "Small wave, big fun!"
+        word: "Feiertag",
+        pronounce: "FYE-er-tahk",
+        meaning: "Public holiday",
+        example: "Heute ist ein Feiertag in Österreich.",
+        exampleMeaning: "Today is a public holiday in Austria."
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Aperol Spritz",
+      type: "aperitif",
+      pairing:
+        "Innsbruck's café terraces on a holiday afternoon are half orange with these. Tyrol sits an hour from the Italian border and drinks accordingly — one spritz under the Nordkette while the kids demolish a second gelato is the day's proper ending.",
+      servingNote: "3 parts prosecco, 2 parts Aperol, splash of soda, orange slice — the Austrians pour them generous"
+    }
   },
   {
     dayNumber: 6,
-    date: "2026-08-22",
-    weekday: "Saturday",
+    date: "2026-08-16",
+    weekday: "Sunday",
     departureTime: "09:30",
-    rideToFirst: { duration: "1 h 20 min", note: "Cortevecchia → Follonica" },
+    rideToFirst: { duration: "15 min", note: "up the Alpbachtal to Reith im Alpbachtal" },
     region: "south",
-    base: "Cortevecchia",
-    title: "Pure adrenaline — Acqua Village Follonica",
+    base: "Kramsach–Alpbachtal",
+    title: "Slow Sunday — enchanted forest & the flower village",
+    subtitle: "Juppi Zauberwald above Reith, Alpbach village, optional alpine coaster",
+    leadImage: "./images/juppi-zauberwald.jpg",
     activities: [
       {
-        time: "Morning to evening",
-        title: "Acqua Village Follonica",
-        description: "Full day of slides, wave pool, lazy river, Polynesian shows.",
-        attractionId: "acqua-village-follonica",
-        tag: "extreme"
+        time: "09:45",
+        title: "Juppi Zauberwald — the enchanted forest on the Reither Kogel",
+        description:
+          "Ride the Reitherkogelbahn up (runs daily except its Wednesday rest day — today's Sunday, we're fine; first ascent 09:00, last descent 16:30–17:00). At the top, Juppi's Zauberwald is a 2.5 km shaded loop of play stations — witch's house, wooden xylophones, balance trails, water wheels — pitched exactly at Gili's speed. Entry is included in the lift ticket. Take it slow: this loop with snack stops is the whole morning.",
+        attractionId: "juppi-zauberwald",
+        tag: "family",
+        rideToNext: { duration: "10 min", note: "over the hill into Alpbach village", departAt: "13:00" }
+      },
+      {
+        time: "13:15",
+        title: "Alpbach — Austria's prettiest village, at nap pace",
+        description:
+          "Alpbach's wooden farmhouses drip with geraniums — the village has won 'most beautiful in Austria' honors and every balcony shows why. Lunch at a gasthof terrace, a slow lap of the village, playground stop by the school. This is the day you take the photos that end up framed.",
+        attractionId: "alpbach-village",
+        tag: "village"
+      },
+      {
+        time: "15:00",
+        title: "Lauser-Sauser alpine coaster — parents alternate",
+        description:
+          "The year-round rail coaster at the Wiedersbergerhorn gondola drops 134 m over 1.4 km, including Austria's highest loop-carousel. Rules: from age 3, kids may ride as a passenger in front of an adult — so Gili qualifies; from 8 (and 1.30 m) they ride alone. Tom can't ride, so parents alternate: one takes Gili down squealing, the other has a coffee at the valley station with Tom. Check the gondola's summer hours at the base station before riding up.",
+        attractionId: "lauser-sauser",
+        tag: "extreme",
+        optional: true
       }
     ],
-    driveNotes: "Cortevecchia ↔ Follonica ≈ 1 h 20 min",
-    restaurants: ["rest-s-trattoria-verdi", "rest-s-i-due-cippi"],
-    drinkOfTheDay: {
-      name: "Spritz al Limone",
-      type: "aperitif",
-      pairing: "Same Spritz family as the Aperol, but built on Limoncello — sharper, brighter, exactly the recovery drink after a long day of slides and chlorine.",
-      servingNote: "Tall glass · ice · 3 parts Prosecco · 2 parts Limoncello · soda · lemon wheel"
-    },
+    driveNotes:
+      "Everything today lives in our home valley: base → Reith im Alpbachtal ≈ 15 min, Reith → Alpbach ≈ 10 min, Alpbach → base ≈ 20 min. The shortest driving day of the trip — by design, after yesterday's city outing.",
     gear: [
-      { item: "Two sets of swimwear per person (one dry for the drive)", for: "acqua-village-follonica" },
-      { item: "Waterproof phone case", for: "acqua-village-follonica" },
-      { item: "Swim shirts / rash guards for kids — sun is harsh on the slides", for: "acqua-village-follonica" },
-      { item: "Water shoes — pavement around the wave pool gets very hot", for: "acqua-village-follonica" },
-      { item: "Beach towels (rentals are paid)", for: "acqua-village-follonica" },
-      { item: "A €1 coin for the locker", for: "acqua-village-follonica" }
+      { item: "Carrier or all-terrain stroller — the Zauberwald loop is a gravel forest path", for: "juppi-zauberwald" },
+      { item: "A change of clothes — the water-wheel stations always win", for: "juppi-zauberwald" },
+      { item: "Closed shoes for Gili on the coaster (and a hair tie — it gets quick)", for: "lauser-sauser" },
+      { item: "Picnic snacks for the forest loop's benches", for: "juppi-zauberwald" }
     ],
     dayTips: [
-      "Online tickets meaningfully cheaper — buy them the night before",
-      "Outside food allowed in the picnic zone; cooler bag = saves €€€",
-      "Arrive at opening (10:00) — slide queues triple after 13:00",
-      "Polynesian show times are posted at the gate; don't miss the evening one"
+      "The Reitherkogelbahn rests on Wednesdays — today (Sunday) it runs, which is exactly why the slow day sits here in the week",
+      "The Zauberwald loop has zero exposure and constant shade — the rare alpine outing where you can let Gili lead",
+      "Sunday lunch in Alpbach is popular with locals — aim to sit down by 12:30 or book a table in the morning",
+      "The Alpbachtal Card (often given free by area accommodations) can include the area lifts — ask the hotel reception before buying tickets",
+      "On the Lauser-Sauser you control the speed with a brake lever — first run gentle, second run Gili will demand 'schneller!'"
     ],
     italianWords: [
       {
-        word: "Scivolo",
-        pronounce: "SHEE-voh-loh",
-        meaning: "Slide",
-        example: "Lo scivolo più alto, per favore!",
-        exampleMeaning: "The tallest slide, please!"
+        word: "Wald",
+        pronounce: "vahlt",
+        meaning: "Forest",
+        example: "Wir gehen in den Zauberwald!",
+        exampleMeaning: "We're going into the enchanted forest!"
       },
       {
-        word: "Divertimento",
-        pronounce: "dee-vehr-tee-MEN-toh",
-        meaning: "Fun",
-        example: "Che divertimento!",
-        exampleMeaning: "What fun!"
+        word: "Zauber",
+        pronounce: "TSOW-ber",
+        meaning: "Magic",
+        example: "Das ist ein Zauberwald.",
+        exampleMeaning: "That's a magic forest."
       },
       {
-        word: "Piscina",
-        pronounce: "pee-SHEE-nah",
-        meaning: "Swimming pool",
-        example: "Andiamo in piscina.",
-        exampleMeaning: "Let's go to the pool."
+        word: "Dorf",
+        pronounce: "dorf",
+        meaning: "Village",
+        example: "Alpbach ist das schönste Dorf.",
+        exampleMeaning: "Alpbach is the prettiest village."
       },
       {
-        word: "Schizzo",
-        pronounce: "SKEET-tzoh",
-        meaning: "Splash, squirt, splotch",
-        example: "Che schizzo dalla piscina!",
-        exampleMeaning: "What a splash from the pool!"
+        word: "Blume",
+        pronounce: "BLOO-meh",
+        meaning: "Flower",
+        example: "So viele Blumen am Balkon!",
+        exampleMeaning: "So many flowers on the balcony!"
       },
       {
-        word: "Tubo",
-        pronounce: "TOO-boh",
-        meaning: "Tube (slide tube — not 'tube-oh')",
-        example: "Scendo nel tubo blu!",
-        exampleMeaning: "I'm going down the blue tube!"
+        word: "Schneller!",
+        pronounce: "SHNEL-ler",
+        meaning: "Faster!",
+        example: "Schneller, Papa, schneller!",
+        exampleMeaning: "Faster, Daddy, faster!"
       },
       {
-        word: "Gridare",
-        pronounce: "gree-DAH-reh",
-        meaning: "To shout (not 'grid')",
-        example: "Non serve gridare, ti sento!",
-        exampleMeaning: "No need to shout — I can hear you!"
+        word: "Langsam",
+        pronounce: "LAHNG-zahm",
+        meaning: "Slow, slowly",
+        example: "Heute machen wir alles langsam.",
+        exampleMeaning: "Today we do everything slowly."
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Obstler",
+      type: "digestif",
+      pairing:
+        "The Tyrolean farmhouse schnaps — clear fruit brandy distilled from apples and pears, and every Alpbach gasthof pours a homemade one. After a Sunday of geranium balconies and forest magic, one small glass 'für die Verdauung' is the local liturgy.",
+      servingNote: "A tiny stem glass, room temperature, sipped — never shot"
+    }
   },
   {
     dayNumber: 7,
-    date: "2026-08-23",
-    weekday: "Sunday",
-    departureTime: "07:00",
-    rideToFirst: { duration: "1 h 15 min", note: "Cortevecchia → Porto Santo Stefano (pier)" },
+    date: "2026-08-17",
+    weekday: "Monday",
+    departureTime: "08:45",
+    rideToFirst: { duration: "30 min", note: "A12 toward Kufstein, exit Wörgl-Ost, then up to Söll" },
     region: "south",
-    base: "Cortevecchia",
-    title: "Argentario catamaran cruise — snorkel & lunch (booked)",
+    base: "Kramsach–Alpbachtal",
+    title: "Hexenwasser — barefoot with the witches",
+    subtitle: "A whole mountain of water play above Söll",
+    leadImage: "./images/hexenwasser-soell.jpg",
     activities: [
       {
-        time: "08:30",
-        title: "Check in at the Porto Santo Stefano pier",
-        description: "Meeting point at the Porto Santo Stefano pier — be there by 08:30, 30 minutes before the 09:00 departure, to check in with DONNINI. Bring the confirmation from your GetYourGuide app. No pets on board."
+        time: "09:30",
+        title: "Gondola up to Hochsöll",
+        description:
+          "The Hexenwasser gondola runs daily through the season, 08:45–17:30. Ride up with the morning crowd of rubber-booted toddlers — you're all going to the same place.",
+        attractionId: "hexenwasser-soell",
+        tag: "family",
+        rideToNext: { duration: "5 min", note: "the witch's world starts right at the top station" }
       },
       {
-        time: "09:00–17:30 (8.5 h)",
-        title: "Catamaran along Monte Argentario",
-        description: "Booked catamaran cruise: sail the Argentario coastline, dropping anchor in quiet coves to swim and snorkel — snorkel gear is provided on board. Lunch is served on deck (captain's bruschetta, seafood risotto, a fish main and a sweet snack), with an open bar of water, soft drinks and wine.",
-        attractionId: "porto-santo-stefano",
+        time: "09:45",
+        title: "Hexenwasser — Austria's best barefoot water world",
+        description:
+          "Seventy-plus hands-on stations spread over the mountainside: the long barefoot trail through mud, moss and spring water, witch-themed water channels with little gates and mills, a giant sundial, bees behind glass, and bread you can watch being baked at the witches' bakery. It is the single best 3-year-old attraction in Tyrol — Gili will do the barefoot trail twice, Tom parks himself at the first water channel and stays. Staff ('witches') run little demos through the day; the whole thing is included in the lift ticket.",
+        attractionId: "hexenwasser-soell",
         tag: "water"
+      },
+      {
+        time: "14:30",
+        title: "Last splash, gondola down, nap-drive home",
+        description:
+          "Buy the fresh witch-bakery bread on the way out — it's tomorrow's breakfast. Thirty minutes of valley motorway does the rest."
       }
     ],
-    driveNotes: "Cortevecchia ↔ Porto Santo Stefano ≈ 1 h 15 min",
-    restaurants: ["rest-s-porto-santo-stefano", "rest-s-trattoria-verdi"],
-    drinkOfTheDay: {
-      name: "Limoncello",
-      type: "digestif",
-      pairing: "After a salty day on the boat, the coastal classic — chilled, citrusy and just sweet enough. Dal Greco's harbour-side terrace is the natural finish line for this one.",
-      servingNote: "Served straight from the freezer in tiny chilled glasses · sip, never shoot"
-    },
+    driveNotes:
+      "Base → Söll ≈ 30 min: A12 toward Kufstein, exit at Wörgl-Ost, then the B178 to the Hexenwasser gondola's big free car park. Same directions in reverse for the sleepy ride home.",
     gear: [
-      { item: "Swimwear under your clothes + a dry set for the drive home", for: "porto-santo-stefano" },
-      { item: "A towel per person", for: "porto-santo-stefano" },
-      { item: "Reef-safe sunscreen, rash guards & sun-shirts (little shade on deck)", for: "porto-santo-stefano" },
-      { item: "Flip-flops + closed-toe water shoes for the swim stops", for: "porto-santo-stefano" },
-      { item: "Floating phone case + waterproof dry bag", for: "porto-santo-stefano" },
-      { item: "A light layer — mornings on the water can be breezy", for: "porto-santo-stefano" }
+      { item: "Towels, full changes of clothes for BOTH kids, and swim diaper for Tom — this is a getting-wet day, not a maybe", for: "hexenwasser-soell" },
+      { item: "Crocs or sandals that can get soaked, for the walks between barefoot stations", for: "hexenwasser-soell" },
+      { item: "Carrier for Tom — paths are gravel and gently sloped; strollers manage the main loop but the carrier is easier", for: "hexenwasser-soell" },
+      { item: "Sunscreen and hats — most water stations sit in open meadow", for: "hexenwasser-soell" },
+      { item: "A plastic bag for the wet everything" }
     ],
     dayTips: [
-      "Leave Cortevecchia by 07:00 — pier check-in is 08:30, 30 min before the 09:00 sail",
-      "Snorkel gear and lunch are included on board — no need to pack either",
-      "Not recommended if pregnant; no pets allowed on board",
-      "Free cancellation up to 09:00 on Aug 22 if the forecast turns rough"
+      "Go on a warm sunny day if the week allows a swap — Hexenwasser in drizzle is heroic, in sunshine it's perfect",
+      "Arrive for the first gondolas: you'll have the barefoot trail nearly to yourselves until 10:30",
+      "The mountain restaurants at Hochsöll are used to soaked toddlers — lunch there rather than packing out",
+      "Watch the boards for the witches' little demos (bread baking, candle making) — short, wordless enough, and toddler-mesmerizing",
+      "Everything at the top is included with the gondola ticket — no coin-operated anything, blessedly"
     ],
     italianWords: [
       {
-        word: "Mare",
-        pronounce: "MAH-reh",
-        meaning: "Sea",
-        example: "Una giornata in mare.",
-        exampleMeaning: "A day at sea."
+        word: "Hexe",
+        pronounce: "HEK-seh",
+        meaning: "Witch (the friendly kind, here)",
+        example: "Die Hexe backt Brot.",
+        exampleMeaning: "The witch is baking bread."
       },
       {
-        word: "Barca",
-        pronounce: "BAR-kah",
-        meaning: "Boat",
-        example: "Saliamo in barca.",
-        exampleMeaning: "We're getting on the boat."
+        word: "Barfuß",
+        pronounce: "BAR-foos",
+        meaning: "Barefoot",
+        example: "Wir gehen barfuß durchs Wasser!",
+        exampleMeaning: "We're walking barefoot through the water!"
       },
       {
-        word: "Ancora",
-        pronounce: "AHN-kor-ah",
-        meaning: "Anchor; also 'still'",
-        example: "Gettiamo l'ancora.",
-        exampleMeaning: "We drop the anchor."
+        word: "Matsch",
+        pronounce: "mahch",
+        meaning: "Mud (the fun kind)",
+        example: "Tom liebt den Matsch.",
+        exampleMeaning: "Tom loves the mud."
       },
       {
-        word: "Timone",
-        pronounce: "tee-MOH-neh",
-        meaning: "Ship's wheel / rudder (captain word)",
-        example: "Chi vuole tenere il timone?",
-        exampleMeaning: "Who wants to hold the wheel?"
+        word: "Brot",
+        pronounce: "broht",
+        meaning: "Bread",
+        example: "Das Brot ist noch warm!",
+        exampleMeaning: "The bread is still warm!"
       },
       {
-        word: "Rete",
-        pronounce: "REH-teh",
-        meaning: "Net (fishing net — not 'reet')",
-        example: "La rete per pescare i pesci.",
-        exampleMeaning: "The net for catching fish."
-      },
-      {
-        word: "Conchiglia",
-        pronounce: "kohn-KEE-lyah",
-        meaning: "Seashell (long musical word)",
-        example: "Ho trovato una conchiglia enorme!",
-        exampleMeaning: "I found a huge seashell!"
+        word: "Nass",
+        pronounce: "nahs",
+        meaning: "Wet",
+        example: "Alle sind nass!",
+        exampleMeaning: "Everyone is wet!"
       }
-    ]
+    ],
+    drinkOfTheDay: {
+      name: "Skiwasser",
+      type: "other",
+      pairing:
+        "Tyrol's own invention — raspberry syrup, lemon and cold water, born on these slopes for thirsty skiers. On the day everyone spent six hours in mountain spring water, the family toast is the local water-based classic. Order it at the mountain hut; make it again at home all winter.",
+      servingNote: "Tall glass, lots of ice, roughly 1 part raspberry syrup to 5 parts water, big lemon squeeze"
+    }
   },
   {
     dayNumber: 8,
-    date: "2026-08-24",
-    weekday: "Monday",
-    departureTime: "06:45",
-    rideToFirst: { duration: "25 min", note: "Cortevecchia → Saturnia" },
+    date: "2026-08-18",
+    weekday: "Tuesday",
+    departureTime: "09:00",
+    rideToFirst: { duration: "25 min", note: "straight down the A12 to Kufstein" },
     region: "south",
-    base: "Cortevecchia",
-    title: "Hot springs at dawn, lake swim, the floating city",
-    subtitle: "A full circuit of the southern Maremma",
+    base: "Kramsach–Alpbachtal",
+    title: "Kufstein — a real fortress above the Inn",
+    subtitle: "Festung Kufstein by glass lift, the noon organ, optional Riedel glassworks",
+    leadImage: "./images/kufstein-festung.jpg",
     activities: [
       {
-        time: "07:30 (critical)",
-        title: "Saturnia — Cascate del Mulino",
-        description: "Arrive by 07:30 for a near-empty turquoise pool. By 10:00 it's packed and parking is gone.",
-        attractionId: "saturnia",
-        tag: "water",
-        rideToNext: { duration: "1 h 20", note: "Saturnia → Bolsena, hills and lakes", departAt: "11:00" }
-      },
-      {
-        time: "Midday",
-        title: "Swim in Lago di Bolsena",
-        description: "Cool, clean volcanic lake — gentler than the August coast.",
-        attractionId: "lago-di-bolsena",
-        tag: "water",
-        rideToNext: { duration: "30 min", note: "Bolsena → Civita di Bagnoregio", departAt: "15:00" }
-      },
-      {
-        time: "Afternoon",
-        title: "Civita di Bagnoregio",
-        description: "Walk the long footbridge into the 'dying city' on its tufa pedestal.",
-        attractionId: "civita-di-bagnoregio",
+        time: "09:45",
+        title: "Festung Kufstein — up by the glass Panoramabahn",
+        description:
+          "The 800-year-old fortress glowers over the town from its rock — and the barrier-free glass Panoramabahn glides you from the visitor center straight to the top, no climb. Up there: ramparts to patrol, the deep well, cannons, the Kaiserturm, and lawns where the kids can safely charge around. The stroller comes up fine on the lift, but inside the towers it's stairs — carrier for Tom, and let Gili count the cannons. Open daily; last entry an hour before closing.",
+        attractionId: "kufstein-festung",
         tag: "culture",
-        // Day 8's title literally calls out "the floating city" — Civita is
-        // the headline finale, not a "skip if tired" extra. Opt it out of
-        // the auto-rule that would otherwise mark the 3rd attraction optional.
-        optional: false
+        rideToNext: { duration: "5 min", note: "walk down into the old town lanes", departAt: "12:15" }
+      },
+      {
+        time: "12:00",
+        title: "The Heldenorgel at noon, then lunch in the old town",
+        description:
+          "Time your descent for 12:00: the Heldenorgel — the world's largest open-air organ, built into the fortress tower in 1931 — plays every day at noon and echoes across the whole town. Listen from the square below, then lunch in the postcard-perfect Römerhofgasse lane.",
+        attractionId: "kufstein-festung",
+        tag: "culture",
+        rideToNext: { duration: "5 min", note: "short drive across town to the Riedel works" }
+      },
+      {
+        time: "14:00",
+        title: "Riedel Glass — watch the glassblowers",
+        description:
+          "The famous wine-glass maker's Kufstein home opens its factory to visitors on weekdays: a museum, a multimedia 'Sinnfonie' walk, and a gallery view of glassblowers shaping red-hot glass. Public tours typically run late morning and early afternoon on weekdays — check times at riedel.com before committing. Gili gets fifteen fascinated minutes out of molten glass; that's the right dose. Skip freely if naps call.",
+        attractionId: "riedel-glass",
+        tag: "culture",
+        optional: true
       }
     ],
+    driveNotes:
+      "Base → Kufstein ≈ 25 min straight up the A12 (it's the last town before the German border — you'll drive this same stretch to the airport on Thursday). Park at the City Parkgarage or the Riedel car park; both are a short walk from the fortress visitor center.",
     gear: [
-      { item: "Swimwear under your clothes for Saturnia (skip the queue)", for: "saturnia" },
-      { item: "Microfibre towel — quick to dry between stops" },
-      { item: "Sandals you don't mind smelling sulphury for a day", for: "saturnia" },
-      { item: "Beach mat for Bolsena's pebble shore", for: "lago-di-bolsena" },
-      { item: "Comfortable walking shoes for the steep Civita climb", for: "civita-di-bagnoregio" },
-      { item: "Sun hats, sunscreen, refilled water bottles" }
+      { item: "Carrier for Tom — the Panoramabahn is step-free but the fortress interiors are stairs on stairs", for: "kufstein-festung" },
+      { item: "Sun hats — the ramparts and lawns at the top are shade-free at midday", for: "kufstein-festung" },
+      { item: "Snack stash — the fortress café lines are slow at peak; the lawns are made for a picnic", for: "kufstein-festung" },
+      { item: "A light layer for the Riedel factory hall — cool inside, hot at the furnace viewing", for: "riedel-glass" }
     ],
     dayTips: [
-      "Saturnia: be in the pools by 07:30 — it's a different place after 10:00",
-      "Rinse swimwear thoroughly at Bolsena — sulphur stains light fabrics",
-      "Civita footbridge ticket ~€5/adult, cash only",
-      "Eat lunch by 13:30 — village kitchens close hard at 14:30"
+      "Be on the Panoramabahn by 10:00 — tour groups arrive from 11 and the fortress top is nicest empty",
+      "Stand a little away from the organ tower at noon — the Heldenorgel is genuinely loud up close, and Tom may have opinions",
+      "The fortress is partly barrier-free thanks to the lift, but plan for 'carrier terrain' inside the towers and casemates",
+      "Riedel is closed Sundays and holidays and its tours are weekday-only — today (Tuesday) works; still check the day's tour times before driving over",
+      "Kufstein is your fuel-up recon: note the petrol stations by the A12 on-ramp for the airport run on Thursday"
     ],
     italianWords: [
       {
-        word: "Terme",
-        pronounce: "TAIR-meh",
-        meaning: "Thermal baths, hot springs",
-        example: "Le terme di Saturnia all'alba.",
-        exampleMeaning: "The Saturnia hot springs at dawn."
+        word: "Festung",
+        pronounce: "FES-toong",
+        meaning: "Fortress",
+        example: "Die Festung ist auf dem Berg.",
+        exampleMeaning: "The fortress is on the mountain."
       },
       {
-        word: "Lago",
-        pronounce: "LAH-goh",
-        meaning: "Lake",
-        example: "Un tuffo nel lago.",
-        exampleMeaning: "A dip in the lake."
+        word: "Ritter",
+        pronounce: "RIT-ter",
+        meaning: "Knight",
+        example: "Hier wohnten Ritter!",
+        exampleMeaning: "Knights lived here!"
       },
       {
-        word: "Panorama",
-        pronounce: "pah-noh-RAH-mah",
-        meaning: "View, panorama",
-        example: "Che panorama!",
-        exampleMeaning: "What a view!"
+        word: "Kanone",
+        pronounce: "kah-NOH-neh",
+        meaning: "Cannon",
+        example: "Eins, zwei, drei Kanonen!",
+        exampleMeaning: "One, two, three cannons!"
       },
       {
-        word: "Vapore",
-        pronounce: "vah-POH-reh",
-        meaning: "Steam (hot-springs mist)",
-        example: "Si vede il vapore sull'acqua calda.",
-        exampleMeaning: "You can see the steam on the hot water."
+        word: "Turm",
+        pronounce: "toorm",
+        meaning: "Tower",
+        example: "Der Turm ist sehr hoch.",
+        exampleMeaning: "The tower is very tall."
       },
       {
-        word: "Cannuccia",
-        pronounce: "kahn-NOOT-chah",
-        meaning: "Drinking straw (not 'can-ooch')",
-        example: "Una cannuccia per la granita.",
-        exampleMeaning: "A straw for the slush ice."
+        word: "Musik",
+        pronounce: "moo-ZEEK",
+        meaning: "Music",
+        example: "Hörst du die Musik? Das ist die Orgel!",
+        exampleMeaning: "Do you hear the music? That's the organ!"
       },
       {
-        word: "Tuffo",
-        pronounce: "TOOF-foh",
-        meaning: "Dive, splash jump",
-        example: "Faccio un tuffo nel lago!",
-        exampleMeaning: "I'm doing a cannonball into the lake!"
+        word: "Glas",
+        pronounce: "glahs",
+        meaning: "Glass",
+        example: "Das Glas ist heiß und rot!",
+        exampleMeaning: "The glass is hot and red!"
       }
     ],
-    restaurants: ["rest-s-i-due-cippi", "rest-s-trattoria-verdi"],
     drinkOfTheDay: {
-      name: "Bianco di Pitigliano DOC",
+      name: "Zweigelt",
       type: "wine",
-      pairing: "A local southern white from the tufa hills you've been driving through. Light, mineral, faintly almond — the right last-night pour after a sunrise in sulphur springs and an afternoon in a floating city.",
-      servingNote: "Served well-chilled (8 °C), in the everyday white-wine glass"
+      pairing:
+        "Austria's flagship red — juicy sour cherry, soft tannins, dangerously drinkable. On the day you watched Riedel's glassblowers, drink an Austrian red from the glass they designed for it. If the hotel has Riedel stemware (many Tyrolean hotels do), tonight's the night to notice.",
+      servingNote: "Lightly cooled (16 °C) — Austrians never serve red warm — ideally in a Burgundy-ish bowl"
     }
   },
   {
     dayNumber: 9,
-    date: "2026-08-25",
-    weekday: "Tuesday",
+    date: "2026-08-19",
+    weekday: "Wednesday",
     departureTime: "09:30",
-    rideToFirst: { duration: "40 min", note: "Cortevecchia → Marina di Alberese" },
+    rideToFirst: { duration: "5 min", note: "just across the Inn — Rattenberg is our neighbor town" },
     region: "south",
-    base: "Cortevecchia",
-    title: "Maremma horses & the Etruscan rock maze",
+    base: "Kramsach–Alpbachtal",
+    title: "Glass-town morning, warm-lake afternoon",
+    subtitle: "Rattenberg's glassmakers, a swim at the Reintalersee, and the suitcase shuffle",
+    leadImage: "./images/rattenberg.jpg",
     activities: [
       {
-        time: "Morning",
-        title: "Horseback ride in the Maremma",
-        description: "1-hour family pony / horse trail through pine forest and dunes.",
-        attractionId: "maremma-horseback",
-        tag: "nature",
-        rideToNext: { duration: "1 h", note: "Maremma coast → Pitigliano hills", departAt: "11:30" }
+        time: "09:45",
+        title: "Rattenberg — Austria's smallest town, made of glass",
+        description:
+          "Five minutes from the hotel: a single medieval main street, about 400 residents, and glass shops end to end — Rattenberg has been a glass town for centuries. At Kisslinger Kristall-Glas the craft workshop is viewable on weekdays: glassblowers, cutters and engravers at their benches (note: the blow-your-own-bauble sessions run Mondays and Fridays only, so today is watching, not blowing). The street is car-free, flat and stroller-perfect; the ice cream is where the street bends.",
+        attractionId: "rattenberg",
+        tag: "village",
+        rideToNext: { duration: "10 min", note: "back through Kramsach to the Reintalersee", departAt: "12:30" }
       },
       {
-        time: "Lunch",
-        title: "Pitigliano + Via Cava di San Giuseppe",
-        description: "Photograph Pitigliano from the viewpoint, walk the old Jewish quarter. Then dive into the cool Etruscan rock corridors.",
-        attractionId: "pitigliano",
-        tag: "culture",
-        rideToNext: { duration: "20 min", note: "Pitigliano → Vitozza, scenic tufa road", departAt: "16:00" }
+        time: "13:00",
+        title: "Reintalersee — a swim in Tyrol's warmest water",
+        description:
+          "The Kramsach lakes are famously the warmest bathing lakes in Tyrol — the Reintalersee regularly hits 24 °C in August, a different sport from the bracing Achensee. The lido has lawns, shallow entries and a playground; this is the low-effort victory-lap swim. Naps in the shade count as swimming.",
+        tag: "water"
       },
       {
-        time: "Late afternoon",
-        title: "Vitozza cave city (wilder option)",
-        description: "Swap the Vie Cave for the abandoned cave dwellings of Vitozza — bring headlamps.",
-        attractionId: "vitozza",
-        tag: "cave"
+        time: "17:00",
+        title: "The great suitcase shuffle",
+        description:
+          "Back to the hotel early. Pack everything except tomorrow's clothes, snacks and the airport entertainment bag. Set aside the vignette-and-fuel plan for the morning, and confirm the Sixt return details: 13:00, Terminalstraße Mitte, Parkhaus P6."
       }
     ],
+    driveNotes:
+      "The shortest driving day of the trip, on purpose: base → Rattenberg ≈ 5 min, Rattenberg → Reintalersee ≈ 10 min, lake → hotel ≈ 5 min. Save the fuel; tomorrow needs it.",
     gear: [
-      { item: "Long pants (jeans) for the horseback ride", for: "maremma-horseback" },
-      { item: "Closed-toe shoes for everything today — riding, caves, cobbles" },
-      { item: "Sun hats & long-sleeve light shirts for the open ride", for: "maremma-horseback" },
-      { item: "Headlamps if doing Vitozza (one per person)", for: "vitozza" },
-      { item: "A light layer for the cool tufa corridors", for: "via-cava-san-giuseppe" },
-      { item: "Water bottles and snacks — gaps between food stops" }
+      { item: "Stroller for the flat, car-free glass street", for: "rattenberg" },
+      { item: "Swim kit one last time — it goes in the laundry bag afterwards, not back in the suitcase" },
+      { item: "Cash for lakeside lido entry and ice creams" },
+      { item: "A small padded box or bubble wrap if you buy glass — hand luggage, never the checked bag", for: "rattenberg" }
     ],
     dayTips: [
-      "Riding helmets are provided; minimum age usually 6",
-      "Pitigliano synagogue closes early on Friday — go before lunch if it's a Friday",
-      "Buy the 'sfratto dei Goym' from the kosher bakery in Pitigliano"
+      "Glass shops + toddlers = one parent browses while the other runs perimeter defense outside. Alternate. The shops are genuinely worth a look",
+      "A little glass animal each is the right souvenir from Rattenberg — Gili picks hers, you pick Tom's",
+      "If you wanted to blow your own glass bauble at Kisslinger, that runs Mondays and Fridays — today you watch the masters instead, which is free",
+      "Do the packing at 17:00, not 21:00 — tonight ends with a proper last dinner, not a suitcase argument",
+      "Check out the fridge: leftover snacks become tomorrow's car provisions"
     ],
     italianWords: [
       {
-        word: "Cavallo",
-        pronounce: "kah-VAH-loh",
-        meaning: "Horse",
-        example: "Un cavallo della Maremma.",
-        exampleMeaning: "A Maremma horse."
+        word: "Klein",
+        pronounce: "kline",
+        meaning: "Small",
+        example: "Rattenberg ist die kleinste Stadt Österreichs.",
+        exampleMeaning: "Rattenberg is Austria's smallest town."
       },
       {
-        word: "Grotta",
-        pronounce: "GROHT-tah",
-        meaning: "Cave, grotto",
-        example: "Entriamo nella grotta.",
-        exampleMeaning: "We're going into the cave."
+        word: "Warm",
+        pronounce: "varm",
+        meaning: "Warm",
+        example: "Der See ist warm!",
+        exampleMeaning: "The lake is warm!"
       },
       {
-        word: "Storia",
-        pronounce: "STOH-ryah",
-        meaning: "History, story",
-        example: "Che storia affascinante!",
-        exampleMeaning: "What a fascinating history!"
+        word: "Koffer",
+        pronounce: "KOF-fer",
+        meaning: "Suitcase",
+        example: "Wir packen die Koffer.",
+        exampleMeaning: "We're packing the suitcases."
       },
       {
-        word: "Stallo",
-        pronounce: "STAHL-loh",
-        meaning: "Stable stall (horses — not English 'stall')",
-        example: "Il cavallo torna allo stallo.",
-        exampleMeaning: "The horse goes back to the stall."
+        word: "Andenken",
+        pronounce: "AHN-den-ken",
+        meaning: "Souvenir, keepsake",
+        example: "Ein Andenken aus Glas für Gili.",
+        exampleMeaning: "A glass souvenir for Gili."
       },
       {
-        word: "Oscuro",
-        pronounce: "oh-SKOO-roh",
-        meaning: "Dark, shadowy",
-        example: "È un po' oscuro nella grotta.",
-        exampleMeaning: "It's a bit dark in the cave."
-      },
-      {
-        word: "Passo",
-        pronounce: "PAHS-soh",
-        meaning: "Step, pace (double 's')",
-        example: "Un passo alla volta, piano piano.",
-        exampleMeaning: "One step at a time, slowly slowly."
+        word: "Vorsichtig!",
+        pronounce: "FOR-zikh-tikh",
+        meaning: "Careful! (the word of the day in a glass shop)",
+        example: "Vorsichtig, das ist aus Glas!",
+        exampleMeaning: "Careful, that's made of glass!"
       }
     ],
-    restaurants: ["rest-s-hostaria-ceccottino", "rest-s-trattoria-sovana"],
     drinkOfTheDay: {
-      name: "Morellino di Scansano DOCG",
+      name: "Weißer Spritzer",
       type: "wine",
-      pairing: "The flagship red of the southern Maremma, made just up the road. Plush dark fruit, soft tannins — the right glass to finish a day of horses, tufa villages and rock-cut corridors.",
-      servingNote: "Served at 16–18 °C, in a wide Burgundy-style bowl"
+      pairing:
+        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a packing night before a driving day, and the most Austrian possible way to toast nine nights in the valley — in a Rattenberg glass, if you bought one.",
+      servingNote: "Half dry white wine, half soda water, plenty of ice — 'a G'spritzter' if you want to order like a local"
     }
   },
   {
     dayNumber: 10,
-    date: "2026-08-26",
-    weekday: "Wednesday",
-    departureTime: "03:30",
-    rideToFirst: { duration: "1 h 40 min", note: "Cortevecchia → Fiumicino" },
+    date: "2026-08-20",
+    weekday: "Thursday",
+    departureTime: "10:30",
+    rideToFirst: { duration: "1 h 45", note: "A12 → A93 → A8 to Munich Airport, plus a fuel stop" },
     region: "transit",
-    base: "Fiumicino",
-    title: "Fly home",
-    leadImage: "./images/tel-aviv-skyline.jpg",
-    leadImageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/lpQwaLWhw9Q",
-      licenseUrl: "https://unsplash.com/license"
-    },
+    base: "Kramsach–Alpbachtal → home",
+    title: "Servus, Tirol — the drive home",
+    subtitle: "Sixt return 13:00 at Terminalstr. Mitte P6 · LY254 departs 16:30",
+    leadImage: "./images/munich-airport.jpg",
     activities: [
       {
-        time: "03:30",
-        title: "At FCO check-in",
-        description: "Bag-drop opens 2 hours before departure. Aim to be in line by 03:30 — even at 5am, FCO has queues. Grab a coffee and pastries near the gate."
+        time: "08:00",
+        title: "Last alpine breakfast, load the car",
+        description:
+          "Unhurried breakfast, final sweep of the room (check under the beds — that's where Tom's other shoe lives), car loaded by 10:15. One last look at the mountains.",
+        rideToNext: { duration: "1 h 45", note: "fuel up near Kufstein before the border", departAt: "10:30" }
       },
       {
-        time: "05:00",
-        title: "Take-off",
-        description: "Arrivederci, Tuscany. Buon viaggio!"
+        time: "12:45",
+        title: "Fuel + Sixt return at Parkhaus P6",
+        description:
+          "Fill the tank before the airport (a station near the Kufstein on-ramp or at the last Autobahn services — airport fuel prices are punitive). Rental return is signposted 'Mietwagen-Rückgabe': Terminalstraße Mitte, Parkhaus P6. Return by 13:00, keep the receipt, and it's a short walk into the terminal.",
+        attractionId: "munich-airport"
+      },
+      {
+        time: "13:15",
+        title: "Check-in, security, LY254 at 16:30",
+        description:
+          "El Al flights from Munich come with thorough security interviews — the 3.5-hour buffer is not padding, it's the plan. Once through, MUC is a comfortable airport to burn an hour in: the kids' play areas and the observation options beat sitting at the gate. Land in Tel Aviv tonight with 2,000 photos and one glass marmot.",
+        attractionId: "munich-airport"
       }
     ],
+    driveNotes:
+      "Base → Munich Airport ≈ 1 h 45 (160 km): A12 east past Kufstein, over the border onto the A93, then the A8 toward Munich and the airport spur. Leave by 10:30 — that's the drive plus a fuel stop plus a toddler-emergency margin, landing you at Sixt right on the 13:00 return slot.",
     gear: [
-      { item: "Light layers — FCO is air-conditioned & the flight is cold" },
-      { item: "Passports + International Driving Permit easily reachable" },
-      { item: "Empty refillable bottle (fill after security)" },
-      { item: "Snacks for the kids — early flights, sleepy mood" },
-      { item: "All gels & liquids re-decanted to ≤ 100 ml" }
+      { item: "The entertainment bag, loaded fresh: snacks, water, one new small surprise toy each for the flight" },
+      { item: "Passports + booking confirmations in the daypack, not the suitcase" },
+      { item: "The glass souvenirs wrapped in clothes in the HAND luggage", for: "munich-airport" },
+      { item: "Change of clothes for both kids in the carry-on — flight insurance of the practical kind" },
+      { item: "Empty water bottles through security, refill at the gate" }
     ],
     dayTips: [
-      "Bag drop opens exactly 2 h before departure — be there at 03:30",
-      "Return the rental with a full tank — closest 24/7 pump is on Via Portuense",
-      "Allow 10–15 min for the rental shuttle from car return to terminal",
-      "Pre-pay airport tolls online to skip the boom-gate queue at exit"
+      "Fuel receipt from within ~20 min of the airport is your proof of a full tank if Sixt queries it",
+      "P6 return: follow 'Mietwagen' signs, not 'Parken' — they split late and the loop back costs ten minutes",
+      "Do a full car sweep at the fuel stop, not at P6 — calm beats frantic for finding pacifiers under seats",
+      "El Al security at MUC interviews every family — with kids you're often waved toward the shorter line; budget the time anyway",
+      "One parent drops the bags at check-in while the other takes the kids straight to the play area — divide and survive"
     ],
     italianWords: [
       {
-        word: "Arrivederci",
-        pronounce: "ah-ree-veh-DAIR-chee",
-        meaning: "Goodbye (until we meet again)",
-        example: "Arrivederci, Toscana!",
-        exampleMeaning: "Goodbye, Tuscany!"
+        word: "Auf Wiedersehen",
+        pronounce: "owf VEE-der-zayn",
+        meaning: "Goodbye (formal — 'until we see each other again')",
+        example: "Auf Wiedersehen, Tirol!",
+        exampleMeaning: "Goodbye, Tyrol!"
       },
       {
-        word: "Volo",
-        pronounce: "VOH-loh",
-        meaning: "Flight",
-        example: "Il volo è in orario.",
-        exampleMeaning: "The flight is on time."
+        word: "Tschüss",
+        pronounce: "chuess",
+        meaning: "Bye! (the casual one — Gili's by now)",
+        example: "Tschüss, Berge!",
+        exampleMeaning: "Bye, mountains!"
       },
       {
-        word: "A presto",
-        pronounce: "ah PRES-toh",
+        word: "Flugzeug",
+        pronounce: "FLOOK-tsoyk",
+        meaning: "Airplane",
+        example: "Unser Flugzeug fliegt nach Hause.",
+        exampleMeaning: "Our airplane flies home."
+      },
+      {
+        word: "Nach Hause",
+        pronounce: "nahkh HOW-zeh",
+        meaning: "(Going) home",
+        example: "Wir fliegen nach Hause.",
+        exampleMeaning: "We're flying home."
+      },
+      {
+        word: "Bis bald",
+        pronounce: "bis BAHLT",
         meaning: "See you soon",
-        example: "A presto, Italia!",
-        exampleMeaning: "See you soon, Italy!"
+        example: "Bis bald, Österreich!",
+        exampleMeaning: "See you soon, Austria!"
       },
       {
-        word: "Grazie",
-        pronounce: "GRAHT-tsyeh",
-        meaning: "Thank you (the 'zie' buzzes)",
-        example: "Grazie mille, è stato bellissimo!",
-        exampleMeaning: "Thanks a million — it was wonderful!"
-      },
-      {
-        word: "Subito",
-        pronounce: "SOO-bee-toh",
-        meaning: "Right away (airport hurry word)",
-        example: "Subito al gate, siamo in ritardo!",
-        exampleMeaning: "Straight to the gate — we're late!"
-      },
-      {
-        word: "Bacio",
-        pronounce: "BAH-choh",
-        meaning: "Kiss goodbye",
-        example: "Un bacio all'Italia!",
-        exampleMeaning: "A kiss for Italy!"
+        word: "Danke schön",
+        pronounce: "DAHN-keh shern",
+        meaning: "Thank you very much",
+        example: "Danke schön für alles!",
+        exampleMeaning: "Thank you very much for everything!"
       }
     ],
     drinkOfTheDay: {
-      name: "Espresso al banco",
+      name: "Wiener Melange",
       type: "coffee",
-      pairing: "The proper Italian send-off — a single shot, standing at the airport bar, downed in three sips. The only nightcap that makes sense at 04:00 before a flight home.",
-      servingNote: "Tiny porcelain cup · drink it standing · pay €1.20 · don't ask for it 'to go'"
+      pairing:
+        "One last Austrian ritual before the gate: the Viennese classic — espresso stretched with steamed milk and a cap of foam, halfway between a cappuccino and a hug. Order it airside at MUC, toast the trip, and start the list for next time.",
+      servingNote: "Served in a small cup with a glass of water on the side — the Austrian café way"
     }
   }
 ];

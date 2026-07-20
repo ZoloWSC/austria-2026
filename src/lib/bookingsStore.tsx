@@ -11,7 +11,7 @@ import { bookingsCipher } from "../data/bookings.enc";
 import { decryptBookings } from "./bookingsCrypto";
 import type { Booking, BookingsData } from "./bookingsTypes";
 
-const PIN_KEY = "tuscany-unlock-v1";
+const PIN_KEY = "trip-unlock-v1";
 
 /**
  * Which itinerary days have a booking. Kept UNencrypted on purpose so day
@@ -19,7 +19,7 @@ const PIN_KEY = "tuscany-unlock-v1";
  * leaks only *that a day has a ticket*, never any booking detail. Keep in
  * sync with the encrypted packet's dayNumbers.
  */
-export const BOOKED_DAY_NUMBERS = new Set<number>([2, 3, 7]);
+export const BOOKED_DAY_NUMBERS = new Set<number>([1, 10]);
 
 interface BookingsCtx {
   /** Decrypted packet, or null while still locked. */

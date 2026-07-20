@@ -2,6 +2,16 @@
 
 import type { Lang } from "./lang";
 
+/**
+ * Pre-generated narration is OFF until you generate it locally. This
+ * blank build ships without the reference trip's audio, so every
+ * ListenButton would otherwise point at a missing MP3 and render a dead
+ * "unavailable" button. Generate clips with the scripts under `scripts/`
+ * (they need a local GEMINI_API_KEY — see the README), drop the MP3s in
+ * `public/audio/`, then flip this to `true` to reveal the Listen buttons.
+ */
+export const AUDIO_ENABLED = false;
+
 /** Vite `base` should include a trailing slash; normalize so we never emit `/reporepo/audio`. */
 function baseUrl(): string {
   const raw = import.meta.env.BASE_URL || "/";
@@ -12,6 +22,7 @@ export function resolveAudioUrl(input: {
   attractionId?: string;
   audioAssetPath?: string;
 }): string | null {
+  if (!AUDIO_ENABLED) return null;
   const base = baseUrl();
   if (input.audioAssetPath) {
     return `${base}audio/${input.audioAssetPath}.mp3`;
@@ -26,7 +37,8 @@ export function resolveAudioUrl(input: {
 export function resolveAttractionListenUrls(
   attractionId: string,
   lang: Lang
-): { primary: string; fallback: string | null } {
+): { primary: string | null; fallback: string | null } {
+  if (!AUDIO_ENABLED) return { primary: null, fallback: null };
   const base = baseUrl();
   const en = `${base}audio/attractions/${attractionId}.mp3`;
   if (lang !== "he") {

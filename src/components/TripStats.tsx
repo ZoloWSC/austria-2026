@@ -12,12 +12,12 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: 9,    label: { en: "nights",       he: "לילות" },     Icon: Moon },
-  { value: 17,   label: { en: "attractions",  he: "אטרקציות" },  Icon: Compass },
-  { value: 2,    label: { en: "bases",        he: "בסיסים" },    Icon: Map },
-  { value: 6,    label: { en: "swims",        he: "שחיות" },     Icon: Waves },
-  { value: 1900, suffix: " m", label: { en: "highest peak", he: "פסגה" }, Icon: Mountain },
-  { value: 4,    label: { en: "old towns",    he: "ערים עתיקות" }, Icon: Castle }
+  { value: 9, label: { en: "nights", he: "לילות" }, Icon: Moon },
+  { value: 15, label: { en: "attractions", he: "אטרקציות" }, Icon: Compass },
+  { value: 6, label: { en: "gondola rides", he: "רכבלים" }, Icon: Map },
+  { value: 3, label: { en: "lake days", he: "ימי אגם" }, Icon: Waves },
+  { value: 2256, label: { en: "highest point (m)", he: "נקודה גבוהה (מ')" }, Icon: Mountain },
+  { value: 4, label: { en: "old towns", he: "ערים עתיקות" }, Icon: Castle }
 ];
 
 function easeOutCubic(t: number) {

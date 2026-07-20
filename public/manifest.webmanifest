@@ -1,25 +1,25 @@
 {
-  "name": "Tuscany '26",
-  "short_name": "Tuscany '26",
-  "description": "Ten days in Tuscany, north to south, 17–26 August 2026. Itinerary, map, stays and tips for the family adventure.",
+  "name": "Austria '26 — Zolotushko Family Trip",
+  "short_name": "Austria '26",
+  "description": "10 days in the Tyrolean Alps — itinerary, map, stays, attractions and tips for the Zolotushko family adventure.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F5EFE0",
-  "theme_color": "#C45A3D",
+  "background_color": "#F4F0E3",
+  "theme_color": "#B93E3C",
   "lang": "en",
   "dir": "ltr",
   "categories": ["travel", "lifestyle"],
   "icons": [
     {
-      "src": "icon-tuscany-192.png",
+      "src": "icon-austria-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-tuscany.png",
+      "src": "icon-austria.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

@@ -1,253 +1,143 @@
 import type { Dish } from "./types";
 
-/** Dishes worth chasing on this trip. Curated to the regions we actually
- *  travel through: north Tuscany (Larciano / Garfagnana / Lucca) and the
- *  southern Maremma + Pitigliano. "tuscany" = found everywhere we'll be. */
+// Austria '26 — Tyrolean & Austrian food the family will actually meet.
+// region: "north"/"south" for a base-side lean, "tyrol" for the
+// everywhere-classics. Kid-friendliness is called out in the copy —
+// Kaiserschmarrn and Pommes are the toddler currency of the Alps.
 export const dishes: Dish[] = [
-  // ============== PASTA — the headline section ==============
   {
-    id: "pici-cacio-pepe",
-    name: "Pici",
-    italianName: "Pici cacio e pepe / al ragù di cinghiale",
-    region: "south",
-    category: "pasta",
-    description:
-      "Hand-rolled fat spaghetti — the signature pasta of Siena and the Maremma. Made with just flour and water (no egg), so it's pleasantly chewy. Locally served either simple ('cacio e pepe' with pecorino & black pepper) or with a slow wild-boar ragù.",
-    tryIt: "Trattoria Verdi (Manciano) · Hostaria del Ceccottino (Pitigliano)",
-    image: "./images/food-pici.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pici"
-    }
-  },
-  {
-    id: "pappardelle-cinghiale",
-    name: "Pappardelle with wild boar ragù",
-    italianName: "Pappardelle al ragù di cinghiale",
-    region: "tuscany",
-    category: "pasta",
-    description:
-      "Wide ribbon pasta tossed in a deep, slow-cooked ragù of wild boar — Tuscany's truly iconic pasta dish. Found on every serious menu from Lucca down to the Maremma. Ask if it's casalinga (made in-house); it shows.",
-    tryIt: "Trattoria del Castello (Larciano) · Taverna Etrusca (Sovana)",
-    image: "./images/food-pappardelle.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pappardelle"
-    }
-  },
-  {
-    id: "tortelli-mugellani",
-    name: "Tortelli with potato",
-    italianName: "Tortelli mugellani / di patate",
-    region: "north",
-    category: "pasta",
-    description:
-      "A north-Tuscan stuffed pasta — large pillows filled with mashed potato, parsley and nutmeg, then dressed with butter & sage or a meat ragù. Hearty, mountain food, perfect after the Abetone gondola day.",
-    tryIt: "Circolo dei Forestieri (Bagni di Lucca)",
-    image: "./images/food-tortelli.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Tortelli"
-    }
-  },
-  {
-    id: "ribollita",
-    name: "Ribollita",
-    italianName: "Ribollita",
-    region: "tuscany",
-    category: "starter",
-    description:
-      "The most Tuscan of soups — twice-cooked stale bread, cannellini beans, cavolo nero (black kale) and vegetables. Served thick enough to stand a spoon in, with a generous drizzle of new-press olive oil. A starter, not a side.",
-    tryIt: "Osteria dei Cavalieri (Pisa)",
-    image: "./images/food-ribollita.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Ribollita"
-    }
-  },
-  {
-    id: "pappa-al-pomodoro",
-    name: "Pappa al pomodoro",
-    italianName: "Pappa al pomodoro",
-    region: "tuscany",
-    category: "starter",
-    description:
-      "A late-summer Tuscan classic and a crowd-pleaser for the kids — stale bread cooked into a thick, sweet tomato porridge with garlic, basil and lots of olive oil. Eaten warm or barely-warm, never hot.",
-    tryIt: "Almost any trattoria — order it as a starter",
-    image: "./images/food-pappa-pomodoro.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pappa_al_pomodoro"
-    }
-  },
-
-  // ============== MAINS ==============
-  {
-    id: "bistecca-fiorentina",
-    name: "Bistecca alla Fiorentina",
-    italianName: "Bistecca alla Fiorentina",
-    region: "tuscany",
+    id: "wiener-schnitzel",
+    name: "Wiener Schnitzel",
+    italianName: "Wiener Schnitzel",
+    region: "tyrol",
     category: "main",
     description:
-      "The legendary T-bone of Chianina beef — minimum 1 kg, charred outside, ruby rare inside, served with nothing but salt, pepper and lemon. Always priced per etto (100 g). This is a sharing dish — order one for the table.",
-    tryIt: "Trattoria del Castello (Larciano) · Taverna Etrusca (Sovana)",
-    image: "./images/food-bistecca.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Bistecca_alla_fiorentina"
-    }
+      "The national icon: a thin veal cutlet (pork is the everyday version, sold as 'Schnitzel vom Schwein') breaded and fried golden, with a lemon wedge and potatoes or cranberry. Mild and crispy — a reliable win for kids who'll happily share a plate with parents.",
+    tryIt: "Any gasthof terrace — a safe, kid-pleasing lunch across the region.",
+    image: "./images/food-wiener-schnitzel.jpg"
   },
   {
-    id: "buglione-agnello",
-    name: "Lamb stew, Maremma style",
-    italianName: "Buglione di agnello",
-    region: "south",
+    id: "kaiserschmarrn",
+    name: "Kaiserschmarrn",
+    italianName: "Kaiserschmarrn",
+    region: "tyrol",
+    category: "dessert",
+    description:
+      "A fluffy pancake torn into caramelised pieces, dusted with icing sugar and served with plum or apple compote. Named for Emperor Franz Joseph, it's the ultimate mountain-hut reward and pure toddler bait — Gili will demand it, and honestly so will everyone else. Often big enough to be lunch.",
+    tryIt: "Any summit hut — the Spieljoch or Reither Kogel terraces do a classic one.",
+    image: "./images/food-kaiserschmarrn.jpg"
+  },
+  {
+    id: "tiroler-groestl",
+    name: "Tiroler Gröstl",
+    italianName: "Tiroler Gröstl",
+    region: "tyrol",
     category: "main",
     description:
-      "A classic Maremma stew of lamb slow-braised with tomato, garlic, rosemary, vinegar and chilli, served over thick toasted bread that soaks up the sauce. Rich and rustic — order it once on the southern leg.",
-    tryIt: "I Due Cippi da Michele (Saturnia)",
-    image: "./images/food-buglione.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://commons.wikimedia.org/"
-    }
+      "The Tyrolean skillet supper: pan-fried potatoes, onions and beef or pork, crisped up and crowned with a fried egg. Hearty, unfussy mountain food born from using up leftovers — filling after a day on the trails, and easy to share small forkfuls with the kids.",
+    tryIt: "Hut lunches and village gasthöfe throughout Tyrol.",
+    image: "./images/food-tiroler-groestl.jpg"
   },
   {
-    id: "acquacotta-maremmana",
-    name: "Maremma vegetable soup",
-    italianName: "Acquacotta maremmana",
-    region: "south",
+    id: "kaesespaetzle",
+    name: "Kasspatzln (Cheese Spätzle)",
+    italianName: "Kasspatzln",
+    region: "north",
+    category: "main",
+    description:
+      "Soft egg noodle-dumplings tossed with mountain cheese and crispy fried onions — the Alpine answer to mac-and-cheese, and therefore a near-guaranteed hit with small children. Rich and warming; a plain buttered portion is easy to ask for if the cheese is too strong for Tom.",
+    tryIt: "Almost any Tyrolean menu; especially good at mountain huts.",
+    image: "./images/food-kaesespaetzle.jpg"
+  },
+  {
+    id: "speckknoedel",
+    name: "Speckknödel",
+    italianName: "Speckknödel",
+    region: "tyrol",
     category: "starter",
     description:
-      "Literally 'cooked water' — a poor-man's tomato & vegetable soup that the Maremma cowboys (butteri) ate in the saddle. Toasted bread at the bottom of the bowl, a poached egg cracked on top. Surprisingly elegant.",
-    tryIt: "Trattoria Verdi (Manciano)",
-    image: "./images/food-acquacotta.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Acquacotta"
-    }
+      "Big bread dumplings studded with speck (cured ham), served either in a clear beef broth (Speckknödelsuppe) or with sauerkraut. The soup version is gentle and kid-approachable — a warming starter on a cool mountain day.",
+    tryIt: "Gasthof menus everywhere; the soup version suits little ones.",
+    image: "./images/food-speckknoedel.jpg"
   },
   {
-    id: "spaghetti-allo-scoglio",
-    name: "Spaghetti with seafood",
-    italianName: "Spaghetti allo scoglio",
-    region: "south",
-    category: "pasta",
+    id: "apfelstrudel",
+    name: "Apfelstrudel",
+    italianName: "Apfelstrudel",
+    region: "tyrol",
+    category: "dessert",
     description:
-      "Argentario's harbour-side classic: spaghetti tossed with whatever the morning catch brings — clams, mussels, small prawns, bits of squid — in a quick garlic, white-wine, parsley and chilli sauce. Eat it the day you do the boat.",
-    tryIt: "Dal Greco (Porto Santo Stefano)",
-    image: "./images/food-spaghetti-scoglio.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://commons.wikimedia.org/"
-    }
+      "Wafer-thin pastry wrapped around cinnamon apples, raisins and breadcrumbs, served warm with vanilla sauce or cream. The Austrian café classic — a calmer alternative to Kaiserschmarrn and just as beloved. A slice shared with a coffee is the perfect old-town pause.",
+    tryIt: "Café terraces in Hall, Kufstein and Innsbruck.",
+    image: "./images/food-apfelstrudel.jpg"
   },
-
-  // ============== DESSERTS / SNACKS ==============
   {
-    id: "sfratto-goym",
-    name: "Sfratto dei Goym",
-    italianName: "Sfratto dei Goym",
+    id: "germknoedel",
+    name: "Germknödel",
+    italianName: "Germknödel",
     region: "south",
     category: "dessert",
     description:
-      "A long, log-shaped pastry from Pitigliano's Jewish quarter — a thin, brittle shell filled with honey, walnuts, orange zest and nutmeg. The name (from sfrattare, 'to evict') jokingly recalls the wooden bats used to summon the Jews to leave. Sweet, dense, unforgettable.",
-    tryIt: "Forno del Ghetto (Pitigliano)"
-    // No CC photo of this niche pastry; PoiImage shows a styled fallback.
+      "A fluffy steamed yeast dumpling filled with spiced plum jam (Powidl), drenched in melted butter and dusted with poppy seeds and sugar. A hut favourite — sweet, pillowy and enormous. Kids love the soft dough; go easy on the poppy topping for the littlest.",
+    tryIt: "Mountain huts on the Spieljoch, Söll and Alpbach lifts.",
+    image: "./images/food-germknoedel.jpg"
   },
   {
-    id: "castagnaccio",
-    name: "Chestnut cake",
-    italianName: "Castagnaccio",
-    region: "north",
+    id: "marillenknoedel",
+    name: "Marillenknödel",
+    italianName: "Marillenknödel",
+    region: "tyrol",
     category: "dessert",
     description:
-      "A dense, dark, gluten-free cake of chestnut flour, water, olive oil, pine nuts, raisins and rosemary — pure Garfagnana mountain food, perfect after a long day at altitude. Looks austere, tastes intriguingly nutty.",
-    tryIt: "Bakeries in Bagni di Lucca & the Garfagnana villages",
-    image: "./images/food-castagnaccio.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Castagnaccio"
-    }
+      "Whole apricots wrapped in a potato-dough dumpling, boiled and rolled in buttery sweet breadcrumbs — a summer special when Austrian apricots (Marillen) are in season, which August is. Not too sweet, fun to cut open; a lovely seasonal treat.",
+    tryIt: "Look for the summer special on dessert boards in August.",
+    image: "./images/food-marillenknoedel.jpg"
   },
   {
-    id: "necci",
-    name: "Chestnut crêpes with ricotta",
-    italianName: "Necci con la ricotta",
-    region: "north",
-    category: "dessert",
-    description:
-      "Thin chestnut-flour pancakes traditionally cooked between hot stone discs, then folded around fresh sheep's-milk ricotta. A Garfagnana street snack that's been made for centuries. Sweet, smoky, impossible to share.",
-    tryIt: "Garfagnana sagre & farm stalls; cafés in Castelnuovo di Garfagnana",
-    image: "./images/food-necci.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Necci"
-    }
-  },
-  {
-    id: "cantucci-vinsanto",
-    name: "Cantucci & vin santo",
-    italianName: "Cantucci con vin santo",
-    region: "tuscany",
-    category: "dessert",
-    description:
-      "The end-of-meal Tuscan ritual: hard almond biscotti dipped into a small glass of sweet, amber-coloured 'holy wine'. Don't eat them dry — the dipping is the whole point.",
-    tryIt: "Any trattoria, ask for the 'fine pasto'",
-    image: "./images/food-cantucci.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Cantuccini"
-    }
-  },
-
-  // ============== EVERYDAY / STREET ==============
-  {
-    id: "schiacciata",
-    name: "Tuscan flatbread",
-    italianName: "Schiacciata",
-    region: "tuscany",
+    id: "brettljause",
+    name: "Brettljause",
+    italianName: "Brettljause",
+    region: "tyrol",
     category: "snack",
     description:
-      "Tuscany's answer to focaccia — crisp on the outside, fluffy inside, glossy with olive oil and big flakes of salt. The right picnic bread for the Lucca walls or the Abetone ridge. Buy it warm by the slice and eat it walking.",
-    tryIt: "Forno bakeries — every village has one",
-    image: "./images/food-schiacciata.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Schiacciata"
-    }
+      "A wooden board of cold cuts, speck, mountain cheese, spreads, pickles and dark bread — the classic hut or farm snack, meant for sharing. Great for a family: parents graze the speck and cheese while the kids pick at bread, butter and mild cheese.",
+    tryIt: "Alpine huts (Almen) and farm-café stops — perfect shared grazing.",
+    image: "./images/food-brettljause.jpg"
   },
   {
-    id: "lardo-colonnata",
-    name: "Lardo di Colonnata",
-    italianName: "Lardo di Colonnata IGP",
-    region: "north",
+    id: "graukaese",
+    name: "Tiroler Graukäse",
+    italianName: "Graukas",
+    region: "south",
     category: "starter",
     description:
-      "Cured pork back-fat from the marble quarries above Carrara, aged for months in marble basins with herbs. Served paper-thin on warm bread — it melts on the tongue. A tiny order goes a long way.",
-    tryIt: "Antipasto plate at Circolo dei Forestieri or Trattoria del Castello",
-    image: "./images/food-lardo.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Lardo_di_Colonnata"
-    }
+      "A pungent, low-fat sour-milk cheese from the Zillertal, protected by EU origin rules and traditionally dressed with onions, vinegar and oil (Sauerkäse). Very much an adventurous-adult taste — sharp and aromatic. One for Yuval and Hila to brave; the kids will not be volunteering.",
+    tryIt: "Zillertal gasthöfe — ask for it dressed as 'Sauerkäse'.",
+    image: "./images/food-graukaese.jpg"
+  },
+  {
+    id: "almdudler",
+    name: "Almdudler",
+    italianName: "Almdudler",
+    region: "tyrol",
+    category: "drink",
+    description:
+      "Austria's cult herbal soda — a lightly fizzy, alpine-herb lemonade that's been the national soft drink since 1957. Non-alcoholic, not too sweet, and genuinely everywhere. A fun 'grown-up-looking' fizzy treat for Gili and the default table drink for the whole family.",
+    tryIt: "Every restaurant, hut and supermarket fridge in the country.",
+    image: "./images/food-almdudler.jpg"
+  },
+  {
+    id: "skiwasser",
+    name: "Skiwasser",
+    italianName: "Skiwasser",
+    region: "tyrol",
+    category: "drink",
+    description:
+      "A raspberry-and-lemon squash mixed with water — the standard kids' (and hikers') thirst-quencher on every mountain, sweet-tart and pink. Cheap, refillable and universally loved by children; ask for it wherever you'd order a drink up a mountain.",
+    tryIt: "Any hut or gasthof — the go-to drink for the kids.",
+    image: "./images/food-skiwasser.jpg"
   }
 ];
 
-/** Convenience selectors used by the UI. */
-export const dishesByRegion = (r: "north" | "south" | "tuscany") =>
+export const dishesByRegion = (r: "north" | "south" | "tyrol") =>
   dishes.filter(d => d.region === r);

@@ -59,7 +59,7 @@ export function activityIcon(activity: Activity): LucideIcon {
   if (/\b(sleep|bed|hotel|villa|home|settle|decompress|wake)\b/.test(t)) return Bed;
   if (/\b(coffee|espresso|cappuccino|wake)\b/.test(t)) return Coffee;
   if (/\b(view|vista|photo|sunset|sunrise|dawn)\b/.test(t)) return Camera;
-  if (/\b(anchor|cove|cala|porto|argentario)\b/.test(t)) return Anchor;
+  if (/\b(anchor|cove|cala|porto)\b/.test(t)) return Anchor;
   if (/\b(morning|early)\b/.test(time)) return Sun;
 
   return Camera;

@@ -10,24 +10,31 @@
   isolation: isolate;
 }
 
+/* Austria '26 palette — anchored in Tyrol in August:
+   terracotta → geranium red (the flower boxes on every Tyrolean balcony,
+     and the red of the Austrian flag, muted for UI);
+   olive → spruce green (the forests that wall the Inn valley);
+   gold → hay-meadow gold (August Almwiesen at golden hour);
+   cream → limestone & fresh snow (the Karwendel walls above Achensee);
+   sienna/ink → dark alpine timber (old Bauernhaus wood). */
 @theme {
-  --color-cream-50: #FBF7EC;
-  --color-cream-100: #F5EFE0;
-  --color-cream-200: #EDE3CB;
-  --color-cream-300: #DFD2B0;
-  --color-terracotta-400: #D87154;
-  --color-terracotta-500: #C45A3D;
-  --color-terracotta-600: #A8472D;
-  --color-terracotta-700: #8B3622;
-  --color-olive-400: #8A9A6B;
-  --color-olive-500: #6B7A4B;
-  --color-olive-600: #525E39;
-  --color-olive-700: #3D4729;
-  --color-sienna-500: #8B4513;
-  --color-sienna-600: #6F3710;
-  --color-ink-700: #4A3A30;
-  --color-ink-800: #2A1F1A;
-  --color-ink-900: #1A120E;
+  --color-cream-50: #FAF8F0;
+  --color-cream-100: #F4F0E3;
+  --color-cream-200: #EAE3CF;
+  --color-cream-300: #D9D0B5;
+  --color-terracotta-400: #D0524A;
+  --color-terracotta-500: #B93E3C;
+  --color-terracotta-600: #9C2F2F;
+  --color-terracotta-700: #7E2425;
+  --color-olive-400: #6E9078;
+  --color-olive-500: #4E7360;
+  --color-olive-600: #3B5A4A;
+  --color-olive-700: #2C4438;
+  --color-sienna-500: #7A4A21;
+  --color-sienna-600: #5F3919;
+  --color-ink-700: #423931;
+  --color-ink-800: #28211C;
+  --color-ink-900: #181310;
   --color-gold-400: #D9A441;
   --color-gold-500: #B8862C;
 

@@ -10,56 +10,56 @@ import type { Lang } from "./lang";
  */
 export const DICT = {
   /* ---------- Brand / hero ---------- */
-  brand: { en: "Tuscany 2026", he: "טוסקנה 2026" },
-  brand_short: { en: "Tuscany", he: "טוסקנה" },
+  brand: { en: "Austria '26", he: "אוסטריה '26" },
+  brand_short: { en: "Austria", he: "אוסטריה" },
   brand_year: { en: "'26", he: "'26" },
   family_edition: {
     en: "Family edition · Issue 01",
     he: "מהדורת המשפחה · גליון 01"
   },
   families_byline: {
-    en: "The Horowitz × Racz × Kaplan families · August 2026",
-    he: "משפחות הורוביץ × רץ × קפלן · אוגוסט 2026"
+    en: "Yuval, Hila, Gili & Tom · 11–20 Aug 2026",
+    he: "יובל, הילה, גילי ותום · 11–20 באוג׳ 2026"
   },
   hero_before_lead: {
-    en: "Counting down to summer in the Tuscan hills",
-    he: "סופרים לאחור לקיץ בגבעות טוסקנה"
+    en: "Counting down to the trip",
+    he: "סופרים לאחור לטיול"
   },
-  hero_today_lead: { en: "Today in Tuscany", he: "היום בטוסקנה" },
-  hero_tomorrow_lead: { en: "Tomorrow in Tuscany", he: "מחר בטוסקנה" },
-  hero_after_lead: { en: "That summer in Tuscany", he: "אותו קיץ בטוסקנה" },
-  hero_after_title: { en: "Buon ritorno", he: "ברוכים השבים" },
+  hero_today_lead: { en: "Today on the trip", he: "היום בטיול" },
+  hero_tomorrow_lead: { en: "Tomorrow on the trip", he: "מחר בטיול" },
+  hero_after_lead: { en: "That was the trip", he: "זה היה הטיול" },
+  hero_after_title: { en: "Welcome back", he: "ברוכים השבים" },
   hero_after_sub: {
-    en: "17 — 26 August 2026 · the family edition",
-    he: "17 — 26 באוגוסט 2026 · מהדורת המשפחה"
+    en: "Tyrol 2026 · the family edition",
+    he: "טירול 2026 · מהדורת המשפחה"
   },
   hero_close_almost: {
-    en: "Buon viaggio — almost there",
-    he: "בון ויאג'ו — כמעט שם"
+    en: "Almost there",
+    he: "כמעט שם"
   },
   hero_one_week: {
-    en: "One week to go · time to pack the dry bag",
-    he: "שבוע נותר · הגיע הזמן לארוז את התיק האטום"
+    en: "One week to go · time to pack",
+    he: "שבוע נותר · הגיע הזמן לארוז"
   },
   hero_one_month: {
-    en: "Less than a month · confirm the chef and the boat",
-    he: "פחות מחודש · לאשר את השף ואת הסירה"
+    en: "Less than a month to go",
+    he: "פחות מחודש נותר"
   },
   hero_far: {
-    en: "An Italian summer, on the horizon",
-    he: "קיץ איטלקי, באופק"
+    en: "An adventure, on the horizon",
+    he: "הרפתקה, באופק"
   },
   hero_today_day: { en: "Day", he: "יום" },
   hero_tomorrow_day: { en: "Tomorrow", he: "מחר" },
-  hero_of_ten: { en: "of ten", he: "מתוך עשרה" },
+  hero_of_ten: { en: "of 10", he: "מתוך 10" },
   scroll_to_plan: { en: "the plan", he: "התוכנית" },
   hero_photo_day: { en: "Day {n}", he: "יום {n}" },
 
   /* ---------- Navbar ---------- */
   nav_plan: { en: "Plan", he: "תוכנית" },
   nav_map: { en: "Map", he: "מפה" },
-  // The two stays — Larciano & Cortevecchia — are the trip's two
-  // "neighborhoods", which is what we surface in the nav.
+  // The stays are the trip's "neighborhoods", which is what we
+  // surface in the nav.
   nav_stays: { en: "Stays", he: "לינות" },
   nav_attractions: { en: "Places", he: "מקומות" },
   // Services (gas / supermarket / nearby restaurants) is no longer in
@@ -78,8 +78,8 @@ export const DICT = {
   /* ---------- Itinerary section ---------- */
   plan_eyebrow: { en: "The plan · day by day", he: "התוכנית · יום אחר יום" },
   plan_kicker: {
-    en: "Swipe through ten chapters · click Read more for the full chapter",
-    he: "החליקו בין עשרה פרקים · לחצו על 'קרא עוד' לפרק המלא"
+    en: "Swipe through the chapters · click Read more for the full chapter",
+    he: "החליקו בין הפרקים · לחצו על 'קרא עוד' לפרק המלא"
   },
   plan_chapter_x_of_y: {
     en: "Chapter {x} / {y}",
@@ -124,8 +124,8 @@ export const DICT = {
   today: { en: "Today", he: "היום" },
 
   /* ---------- Region / chapter labels ---------- */
-  region_north_long: { en: "North Tuscany", he: "צפון טוסקנה" },
-  region_south_long: { en: "South Tuscany", he: "דרום טוסקנה" },
+  region_north_long: { en: "North", he: "צפון" },
+  region_south_long: { en: "South", he: "דרום" },
   region_transit_long: { en: "Transit", he: "מעבר" },
   region_north_short: { en: "North", he: "צפון" },
   region_south_short: { en: "South", he: "דרום" },
@@ -153,30 +153,30 @@ export const DICT = {
     he: "הקישו על סיכה · עקבו אחר המסלול · סננו את השאר"
   },
   map_intro: {
-    en: "Every stay, attraction, restaurant, supermarket and gas station — color-coded by category. The dashed line is our actual journey: Rome to Larciano, Larciano to Cortevecchia, Cortevecchia back to Rome.",
-    he: "כל מקום לינה, אטרקציה, מסעדה, סופרמרקט ותחנת דלק — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מרומא ללרצ'יאנו, מלרצ'יאנו לקורטווקיה, ובחזרה לרומא."
+    en: "Every stay, attraction, restaurant, supermarket and gas station — color-coded by category. The dashed line is our actual journey between the bases.",
+    he: "כל מקום לינה, אטרקציה, מסעדה, סופרמרקט ותחנת דלק — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו בין הבסיסים."
   },
   map_route_on: { en: "Route on", he: "מסלול מוצג" },
   map_route_off: { en: "Route off", he: "מסלול מוסתר" },
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },
   map_spokes_off: { en: "Day trips off", he: "טיולי יום מוסתרים" },
   map_seg_arrival: {
-    en: "Day 1 · Land in Rome, drive north",
-    he: "יום 1 · נחיתה ברומא, נסיעה צפונה"
+    en: "Arrival · TBD",
+    he: "הגעה · ייקבע"
   },
-  map_seg_arrival_short: { en: "Mon · 17 Aug", he: "ב' · 17 באוגוסט" },
+  map_seg_arrival_short: { en: "TBD", he: "ייקבע" },
   map_seg_transfer: {
-    en: "Day 5 · Transfer to the south, via Sentierelsa",
-    he: "יום 5 · מעבר לדרום, דרך סנטיירלסה"
+    en: "Transfer between bases · TBD",
+    he: "מעבר בין בסיסים · ייקבע"
   },
-  map_seg_transfer_short: { en: "Fri · 21 Aug", he: "ו' · 21 באוגוסט" },
+  map_seg_transfer_short: { en: "TBD", he: "ייקבע" },
   map_seg_departure: {
-    en: "Day 9–10 · Final loop to Fiumicino",
-    he: "ימים 9–10 · הלולאה האחרונה לפיומיצ'ינו"
+    en: "Departure · TBD",
+    he: "יציאה · ייקבע"
   },
   map_seg_departure_short: {
-    en: "Tue/Wed · 25–26 Aug",
-    he: "ג'/ד' · 25–26 באוגוסט"
+    en: "TBD",
+    he: "ייקבע"
   },
   map_zoom_fit: { en: "Zoom to fit all locations", he: "התאם תצוגה לכל המיקומים" },
   map_locate_me: { en: "Show my location", he: "הצג את המיקום שלי" },
@@ -214,16 +214,16 @@ export const DICT = {
   listen_unavailable: { en: "Audio unavailable", he: "האודיו לא זמין" },
 
   /* ---------- Gemininio (the AI tour guide) ---------- */
-  gem_open: { en: "Chat with Gemininio", he: "שוחחו עם ג׳מיניניו" },
+  gem_open: { en: "Chat with Wolfi", he: "שוחחו עם וולפי" },
   gem_close: { en: "Close", he: "סגור" },
-  gem_title: { en: "Gemininio", he: "ג׳מיניניו" },
+  gem_title: { en: "Wolfi", he: "וולפי" },
   gem_tagline: {
-    en: "Your Italian friend in Tuscany",
-    he: "החבר האיטלקי שלכם בטוסקנה"
+    en: "Your friendly Tyrolean guide",
+    he: "המדריך הטירולי הידידותי שלכם"
   },
-  gem_setup_title: { en: "Set up Gemininio", he: "הגדרת ג׳מיניניו" },
+  gem_setup_title: { en: "Set up Wolfi", he: "הגדרת וולפי" },
   gem_setup_blurb: {
-    en: "Gemininio uses Google's Gemini Live API to talk with you. Paste a free Gemini API key — it's saved on this device only and never shared.",
+    en: "Wolfi uses Google's Gemini Live API to talk with you. Paste a free Gemini API key — it's saved on this device only and never shared.",
     he: "ג׳מיניניו משתמש ב־Gemini Live API של גוגל כדי לדבר אתכם. הדביקו מפתח Gemini API חינמי — הוא נשמר במכשיר הזה בלבד ולא נשלח לשום מקום אחר."
   },
   gem_setup_link: {
@@ -263,8 +263,8 @@ export const DICT = {
     he: "משהו השתבש. נסו שוב מאוחר יותר. (קוד: {code})"
   },
   gem_first_hint: {
-    en: "Try: \"What should we do tomorrow morning?\" or \"Tell me a story about Pitigliano.\"",
-    he: "נסו: \"מה כדאי לעשות מחר בבוקר?\" או \"ספר לי סיפור על פיטיליאנו.\""
+    en: "Try: \"What should we do tomorrow morning?\" or \"Tell me a story about where we're going.\"",
+    he: "נסו: \"מה כדאי לעשות מחר בבוקר?\" או \"ספר לי סיפור על המקום שאליו נוסעים.\""
   },
   gem_settings: { en: "Settings", he: "הגדרות" },
   gem_back: { en: "Back to chat", he: "חזרה לשיחה" },
@@ -288,14 +288,14 @@ export const DICT = {
   },
   /* ---------- Stays section ---------- */
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
-  stays_title: { en: "Two homes, two halves", he: "שני בתים, שני חצאים" },
+  stays_title: { en: "Where we'll stay", he: "איפה נלון" },
   stays_kicker: {
-    en: "Five nights up north, five nights down south",
-    he: "חמישה לילות בצפון, חמישה לילות בדרום"
+    en: "Candidate bases for our nine nights — not booked yet",
+    he: "מועמדים לבסיס לתשעת הלילות — עדיין לא הוזמן"
   },
   stays_intro: {
-    en: "We split the trip between a private home in northern Tuscany and a restored estate in the southern Maremma — each chosen as the perfect base for the days around it.",
-    he: "אנחנו מחלקים את הטיול בין בית פרטי בצפון טוסקנה לאחוזה משוחזרת במרמה הדרומית — כל אחד נבחר כבסיס מושלם לימים שסביבו."
+    en: "Each stay is chosen as the perfect base for the days around it.",
+    he: "כל מקום לינה נבחר כבסיס מושלם לימים שסביבו."
   },
   stay_check_in: { en: "Check in", he: "צ'ק־אין" },
   stay_check_out: { en: "Check out", he: "צ'ק־אאוט" },
@@ -316,8 +316,8 @@ export const DICT = {
   attr_eyebrow: { en: "Where we'll go", he: "לאן נלך" },
   attr_title: { en: "Places we'll fall for", he: "מקומות שנתאהב בהם" },
   attr_kicker: {
-    en: "Sixteen stops — water, walls, cliffs, caves, and a few good meals",
-    he: "שש־עשרה תחנות — מים, חומות, צוקים, מערות וכמה ארוחות טובות"
+    en: "The stops we're most excited about",
+    he: "התחנות שהכי מסקרנות אותנו"
   },
   attr_filter_all: { en: "All", he: "הכול" },
   attr_filter_north: { en: "North", he: "צפון" },
@@ -375,8 +375,8 @@ export const DICT = {
   lock_working: { en: "Checking…", he: "בודק…" },
   lock_error: { en: "Wrong PIN — try again", he: "קוד שגוי — נסו שוב" },
   lock_hint: {
-    en: "Shared with the group · ask Itay for the PIN",
-    he: "משותף עם הקבוצה · בקשו את הקוד מאיתי"
+    en: "Shared with the group · ask the trip owner for the PIN",
+    he: "משותף עם הקבוצה · בקשו את הקוד ממארגן הטיול"
   },
 
   /* ---------- Bookings & logistics ---------- */
@@ -429,9 +429,9 @@ export const DICT = {
   },
 
   /* ---------- Weather ---------- */
-  weather_eyebrow: { en: "Right now in Tuscany", he: "עכשיו בטוסקנה" },
-  weather_north: { en: "North · Larciano", he: "צפון · לרצ'יאנו" },
-  weather_south: { en: "South · Maremma", he: "דרום · מרמה" },
+  weather_eyebrow: { en: "Right now at the destination", he: "עכשיו ביעד" },
+  weather_north: { en: "North base", he: "בסיס צפוני" },
+  weather_south: { en: "South base", he: "בסיס דרומי" },
   weather_loading: { en: "Loading…", he: "טוען…" },
   weather_error: { en: "Weather unavailable", he: "מזג אוויר לא זמין" },
   weather_high_low: { en: "H {high}° / L {low}°", he: "מקס׳ {high}° / מינ׳ {low}°" },
@@ -456,7 +456,7 @@ export const DICT = {
   gear_for_label: { en: "for", he: "ל־" },
   gear_for_general: { en: "general", he: "כללי" },
 
-  word_eyebrow: { en: "Italian word of the day", he: "המילה האיטלקית של היום" },
+  word_eyebrow: { en: "German word of the day", he: "המילה הגרמנית של היום" },
   word_pronounce_label: { en: "Pronounce it", he: "איך אומרים" },
   word_meaning_label: { en: "Meaning", he: "פירוש" },
   word_use_label: { en: "Try it", he: "נסו לומר" },
@@ -472,8 +472,8 @@ export const DICT = {
     he: "השמעת הגייה"
   },
   word_example_chip_listen: {
-    en: "Play example (Italian, then English, then Hebrew)",
-    he: "השמעת המשפט (איטלקית, אחר כך אנגלית, ואז עברית)"
+    en: "Play example (German, then English, then Hebrew)",
+    he: "השמעת המשפט (גרמנית, אחר כך אנגלית, ואז עברית)"
   },
   daytips_eyebrow: { en: "Notes for the day", he: "הערות להיום" },
   daytips_title: { en: "Good to know", he: "טוב לדעת" },
@@ -484,16 +484,16 @@ export const DICT = {
 
   /* ---------- Food & Wine ---------- */
   food_eyebrow: { en: "At the table", he: "ליד השולחן" },
-  food_title: { en: "What Tuscany tastes like", he: "הטעם של טוסקנה" },
+  food_title: { en: "What the trip tastes like", he: "הטעם של הטיול" },
   food_kicker: {
     en: "Signature dishes, local pasta and the wineries to visit",
     he: "מנות דגל, פסטות מקומיות והיקבים שחובה לבקר"
   },
   food_dishes_label: { en: "Signature dishes", he: "מנות דגל" },
   food_wineries_label: { en: "Wineries to visit", he: "יקבים לבקר" },
-  food_filter_north: { en: "North · Larciano", he: "צפון · לרצ'יאנו" },
-  food_filter_south: { en: "South · Maremma", he: "דרום · מרמה" },
-  food_filter_tuscany: { en: "Across Tuscany", he: "כל טוסקנה" },
+  food_filter_north: { en: "North", he: "צפון" },
+  food_filter_south: { en: "South", he: "דרום" },
+  food_filter_tyrol: { en: "Everywhere", he: "בכל מקום" },
   food_try_it: { en: "Try it at", he: "לטעום ב" },
   food_appellation: { en: "Appellation", he: "ייעוד יין" },
   food_book_visit: { en: "Book the visit", he: "הזמן ביקור" },
@@ -506,8 +506,8 @@ export const DICT = {
 
   /* ---------- Footer ---------- */
   footer_made_with: {
-    en: "Built for the family · August 2026",
-    he: "נבנה למשפחה · אוגוסט 2026"
+    en: "Built for the trip",
+    he: "נבנה בשביל הטיול"
   },
   footer_attribution: {
     en: "Photos credited to their respective authors. Map © OpenStreetMap & CARTO.",
@@ -536,8 +536,8 @@ export const DICT = {
   drink_eyebrow: { en: "After dinner", he: "אחרי ארוחת הערב" },
   drink_title: { en: "A glass to close the day", he: "כוסית לסיום היום" },
   drink_kicker: {
-    en: "Adults only — Tuscany pours generously",
-    he: "למבוגרים בלבד — טוסקנה מוזגת ברוחב יד"
+    en: "Adults only — a toast to the day",
+    he: "למבוגרים בלבד — לחיי היום הזה"
   },
   drink_pairing_label: { en: "Why tonight", he: "למה הערב" },
   drink_serving_label: { en: "Serving", he: "הגשה" },
@@ -615,8 +615,8 @@ export const DICT = {
     he: "הקישו על \u05F4הוסף\u05F4 בפינה העליונה"
   },
   install_step_confirm_hint: {
-    en: "The Tuscany icon lands on your home screen",
-    he: "הסמל של טוסקנה מופיע במסך הבית"
+    en: "The trip icon lands on your home screen",
+    he: "הסמל של הטיול מופיע במסך הבית"
   },
 
   /* iOS – not Safari (Chrome / Firefox / Edge on iOS) */
@@ -667,17 +667,17 @@ export const DICT = {
     he: "הניקוד: {score} מתוך {total}"
   },
   quiz_score_perfect: {
-    en: "Bravissimo! Perfect score!",
-    he: "ברביסימו! ניקוד מושלם!"
+    en: "Bravo! Perfect score!",
+    he: "בראבו! ניקוד מושלם!"
   },
-  quiz_score_great: { en: "Molto bene!", he: "מולטו בנה!" },
+  quiz_score_great: { en: "Super!", he: "סופר!" },
   quiz_score_ok: {
     en: "Not bad — try again to beat it.",
     he: "לא רע — נסו שוב כדי לשפר."
   },
   quiz_score_low: {
-    en: "Allora, that's a tough one. Another round?",
-    he: "אללוֹרָה, שאלות קשות. עוד סיבוב?"
+    en: "Servus, that's a tough one. Another round?",
+    he: "סרווס, שאלות קשות. עוד סיבוב?"
   },
   quiz_play_again: { en: "Play again", he: "שחקו שוב" },
   quiz_new_questions: { en: "New questions", he: "שאלות חדשות" },
