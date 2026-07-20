@@ -63,13 +63,27 @@ export default function SiteGate({ children }: { children: ReactNode }) {
     }
   };
 
+  const bg = `${import.meta.env.BASE_URL}images/hero/tirol-valley.jpg`;
+
   return (
     <div
       dir={dir}
-      className="fixed inset-0 z-[9000] flex items-center justify-center bg-gradient-to-b from-olive-700 via-olive-600 to-ink-800 px-6 text-cream-50"
+      className="fixed inset-0 z-[9000] flex items-center justify-center overflow-hidden bg-ink-800 px-6 text-cream-50"
       style={{ paddingTop: "env(safe-area-inset-top)", paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="w-full max-w-sm text-center">
+      {/* Sunny Tyrol backdrop */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('${bg}')` }}
+        aria-hidden
+      />
+      {/* Dark wash so the wordmark + card stay readable over any photo */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-ink-900/45 to-ink-900/75"
+        aria-hidden
+      />
+
+      <div className="relative z-10 w-full max-w-sm text-center">
         <div className="font-serif text-4xl leading-none">
           Austria <span className="italic text-terracotta-400">'26</span>
         </div>

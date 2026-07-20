@@ -26,14 +26,13 @@ interface HeroPhoto {
   dayNumber?: number;
 }
 
-// Pre-trip "screensaver" backdrops — minimalist alpine illustrations
-// (not photos of specific POIs), so they carry a generic Tyrol label.
-// To swap in real CC-licensed photos later, drop them here and use the
-// place name. See scripts/fetch-hero-images.mjs.
+// Pre-trip "screensaver" backdrops — real, freely-licensed photos of
+// sunny Tyrol (Wikimedia Commons). A dark gradient overlay in the hero
+// keeps the headline text readable over them.
 const HERO_PHOTOS: HeroPhoto[] = [
-  { src: "./images/hero/dawn.jpg", place: "Tirol", credit: "", source: "#" },
-  { src: "./images/hero/lake.jpg", place: "Tirol", credit: "", source: "#" },
-  { src: "./images/hero/meadow.jpg", place: "Tirol", credit: "", source: "#" }
+  { src: "./images/hero/tirol-valley.jpg", place: "Zillertal, Tirol", credit: "", source: "#" },
+  { src: "./images/achensee.jpg", place: "Achensee", credit: "", source: "#" },
+  { src: "./images/alpbach-village.jpg", place: "Alpbach", credit: "", source: "#" }
 ];
 
 const PHOTO_DURATION_MS = 7000;
