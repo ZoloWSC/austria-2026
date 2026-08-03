@@ -841,7 +841,60 @@ export const attractions: POI[] = [
       "Fuel up just before the airport on return day; Sixt expects the tank full.",
       "Build in a buffer on Aug 20: car back by 13:00, then check-in and security for the 16:30 flight."
     ]
-  }
+  },
+  {
+    id: "bergtierpark-blindham",
+    name: "BergTierPark Blindham",
+    category: "attraction",
+    region: "transit",
+    description:
+      "A small hill-animal park in the Bavarian foothills, and the perfect circuit-breaker on the drive down from Munich. In the petting area Gili can feed and stroke the sheep; further round there are deer, wild boar, beavers and a long list of others. The main loop is about 2 km, buggy-friendly, and threaded with playgrounds so nobody gets marched anywhere. Best of all for an arrival day: there's a big indoor play barn (the SpielStadl) with a toddler corner, a sandpit and ride-on cars, so a wet morning doesn't sink the plan.",
+    shortDescription: "Petting zoo, buggy-friendly forest loop and a big indoor play barn — 40 min from the airport.",
+    image: "./images/bergtierpark-blindham.jpg",
+    address: "Blindham 3, 85653 Aying, Germany",
+    coords: [47.9276, 11.8159],
+    tags: ["nature", "family"],
+    difficulty: "easy",
+    openingNote:
+      "Open daily in summer, but check the day's hours before you set off — this is the one stop the whole morning is built around.",
+    tips: [
+      "A8 exit 96 (Hofoldinger Forst) — roughly 40 min from Munich Airport, a small detour off the motorway.",
+      "Hire one of the pull-along wagons at the entrance (about €3) — worth it the moment Tom decides he's done walking.",
+      "The indoor SpielStadl is the rain plan: ~2,000 m² with a toddler area, sandpit and ride-on cars.",
+      "Buy a bag of feed at the entrance so the sheep actually come to Gili rather than ignoring her.",
+      "Eat lunch here before the long stretch — and with Gili's sesame and Tom's banana allergies, check the counter's ingredients rather than assuming."
+    ],
+    quizFacts: [
+      {
+        question: "Which animal at BergTierPark Blindham can you feed and stroke up close?",
+        correctAnswer: "The sheep",
+        distractors: ["The wolves", "The eagles", "The crocodiles"]
+      }
+    ]
+  },
+  {
+    id: "chiemsee-uebersee",
+    name: "Chiemsee — Strandbad Feldwies (Übersee)",
+    category: "attraction",
+    region: "transit",
+    description:
+      "Bavaria's biggest lake, nicknamed the Bavarian Sea, and the southern shore at Übersee is its family end. The lido at Feldwies has a gently shelving, shallow entry — the kind a one-and-a-half-year-old can actually stand up in — plus a playground with carousels, climbing frames, slides and swings, wide lawns to flop on and food on site. Being lowland rather than alpine, the water is markedly warmer than the mountain lakes, and the Alps sit on the far side of it for the view.",
+    shortDescription: "The Chiemsee's family shore — shallow warm water, a proper playground, 5 min off the A8.",
+    image: "./images/chiemsee-uebersee.jpg",
+    address: "Strandbad Feldwies, Seethal, 83236 Übersee, Germany",
+    coords: [47.8496, 12.4754],
+    tags: ["water", "family", "view"],
+    difficulty: "easy",
+    openingNote:
+      "Summer lido — most Chiemsee lidos charge a small entry fee; confirm the day's hours and price at the gate.",
+    tips: [
+      "About 5 minutes off the A8 Übersee exit, so it costs almost nothing in detour on the Munich run.",
+      "Warmer than Achensee or the Reintalersee — this is the lake where the water isn't a shock.",
+      "Pack the towels and swim things somewhere reachable in the car, not at the bottom of a case.",
+      "Shade is patchy on the lawns; claim a spot under a tree and keep the sun hats on.",
+      "A good final play on the way home — burn the last of the kids' energy before the hotel and the flight."
+    ]
+  },
 ];
 
 export const getAttraction = (id: string) => attractions.find(a => a.id === id);

@@ -29,8 +29,8 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "last-night",
-    text: "Sort the last night (19→20 Aug) — still open!",
-    detail: "The Stacherhof booking ends on 19 Aug but we fly home on the 20th. Either extend one night in Fügen, or book near Munich Airport (which makes the 13:00 car return and 16:30 flight much calmer).",
+    text: "Book the Munich hotel for the last night (19 Aug)",
+    detail: "Decided: we drive back to Munich on the 19th and sleep there. Still to book. An airport hotel is the calmest option — the Hilton we use on the 11th is connected to the terminal by a covered walkway, so on the 20th it's just return the car and walk over. A hotel in the city means a ~40 min drive before the 13:00 car return.",
     urgent: true
   },
   {
