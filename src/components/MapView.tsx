@@ -486,6 +486,21 @@ export default function MapView({ registerFocus }: Props) {
               <span className="text-ink-800">{t(seg.dayKey)}</span>
             </span>
           ))}
+
+          {/* Legend entry for Hila's own picks, so the orchid heart pins on
+              the map are self-explanatory. Only shown once her map is in. */}
+          {allPOIs.some(p => p.addedBy === "hila") && (
+            <span className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] font-medium">
+              <span
+                className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] leading-none text-cream-50"
+                style={{ backgroundColor: HILA_PIN }}
+                aria-hidden
+              >
+                &#10084;
+              </span>
+              <span className="text-ink-800">{t("map_hila_legend")}</span>
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2">
           <button
