@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Heart } from "lucide-react";
 import { attractions } from "../data/attractions";
 import AttractionCard from "./AttractionCard";
 import Section from "./Section";
@@ -34,15 +35,23 @@ export default function AttractionsGrid() {
   const t = useT();
   const [region, setRegion] = useState<RegionFilter>("all");
   const [tag, setTag] = useState<AttractionTag | null>(null);
+  /** When on, show only the places off Hila's own map. */
+  const [hilaOnly, setHilaOnly] = useState(false);
+
+  const hilaCount = useMemo(
+    () => attractions.filter(a => a.addedBy === "hila").length,
+    []
+  );
 
   const filtered = useMemo(
     () =>
       attractions.filter(a => {
         if (region !== "all" && a.region !== region) return false;
         if (tag && !(a.tags ?? []).includes(tag)) return false;
+        if (hilaOnly && a.addedBy !== "hila") return false;
         return true;
       }),
-    [region, tag]
+    [region, tag, hilaOnly]
   );
 
   return (
@@ -71,6 +80,25 @@ export default function AttractionsGrid() {
               </span>
             </button>
           ))}
+
+          {/* Hila's-picks toggle — only meaningful once her map is loaded in */}
+          {hilaCount > 0 && (
+            <button
+              onClick={() => setHilaOnly(v => !v)}
+              aria-pressed={hilaOnly}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap min-h-10 ${
+                hilaOnly
+                  ? "bg-[#8A4FA8] text-cream-50 shadow-[0_4px_14px_rgba(138,79,168,0.4)]"
+                  : "bg-cream-50 border border-[#8A4FA8]/45 text-[#6E3C86] hover:border-[#8A4FA8]"
+              }`}
+            >
+              <Heart size={13} strokeWidth={2.5} className={hilaOnly ? "fill-cream-50" : "fill-[#8A4FA8]/25"} />
+              {t("attr_filter_hila")}
+              <span className={`text-xs ${hilaOnly ? "text-cream-200" : "text-[#6E3C86]/60"}`}>
+                {hilaCount}
+              </span>
+            </button>
+          )}
         </div>
       </div>
 

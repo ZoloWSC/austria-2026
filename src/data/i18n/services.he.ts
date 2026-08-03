@@ -5,7 +5,7 @@ export const servicesHE: Record<
   string,
   Partial<Pick<Service, "name" | "shortDescription" | "description" | "address" | "hours">>
 > = {
-  "mpreis-brixlegg": {
+  "spar-fuegen": {
     name: "MPreis בריקסלג",
     description:
       "MPreis היא רשת הסופרמרקטים הטירולית האהובה, ולרוב הסניפים צמוד בית קפה-מאפייה בשם 'Baguette'. הסניף בבריקסלג הוא החנות המלאה הקרובה ביותר לבסיס באלפבאכטל — מצוין לקניות בוקר, חטיפים לפעוטות, חיתולים וקפה מהיר.",
@@ -26,7 +26,7 @@ export const servicesHE: Record<
     shortDescription: "MPreis בצד המערבי, מצוין לאספקת פיקניק בדרך.",
     hours: "שני–שישי ~07:15–19:30, שבת ~07:15–18:00, סגור בימי ראשון ובחגים",
   },
-  "fuel-a12-kramsach": {
+  "fuel-zillertal": {
     name: "תחנת דלק — A12 ליד קרמזאך/בריקסלג",
     description:
       "תחנת התדלוק היומיומית ליד הבסיס, סמוך למחלף ה-A12. דיזל נפוץ ברכבי שטח שכורים באוסטריה — בדקו במה מתדלק רכב הסיקסט לפני המילוי הראשון. דלק זול יותר באוסטריה מאשר בתחנות האוטובאן הגרמניות, אז תדלקו בצד הזה.",

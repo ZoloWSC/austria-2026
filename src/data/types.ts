@@ -74,8 +74,16 @@ export interface AttractionQuizFact {
   distractors: string[];
 }
 
+/** Who put this place on the list. Omitted = suggested while building the
+ *  trip (the "AI suggestion" default). "hila" = from Hila's own map, which
+ *  the UI badges and gives its own map-pin colour so the family can tell
+ *  her picks apart at a glance. */
+export type AddedBy = "hila";
+
 export interface POI {
   id: string;
+  /** Set to "hila" for places off Hila's map. Undefined = AI suggestion. */
+  addedBy?: AddedBy;
   name: string;
   category: Category;
   region: Region;

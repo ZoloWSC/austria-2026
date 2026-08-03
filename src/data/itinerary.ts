@@ -1,9 +1,11 @@
 import type { Day } from "./types";
 
-// TYROL 2026 — Alpbachtal & the Lower Inn Valley with two toddlers.
-// One anchor activity per day, naps are sacred, no drive over ~40 min
-// except the two airport transfers. Base for eight of the nine nights: the hotel
-// in the Kramsach–Alpbachtal area.
+// TYROL 2026 — the Zillertal & the Lower Inn Valley with two toddlers.
+// One anchor activity per day, naps are sacred, no drive over ~50 min
+// except the two airport transfers. Base for seven of the nine nights: the
+// Aparthotel Stacherhof in Fügen (Kleinboden), Zillertal — booked, check-in
+// Wed 12 Aug, check-out Wed 19 Aug. Night 1 is the Hilton at Munich Airport;
+// the night of 19→20 Aug is still being finalised.
 export const itinerary: Day[] = [
   {
     dayNumber: 1,
@@ -26,16 +28,16 @@ export const itinerary: Day[] = [
         time: "~19:45",
         title: "Check in at the Hilton Munich Airport",
         description:
-          "The Hilton sits right at the airport, connected to the terminals by a covered walkway — wheel the bags and the kids straight over, no shuttle, no car. Dinner at the hotel, warm baths, everyone into bed. Tonight's whole job is simple: let Gili and Tom sleep off the travel day before the drive into the Alps tomorrow."
+          "The Hilton sits right at the airport, connected to the terminals by a covered walkway — wheel the bags and the kids straight over, no shuttle, no car. Dinner at the hotel, warm baths, everyone into bed. Tonight's whole job is simple: let Gili and Tom sleep off the travel day before the drive into the Zillertal tomorrow."
       }
     ],
     driveNotes:
-      "No driving today — the Hilton is connected to the terminal, so land, walk over, and rest. You pick up the Sixt car tomorrow morning and drive into Tyrol then. Do buy the Austrian digital vignette online tonight so it's already sorted before you cross the border in the morning.",
+      "No driving today — the Hilton is connected to the terminal, so land, walk over, and rest. You pick up the Sixt car tomorrow morning and drive into the Zillertal then (Munich Airport → Fügen is ≈ 1 h 50). Do buy the Austrian digital vignette online tonight so it's already sorted before you cross the border in the morning.",
     gear: [
       { item: "Passports and the Hilton confirmation handy in the daypack" },
       { item: "Pyjamas, toothbrushes and one comfort toy each at the top of a bag for a zero-search bedtime" },
       { item: "Light jackets over the carry-on — Munich evenings run cooler than Tel Aviv" },
-      { item: "Milk, water and a few snacks for the room (there's an Edeka in the MAC Forum between the terminals)" }
+      { item: "Milk, water and a few snacks for the room (there's an Edeka in the MAC Forum between the terminals) — no need to stock up on breakfast, the Stacherhof includes it" }
     ],
     dayTips: [
       "The Hilton is a covered two-minute walk from the terminals — you don't need the car or a shuttle tonight",
@@ -93,11 +95,11 @@ export const itinerary: Day[] = [
     date: "2026-08-12",
     weekday: "Wednesday",
     departureTime: "09:00",
-    rideToFirst: { duration: "1 h 15", note: "Sixt pickup at MUC, then A8 → A93 → A12 to Achensee" },
+    rideToFirst: { duration: "1 h 45", note: "Sixt pickup at MUC, then A8 → A93 → A12 to Achensee" },
     region: "north",
-    base: "Munich → Kramsach–Alpbachtal",
+    base: "Munich → Fügen (Zillertal)",
     title: "Into the Alps — pick up the car, then the lake",
-    subtitle: "Morning Sixt pickup at MUC · drive into Tyrol · Achensee afternoon, then settle at the base",
+    subtitle: "Morning Sixt pickup at MUC · drive into Tyrol · Achensee afternoon, then check in at the Stacherhof",
     leadImage: "./images/achensee.jpg",
     activities: [
       {
@@ -106,10 +108,10 @@ export const itinerary: Day[] = [
         description:
           "Unhurried hotel breakfast, then walk to the Sixt desk in the Airport Center between Terminals 1 and 2. Confirm both child seats are installed and actually fit before you leave the garage. Make sure the Austrian vignette is sorted (buy online now if you didn't last night), set the nav for Pertisau, and roll.",
         attractionId: "munich-airport",
-        rideToNext: { duration: "1 h 15", note: "A8 → A93 → A12; you cross into Austria at Kufstein", departAt: "10:00" }
+        rideToNext: { duration: "1 h 45", note: "A8 → A93 → A12; you cross into Austria at Kufstein", departAt: "10:00" }
       },
       {
-        time: "~11:15",
+        time: "~11:45",
         title: "Strandbad Pertisau — beach, playground, shallow water",
         description:
           "Straight from the airport to the lake. The lakeside lido on the Pertisau shore is built for exactly this crew: a huge lawn, a pirate-ship playground with slide and sandbox, a shallow children's pool, and a gently shelving lake entry. The water is drinking-water clear and famously brisk — Gili will be in it anyway. The kids nap in the car on the drive down, then wake to a beach. Grab a shaded spot under the sun sails; the Karwendel peaks do the view work.",
@@ -125,17 +127,17 @@ export const itinerary: Day[] = [
         attractionId: "achensee",
         tag: "water",
         optional: true,
-        rideToNext: { duration: "35 min", note: "down to Wiesing, then to the Kramsach–Alpbachtal base" }
+        rideToNext: { duration: "40 min", note: "down to Wiesing, onto the A12, then the B169 into the Zillertal to Fügen" }
       },
       {
         time: "~16:00",
-        title: "Drive to the base and settle in",
+        title: "Drive to Fügen and settle in",
         description:
-          "The winding descent does what it does best — both kids asleep before Wiesing. Check into the hotel that's home for the next eight nights, unpack properly, and have an easy first dinner near base."
+          "The winding descent does what it does best — both kids asleep before Wiesing. Check into the Stacherhof in Fügen, home for the next seven nights: the chalet suite has two bedrooms, a kitchen, two bathrooms and a balcony, and the underground garage is free and monitored (2.20 m height limit — worth remembering if Sixt hands you something tall). Breakfast is included, so there's nothing to shop for tonight. If there's daylight left, the natural swimming pond and the new playground are steps from the door; the sauna and wellness area is 14+, so that one's not for Gili and Tom."
       }
     ],
     driveNotes:
-      "Two legs today: Munich Airport → Achensee (Pertisau) ≈ 1 h 15 via the A8/A93/A12, crossing into Austria at Kufstein (vignette needed); then Achensee → the Kramsach–Alpbachtal base ≈ 35 min. The Achensee approach is a proper mountain road for ten minutes — smooth but curvy.",
+      "Two legs today: Munich Airport → Achensee (Pertisau) ≈ 1 h 45 via the A8/A93/A12, crossing into Austria at Kufstein (vignette needed); then Achensee → Fügen ≈ 40 min — back down the mountain road to Wiesing, one junction east on the A12, then the B169 up the Zillertal. The Achensee approach is a proper mountain road for ten minutes — smooth but curvy — and Fügen sits about 10 min off the A12's Zillertal exit.",
     gear: [
       { item: "Passports, driving licence and the Sixt booking confirmation handy for pickup" },
       { item: "Swim gear, swim diaper for Tom, and a change of clothes for everyone", for: "achensee" },
@@ -148,7 +150,7 @@ export const itinerary: Day[] = [
       "The lake sits at ~950 m: mornings can start at 15 °C even when the afternoon hits 27 °C, so layer the kids",
       "Afternoon thunderstorms are an Alpine summer classic — do the water stuff first, keep the boat ride flexible",
       "Kids under 6 sail free on the Achensee ships; buy tickets right at the dock",
-      "Don't over-plan today — it's a travel-plus-lake day; the base and a quiet dinner are the finish line"
+      "Don't over-plan today — it's a travel-plus-lake day; the Stacherhof, the swimming pond and a quiet dinner are the finish line"
     ],
     italianWords: [
       {
@@ -207,9 +209,9 @@ export const itinerary: Day[] = [
     date: "2026-08-13",
     weekday: "Thursday",
     departureTime: "09:00",
-    rideToFirst: { duration: "30 min", note: "A12 west to the Wattens exit" },
+    rideToFirst: { duration: "25 min", note: "B169 down to Strass, then the A12 west to the Wattens exit" },
     region: "north",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Crystal worlds & a medieval old town",
     subtitle: "Swarovski Kristallwelten in Wattens, then Hall in Tirol",
     leadImage: "./images/swarovski-kristallwelten.jpg",
@@ -235,11 +237,11 @@ export const itinerary: Day[] = [
         time: "15:00",
         title: "Home for naps",
         description:
-          "Thirty easy minutes back on the A12. If the kids are asleep, take the scenic valley road and stretch the drive."
+          "Half an hour back east on the A12 and up the Zillertal. If the kids are asleep, stretch the last bit on the valley road rather than waking them — and once you're back, the Stacherhof's swimming pond and playground are the whole afternoon plan."
       }
     ],
     driveNotes:
-      "Base → Wattens ≈ 30 min on the A12, Wattens → Hall in Tirol ≈ 15 min, Hall → base ≈ 30 min. All flat valley motorway — the easiest driving day of the trip.",
+      "Fügen → Wattens ≈ 25 min: ten minutes down the B169 to the A12 at Strass, then west to the Wattens exit. Wattens → Hall in Tirol ≈ 15 min, Hall → Fügen ≈ 30 min. Almost all flat valley motorway plus the short Zillertal hop at each end — the easiest driving day of the trip.",
     gear: [
       { item: "Stroller for Tom — the whole Kristallwelten garden is smooth and stroller-friendly", for: "swarovski-kristallwelten" },
       { item: "A spare shirt for the Giant's water features — someone will get sprayed", for: "swarovski-kristallwelten" },
@@ -309,22 +311,22 @@ export const itinerary: Day[] = [
     dayNumber: 4,
     date: "2026-08-14",
     weekday: "Friday",
-    departureTime: "08:45",
-    rideToFirst: { duration: "20 min", note: "A12 to Wiesing, then into the Zillertal to Fügen" },
+    departureTime: "08:50",
+    rideToFirst: { duration: "5 min", note: "the Spieljochbahn valley station is in our own village — five minutes down the hill" },
     region: "south",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Zillertal family mountain day",
     subtitle: "Spieljoch Fügen gondola — play areas at 1,860 m; steam train optional",
     leadImage: "./images/spieljoch-fuegen.jpg",
     activities: [
       {
-        time: "09:15",
+        time: "09:00",
         title: "Spieljochbahn up the family mountain",
         description:
-          "Fügen's certified family mountain: the gondola runs daily in peak season (first ascent 09:00, last descent 17:00 through late August). At the top station you get a toddler jackpot — a water play area, barefoot path, a walk-in show mine, and a big adventure playground, all within a hundred meters of the lift and the Mountain Loft restaurant. Gili roams free, Tom paddles at the water channels; nobody has to hike anywhere.",
+          "Our own village's certified family mountain — the valley station is five minutes from the Stacherhof, so today needs no real drive at all. The gondola runs daily in peak season (first ascent 09:00, last descent 17:00 through late August). At the top station you get a toddler jackpot — a water play area, barefoot path, a walk-in show mine, and a big adventure playground, all within a hundred meters of the lift and the Mountain Loft restaurant. Gili roams free, Tom paddles at the water channels; nobody has to hike anywhere.",
         attractionId: "spieljoch-fuegen",
         tag: "family",
-        rideToNext: { duration: "10 min", note: "down the valley road to Jenbach station", departAt: "14:00" }
+        rideToNext: { duration: "15 min", note: "down the B169 to Jenbach station", departAt: "14:00" }
       },
       {
         time: "Afternoon",
@@ -337,13 +339,13 @@ export const itinerary: Day[] = [
       },
       {
         time: "15:30",
-        title: "Back to base, playground and dinner",
+        title: "Back to base, swimming pond and dinner",
         description:
-          "Twenty minutes home. If naps happened on the mountain, the hotel playground closes out the day."
+          "Fifteen minutes home from Jenbach — or five straight from the gondola if you skip the train. If naps happened on the mountain, the Stacherhof's natural swimming pond and new playground close out the day, and there's a ball-games lawn if anyone still has legs."
       }
     ],
     driveNotes:
-      "Base → Fügen (Spieljochbahn valley station) ≈ 20 min: A12 one junction to Wiesing, then the B169 into the Zillertal. Jenbach station is ≈ 10 min from Fügen on the way home. Zero mountain-road driving — the gondola does the climbing.",
+      "The home-valley day: the Spieljochbahn valley station is ≈ 5 min from the Stacherhof, down the hill and through Fügen — the shortest drive of the whole trip, and genuinely walkable if you're feeling energetic. Jenbach station for the steam train is ≈ 15 min down the B169, and ≈ 15 min back up again. Zero mountain-road driving — the gondola does the climbing.",
     gear: [
       { item: "Change of clothes and a small towel for the summit water play area", for: "spieljoch-fuegen" },
       { item: "Carrier for Tom — paths at the top are gravel; a stroller works around the play area but the carrier is freer", for: "spieljoch-fuegen" },
@@ -356,7 +358,7 @@ export const itinerary: Day[] = [
       "The gondola cabins take strollers, no problem — no folding gymnastics required",
       "If clouds sit low on the peaks in the morning, flip the day: steam train first, mountain after lunch",
       "The steam train is the nostalgia option, not the schedule backbone — regular modern trains run the same line hourly if the timing doesn't work",
-      "Friday afternoon traffic into the Zillertal is inbound tourists — you'll be driving out against it, smug and on time for naps"
+      "Friday afternoon fills the Zillertal with arriving tourists — but you already live here, five minutes from the lift, so let them queue on the B169 while you walk to the pond"
     ],
     italianWords: [
       {
@@ -408,9 +410,9 @@ export const itinerary: Day[] = [
     date: "2026-08-15",
     weekday: "Saturday",
     departureTime: "09:00",
-    rideToFirst: { duration: "40 min", note: "A12 west to Innsbruck" },
+    rideToFirst: { duration: "40 min", note: "B169 down to Strass, then the A12 west to Innsbruck" },
     region: "north",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Innsbruck — alpine animals & the Golden Roof",
     subtitle: "Assumption Day: shops shut, but the zoo, the funicular and the old town don't care",
     leadImage: "./images/alpenzoo-innsbruck.jpg",
@@ -443,7 +445,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes:
-      "Base → Innsbruck ≈ 40 min on the A12 — the longest day-trip drive of the week, timed against morning energy. Park once at the Congress/Hungerburgbahn garage and let the funicular handle the hill; driving up to the zoo directly is possible but the small lot fills fast on holidays.",
+      "Fügen → Innsbruck ≈ 40 min: ten minutes down the B169 to the A12 at Strass, then straight west up the Inn valley. One of the two long day-trip drives of the week (Monday's Söll run is the other), timed against morning energy. Park once at the Congress/Hungerburgbahn garage and let the funicular handle the hill; driving up to the zoo directly is possible but the small lot fills fast on holidays.",
     gear: [
       { item: "Carrier for Tom — the zoo is built on a slope and some paths are stepped", for: "alpenzoo-innsbruck" },
       { item: "Stroller for the flat, car-free Altstadt — swap at the car if you can", for: "innsbruck-altstadt" },
@@ -514,10 +516,10 @@ export const itinerary: Day[] = [
     dayNumber: 6,
     date: "2026-08-16",
     weekday: "Sunday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "15 min", note: "up the Alpbachtal to Reith im Alpbachtal" },
+    departureTime: "09:20",
+    rideToFirst: { duration: "25 min", note: "B169 down to Strass, A12 east to Kramsach, then up into the Alpbachtal to Reith" },
     region: "south",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Slow Sunday — enchanted forest & the flower village",
     subtitle: "Juppi Zauberwald above Reith, Alpbach village, optional alpine coaster",
     leadImage: "./images/juppi-zauberwald.jpg",
@@ -550,7 +552,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes:
-      "Everything today lives in our home valley: base → Reith im Alpbachtal ≈ 15 min, Reith → Alpbach ≈ 10 min, Alpbach → base ≈ 20 min. The shortest driving day of the trip — by design, after yesterday's city outing.",
+      "Today is the next valley over, not ours: Fügen → Reith im Alpbachtal ≈ 25–30 min (B169 down to Strass, one junction east on the A12 to Kramsach, then up into the Alpbachtal), Reith → Alpbach ≈ 10 min, Alpbach → Fügen ≈ 30 min. No single leg is over half an hour, so it stays one of the calmer days of the week — but the Alpbachtal is no longer on our doorstep the way Friday's Spieljoch was, so bank on the naps happening in the car and keep the whole day loose.",
     gear: [
       { item: "Carrier or all-terrain stroller — the Zauberwald loop is a gravel forest path", for: "juppi-zauberwald" },
       { item: "A change of clothes — the water-wheel stations always win", for: "juppi-zauberwald" },
@@ -561,7 +563,7 @@ export const itinerary: Day[] = [
       "The Reitherkogelbahn rests on Wednesdays — today (Sunday) it runs, which is exactly why the slow day sits here in the week",
       "The Zauberwald loop has zero exposure and constant shade — the rare alpine outing where you can let Gili lead",
       "Sunday lunch in Alpbach is popular with locals — aim to sit down by 12:30 or book a table in the morning",
-      "The Alpbachtal Card (often given free by area accommodations) can include the area lifts — ask the hotel reception before buying tickets",
+      "The Alpbachtal Card that covers the Reitherkogelbahn comes with Alpbachtal accommodation — we're staying in the Zillertal, so assume you're paying at the counter today, and ask the Stacherhof reception what Zillertal card they offer for the Spieljoch instead",
       "On the Lauser-Sauser you control the speed with a brake lever — first run gentle, second run Gili will demand 'schneller!'"
     ],
     italianWords: [
@@ -620,10 +622,10 @@ export const itinerary: Day[] = [
     dayNumber: 7,
     date: "2026-08-17",
     weekday: "Monday",
-    departureTime: "08:45",
-    rideToFirst: { duration: "30 min", note: "A12 toward Kufstein, exit Wörgl-Ost, then up to Söll" },
+    departureTime: "08:30",
+    rideToFirst: { duration: "50 min", note: "B169 to Strass, A12 east toward Kufstein, exit Wörgl-Ost, then the B178 up to Söll" },
     region: "south",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Hexenwasser — barefoot with the witches",
     subtitle: "A whole mountain of water play above Söll",
     leadImage: "./images/hexenwasser-soell.jpg",
@@ -649,11 +651,11 @@ export const itinerary: Day[] = [
         time: "14:30",
         title: "Last splash, gondola down, nap-drive home",
         description:
-          "Buy the fresh witch-bakery bread on the way out — it's tomorrow's breakfast. Thirty minutes of valley motorway does the rest."
+          "Buy the fresh witch-bakery bread on the way out — breakfast at the Stacherhof is included, so make this tonight's dinner bread instead. Then fifty minutes of valley motorway does the rest; nobody will be awake past Wörgl."
       }
     ],
     driveNotes:
-      "Base → Söll ≈ 30 min: A12 toward Kufstein, exit at Wörgl-Ost, then the B178 to the Hexenwasser gondola's big free car park. Same directions in reverse for the sleepy ride home.",
+      "Fügen → Söll ≈ 50 min: ten minutes down the B169 to the A12 at Strass, east toward Kufstein, exit at Wörgl-Ost, then the B178 to the Hexenwasser gondola's big free car park. It's the longest day-trip drive of the week now that we're based in the Zillertal — leave by 08:30 and it's done before anyone notices. Same directions in reverse for the sleepy ride home.",
     gear: [
       { item: "Towels, full changes of clothes for BOTH kids, and swim diaper for Tom — this is a getting-wet day, not a maybe", for: "hexenwasser-soell" },
       { item: "Crocs or sandals that can get soaked, for the walks between barefoot stations", for: "hexenwasser-soell" },
@@ -717,10 +719,10 @@ export const itinerary: Day[] = [
     dayNumber: 8,
     date: "2026-08-18",
     weekday: "Tuesday",
-    departureTime: "09:00",
-    rideToFirst: { duration: "25 min", note: "straight down the A12 to Kufstein" },
+    departureTime: "08:45",
+    rideToFirst: { duration: "45 min", note: "B169 down to Strass, then the A12 north-east to Kufstein" },
     region: "south",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (Zillertal)",
     title: "Kufstein — a real fortress above the Inn",
     subtitle: "Festung Kufstein by glass lift, the noon organ, optional Riedel glassworks",
     leadImage: "./images/kufstein-festung.jpg",
@@ -754,7 +756,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes:
-      "Base → Kufstein ≈ 25 min straight up the A12 (it's the last town before the German border — you'll drive this same stretch to the airport on Thursday). Park at the City Parkgarage or the Riedel car park; both are a short walk from the fortress visitor center.",
+      "Fügen → Kufstein ≈ 45 min: ten minutes down the B169 to the A12 at Strass, then straight north-east down the Inn valley (Kufstein is the last town before the German border — you'll drive this same stretch to the airport on Thursday, so today doubles as a dry run). Park at the City Parkgarage or the Riedel car park; both are a short walk from the fortress visitor center.",
     gear: [
       { item: "Carrier for Tom — the Panoramabahn is step-free but the fortress interiors are stairs on stairs", for: "kufstein-festung" },
       { item: "Sun hats — the ramparts and lawns at the top are shade-free at midday", for: "kufstein-festung" },
@@ -824,19 +826,25 @@ export const itinerary: Day[] = [
     dayNumber: 9,
     date: "2026-08-19",
     weekday: "Wednesday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "5 min", note: "just across the Inn — Rattenberg is our neighbor town" },
+    departureTime: "09:20",
+    rideToFirst: { duration: "20 min", note: "B169 down to Strass, then one junction east on the A12 to Rattenberg" },
     region: "south",
-    base: "Kramsach–Alpbachtal",
+    base: "Fügen (check-out) → tonight TBC",
     title: "Glass-town morning, warm-lake afternoon",
-    subtitle: "Rattenberg's glassmakers, a swim at the Reintalersee, and the suitcase shuffle",
+    subtitle: "Check out of the Stacherhof, Rattenberg's glassmakers, then a swim at the Reintalersee",
     leadImage: "./images/rattenberg.jpg",
     activities: [
+      {
+        time: "08:00",
+        title: "Check out of the Stacherhof, load the car",
+        description:
+          "Seven nights done. Last included breakfast, then the full sweep: pack everything, check under the beds (that's where Tom's other shoe lives), empty the apartment fridge into the car snack bag, and get the boot loaded before you go anywhere. Check-out is this morning — the suite isn't ours past today, so from here on the car is home base. Keep one small overnight bag and the airport entertainment bag on top rather than buried at the bottom."
+      },
       {
         time: "09:45",
         title: "Rattenberg — Austria's smallest town, made of glass",
         description:
-          "Five minutes from the hotel: a single medieval main street, about 400 residents, and glass shops end to end — Rattenberg has been a glass town for centuries. At Kisslinger Kristall-Glas the craft workshop is viewable on weekdays: glassblowers, cutters and engravers at their benches (note: the blow-your-own-bauble sessions run Mondays and Fridays only, so today is watching, not blowing). The street is car-free, flat and stroller-perfect; the ice cream is where the street bends.",
+          "Twenty minutes down the valley and one junction east: a single medieval main street, about 400 residents, and glass shops end to end — Rattenberg has been a glass town for centuries. At Kisslinger Kristall-Glas the craft workshop is viewable on weekdays: glassblowers, cutters and engravers at their benches (note: the blow-your-own-bauble sessions run Mondays and Fridays only, so today is watching, not blowing). The street is car-free, flat and stroller-perfect; the ice cream is where the street bends.",
         attractionId: "rattenberg",
         tag: "village",
         rideToNext: { duration: "10 min", note: "back through Kramsach to the Reintalersee", departAt: "12:30" }
@@ -845,30 +853,32 @@ export const itinerary: Day[] = [
         time: "13:00",
         title: "Reintalersee — a swim in Tyrol's warmest water",
         description:
-          "The Kramsach lakes are famously the warmest bathing lakes in Tyrol — the Reintalersee regularly hits 24 °C in August, a different sport from the bracing Achensee. The lido has lawns, shallow entries and a playground; this is the low-effort victory-lap swim. Naps in the shade count as swimming.",
+          "The Kramsach lakes are famously the warmest bathing lakes in Tyrol — the Reintalersee regularly hits 24 °C in August, a different sport from the bracing Achensee. The lido has lawns, shallow entries and a playground; this is the low-effort victory-lap swim, and with the car already packed there's nothing left to do but get in. No hotel pond to fall back on tonight, so let this one run long. Naps in the shade count as swimming.",
         tag: "water"
       },
       {
-        time: "17:00",
-        title: "The great suitcase shuffle",
+        time: "Late afternoon",
+        title: "Tonight's stay — still being finalised",
         description:
-          "Back to the hotel early. Pack everything except tomorrow's clothes, snacks and the airport entertainment bag. Set aside the vignette-and-fuel plan for the morning, and confirm the Sixt return details: 13:00, Terminalstraße Mitte, Parkhaus P6."
+          "Where you sleep tonight isn't booked yet: extending at the Stacherhof and taking a hotel near Munich Airport are both still on the table. Check the Lists section for whatever's been decided before you set the nav after the lake, and wherever you land, unpack one night's worth and no more. Tomorrow's fixed points don't move either way: Sixt return by 13:00 at Terminalstraße Mitte, Parkhaus P6, and LY254 at 16:30 — worth re-reading tonight along with the vignette-and-fuel plan."
       }
     ],
     driveNotes:
-      "The shortest driving day of the trip, on purpose: base → Rattenberg ≈ 5 min, Rattenberg → Reintalersee ≈ 10 min, lake → hotel ≈ 5 min. Save the fuel; tomorrow needs it.",
+      "Check-out morning, so the car gets loaded before anything else happens. Fügen → Rattenberg ≈ 20 min (B169 down to Strass, then one junction east on the A12), Rattenberg → Reintalersee ≈ 10 min — barely any driving all day. The one open leg is the last one: tonight's stay is still being finalised, so check the Lists section before you set the nav after the lake.",
     gear: [
       { item: "Stroller for the flat, car-free glass street", for: "rattenberg" },
-      { item: "Swim kit one last time — it goes in the laundry bag afterwards, not back in the suitcase" },
+      { item: "Swim kit packed where you can reach it — it goes in the laundry bag after the lake, not back into a suitcase" },
+      { item: "One small overnight bag on top of the load — until tonight's bed is confirmed you want a change of clothes without emptying the boot" },
       { item: "Cash for lakeside lido entry and ice creams" },
       { item: "A small padded box or bubble wrap if you buy glass — hand luggage, never the checked bag", for: "rattenberg" }
     ],
     dayTips: [
+      "Check-out is this morning, not tonight — load the car before Rattenberg and the rest of the day stays genuinely easy",
+      "Tonight's stay is still being finalised (extending at the Stacherhof vs. a Munich-airport hotel) — check the Lists section before you set the nav after the lake",
       "Glass shops + toddlers = one parent browses while the other runs perimeter defense outside. Alternate. The shops are genuinely worth a look",
       "A little glass animal each is the right souvenir from Rattenberg — Gili picks hers, you pick Tom's",
       "If you wanted to blow your own glass bauble at Kisslinger, that runs Mondays and Fridays — today you watch the masters instead, which is free",
-      "Do the packing at 17:00, not 21:00 — tonight ends with a proper last dinner, not a suitcase argument",
-      "Check out the fridge: leftover snacks become tomorrow's car provisions"
+      "Empty the apartment fridge at check-out: leftover snacks become today's car provisions"
     ],
     italianWords: [
       {
@@ -911,7 +921,7 @@ export const itinerary: Day[] = [
       name: "Weißer Spritzer",
       type: "wine",
       pairing:
-        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a packing night before a driving day, and the most Austrian possible way to toast eight nights in the valley — in a Rattenberg glass, if you bought one.",
+        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a check-out day with a drive still ahead, and the most Austrian possible way to toast seven nights in the Zillertal — in a Rattenberg glass, if you bought one.",
       servingNote: "Half dry white wine, half soda water, plenty of ice — 'a G'spritzter' if you want to order like a local"
     }
   },
@@ -919,10 +929,10 @@ export const itinerary: Day[] = [
     dayNumber: 10,
     date: "2026-08-20",
     weekday: "Thursday",
-    departureTime: "10:30",
-    rideToFirst: { duration: "1 h 45", note: "A12 → A93 → A8 to Munich Airport, plus a fuel stop" },
+    departureTime: "10:00",
+    rideToFirst: { duration: "1 h 50", note: "A12 → A93 → A8 to Munich Airport, plus a fuel stop" },
     region: "transit",
-    base: "Kramsach–Alpbachtal → home",
+    base: "Tyrol → home",
     title: "Servus, Tirol — the drive home",
     subtitle: "Sixt return 13:00 at Terminalstr. Mitte P6 · LY254 departs 16:30",
     leadImage: "./images/munich-airport.jpg",
@@ -931,11 +941,11 @@ export const itinerary: Day[] = [
         time: "08:00",
         title: "Last alpine breakfast, load the car",
         description:
-          "Unhurried breakfast, final sweep of the room (check under the beds — that's where Tom's other shoe lives), car loaded by 10:15. One last look at the mountains.",
-        rideToNext: { duration: "1 h 45", note: "fuel up near Kufstein before the border", departAt: "10:30" }
+          "Unhurried breakfast wherever last night landed you, final sweep of the room (check under the beds — that's where Tom's other shoe lives), car loaded by 09:45. One last look at the mountains.",
+        rideToNext: { duration: "1 h 50", note: "fuel up near Kufstein before the border", departAt: "10:00" }
       },
       {
-        time: "12:45",
+        time: "12:15",
         title: "Fuel + Sixt return at Parkhaus P6",
         description:
           "Fill the tank before the airport (a station near the Kufstein on-ramp or at the last Autobahn services — airport fuel prices are punitive). Rental return is signposted 'Mietwagen-Rückgabe': Terminalstraße Mitte, Parkhaus P6. Return by 13:00, keep the receipt, and it's a short walk into the terminal.",
@@ -950,7 +960,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes:
-      "Base → Munich Airport ≈ 1 h 45 (160 km): A12 east past Kufstein, over the border onto the A93, then the A8 toward Munich and the airport spur. Leave by 10:30 — that's the drive plus a fuel stop plus a toddler-emergency margin, landing you at Sixt right on the 13:00 return slot.",
+      "Wherever last night ended up, the airport run is the same road: A12 east past Kufstein, over the border onto the A93, then the A8 toward Munich and the airport spur. From Fügen that's ≈ 1 h 50 (about 185 km); from a Munich-side hotel it's a fraction of that, so adjust the alarm accordingly. If you're still in Tyrol, leave by 10:00 — that's the drive plus a fuel stop plus a toddler-emergency margin, landing you at Sixt comfortably inside the 13:00 return slot.",
     gear: [
       { item: "The entertainment bag, loaded fresh: snacks, water, one new small surprise toy each for the flight" },
       { item: "Passports + booking confirmations in the daypack, not the suitcase" },

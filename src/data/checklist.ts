@@ -23,8 +23,21 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "hotel",
-    text: "Book the hotel — still open!",
-    detail: "8 nights in the Alpbachtal / Inn valley (Aug 12–20). Filter for air conditioning + a family room/apartment big enough for 2 adults + 2 kids. See the Stays section for candidates.",
+    text: "Hotel booked — Aparthotel Stacherhof, Fügen",
+    detail: "Chalet Suite, 71 m², breakfast included. Check-in Wed 12 Aug, check-out Wed 19 Aug (7 nights). Confirmation is in the Tickets section.",
+    done: true
+  },
+  {
+    id: "last-night",
+    text: "Sort the last night (19→20 Aug) — still open!",
+    detail: "The Stacherhof booking ends on 19 Aug but we fly home on the 20th. Either extend one night in Fügen, or book near Munich Airport (which makes the 13:00 car return and 16:30 flight much calmer).",
+    urgent: true
+  },
+  {
+    id: "hotel-ac",
+    text: "Call the Stacherhof about air conditioning",
+    detail: "The offer never mentions AC. Ring +43 5288 62753 to ask whether the Chalet Suite has it — and if not, ask for a fan and plan on shutters-down-by-day, windows-open-at-night.",
+    link: "tel:+43528862753",
     urgent: true
   },
   {

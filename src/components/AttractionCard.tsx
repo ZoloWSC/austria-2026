@@ -6,7 +6,8 @@ import {
   Plus,
   X,
   Lightbulb,
-  Activity
+  Activity,
+  Heart
 } from "lucide-react";
 import type { Difficulty, POI } from "../data/types";
 import { useMapFocus } from "../lib/mapContext";
@@ -84,14 +85,23 @@ export default function AttractionCard({ poi: rawPoi }: { poi: POI }) {
         </div>
       </div>
 
-      {/* Top corner: region badge */}
-      <div className="absolute top-3 start-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/55 backdrop-blur-md text-cream-50 text-[10px] uppercase tracking-[0.18em] font-medium">
-        <span
-          className={`w-1.5 h-1.5 rounded-full ${
-            isSouth ? "bg-gold-500" : "bg-olive-500"
-          }`}
-        />
-        {regionLabel}
+      {/* Top corner: region badge + (if it's one of Hila's own finds) her
+          badge, in the same orchid used for her map pins. */}
+      <div className="absolute top-3 start-3 flex flex-col items-start gap-1.5">
+        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/55 backdrop-blur-md text-cream-50 text-[10px] uppercase tracking-[0.18em] font-medium">
+          <span
+            className={`w-1.5 h-1.5 rounded-full ${
+              isSouth ? "bg-gold-500" : "bg-olive-500"
+            }`}
+          />
+          {regionLabel}
+        </div>
+        {poi.addedBy === "hila" && (
+          <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#8A4FA8] text-cream-50 text-[10px] uppercase tracking-[0.16em] font-semibold shadow-[0_4px_14px_rgba(138,79,168,0.45)]">
+            <Heart size={10} strokeWidth={2.5} className="fill-cream-50" />
+            {t("added_by_hila")}
+          </div>
+        )}
       </div>
 
       {/* Top corner: first tag + difficulty pill (stacked) */}

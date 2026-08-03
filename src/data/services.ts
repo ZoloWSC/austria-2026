@@ -1,25 +1,25 @@
 import type { Service } from "./types";
 
 // Austria '26 — supermarkets, fuel and family-friendly eats near the
-// Alpbachtal base and along the day-trip routes. `base: "north"` =
+// Fügen (Zillertal) base and along the day-trip routes. `base: "north"` =
 // base-area / Inn valley west; `base: "south"` = east side. Austrian
 // supermarkets close on Sundays and public holidays (incl. Aug 15) —
 // stock up on Saturday. Hours are typical patterns; confirm on the day.
 export const services: Service[] = [
   // ---- Supermarkets ----
   {
-    id: "mpreis-brixlegg",
-    name: "MPreis Brixlegg",
+    id: "spar-fuegen",
+    name: "SPAR Fügen",
     category: "supermarket",
     region: "north",
     base: "north",
     description:
-      "MPreis is the beloved Tyrolean supermarket chain, most branches with a 'Baguette' café-bakery attached. The Brixlegg store is the closest full shop to the Alpbachtal base — good for breakfast supplies, toddler snacks, nappies and a quick coffee.",
-    shortDescription: "Closest full supermarket to the base, with a bakery-café.",
-    coords: [47.4310, 11.8790],
-    address: "Brixlegg, 6230, Austria",
-    hours: "Mon–Fri ~07:15–19:30, Sat ~07:15–18:00, closed Sun & holidays",
-    website: "https://www.mpreis.at/"
+      "The main supermarket in Fügen, minutes from the Stacherhof — the everyday stop for toddler snacks, nappies, fruit, and anything the apartment kitchen needs. Breakfast is included at the hotel, so this is mostly lunches, picnic supplies and the odd bottle of wine. There's also an MPreis in the village (Bahnhofstraße 4) with a bakery-café attached.",
+    shortDescription: "The village supermarket, minutes from our apartment.",
+    coords: [47.3468, 11.8524],
+    address: "Zillerweg 6, 6263 Fügen, Austria",
+    hours: "Mon–Sat ~07:15–18:00, closed Sun & holidays",
+    website: "https://www.spar.at/"
   },
   {
     id: "spar-woergl",
@@ -28,7 +28,7 @@ export const services: Service[] = [
     region: "south",
     base: "south",
     description:
-      "A larger EUROSPAR in Wörgl on the east side — handy to stock up before or after the Söll/Kufstein day trips. Wider range than the village shops, with fresh produce, baby items and a deli counter.",
+      "A larger EUROSPAR in Wörgl on the east side — handy on the longer Söll and Kufstein days (both ~45–50 min from Fügen). Wider range than the village shops, with fresh produce, baby items and a deli counter.",
     shortDescription: "Bigger supermarket on the east side, good for a proper stock-up.",
     coords: [47.4930, 12.0630],
     address: "Wörgl, 6300, Austria",
@@ -42,8 +42,8 @@ export const services: Service[] = [
     region: "north",
     base: "north",
     description:
-      "On the way to Achensee, the Zillertal and Innsbruck — a convenient MPreis to grab picnic supplies before a mountain or lake day when the huts are pricey and toddler patience is short.",
-    shortDescription: "West-side MPreis, good for picnic supplies en route.",
+      "Fifteen minutes down the valley at the mouth of the Zillertal — the natural stop for picnic supplies on the way to Achensee, Innsbruck or Rattenberg, when hut prices are steep and toddler patience is short.",
+    shortDescription: "MPreis at the valley mouth, good for picnic supplies en route.",
     coords: [47.3880, 11.7770],
     address: "Jenbach, 6200, Austria",
     hours: "Mon–Fri ~07:15–19:30, Sat ~07:15–18:00, closed Sun & holidays",
@@ -51,16 +51,16 @@ export const services: Service[] = [
   },
   // ---- Fuel ----
   {
-    id: "fuel-a12-kramsach",
-    name: "Petrol station — A12 near Kramsach/Brixlegg",
+    id: "fuel-zillertal",
+    name: "Petrol station — Fügen / Zillertal valley road",
     category: "gas",
     region: "north",
     base: "north",
     description:
-      "The everyday fill-up near the base by the A12 junction. Diesel is common on Austrian rental SUVs — check which the Sixt car takes before the first fill. Fuel is cheaper in Austria than at the German motorway stations, so tank up this side.",
-    shortDescription: "Everyday fuel stop near the base by the A12.",
-    coords: [47.4360, 11.8850],
-    address: "Near Kramsach/Brixlegg A12 junction, Austria",
+      "The everyday fill-up on the B169 valley road through Fügen, on the way to the A12. Diesel is common on Austrian rental SUVs — check which the Sixt car takes before the first fill. Fuel is cheaper in Austria than at the German motorway stations, so tank up this side of the border.",
+    shortDescription: "Everyday fuel stop in Fügen, on the valley road.",
+    coords: [47.3470, 11.8560],
+    address: "B169 Zillertalstraße, 6263 Fügen, Austria",
     hours: "Daily, long hours"
   },
   {
@@ -97,8 +97,8 @@ export const services: Service[] = [
     region: "south",
     base: "north",
     description:
-      "A lake-terrace spot by the warm Reintalersee near the base — easy for a swim-then-lunch on the Rattenberg day, with space for the kids to potter and a menu of grilled fish, salads and the usual Tyrolean staples.",
-    shortDescription: "Lakeside terrace by the Reintalersee — swim then lunch.",
+      "A lake-terrace spot by the warm Reintalersee, about 25 minutes from Fügen — easy for a swim-then-lunch on the Rattenberg day, with space for the kids to potter and a menu of grilled fish, salads and the usual Tyrolean staples.",
+    shortDescription: "Lakeside terrace by the Reintalersee — swim then lunch (~25 min).",
     coords: [47.4540, 11.8940],
     address: "Reintalersee, 6233 Kramsach, Austria",
     hours: "Daytime & dinner in summer season"

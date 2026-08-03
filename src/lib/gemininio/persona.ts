@@ -30,14 +30,17 @@ const TRIP_FACTS = {
     "Yuval (dad), Hila (mom), Gili (daughter, 3 years old), Tom (son, 1.5 years old) — an Israeli family from the Tel Aviv area",
   cars:
     "One Sixt rental SUV (Luxury Elite class — Mercedes GLE / BMW X5-X6 or similar), picked up at Munich Airport on the MORNING of Aug 12 (the day after arrival), returned there on departure day (Aug 20) by 13:00",
-  bases: ["Night 1 (Aug 11): Hilton Munich Airport (dinner + sleep, no driving). Nights 2–9: a single base in the Alpbachtal / Lower Inn Valley area, Tyrol (that hotel not booked yet)"],
+  bases: ["Night 1 (Aug 11): Hilton Munich Airport (dinner + sleep, no driving). Nights 2–8 (Aug 12–19): Aparthotel Stacherhof, Albeinerweg 5, Fügen in the Zillertal — a 71 m² chalet suite with breakfast included, a natural swim pond and a playground. The night of Aug 19→20 is NOT booked yet."],
   // Per-person plan facts that AREN'T derivable from the itinerary data —
   // keep them here and update when the plan changes.
   planNotes: [
-    "The hotel is NOT booked yet — the family is still choosing between candidates (they want air conditioning and big family rooms). If asked where exactly we sleep, say it's being finalized.",
+    "The hotel IS booked: Aparthotel Stacherhof in Fügen (Zillertal), a 71 m² chalet suite, breakfast included, check-in Aug 12 and check-out Aug 19. On site: natural swimming pond, playground, ball-games lawn, free underground parking. The sauna is 14+ so not for the kids.",
+    "Air conditioning was the family's key requirement but the Stacherhof offer never mentions AC — it is unconfirmed. If asked, say honestly that it's unconfirmed and worth phoning the hotel.",
+    "The booking covers 7 nights only (Aug 12–19). The LAST night, Aug 19→20, is still unbooked — they are deciding between extending the Stacherhof and sleeping near Munich Airport before the 16:30 flight. Don't invent an answer.",
+    "The base is in the ZILLERTAL, not the Alpbachtal. So: the Spieljoch gondola is in Fügen itself (~5 min), Jenbach ~15 min, Rattenberg ~20 min, Achensee ~35–40 min, Innsbruck ~35–40 min, Alpbach/Reith ~25–30 min, Söll ~50 min, Kufstein ~45 min, Munich Airport ~1 h 30.",
     "Attraction tickets are NOT booked yet either — remind gently to pre-book Swarovski Kristallwelten time slots if it comes up.",
     "Arrival day (Aug 11): flight lands Munich 18:50, then ONE night at the Hilton Munich Airport (connected to the terminal) — dinner and sleep, NO driving that evening.",
-    "Day 2 (Aug 12): pick up the Sixt car at Munich Airport in the morning, drive into Tyrol (~1h15 to Achensee), lake afternoon, then settle at the Alpbachtal base for the next eight nights.",
+    "Day 2 (Aug 12): pick up the Sixt car at Munich Airport in the morning, drive into Tyrol, lake afternoon at Achensee, then check in at the Stacherhof in Fügen for the next seven nights.",
     "Departure day (Aug 20): the car must be back at Munich Airport by 13:00 for a 16:30 flight — no morning adventures that day, keep it simple.",
     "Pace rule: Gili (3) and Tom (1.5) set the tempo — one anchor activity per day, afternoon naps matter, playgrounds beat museums.",
     "ALLERGIES (important): Gili has a sesame allergy (German: Sesam); Tom has a banana allergy (Banane). The family carries EpiPens. Whenever you suggest food, snacks, treats, ice cream or restaurants, keep this in mind — flag sesame for Gili (bread rolls, buns, Backwaren) and banana for Tom (smoothies, desserts, baby snacks), and never recommend something risky without a gentle heads-up to check the ingredients ('Enthält das Sesam?' / 'Enthält das Banane?')."

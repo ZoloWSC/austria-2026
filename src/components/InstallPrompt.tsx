@@ -152,15 +152,29 @@ export default function InstallPrompt() {
             aria-modal="true"
             aria-labelledby={`${checkboxId}-title`}
             dir={dir}
+            /* iOS FIX: cap the sheet to the *visual* viewport and let it
+               scroll internally. Without this, the 3-step iOS instructions
+               made the sheet taller than an iPhone screen, so the footer
+               (checkbox + dismiss) sat below the fold — under Safari's
+               bottom toolbar — and simply could not be tapped. The extra
+               bottom padding clears that toolbar / home indicator. */
             className="fixed z-[8101] inset-x-0 bottom-0 md:inset-0 md:m-auto md:h-fit md:max-w-md
+                       max-h-[88dvh] overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]
                        bg-cream-50 text-ink-900
                        rounded-t-3xl md:rounded-3xl
                        border border-cream-300/70 shadow-[0_-12px_40px_-8px_rgba(42,31,26,0.25)] md:shadow-[0_24px_60px_-12px_rgba(42,31,26,0.35)]
-                       pt-3 pb-[max(1rem,env(safe-area-inset-bottom))] px-5 md:p-6"
-            initial={{ y: "100%", opacity: 0 }}
+                       pt-3 pb-[max(1.5rem,calc(env(safe-area-inset-bottom)+1rem))] px-5 md:p-6
+                       [touch-action:manipulation]"
+            /* Deliberately a SHORT slide (24px), not a full `y: 100%` one.
+               A full-height translate means that if the enter animation ever
+               stalls — throttled rAF, iOS low-power mode, a backgrounded or
+               mid-scroll tab — the sheet freezes below the fold and the user
+               is left with a popup they cannot tap. Capping the travel keeps
+               this dialog reachable even if the animation never finishes. */
+            initial={{ y: 24, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "100%", opacity: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 28 }}
+            exit={{ y: 24, opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
           >
             {/* Drag handle — visual only, signals "this is a sheet" on mobile */}
             <div
@@ -235,44 +249,65 @@ export default function InstallPrompt() {
               </ol>
             )}
 
-            {/* Native Install CTA — Android-with-event only */}
-            {platform === "android" && canNativeInstall && (
-              <button
-                type="button"
-                onClick={handleInstallClick}
-                className="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full
-                           bg-terracotta-500 px-5 py-3 text-base font-medium text-cream-50
-                           shadow-md shadow-terracotta-700/20 active:scale-[0.99] transition-transform
-                           hover:bg-terracotta-600 focus:outline-none focus:ring-2 focus:ring-terracotta-500/40"
-              >
-                <Download size={18} />
-                {t("install_install_button")}
-              </button>
-            )}
+            {/* ACTION BAR — sticky to the bottom of the (scrollable) sheet.
+                On a small iPhone the instructions make the sheet taller than
+                the screen; if these controls scrolled away with the content
+                the popup looked impossible to accept or dismiss. Pinning
+                them here means the primary button is ALWAYS on screen. */}
+            <div className="sticky bottom-0 -mx-5 md:-mx-6 mt-5 px-5 md:px-6 pt-3 pb-1 bg-cream-50 border-t border-cream-300/60">
+              {/* Native Install CTA — Android-with-event only */}
+              {platform === "android" && canNativeInstall ? (
+                <button
+                  type="button"
+                  onClick={handleInstallClick}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full
+                             bg-terracotta-500 px-5 py-3 text-base font-medium text-cream-50
+                             shadow-md shadow-terracotta-700/20 active:scale-[0.99] transition-transform
+                             hover:bg-terracotta-600 focus:outline-none focus:ring-2 focus:ring-terracotta-500/40"
+                >
+                  <Download size={18} />
+                  {t("install_install_button")}
+                </button>
+              ) : (
+                /* Everything else (all iOS, Android without the event) has no
+                   native dialog — give it a clear, unmissable acknowledge. */
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full
+                             bg-terracotta-500 px-5 py-3 text-base font-medium text-cream-50
+                             shadow-md shadow-terracotta-700/20 active:scale-[0.99] transition-transform
+                             hover:bg-terracotta-600 focus:outline-none focus:ring-2 focus:ring-terracotta-500/40"
+                >
+                  <Check size={18} />
+                  {t("install_got_it")}
+                </button>
+              )}
 
-            {/* Footer — checkbox + dismiss */}
-            <div className="mt-5 flex items-center justify-between gap-3">
-              <label
-                htmlFor={checkboxId}
-                className="inline-flex items-center gap-2 text-xs text-ink-700/85 cursor-pointer select-none"
-              >
-                <input
-                  id={checkboxId}
-                  type="checkbox"
-                  checked={neverAgain}
-                  onChange={(e) => setNeverAgain(e.target.checked)}
-                  className="h-4 w-4 rounded border-cream-300 text-terracotta-500
-                             focus:ring-terracotta-500/40 accent-terracotta-500"
-                />
-                {t("install_dont_show_again")}
-              </label>
-              <button
-                type="button"
-                onClick={handleClose}
-                className="text-xs font-medium text-ink-700 hover:text-terracotta-600 transition-colors px-2 py-1"
-              >
-                {t("install_dismiss")}
-              </button>
+              {/* Footer — checkbox + dismiss */}
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <label
+                  htmlFor={checkboxId}
+                  className="inline-flex items-center gap-2 py-2 text-xs text-ink-700/85 cursor-pointer select-none"
+                >
+                  <input
+                    id={checkboxId}
+                    type="checkbox"
+                    checked={neverAgain}
+                    onChange={(e) => setNeverAgain(e.target.checked)}
+                    className="h-4 w-4 rounded border-cream-300 text-terracotta-500
+                               focus:ring-terracotta-500/40 accent-terracotta-500"
+                  />
+                  {t("install_dont_show_again")}
+                </label>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="text-xs font-medium text-ink-700 hover:text-terracotta-600 transition-colors px-3 py-2 -me-1 min-h-11"
+                >
+                  {t("install_dismiss")}
+                </button>
+              </div>
             </div>
           </motion.div>
         </>

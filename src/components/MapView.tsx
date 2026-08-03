@@ -37,8 +37,15 @@ const CATEGORY_CONFIG: Record<Category, CategoryConfig> = {
   winery:      { id: "winery",      labelKey: "cat_winery",      color: "#7A2E3F", bg: "#7A2E3F", Icon: Grape }         // deep burgundy
 };
 
-function makeIcon(cat: Category, isHero = false): L.DivIcon {
+/* Hila's own picks get their own pin colour (orchid — deliberately
+   outside the category palette) and a heart glyph, so her places are
+   instantly distinguishable from the suggested ones. */
+const HILA_PIN = "#8A4FA8";
+
+function makeIcon(cat: Category, isHero = false, addedBy?: "hila"): L.DivIcon {
   const cfg = CATEGORY_CONFIG[cat];
+  const isHila = addedBy === "hila";
+  const bg = isHila ? HILA_PIN : cfg.bg;
   const size = isHero ? 38 : 30;
   const html = `
     <div style="
@@ -49,13 +56,13 @@ function makeIcon(cat: Category, isHero = false): L.DivIcon {
         position:absolute;inset:0;
         border-radius:50% 50% 50% 0;
         transform:rotate(-45deg);
-        background:linear-gradient(135deg, ${cfg.bg} 0%, ${shade(cfg.bg, -15)} 100%);
+        background:linear-gradient(135deg, ${bg} 0%, ${shade(bg, -15)} 100%);
         border:2px solid #FBF7EC;
         box-shadow:0 6px 14px rgba(42,31,26,0.4);
         display:flex;align-items:center;justify-content:center;
       ">
         <div style="transform:rotate(45deg);color:#FBF7EC;font-size:${isHero ? 16 : 13}px;line-height:1;font-weight:700;">
-          ${categoryGlyph(cat)}
+          ${isHila ? "&#10084;" : categoryGlyph(cat)}
         </div>
       </div>
       ${isHero ? `<div style="position:absolute;top:-6px;right:-6px;width:14px;height:14px;border-radius:50%;background:#FBF7EC;border:2px solid #C45A3D;box-shadow:0 2px 4px rgba(0,0,0,0.2);"></div>` : ""}
@@ -166,8 +173,9 @@ type RouteSegment = {
   coords: [number, number][];
 };
 
-// The trip's big movements: Munich Airport ⇄ the Alpbachtal base.
-// Waypoints roughly follow the A8 → A93 → A12 Inntal corridor.
+// The trip's big movements: Munich Airport ⇄ the Fügen base.
+// Waypoints follow the A8 → A93 → A12 Inntal corridor, then the
+// Zillertal valley road (B169) south to Fügen.
 const ROUTE_SEGMENTS: RouteSegment[] = [
   {
     id: "arrival",
@@ -181,7 +189,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
       [47.75, 12.05],     // A93 turnoff
       [47.61, 12.06],     // Kiefersfelden border
       [47.58, 12.17],     // Kufstein
-      [47.44, 11.94]      // Alpbachtal / Kramsach base
+      [47.3879, 11.7784], // A12 west to Jenbach / Zillertal exit
+      [47.3311, 11.8576]  // Stacherhof, Fügen (Zillertal) — our base
     ]
   },
   {
@@ -504,7 +513,7 @@ export default function MapView({ registerFocus }: Props) {
 
       <div className="relative card-paper overflow-hidden -mx-4 sm:mx-0 rounded-none sm:rounded-2xl">
         <MapContainer
-          center={[47.42, 11.75]}
+          center={[47.39, 11.82]}
           zoom={9}
           scrollWheelZoom={true}
           className="h-[70svh] sm:h-[600px] w-full"
@@ -585,7 +594,7 @@ export default function MapView({ registerFocus }: Props) {
               <Marker
                 key={poi.id}
                 position={poi.coords}
-                icon={makeIcon(poi.category, isHero)}
+                icon={makeIcon(poi.category, isHero, poi.addedBy)}
                 ref={ref => {
                   markersRef.current[poi.id] = ref;
                 }}

@@ -287,8 +287,8 @@ export const DICT = {
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
   stays_title: { en: "Where we'll stay", he: "איפה נלון" },
   stays_kicker: {
-    en: "Candidate bases for our eight Tyrol nights — not booked yet",
-    he: "מועמדים לבסיס לשמונה לילות בטירול — עדיין לא הוזמן"
+    en: "Our booked base in the Zillertal · 12–19 Aug",
+    he: "הבסיס שהזמנו בצילרטל · 12–19 באוג׳"
   },
   stays_intro: {
     en: "Each stay is chosen as the perfect base for the days around it.",
@@ -576,6 +576,12 @@ export const DICT = {
     he: "הוסיפו קיצור דרך מתפריט Chrome"
   },
   install_install_button: { en: "Install", he: "התקן" },
+  install_got_it: { en: "Got it", he: "הבנתי" },
+
+  /* ---------- Provenance: Hila's own picks vs suggested places ---------- */
+  added_by_hila: { en: "Hila's pick", he: "הבחירה של הילה" },
+  attr_filter_hila: { en: "Hila's picks", he: "הבחירות של הילה" },
+  map_hila_legend: { en: "Hila's picks", he: "הבחירות של הילה" },
   install_menu_label: { en: "Install app", he: "התקנת האפליקציה" },
   install_dismiss: { en: "Maybe later", he: "אולי אחר כך" },
   install_dont_show_again: { en: "Don't show this again", he: "אל תציגו לי שוב" },

@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 import type { Lang } from "../lib/lang";
 
 const SPOT_LABEL: Record<"north" | "south", { en: string; he: string }> = {
-  north: { en: "Alpbachtal", he: "אלפבאכטאל" },
+  north: { en: "Fügen", he: "פיוגן" },
   south: { en: "Innsbruck", he: "אינסברוק" }
 };
 
@@ -22,7 +22,7 @@ interface RegionWeather {
 }
 
 const SPOTS = [
-  { key: "north", label: "Alpbachtal", lat: 47.44, lon: 11.94 },
+  { key: "north", label: "Fügen", lat: 47.3311, lon: 11.8576 },
   { key: "south", label: "Innsbruck", lat: 47.2692, lon: 11.4041 }
 ] as const;
 

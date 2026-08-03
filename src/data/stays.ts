@@ -1,95 +1,49 @@
 import type { Stay } from "./types";
 
-// Austria '26 — NOT BOOKED YET. Three candidate bases for the 8 Tyrol nights,
-// chosen for the family's two must-haves: air conditioning (genuinely
-// rare in the Tyrolean Alps — most hotels rely on cool mountain nights)
-// and big family rooms / apartments for two small kids. Every entry
-// carries a "confirm AC in your room category" warning because AC in
-// this region is often only in some categories, or absent entirely.
-// Verify the exact address, price and AC before booking.
+// Austria '26 — BOOKED. Aparthotel Stacherhof in Fügen (Zillertal),
+// Chalet Suite (Option 1): check-in Wed 12 Aug, check-out Wed 19 Aug
+// = 7 nights, breakfast included.
+//
+// NOTE: the trip runs to 20 Aug, so the night of 19→20 Aug is NOT
+// covered by this booking — that last night is still open (either
+// extend here or take a Munich-airport hotel for the drive home).
+// The booking confirmation / price lives in the encrypted Tickets
+// packet, never in this file.
 export const stays: Stay[] = [
   {
-    id: "stay-alpbacherhof",
-    name: "Das Alpbacherhof (candidate)",
+    id: "stay-stacherhof",
+    name: "Aparthotel Stacherhof",
     category: "stay",
     region: "south",
     description:
-      "A four-star family and wellness hotel in the heart of Alpbach — Austria's prettiest village and only ~20 min from every east-side day trip. Family rooms and suites, a big indoor/outdoor pool and spa, and a kids' programme make it an easy soft-landing with toddlers. As with most Tyrolean hotels, air conditioning is not guaranteed in every room, so this is a candidate to confirm.",
-    shortDescription: "4★ family & wellness hotel in Alpbach village, with pool and spa.",
-    image: "./images/stay-alpbacherhof.jpg",
-    website: "https://www.alpbacherhof.at/en/",
-    bookingLink: "https://www.alpbacherhof.at/en/",
-    address: "Alpbach 236, 6236 Alpbach, Austria",
-    coords: [47.3995, 11.9435],
+      "Home for seven nights: a 71 m² Chalet Suite at the Stacherhof, on the sunny hillside above Fügen at the mouth of the Zillertal. Two separate bedrooms (so the kids sleep behind a door), a full kitchen, two bathrooms with walk-in showers, a living room with a fireplace and a balcony over the valley. Breakfast is a proper buffet and included every morning. Outside there's a natural swimming pond, a new playground and a ball-games lawn — which means the afternoons can end with the kids running themselves tired without anyone getting back in the car. The Spieljoch gondola is in the same village, minutes away.",
+    shortDescription:
+      "Our booked base — a 71 m² chalet suite above Fügen, with breakfast, a swim pond and a playground.",
+    // A freely-licensed view of the Zillertal — the actual valley the
+    // hotel sits in. (Not a photo of the property itself; swap in one of
+    // your own once you're there.)
+    image: "./images/hero/tirol-valley.jpg",
+    website: "https://www.stacherhof-zillertal.at/",
+    bookingLink: "https://www.stacherhof-zillertal.at/",
+    address: "Albeinerweg 5, 6263 Fügen, Austria",
+    coords: [47.3311, 11.8576],
     checkIn: "2026-08-12",
-    checkOut: "2026-08-20",
-    nights: 8,
+    checkOut: "2026-08-19",
+    nights: 7,
     highlights: [
-      "In Alpbach village — central to Lauser-Sauser, Juppi's Zauberwald and Zillertal day trips",
-      "Family rooms and suites sized for a family of four",
-      "Indoor/outdoor pool and spa — a good rainy-afternoon fallback",
-      "Half-board options mean one less dinner logistics headache with tired kids"
+      "71 m² chalet suite: two bedrooms, kitchen, two bathrooms, living room and a valley balcony",
+      "Breakfast buffet included every morning — one less thing to organise with toddlers",
+      "Natural swimming pond, new playground and ball-games lawn on site",
+      "Free monitored underground parking (watch the 2.20 m height limit)",
+      "The Spieljoch family gondola is in Fügen itself — a five-minute hop",
+      "Weekly cleaning with fresh linen, daily rubbish service, WiFi throughout"
     ],
     warnings: [
-      "NOT BOOKED YET — candidate. Confirm availability for the exact dates.",
-      "Air conditioning is not standard in Tyrol — confirm AC is included in your specific room category before booking.",
-      "Village-elevation hotel; a valley-floor stay may be a touch warmer but closer to the motorway."
-    ]
-  },
-  {
-    id: "stay-kramsach-aparthotel",
-    name: "Aparthotel / Landhaus near Reintalersee, Kramsach (candidate)",
-    category: "stay",
-    region: "south",
-    description:
-      "A self-catering apartment base on the valley floor at Kramsach, beside the warm Reintalersee swimming lake and right by the A12 for fast day trips in both directions. Apartments give you a separate bedroom for the kids, a kitchen for toddler meals and a washing machine — the practical choice for a family of four. Valley-floor apartments in this area are also among the more likely to actually offer air conditioning.",
-    shortDescription: "Self-catering family apartment by the Reintalersee, on the valley floor.",
-    image: "./images/stay-kramsach-aparthotel.jpg",
-    website: "https://www.alpbachtal.at/en/search-and-book/accommodation",
-    bookingLink: "https://www.alpbachtal.at/en/search-and-book/accommodation",
-    address: "Kramsach (Reintalersee), 6233 Kramsach, Austria",
-    coords: [47.4530, 11.8930],
-    checkIn: "2026-08-12",
-    checkOut: "2026-08-20",
-    nights: 8,
-    highlights: [
-      "Apartment layout — separate kids' bedroom, kitchen and washing machine",
-      "Walking distance to the Reintalersee, Tyrol's warmest swimming lake",
-      "Right by the A12 — quick to Innsbruck (west) and Kufstein/Söll (east)",
-      "Valley-floor location: the best odds of finding real air conditioning"
-    ],
-    warnings: [
-      "NOT BOOKED YET — candidate. Filter the Alpbachtal booking portal for 'air conditioning' and an apartment sized for 2 adults + 2 kids.",
-      "Confirm AC on the specific unit — even here it is not universal.",
-      "Self-catering means no hotel restaurant on-site; plan dinners or pick a place near a gasthof."
-    ]
-  },
-  {
-    id: "stay-innsbruck-ac-hotel",
-    name: "Air-conditioned hotel near Innsbruck / Inn valley (candidate)",
-    category: "stay",
-    region: "north",
-    description:
-      "A fallback if a genuinely air-conditioned room proves hard to find in the Alpbachtal itself: a modern hotel on the Inn valley floor toward Innsbruck, where larger business-and-leisure hotels are far more likely to have real AC. It shifts the base a little west, lengthening the east-side drives (Söll, Kufstein) slightly, but guarantees a cool room for the kids on a hot August night.",
-    shortDescription: "Valley-floor fallback toward Innsbruck — best odds of real AC.",
-    image: "./images/stay-innsbruck-ac-hotel.jpg",
-    website: "https://www.innsbruck.info/en/accommodation.html",
-    bookingLink: "https://www.innsbruck.info/en/accommodation.html",
-    address: "Inn valley near Innsbruck, Tyrol, Austria",
-    coords: [47.2830, 11.4200],
-    checkIn: "2026-08-12",
-    checkOut: "2026-08-20",
-    nights: 8,
-    highlights: [
-      "Modern valley-floor hotels here are the most likely to have genuine air conditioning",
-      "Family rooms / connecting rooms common in this class of hotel",
-      "Closest of the three to the west-side sights (Innsbruck, Alpenzoo, Swarovski, Achensee)",
-      "Easy motorway access keeps every day trip on the A12"
-    ],
-    warnings: [
-      "NOT BOOKED YET — candidate, and a compromise: it lengthens the east-side drives (Söll, Kufstein) by ~20–30 min.",
-      "Still confirm AC explicitly — filter for it and read the room description.",
-      "A valley-floor location is warmer than the villages; AC matters more here, not less."
+      "Air conditioning is NOT mentioned anywhere in the offer — worth calling to ask (+43 5288 62753) before August. The suite has a balcony and hillside airflow, but bring a plan for a hot night (fan, cross-ventilation, blinds down by day).",
+      "The booking ends on 19 Aug — the night of 19→20 Aug still needs sorting (extend here, or sleep near Munich Airport for the flight home).",
+      "The sauna / wellness area is 14+, so it's not an option with Gili and Tom — the swim pond and playground are the kids' territory.",
+      "Underground garage height is 2.20 m — fine for the booked SUV class, but check if you end up with a roof box.",
+      "It's in the Zillertal, not the Alpbachtal: Söll and Kufstein are now ~45–50 min away, while Spieljoch, Jenbach and Rattenberg are very close."
     ]
   }
 ];
