@@ -33,7 +33,7 @@ export const tips: Tip[] = [
     id: "assumption-day",
     title: "Aug 15 is a public holiday — shops shut",
     body:
-      "Mariä Himmelfahrt (Assumption Day), Saturday Aug 15, is a national holiday falling mid-trip: supermarkets and most shops close, like a Sunday. Museums vary, but outdoor attractions, lifts, cafés and restaurants stay open — which is exactly why the Innsbruck zoo-and-old-town day is parked here. Stock up on groceries the day before.",
+      "Mariä Himmelfahrt (Assumption Day), Saturday Aug 15, is a national holiday falling mid-trip: supermarkets and most shops close, like a Sunday. Outdoor attractions, lifts, cafés and restaurants stay open — which is why the Hexenwasser is a fine choice that morning. The catch is the afternoon: Rattenberg is a town of glass workshops and shops, and those will very likely be shut, so either treat it as a pretty car-free stroll with coffee and strudel, or swap that afternoon with another day. Do the grocery run on Friday the 14th.",
     severity: "warning",
     icon: "calendar"
   },
