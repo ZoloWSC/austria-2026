@@ -105,7 +105,7 @@ export const tips: Tip[] = [
     id: "entry-documents",
     title: "Passports & EU entry for Israeli travellers",
     body:
-      "Israeli passport holders enter the Schengen area (Austria/Germany) visa-free for short stays; make sure passports are valid well beyond the trip. ETIAS, the EU's pre-travel authorisation, has been repeatedly delayed — check its status close to departure and register online if it's live by August 2026. Carry travel/health insurance details; Israel has no EHIC.",
+      "Israeli passport holders enter the Schengen area (Austria/Germany) visa-free for short stays — passports checked and valid. Carry travel/health insurance details; Israel has no EHIC, so a private policy is what covers you.",
     severity: "warning",
     icon: "passport"
   },
