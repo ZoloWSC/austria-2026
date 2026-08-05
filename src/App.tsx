@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TripStats from "./components/TripStats";
 import ItinerarySection from "./components/ItinerarySection";
+import ForecastSection from "./components/ForecastSection";
 import BookingsSection from "./components/BookingsSection";
 import MapView from "./components/MapView";
 import AttractionsGrid from "./components/AttractionsGrid";
@@ -52,6 +53,10 @@ export default function App() {
 
       {/* The Plan — the magazine's main feature, leads everything else */}
       <ItinerarySection />
+
+      {/* Live 10-day forecast, right under the plan it applies to */}
+      <SectionOrnament />
+      <ForecastSection />
 
       <SectionOrnament />
       <BookingsSection />

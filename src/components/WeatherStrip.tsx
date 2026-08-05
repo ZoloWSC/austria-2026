@@ -81,7 +81,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
         const result: Record<string, RegionWeather> = {};
         await Promise.all(
           SPOTS.map(async spot => {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FRome&forecast_days=5`;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FVienna&forecast_days=5`;
             const res = await fetch(url);
             if (!res.ok) throw new Error(String(res.status));
             const json = await res.json();

@@ -578,6 +578,34 @@ export const DICT = {
   install_install_button: { en: "Install", he: "התקן" },
   install_got_it: { en: "Got it", he: "הבנתי" },
 
+  /* ---------- 10-day live forecast ---------- */
+  forecast_eyebrow: { en: "Live weather", he: "מזג אוויר בזמן אמת" },
+  forecast_title: {
+    en: "The ten days, as the sky sees them",
+    he: "עשרת הימים, כמו שהשמיים רואים אותם"
+  },
+  forecast_kicker: {
+    en: "Real forecast for where we'll actually be each day · refreshes itself",
+    he: "תחזית אמיתית למקום שבו נהיה בכל יום · מתעדכנת מעצמה"
+  },
+  forecast_updated: { en: "Updated {time}", he: "עודכן ב-{time}" },
+  forecast_loading: { en: "Fetching the forecast…", he: "טוען את התחזית…" },
+  forecast_refresh: { en: "Refresh", he: "רענון" },
+  forecast_unavailable: { en: "Forecast unavailable", he: "התחזית אינה זמינה" },
+  forecast_error_body: {
+    en: "Couldn't reach the weather service just now — it'll try again on its own next time you open the app.",
+    he: "לא הצלחנו להגיע לשירות מזג האוויר כרגע — הוא ינסה שוב מעצמו בפעם הבאה שתפתחו את האפליקציה."
+  },
+  forecast_not_yet: {
+    en: "Opens ~{n} days out",
+    he: "ייפתח בעוד כ-{n} ימים"
+  },
+  forecast_past: { en: "Already behind us", he: "כבר מאחורינו" },
+  forecast_source: {
+    en: "Data from Open-Meteo, fetched fresh in your browser and cached for an hour. Mountain forecasts move — treat anything beyond three days as a hint, not a promise.",
+    he: "נתונים מ-Open-Meteo, נטענים מחדש בדפדפן שלכם ונשמרים לשעה. תחזיות בהרים משתנות — כל מה שמעבר לשלושה ימים הוא רמז, לא הבטחה."
+  },
+
   /* ---------- Provenance: Hila's own picks vs suggested places ---------- */
   added_by_hila: { en: "Hila's pick", he: "הבחירה של הילה" },
   attr_filter_hila: { en: "Hila's picks", he: "הבחירות של הילה" },
