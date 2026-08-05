@@ -895,6 +895,171 @@ export const attractions: POI[] = [
       "A good final play on the way home — burn the last of the kids' energy before the hotel and the flight."
     ]
   },
+  {
+    id: "ziller-radweg",
+    addedBy: "hila",
+    name: "Ziller Valley Cycle Path (Ziller Radweg)",
+    category: "attraction",
+    region: "south",
+    description:
+      "The valley's flat, paved cycle path, which runs along the Ziller river and passes straight out of Fügen — so it starts more or less at our front door. There is almost no gradient the whole way: just meadows, the rushing grey-green river on one side and the Zillertal walls rising on both, with benches and the odd farm shop along the route. Hila has it pencilled in for the late afternoon of arrival day, once the bags are in the room and nobody can face another car journey. It is the rare Austrian outing that works equally well with a stroller, a balance bike or a towed trailer, and because it is out-and-back you simply turn round the moment the kids have had enough.",
+    shortDescription: "A flat riverside cycle path out of Fügen — buggy, balance-bike and trailer friendly.",
+    image: "./images/ziller-radweg.jpg",
+    address: "Ziller Radweg, 6263 Fügen, Austria",
+    coords: [47.3492, 11.8550],
+    tags: ["nature", "family"],
+    difficulty: "easy",
+    openingNote:
+      "A public cycle path — no gate, no ticket, no hours. Nothing to check before setting off.",
+    tips: [
+      "Bikes, e-bikes and child trailers can be hired in the valley — ask the Stacherhof reception for the nearest rental and the current rates.",
+      "With a 1.5-year-old the answer is a towed trailer or a child seat, not a saddle — Tom rides, Gili can do short stretches on a balance bike.",
+      "It is out-and-back with no loop to commit to: ride until the mood turns, then roll back downstream.",
+      "Almost no shade on the open meadow stretches — hats, sun cream and a water bottle even late in the day.",
+      "Perfect arrival-day plan: it costs nothing, needs no booking, and you are ten minutes from the room when it collapses."
+    ]
+  },
+  {
+    id: "kundler-klamm",
+    addedBy: "hila",
+    name: "Kundler Klamm",
+    category: "attraction",
+    region: "north",
+    description:
+      "A gorge walk that a stroller can actually do, which is close to unheard of. The path from Kundl follows the Wildschönauer Ache into a narrow rock cleft — wide, well surfaced and near-level, with the river crashing along beside you and the walls closing overhead. Because the gorge is deep and tree-shaded it stays properly cool, which makes it the obvious answer to a hot August afternoon when nobody wants a mountain. Roughly 26 minutes from Fügen, and short enough to be a half-day rather than an expedition.",
+    shortDescription: "A shady, genuinely stroller-friendly gorge walk beside a rushing river.",
+    image: "./images/kundler-klamm.jpg",
+    address: "Kundler Klamm, 6250 Kundl, Austria",
+    coords: [47.4543, 11.9863],
+    tags: ["nature", "water", "family"],
+    difficulty: "easy",
+    openingNote:
+      "A public gorge path, open through the summer; it can close after storms or rockfall — check locally before driving over.",
+    tips: [
+      "≈26 min from Fügen — down the B169 to Strass, one hop on the A12, then into Kundl. Park at the gorge entrance.",
+      "It is an out-and-back, so you choose the length: walk in twenty minutes, turn round, and it is still a proper outing.",
+      "There is a gasthof at or near the gorge entrance for a drink and a break — worth confirming its hours on the day rather than counting on lunch.",
+      "The gorge is shaded and noticeably colder than the valley — bring a layer for both kids even on a hot day.",
+      "Rock and spray mean the surface can be damp; grippy shoes for Gili, and keep the stroller brake on at the viewpoints."
+    ],
+    quizFacts: [
+      {
+        question: "What made the narrow rocky gorge at the Kundler Klamm?",
+        correctAnswer: "A rushing river slowly cutting through the rock",
+        distractors: ["Giants digging with spades", "A machine built by the villagers", "A very big earthquake last year"]
+      }
+    ]
+  },
+  {
+    id: "pillersee",
+    addedBy: "hila",
+    name: "Pillersee",
+    category: "attraction",
+    region: "south",
+    description:
+      "A calm, quiet lake at St. Ulrich am Pillersee with a flat, pram-friendly path running the whole way round it — mountains reflected in still water, reeds, benches, and rowing boats to hire from the shore. The circuit is short and level enough that a 3-year-old can walk most of it, with the boats as the bribe at the end. The catch is geography: this is a long way from the Zillertal, roughly two hours from Fügen, so it is not a day trip from base. It sits about 20 minutes from Triassic Park at Waidring, which is the only sensible way to use it — dinosaurs in the morning, lake in the afternoon.",
+    shortDescription: "A still lake with a flat loop path and rowing boats — pair it with the Triassic Park day.",
+    image: "./images/pillersee.jpg",
+    address: "Pillersee, 6393 St. Ulrich am Pillersee, Austria",
+    coords: [47.5393, 12.5688],
+    tags: ["water", "nature", "family"],
+    difficulty: "easy",
+    openingNote:
+      "The lakeside path is public and free; the boat hire is seasonal and weather-dependent — confirm it at the kiosk on the day.",
+    tips: [
+      "Do not plan this from Fügen: it is roughly 2 hours each way. It only makes sense bolted onto the Triassic Park / Waidring day, ≈20 min away.",
+      "The path round the lake is flat and explicitly pram-friendly — the one lake walk where the stroller is easier than the carrier.",
+      "Rowing boats are hired by the half-hour at the shore; ask about life jackets in toddler sizes before you push off.",
+      "It is a mountain lake, so the water is cold and the shoreline shelves — paddling and duck-watching rather than a swim day.",
+      "Bring a picnic; there is not much on the lake itself and the nearest village is a short drive."
+    ],
+    quizFacts: [
+      {
+        question: "What can you hire at the Pillersee to travel out onto the water?",
+        correctAnswer: "A rowing boat",
+        distractors: ["A submarine", "A hot-air balloon", "A cable car"]
+      }
+    ]
+  },
+  {
+    id: "mayrhofen-town",
+    addedBy: "hila",
+    name: "Mayrhofen village",
+    category: "attraction",
+    region: "south",
+    description:
+      "The lively resort town at the head of the Zillertal, about 21 minutes up the valley from Fügen, and the closest thing the trip has to a proper high street. The main street is a flat walk lined with cafés, ice cream, souvenir shops and sports shops, with playgrounds tucked in behind and the big Penken and Ahorn lift stations bookending it. Hila's plan uses it as a soft landing after the show dairy — no tickets, no lifts, nothing to organise. For a 3-year-old the entire point is the ice cream, and that is a perfectly good reason to go.",
+    shortDescription: "A flat, walkable resort high street 21 min from base — cafés, ice cream and playgrounds.",
+    image: "./images/mayrhofen-town.jpg",
+    address: "Hauptstraße, 6290 Mayrhofen, Austria",
+    coords: [47.1628, 11.8608],
+    tags: ["village", "food", "family"],
+    difficulty: "easy",
+    tips: [
+      "≈21 min from Fügen straight up the B169 — the natural pairing with the show dairy at Hollenzen, which is on the same road just before town.",
+      "Use one of the parking garages by the centre rather than hunting a street space; everything worth seeing is a flat walk from them.",
+      "The main street is level and wide — stroller territory the whole way, no cobbles or climbs.",
+      "Ice cream is the whole plan for Gili; with her sesame allergy, ask at the counter about the cones and toppings rather than assuming.",
+      "Late afternoon is the right slot: the shops are open, the day's mountain crowds are down, and nobody needs a nap schedule respected."
+    ]
+  },
+  {
+    id: "lauserland",
+    addedBy: "hila",
+    name: "Lauserland (Alpbachtal)",
+    category: "attraction",
+    region: "south",
+    description:
+      "The family play world spread around the Wiedersbergerhorn valley station in Alpbach, about 24 minutes from Fügen. It is a big wooden adventure and water playground built for genuinely small children: climbing frames, slides, a sand area, and best of all a run of water channels with sluices and dams for the kids to build, block and flood, all set between forest and meadow. Hila has it down as the last Austrian morning of the trip, on the way out — close to the road home, free-form, and easy to cut short when the car is calling. Nothing needs booking and nobody has to be tall enough for anything.",
+    shortDescription: "A wooden adventure and water playground at the Alpbach valley station — built for little kids.",
+    image: "./images/lauserland.jpg",
+    website: "https://www.alpbachtal.at/en/wiedersbergerhornbahn",
+    address: "Talstation Wiedersbergerhornbahn, 6236 Alpbach, Austria",
+    coords: [47.3963, 11.9243],
+    tags: ["family", "nature", "water"],
+    difficulty: "easy",
+    openingNote:
+      "Open through the summer season at the Wiedersbergerhornbahn valley station — check the day's hours before driving over.",
+    tips: [
+      "Don't confuse the two: Lauserland is the play park at the base station, while the 'Lauser-Sauser' is the alpine coaster at the same spot — separate things, separate entry.",
+      "The coaster's rule is age 3 and up riding in front of an adult, so Gili can go and Tom cannot. Lauserland itself has no age bar, which is why it is the better fit for both of them.",
+      "The water channels and dams are the main event — full change of clothes and shoes that can get soaked.",
+      "≈24 min from Fügen via Strass and the Alpbachtal road; there is parking at the valley station.",
+      "Good drive-out-day choice: turn up when it opens, let them wreck themselves for two hours, then head for Munich. Check the day's hours before you set off."
+    ]
+  },
+  {
+    id: "olympiapark-munich",
+    addedBy: "hila",
+    name: "Olympiapark München",
+    category: "attraction",
+    region: "transit",
+    description:
+      "The park built for Munich's 1972 Olympic Games, and Hila's pick for the final morning before the flight. It is enormous and green: rolling grass hills to run down, a lake with ducks that expect to be fed, and the famous tented roofs sweeping over the stadium and swimming hall. The Olympiaturm stands over it all with a lift up to a viewing platform, from which you can see the whole city and, on a clear day, the line of Alps you have just driven out of. Flat asphalt paths make it easy going with a buggy, and it is a soft, unstructured way to spend a last morning without committing to anything ticketed.",
+    shortDescription: "Munich's 1972 Olympic park — big lawns, a duck lake and a tower with a view back to the Alps.",
+    image: "./images/olympiapark-munich.jpg",
+    website: "https://www.olympiapark.de/en",
+    address: "Spiridon-Louis-Ring 21, 80809 München, Germany",
+    coords: [48.1687, 11.5504],
+    tags: ["family", "view", "nature"],
+    difficulty: "easy",
+    openingNote:
+      "The park itself is open and free all day; the Olympiaturm charges separately and keeps its own hours — check them before you go up.",
+    tips: [
+      "It is a very big park — pick one corner (the lake and the hill below the stadium roofs) rather than trying to walk the whole thing with two small kids.",
+      "Paths are flat and paved, so the buggy is fine; the grass hills are where Gili will actually want to be.",
+      "The Olympiaturm is a paid extra with a lift queue that builds through the day — go early or skip it, and don't promise it before you've seen the line.",
+      "Bring bread or duck food for the lake; that alone is twenty happy minutes for a 1.5-year-old.",
+      "Park in the Olympiapark garages and time the exit generously — this is the last stop before the airport and the rental return."
+    ],
+    quizFacts: [
+      {
+        question: "Which enormous sports event was the Olympiapark in Munich built for?",
+        correctAnswer: "The Olympic Games",
+        distractors: ["A giant birthday party", "The world's biggest ice-cream festival", "A rocket launch"]
+      }
+    ]
+  },
 ];
 
 export const getAttraction = (id: string) => attractions.find(a => a.id === id);

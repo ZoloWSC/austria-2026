@@ -1,12 +1,25 @@
 import type { Day } from "./types";
 
-// TYROL 2026 — the Zillertal & the Lower Inn Valley with two toddlers.
-// One anchor activity per day, naps are sacred, no drive over ~50 min
-// except the two airport transfers. Base for seven of the nine nights: the
-// Aparthotel Stacherhof in Fügen (Kleinboden), Zillertal — booked, check-in
-// Wed 12 Aug, check-out Wed 19 Aug. Night 1 is the Hilton at Munich Airport;
-// the night of 19→20 Aug is near Munich — decided, but the specific hotel is
-// still being booked, so Day 9 and Day 10 deliberately stay hotel-agnostic.
+// TYROL 2026 — Hila's plan, merged and pressure-tested against real drive times.
+// The rhythm is hers and it is deliberately built for a 3-year-old and a
+// 1.5-year-old: one morning anchor at ~08:30 (a lift, a play world, water),
+// lunch around 12:30, the nap in the car during the transfer, a gentler
+// afternoon, home by ~17:00. Play parks, gondolas and lakes — no museums.
+//
+// Base for seven of the nine nights: the Aparthotel Stacherhof in Fügen
+// (Kleinboden), Zillertal — booked, check-in Wed 12 Aug, check-out Wed 19 Aug,
+// breakfast included, natural swimming pond and playground on site, free
+// underground garage with a 2.20 m height limit. Night 1 is the Hilton at
+// Munich Airport; the night of 19→20 Aug is in the Freising / Munich-airport
+// area — decided, but the specific hotel is still being booked, so Day 9 and
+// Day 10 stay deliberately hotel-agnostic.
+//
+// Every drive time in this file was measured on a routing engine, and where a
+// measurement disagreed with the original plan the file says so out loud
+// (Hintersteiner See is 65 min not 40, Söll is 52 not 35, Waidring is 76 not
+// 55, the drive to Freising is a full 2 h). Three standing notes run through
+// every day: the nap is planned into the transfer, the permanent kit lives in
+// the car, and the Austrian vignette has to be valid before Kufstein.
 export const itinerary: Day[] = [
   {
     dayNumber: 1,
@@ -33,7 +46,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes:
-      "No driving today — the Hilton is connected to the terminal, so land, walk over, and rest. You pick up the Sixt car tomorrow morning and drive into the Zillertal then (Munich Airport → Fügen is ≈ 1 h 50). Do buy the Austrian digital vignette online tonight so it's already sorted before you cross the border in the morning.",
+      "No driving today — the Hilton is connected to the terminal, so land, walk over, and rest. You pick up the Sixt car tomorrow morning and drive into the Zillertal then (Munich Airport → Fügen is a measured 1 h 50, 185 km). Do buy the Austrian digital vignette online tonight so it's already sorted before you cross the border in the morning.",
     gear: [
       { item: "Passports and the Hilton confirmation handy in the daypack" },
       { item: "Pyjamas, toothbrushes and one comfort toy each at the top of a bag for a zero-search bedtime" },
@@ -95,296 +108,70 @@ export const itinerary: Day[] = [
     dayNumber: 2,
     date: "2026-08-12",
     weekday: "Wednesday",
-    departureTime: "09:00",
-    rideToFirst: { duration: "40 min", note: "Sixt pickup at MUC, then the A8 south to exit 96 Hofoldinger Forst" },
-    region: "north",
+    departureTime: "08:30",
+    rideToFirst: { duration: "1 h 50", note: "Sixt pickup at MUC Airport Center, then the A8/A93 south over the Kufstein border and up the B169 — 185 km" },
+    region: "transit",
     base: "Munich → Fügen (Zillertal)",
-    title: "Into the Alps — a car, an animal park, and home for a week",
-    subtitle: "Morning Sixt pickup at MUC · BergTierPark Blindham on the way south · check in at the Stacherhof mid-afternoon",
-    leadImage: "./images/bergtierpark-blindham.jpg",
-    activities: [
-      {
-        time: "09:00",
-        title: "Breakfast, then Sixt pickup at MUC Airport Center",
-        description:
-          "Unhurried hotel breakfast, then walk to the Sixt desk in the Airport Center between Terminals 1 and 2. Confirm both child seats are installed and actually fit before you leave the garage, and note the car's height while you're at it — the Stacherhof garage tops out at 2.20 m. Make sure the Austrian vignette is sorted (buy it online now if you didn't last night), set the nav for Blindham, and roll by about 10:00.",
-        attractionId: "munich-airport",
-        rideToNext: { duration: "40 min", note: "A8 south toward Salzburg, exit 96 Hofoldinger Forst, then village lanes to Blindham near Aying", departAt: "10:00" }
-      },
-      {
-        time: "~10:45",
-        title: "BergTierPark Blindham — sheep to feed, a barn to run wild in",
-        description:
-          "The day's one real activity, and it's the right one: a small hill-animal park forty minutes south of the airport where the kids do the touching. A petting enclosure where Gili can feed and stroke the sheep, then deer, wild boar and beavers along a stroller-friendly loop of about 2 km with playgrounds dotted down it. Hire one of the pull-along wagons at the entrance (around €3) and Tom rides while Gili pulls. If the Bavarian sky turns — and it might — the SpielStadl indoor play barn is some 2,000 m² of toddler area, sandpit and ride-on cars, so the day survives rain intact. Lunch at the cafeteria on site. Budget two to two and a half hours and let them burn every last bit of energy here; the long stretch south comes next. Check the day's opening hours before you set off.",
-        attractionId: "bergtierpark-blindham",
-        tag: "family",
-        rideToNext: { duration: "1 h 30", note: "back onto the A8, then the A93 over the Kufstein border, the A12 west and the B169 up the Zillertal", departAt: "14:00" }
-      },
-      {
-        time: "~15:30",
-        title: "Arrive in Fügen and settle into the Stacherhof",
-        description:
-          "Both kids should be asleep before the border, which is exactly the plan. Check into the Stacherhof in Fügen, home for the next seven nights: the chalet suite has two bedrooms, a kitchen, two bathrooms and a balcony, and the underground garage is free and monitored (2.20 m height limit — worth remembering if Sixt handed you something tall). Breakfast is included, so there's nothing to shop for tonight. Unpack properly today instead of living out of bags, then go find the natural swimming pond and the new playground — they're steps from the door. The sauna and wellness area is 14+, so that one's not for Gili and Tom. Easy first dinner, early night."
-      }
-    ],
-    driveNotes:
-      "Two legs with a long play stop between them, which is the whole point. Munich Airport → BergTierPark Blindham ≈ 40 min: the A8 south toward Salzburg, exit 96 Hofoldinger Forst, then a few minutes of village lanes near Aying. Blindham → Fügen ≈ 1 h 30: back onto the A8, south on the A93, across the Austrian border at Kufstein, west on the A12 to the Zillertal exit, then the B169 up the valley (Fügen is about 10 min off the motorway). The vignette has to be active before Kufstein. No mountain roads anywhere today — motorway plus the valley run in, with a nap-shaped gap in the middle.",
-    gear: [
-      { item: "Passports, driving licence and the Sixt booking confirmation handy for pickup" },
-      { item: "Cash in small notes for the park entry, the pull-along wagon (~€3) and the cafeteria", for: "bergtierpark-blindham" },
-      { item: "Closed shoes for both kids plus wet wipes and hand gel — there's a petting enclosure and a sandpit", for: "bergtierpark-blindham" },
-      { item: "A light rain layer each — if the sky turns, the indoor SpielStadl becomes the whole plan", for: "bergtierpark-blindham" },
-      { item: "Snacks and full water bottles for the 1 h 30 leg south — the fewer stops after Blindham, the better" },
-      { item: "Swim gear near the top of a bag — the Stacherhof's swimming pond is the first thing Gili will spot" }
-    ],
-    dayTips: [
-      "The Austrian digital vignette has to be active BEFORE you cross at Kufstein — a German rental doesn't include it, so buy it online this morning if last night got away from you",
-      "Check both child seats in the Sixt garage, not on the A8 shoulder — five calm minutes now saves an ugly stop later",
-      "BergTierPark is today's whole job: it burns the kids' energy before the long stretch south, and the indoor play barn means rain doesn't cancel anything. Check the day's opening hours before you set off",
-      "Ask about the pull-along wagons at the entrance (a couple of euros) — with Tom riding, the 2 km loop stops being a negotiation",
-      "Aim to be back in the car by 14:00: the drive down is a nap, and a ~15:30 check-in leaves a whole easy evening for the pond, the playground and a first quiet dinner",
-      "Don't add anything else today — travel day plus one animal park is the plan, and unpacking properly tonight pays off all week"
-    ],
-    italianWords: [
-      {
-        word: "Wald",
-        pronounce: "vahlt",
-        meaning: "Forest",
-        example: "Wir gehen in den Zauberwald!",
-        exampleMeaning: "We're going into the enchanted forest!"
-      },
-      {
-        word: "Zauber",
-        pronounce: "TSOW-ber",
-        meaning: "Magic",
-        example: "Das ist ein Zauberwald.",
-        exampleMeaning: "That's a magic forest."
-      },
-      {
-        word: "Dorf",
-        pronounce: "dorf",
-        meaning: "Village",
-        example: "Alpbach ist das schönste Dorf.",
-        exampleMeaning: "Alpbach is the prettiest village."
-      },
-      {
-        word: "Blume",
-        pronounce: "BLOO-meh",
-        meaning: "Flower",
-        example: "So viele Blumen am Balkon!",
-        exampleMeaning: "So many flowers on the balcony!"
-      },
-      {
-        word: "Schneller!",
-        pronounce: "SHNEL-ler",
-        meaning: "Faster!",
-        example: "Schneller, Papa, schneller!",
-        exampleMeaning: "Faster, Daddy, faster!"
-      },
-      {
-        word: "Langsam",
-        pronounce: "LAHNG-zahm",
-        meaning: "Slow, slowly",
-        example: "Heute machen wir alles langsam.",
-        exampleMeaning: "Today we do everything slowly."
-      }
-    ],
-    drinkOfTheDay: {
-      name: "Hugo",
-      type: "cocktail",
-      pairing:
-        "The Alps' summer spritz — prosecco, elderflower syrup, mint and soda. Elderflower grows on the Bavarian meadows you walked through this morning, and after a day of sheep, a play barn and an hour and a half of Autobahn, its light floral fizz on the Stacherhof balcony is exactly right.",
-      servingNote: "Big wine glass, lots of ice, a mint sprig and a squeeze of lime"
-    }
-  },
-  {
-    dayNumber: 3,
-    date: "2026-08-13",
-    weekday: "Thursday",
-    departureTime: "09:00",
-    rideToFirst: { duration: "25 min", note: "B169 down to Strass, then the A12 west to the Wattens exit" },
-    region: "north",
-    base: "Fügen (Zillertal)",
-    title: "Crystal worlds & a medieval old town",
-    subtitle: "Swarovski Kristallwelten in Wattens, then Hall in Tirol",
-    leadImage: "./images/swarovski-kristallwelten.jpg",
-    activities: [
-      {
-        time: "09:30",
-        title: "Swarovski Kristallwelten — the Giant's garden",
-        description:
-          "Open daily 09:00–19:00 (last entry 18:00), so an early start beats the tour buses. Inside, the Chambers of Wonder are a dim, sparkly 45 minutes that both kids will treat as fireworks; outside is the real toddler gold — the crystal cloud over the mirror pool, the huge playground tower with slides and nets, and the carousel. Gili gets the play tower, Tom gets the water-spitting Giant's head. Do the chambers first, then release them into the garden.",
-        attractionId: "swarovski-kristallwelten",
-        tag: "family",
-        rideToNext: { duration: "15 min", note: "back roads along the Inn to Hall", departAt: "13:00" }
-      },
-      {
-        time: "13:15",
-        title: "Hall in Tirol — lunch and an old-town wander",
-        description:
-          "Hall has one of the best-preserved medieval old towns in Austria — bigger than Innsbruck's, and blissfully uncrowded. Park at the edge (the old town is largely car-free), find a gasthaus table on the Oberer Stadtplatz, then let the kids run the cobbled lanes. The mint tower (Münzerturm) is the postcard; the ice cream on the square is the actual goal.",
-        attractionId: "hall-in-tirol",
-        tag: "village"
-      },
-      {
-        time: "15:00",
-        title: "Home for naps",
-        description:
-          "Half an hour back east on the A12 and up the Zillertal. If the kids are asleep, stretch the last bit on the valley road rather than waking them — and once you're back, the Stacherhof's swimming pond and playground are the whole afternoon plan."
-      }
-    ],
-    driveNotes:
-      "Fügen → Wattens ≈ 25 min: ten minutes down the B169 to the A12 at Strass, then west to the Wattens exit. Wattens → Hall in Tirol ≈ 15 min, Hall → Fügen ≈ 30 min. Almost all flat valley motorway plus the short Zillertal hop at each end — the easiest driving day of the trip.",
-    gear: [
-      { item: "Stroller for Tom — the whole Kristallwelten garden is smooth and stroller-friendly", for: "swarovski-kristallwelten" },
-      { item: "A spare shirt for the Giant's water features — someone will get sprayed", for: "swarovski-kristallwelten" },
-      { item: "Comfortable shoes for Hall's cobbles — stroller wheels rattle but manage", for: "hall-in-tirol" },
-      { item: "Sun hats for the playground tower — it's in full sun at midday", for: "swarovski-kristallwelten" }
-    ],
-    dayTips: [
-      "Book Kristallwelten tickets online the night before — you skip the ticket line and August mornings get busy by 10:30",
-      "The indoor chambers are dark and a bit loud in places — Tom in the carrier, Gili by the hand, and it's magic rather than scary",
-      "Kristallwelten's café is fine but Hall's old-town gasthäuser are better and half the price — hold out for lunch",
-      "Most Hall shops close for a quiet hour after lunch; the square and ice cream don't",
-      "Keep the receipt-sized garden map — the play tower and carousel are at the far end and easy to miss"
-    ],
-    italianWords: [
-      {
-        word: "Kristall",
-        pronounce: "kris-TAHL",
-        meaning: "Crystal",
-        example: "So viele Kristalle!",
-        exampleMeaning: "So many crystals!"
-      },
-      {
-        word: "Glitzern",
-        pronounce: "GLIT-sern",
-        meaning: "To sparkle, glitter",
-        example: "Alles glitzert hier!",
-        exampleMeaning: "Everything sparkles here!"
-      },
-      {
-        word: "Riese",
-        pronounce: "REE-zeh",
-        meaning: "Giant (the big grass-covered head at Kristallwelten)",
-        example: "Der Riese spuckt Wasser!",
-        exampleMeaning: "The giant spits water!"
-      },
-      {
-        word: "Schau mal!",
-        pronounce: "SHOW mahl",
-        meaning: "Look! (the phrase you'll hear Gili copy first)",
-        example: "Schau mal, ein Karussell!",
-        exampleMeaning: "Look, a carousel!"
-      },
-      {
-        word: "Eis",
-        pronounce: "ice",
-        meaning: "Ice cream (also 'ice')",
-        example: "Ein Eis für Gili, bitte.",
-        exampleMeaning: "One ice cream for Gili, please."
-      },
-      {
-        word: "Stadt",
-        pronounce: "shtaht",
-        meaning: "Town, city",
-        example: "Hall ist eine alte Stadt.",
-        exampleMeaning: "Hall is an old town."
-      }
-    ],
-    drinkOfTheDay: {
-      name: "Grüner Veltliner",
-      type: "wine",
-      pairing:
-        "Austria's signature white — white pepper, green apple, crystal-crisp acidity. On the day you spent inside a giant crystal, pour the wine that tastes like one. Any Tyrolean gasthaus lists a good one from the Wachau or Weinviertel.",
-      servingNote: "Well-chilled (8–10 °C); a Grüner from a 'DAC' region is a safe pick"
-    }
-  },
-  {
-    dayNumber: 4,
-    date: "2026-08-14",
-    weekday: "Friday",
-    departureTime: "08:50",
-    rideToFirst: { duration: "5 min", note: "the Spieljochbahn valley station is in our own village — five minutes down the hill" },
-    region: "south",
-    base: "Fügen (Zillertal)",
-    title: "Family mountain morning, Alpbachtal afternoon",
-    subtitle: "Spieljoch Fügen gondola at 1,860 m, then Juppi's enchanted forest above Reith — the fullest day of the week, with three cut-first extras",
+    title: "Into the Alps — a car, a gondola, and home for a week",
+    subtitle: "Sixt pickup at MUC · Spieljoch's summit play world above our own village · check in at the Stacherhof · an easy river ride before dinner",
     leadImage: "./images/spieljoch-fuegen.jpg",
     activities: [
       {
-        time: "09:00",
-        title: "Spieljochbahn up the family mountain",
+        time: "08:00",
+        title: "Breakfast, then Sixt pickup at MUC Airport Center",
         description:
-          "Our own village's certified family mountain — the valley station is five minutes from the Stacherhof, so the morning needs no real drive at all. The gondola runs daily in peak season (first ascent 09:00, last descent 17:00 through late August). At the top station you get a toddler jackpot: a water play area, barefoot path, a walk-in show mine, and a big adventure playground, all within a hundred meters of the lift and the Mountain Loft restaurant. Gili roams free, Tom paddles at the water channels; nobody has to hike anywhere. Eat an early lunch up top at the Mountain Loft so the afternoon can start straight from the valley station.",
+          "Unhurried hotel breakfast, then walk to the Sixt desk in the Airport Center between Terminals 1 and 2. Three things before you leave the garage: both child seats actually installed and actually fitting, the car's height noted (the Stacherhof garage tops out at 2.20 m), and the Austrian vignette confirmed — a German rental doesn't include one. This is also where the car's permanent kit gets built, because it lives there for the whole week: swimwear for four, towels, spare clothes for both kids, the back carrier, water. Then set the nav for Fügen and roll.",
+        attractionId: "munich-airport",
+        rideToNext: { duration: "1 h 50", note: "A8 south, A93 over the Kufstein border, A12 west, then the B169 up the Zillertal — 185 km, motorway the whole way", departAt: "08:30" }
+      },
+      {
+        time: "10:30",
+        title: "Spieljochbahn Fügen — gondola straight up to the play world",
+        description:
+          "One of Hila's own picks, and she's been: our village's family mountain, with the valley station a measured six minutes from the hotel. The gondola lifts you to a summit that has been built entirely around small children — inflatable trampolines, water-play pools with little channels and boats, a big adventure playground, and the kind of view that makes the flight feel worth it. Nobody has to hike anywhere: it's all within a couple of hundred metres of the top station and its restaurant. Gili will find the trampolines in under a minute; Tom will pick one water channel and stay there. Check the day's first ascent and last descent at the valley station so the afternoon doesn't get decided for you.",
         attractionId: "spieljoch-fuegen",
         tag: "family",
-        rideToNext: { duration: "25 min", note: "down the B169 to Strass, one junction east on the A12 to Kramsach, then up into the Alpbachtal to Reith", departAt: "12:45" }
+        rideToNext: { duration: "6 min", note: "gondola down, then a couple of minutes into Fügen village", departAt: "13:30" }
       },
       {
-        time: "13:15",
-        title: "Juppi Zauberwald — the enchanted forest on the Reither Kogel",
+        time: "13:30",
+        title: "Lunch in Fügen",
         description:
-          "The valley next door, and the softest afternoon in the region. Ride the Reitherkogelbahn up (it runs daily except its Wednesday rest day — today is Friday, we're fine; last descent is around 16:30–17:00, so check the board at the valley station and give yourselves a clear hour of margin). At the top, Juppi's Zauberwald is a shaded 2.5 km loop of play stations — witch's house, wooden xylophones, balance trails, water wheels — pitched exactly at Gili's speed, and entry is included in the lift ticket. You do not have to finish the loop: after a mountain morning, half of it plus a bench and a snack is a complete success.",
-        attractionId: "juppi-zauberwald",
-        tag: "family",
-        rideToNext: { duration: "10 min", note: "over the hill into Alpbach village", departAt: "15:45" }
+          "Eat up at the mountain restaurant if the kids are still in flow, or come down and take a gasthaus table in Fügen — either works, and the six-minute drive is short enough that you're not committing to anything. Keep it simple: the goal is fed kids and a calm handover into check-in, not a long meal."
       },
       {
-        time: "16:00",
-        title: "Alpbach — Austria's prettiest village, at nap pace",
+        time: "14:15",
+        title: "Check in at the Stacherhof — home for seven nights",
         description:
-          "Alpbach's wooden farmhouses drip with geraniums — the village has won 'most beautiful in Austria' honors and every balcony shows why. Lunch already happened on the mountain, so this is the short version: park once, walk a slow lap, ice cream, the playground by the school, and the photos that end up framed. Ten minutes or an hour, whatever the kids have left.",
-        attractionId: "alpbach-village",
-        tag: "village",
-        optional: true,
-        rideToNext: { duration: "5 min", note: "up the valley to the Wiedersbergerhorn gondola at Inneralpbach" }
+          "The chalet suite has two bedrooms, a kitchen, two bathrooms and a balcony, and the underground garage is free and monitored (2.20 m height limit — worth remembering if Sixt handed you something tall). Breakfast is included every morning, so there's nothing you have to shop for tonight. Unpack properly today rather than living out of bags for a week, and take the half hour: a short nap in a real room now is what makes the late afternoon pleasant. The sauna and wellness area is 14+, so that one isn't for Gili and Tom — the natural swimming pond and the playground, steps from the door, very much are."
       },
       {
-        time: "Only if the day is flying",
-        title: "Lauser-Sauser alpine coaster — parents alternate",
+        time: "15:00",
+        title: "The Ziller valley cycle path — a first flat spin along the river",
         description:
-          "The year-round rail coaster at the Wiedersbergerhorn gondola drops 134 m over 1.4 km, including Austria's highest loop-carousel. From age 3 kids may ride as a passenger in front of an adult, so Gili qualifies; from 8 (and 1.30 m) they ride alone. Tom can't ride, so parents alternate: one takes Gili down squealing, the other has a coffee at the valley station with Tom. Check the gondola's summer hours at the base station before riding up — and be honest about the clock: after a gondola morning and the Zauberwald, this is the extra that most likely waits for another trip.",
-        attractionId: "lauser-sauser",
-        tag: "extreme",
-        optional: true,
-        rideToNext: { duration: "30 min", note: "down the Alpbachtal to Kramsach, west on the A12 to Wiesing, then the B169 home — Jenbach station is right on the way" }
-      },
-      {
-        time: "Swap-in, not an add-on",
-        title: "Zillertalbahn steam train",
-        description:
-          "The narrow-gauge Zillertalbahn still runs a real steam locomotive with wooden carriages between Jenbach and Mayrhofen — in summer it operates Tuesday to Saturday, so today qualifies. A short hop (Jenbach → Fügen) is plenty for the kids: whistle, smoke, clickety-clack, done in half an hour. Now that the Alpbachtal sits in this afternoon, treat the steam train as the first thing to cut — or as the swap if the Reitherkogelbahn is closed or the weather turns and you come home early. Check the day's departures at Jenbach station or zillertalbahn.at rather than building anything around it.",
-        attractionId: "zillertalbahn",
-        tag: "family",
-        optional: true,
-        rideToNext: { duration: "15 min", note: "Jenbach up the B169 to Fügen" }
-      },
-      {
-        time: "~17:30",
-        title: "Back to base, swimming pond and dinner",
-        description:
-          "Half an hour home from Alpbach, fifteen minutes from Jenbach, five straight from the gondola if you cut the whole afternoon. Whatever you managed, the Stacherhof's natural swimming pond and new playground close out the day, and there's a ball-games lawn if anyone somehow still has legs."
+          "The Zillertal's cycle path runs flat and paved along the river right out of Fügen, which makes it the gentlest possible way to meet the valley you'll be living in. Ask the Stacherhof reception for the nearest rental — bikes or e-bikes plus a child trailer or seats — and just head out along the water, turning back the moment the kids have had enough. No route, no distance target, no summit. Finish at the hotel's swimming pond and the playground, then a first quiet dinner and an early night.",
+        attractionId: "ziller-radweg",
+        tag: "nature"
       }
     ],
     driveNotes:
-      "The morning is the home-valley day: the Spieljochbahn valley station is ≈ 5 min from the Stacherhof, down the hill and through Fügen — the shortest drive of the whole trip, and genuinely walkable if you're feeling energetic. The afternoon is the valley next door: Spieljoch → Reith im Alpbachtal ≈ 25–30 min (B169 down to Strass, one junction east on the A12 to Kramsach, then up into the Alpbachtal), Reith → Alpbach ≈ 10 min, Alpbach → Fügen ≈ 30 min. Jenbach station, if the steam train tempts you, is right on the way home (≈ 15 min out of Fügen). No single leg is over half an hour and there's no proper mountain-road driving — but this is the fullest day of the week, so bank on naps happening in the car and cut from the bottom of the list without guilt.",
+      "One real drive today and it's all motorway: Munich Airport → Fügen is a measured 1 h 50 (185 km) — the A8 south, the A93 down to Kufstein, over the border, the A12 west to the Zillertal exit, then the B169 up the valley. The vignette has to be active before Kufstein. Once you're here the day shrinks to nothing: the Spieljochbahn valley station is 6 minutes from the hotel and the cycle path starts in the village, so everything after lunch is on the doorstep. That's also your safety margin — if the morning slips, nothing downstream breaks.",
     gear: [
-      { item: "Change of clothes and a small towel for the summit water play area", for: "spieljoch-fuegen" },
-      { item: "A second change of clothes — the Zauberwald's water-wheel stations always win", for: "juppi-zauberwald" },
-      { item: "Carrier for Tom, or the all-terrain stroller — gravel at 1,860 m and a gravel forest loop in the afternoon", for: "juppi-zauberwald" },
-      { item: "Fleece layers — it's 10 °C cooler at 1,860 m than in the valley", for: "spieljoch-fuegen" },
-      { item: "Closed shoes for the show mine (cool and dim inside) — the same pair does for the coaster", for: "spieljoch-fuegen" },
-      { item: "Picnic snacks for the Zauberwald's benches — you'll want a sit-down halfway round", for: "juppi-zauberwald" },
-      { item: "Sunscreen — alpine sun above the treeline is fierce even at 20 °C" }
+      { item: "Passports, driving licence and the Sixt booking confirmation handy for pickup" },
+      { item: "The car's permanent kit, assembled at pickup and never unpacked: swimwear, towels, spare clothes for both kids, the back carrier, water" },
+      { item: "Snacks and full water bottles for the 1 h 50 run south — the fewer stops, the better the nap" },
+      { item: "A change of clothes and a small towel each for the summit water play — this is a wet stop, not a maybe", for: "spieljoch-fuegen" },
+      { item: "Fleece layers — the summit runs a good 10 °C cooler than the valley", for: "spieljoch-fuegen" },
+      { item: "Sunscreen and hats — alpine sun above the treeline is fierce even at 20 °C", for: "spieljoch-fuegen" },
+      { item: "Helmets for both kids if the rental doesn't include them — ask when you book the trailer", for: "ziller-radweg" }
     ],
     dayTips: [
-      "Ride up before 09:30 — clear morning views, empty playground, and you're eating an early lunch at the Mountain Loft while the crowds arrive",
-      "This is now a two-anchor day, which is one more than our usual rule: the honest cut order is steam train first, then Lauser-Sauser, then Alpbach village. Getting the gondola and the Zauberwald is a full, happy day",
-      "The Reitherkogelbahn rests on Wednesdays — today is Friday, so it runs; just don't ever move this pair onto a Wednesday",
-      "The gondola cabins take strollers, no problem — no folding gymnastics required, at either lift",
-      "If clouds sit low on the peaks in the morning, flip the halves: the Zauberwald is shaded forest and copes with grey far better than a summit does",
-      "The Alpbachtal Card that covers the Reitherkogelbahn comes with Alpbachtal accommodation — we're in the Zillertal, so assume you're paying at the counter, and ask the Stacherhof reception which Zillertal card covers the Spieljoch"
+      "Honest look at the clock: to start at Spieljoch by 10:30 you'd have to be rolling by ~08:30, and a rental desk with two toddlers rarely takes under 30–45 minutes. Treat 11:00–11:30 at the lift as the realistic version — or flip the order and check in first (it's 6 min away), lift after lunch. Everything today is on the doorstep, so the order is genuinely flexible",
+      "The Austrian digital vignette must be active BEFORE Kufstein — a German rental doesn't include it, so buy it online this morning if last night got away from you",
+      "Build the car kit at the Sixt garage and leave it in the boot all week: swimwear, towels, spare clothes, the back carrier, water. Half the days on this trip end wetter than they started",
+      "The nap is part of the plan, not an accident — every transfer this week is timed so the kids sleep in the car. Today's is the 1 h 50 down to the valley",
+      "If you want a real break on the drive south instead, BergTierPark Blindham (petting zoo plus a big indoor play barn) is about 40 min from the airport — but it costs you the Spieljoch slot. It's an either/or, not an add-on",
+      "Check both child seats in the Sixt garage, not on the A8 shoulder — and note the car's height for the 2.20 m garage while you're standing there"
     ],
     italianWords: [
       {
@@ -395,210 +182,139 @@ export const itinerary: Day[] = [
         exampleMeaning: "We're riding the gondola!"
       },
       {
-        word: "Zug",
-        pronounce: "tsook",
-        meaning: "Train",
-        example: "Der Zug macht tschu-tschu!",
-        exampleMeaning: "The train goes choo-choo!"
+        word: "Berg",
+        pronounce: "behrk",
+        meaning: "Mountain",
+        example: "Die Berge sind so hoch!",
+        exampleMeaning: "The mountains are so tall!"
       },
       {
-        word: "Dampf",
-        pronounce: "dahmpf",
-        meaning: "Steam",
-        example: "Schau, der Dampf von der Lokomotive!",
-        exampleMeaning: "Look, the steam from the locomotive!"
+        word: "Hüpfburg",
+        pronounce: "HUEPF-boork",
+        meaning: "Bouncy castle, inflatable trampoline",
+        example: "Gili springt auf der Hüpfburg.",
+        exampleMeaning: "Gili is jumping on the bouncy castle."
       },
       {
-        word: "Hoch",
-        pronounce: "hohkh",
-        meaning: "High, tall",
-        example: "Wir sind so hoch oben!",
-        exampleMeaning: "We're so high up!"
+        word: "Fahrrad",
+        pronounce: "FAHR-raht",
+        meaning: "Bicycle",
+        example: "Wir fahren mit dem Fahrrad am Fluss.",
+        exampleMeaning: "We're cycling along the river."
       },
-      {
-        word: "Kuh",
-        pronounce: "koo",
-        meaning: "Cow (you'll hear the bells before you see them)",
-        example: "Die Kuh hat eine Glocke.",
-        exampleMeaning: "The cow has a bell."
-      }
-    ],
-    drinkOfTheDay: {
-      name: "Zillertal Bier",
-      type: "beer",
-      pairing:
-        "Brewed in Zell am Ziller since 1500, a few kilometers up the valley you played in this morning. After the longest day of the week — a family mountain, a magic forest and two valleys — the Zillertal Weißbier is banana-y, cloudy, cold, and as local as a beer pairing gets on this trip.",
-      servingNote: "Weißbier glass, poured slowly, yeast swirled in at the end"
-    }
-  },
-  {
-    dayNumber: 5,
-    date: "2026-08-15",
-    weekday: "Saturday",
-    departureTime: "09:00",
-    rideToFirst: { duration: "40 min", note: "B169 down to Strass, then the A12 west to Innsbruck" },
-    region: "north",
-    base: "Fügen (Zillertal)",
-    title: "Innsbruck — alpine animals & the Golden Roof",
-    subtitle: "Assumption Day: shops shut, but the zoo, the funicular and the old town don't care",
-    leadImage: "./images/alpenzoo-innsbruck.jpg",
-    activities: [
-      {
-        time: "09:45",
-        title: "Alpenzoo — every animal of the Alps, on a hillside",
-        description:
-          "Europe's highest-altitude zoo is open 365 days a year, 09:00–18:00 in summer — public holiday included, which is exactly why it anchors today. Around 2,000 alpine animals: ibex, brown bears, wolves, lynx, otters, and a fish-filled aquarium. It's compact enough for toddler legs (with a hill — bring the carrier), and morning is feeding-and-activity time for the animals. Park at the Hungerburgbahn's Congress garage and ride the funicular one stop up to the zoo — for Gili, the space-ship stations are half the attraction.",
-        attractionId: "alpenzoo-innsbruck",
-        tag: "family",
-        rideToNext: { duration: "15 min", note: "funicular down + a short walk into the Altstadt", departAt: "12:30" }
-      },
-      {
-        time: "12:45",
-        title: "Altstadt stroll & the Golden Roof",
-        description:
-          "Lunch in the old town, then the two-minute sightseeing hit: the Goldenes Dachl with its 2,657 gilded copper tiles, Maria-Theresien-Straße's pastel facades, and the Nordkette wall of rock looming over everything. It's a holiday, so shops are shuttered — but cafés, restaurants and gelato are open and the car-free lanes are perfect stroller territory.",
-        attractionId: "innsbruck-altstadt",
-        tag: "culture"
-      },
-      {
-        time: "14:30",
-        title: "Nordkette — up the mountain in a moving postcard",
-        description:
-          "If the kids are still charged, ride the Hungerburgbahn onward and take the cable car to Seegrube at 1,905 m — coffee-with-a-view height, twenty minutes above the city. Cable cars run daily including holidays; check the last descent time at the station. Skip guilt-free if nap o'clock is calling.",
-        attractionId: "nordkette",
-        tag: "view",
-        optional: true
-      }
-    ],
-    driveNotes:
-      "Fügen → Innsbruck ≈ 40 min: ten minutes down the B169 to the A12 at Strass, then straight west up the Inn valley. One of the two long day-trip drives of the week (Monday's Söll run is the other), timed against morning energy. Park once at the Congress/Hungerburgbahn garage and let the funicular handle the hill; driving up to the zoo directly is possible but the small lot fills fast on holidays.",
-    gear: [
-      { item: "Carrier for Tom — the zoo is built on a slope and some paths are stepped", for: "alpenzoo-innsbruck" },
-      { item: "Stroller for the flat, car-free Altstadt — swap at the car if you can", for: "innsbruck-altstadt" },
-      { item: "Layers for Seegrube — it can be 12 °C up there in August", for: "nordkette" },
-      { item: "Water bottles — refill at Innsbruck's public fountains, the water is straight off the mountain" },
-      { item: "Coins/card for the parking garage — holiday rates apply all day" }
-    ],
-    dayTips: [
-      "August 15 is Mariä Himmelfahrt — a national holiday. Shops closed, museums vary, but the zoo, lifts, cafés and restaurants all run. Expect locals out in force",
-      "Combi tickets covering Hungerburgbahn + Alpenzoo entry are sold at the funicular — cheaper than paying each separately",
-      "Be at the zoo when it's freshest — animals are active in the morning cool, and holiday crowds peak after 11",
-      "Reserve nothing for lunch, just walk one lane off the Golden Roof drag and pick a gasthaus with a free table outside",
-      "If the holiday crowds feel like too much, bail after the zoo — it's the anchor; everything else is garnish"
-    ],
-    italianWords: [
-      {
-        word: "Zoo",
-        pronounce: "tsoh",
-        meaning: "Zoo (Germans say 'tso', not 'zoo')",
-        example: "Der Alpenzoo hat Bären!",
-        exampleMeaning: "The alpine zoo has bears!"
-      },
-      {
-        word: "Tier",
-        pronounce: "teer",
-        meaning: "Animal",
-        example: "Welches Tier ist das?",
-        exampleMeaning: "Which animal is that?"
-      },
-      {
-        word: "Adler",
-        pronounce: "AHD-ler",
-        meaning: "Eagle (Tyrol's symbol — it's on the flag)",
-        example: "Der Adler fliegt hoch.",
-        exampleMeaning: "The eagle flies high."
-      },
-      {
-        word: "Murmeltier",
-        pronounce: "MOOR-mel-teer",
-        meaning: "Marmot (the whistling fluffball of the Alps)",
-        example: "Das Murmeltier pfeift!",
-        exampleMeaning: "The marmot whistles!"
-      },
-      {
-        word: "Gold",
-        pronounce: "golt",
-        meaning: "Gold",
-        example: "Das Dach ist aus Gold!",
-        exampleMeaning: "The roof is made of gold!"
-      },
-      {
-        word: "Feiertag",
-        pronounce: "FYE-er-tahk",
-        meaning: "Public holiday",
-        example: "Heute ist ein Feiertag in Österreich.",
-        exampleMeaning: "Today is a public holiday in Austria."
-      }
-    ],
-    drinkOfTheDay: {
-      name: "Aperol Spritz",
-      type: "aperitif",
-      pairing:
-        "Innsbruck's café terraces on a holiday afternoon are half orange with these. Tyrol sits an hour from the Italian border and drinks accordingly — one spritz under the Nordkette while the kids demolish a second gelato is the day's proper ending.",
-      servingNote: "3 parts prosecco, 2 parts Aperol, splash of soda, orange slice — the Austrians pour them generous"
-    }
-  },
-  {
-    dayNumber: 6,
-    date: "2026-08-16",
-    weekday: "Sunday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "40 min", note: "B169 down to Strass, A12 west to Wiesing, then the switchback climb up to Pertisau" },
-    region: "south",
-    base: "Fügen (Zillertal)",
-    title: "Achensee Sunday — Tyrol's big turquoise lake",
-    subtitle: "Strandbad Pertisau: lawn, pirate ship, shallow water · the 1887 steamer from the dock if the timetable plays along",
-    leadImage: "./images/achensee.jpg",
-    activities: [
-      {
-        time: "~10:15",
-        title: "Strandbad Pertisau — beach, playground, shallow water",
-        description:
-          "The lakeside lido on the Pertisau shore is built for exactly this crew: a huge lawn, a pirate-ship playground with slide and sandbox, a shallow children's pool, and a gently shelving lake entry that a one-and-a-half-year-old can walk into. The water is drinking-water clear and famously brisk — Gili will be in it anyway. Grab a shaded spot under the sun sails and let the whole morning go: the Karwendel peaks do the view work while you do the lifeguarding. The lake sits at about 950 m, so the water and the air both need the sun to get going — the later half of the morning is the warmer half.",
-        attractionId: "achensee",
-        tag: "water",
-        rideToNext: { duration: "5 min", note: "short hop along the shore to the Pertisau dock" }
-      },
-      {
-        time: "Early afternoon",
-        title: "Boat ride on the lake",
-        description:
-          "The Achensee ships have run since 1887 and sail in summer between the lake's docks. Hop on at Pertisau for a short leg — kids under 6 ride free, and the top deck is toddler-thrilling without being scary. Confirm the boat timetable at the dock (or on achenseeschifffahrt.at) before you plan around it, and only go if the sailing lines up with the kids rather than against them; the beach is a perfectly good afternoon on its own.",
-        attractionId: "achensee",
-        tag: "water",
-        optional: true,
-        rideToNext: { duration: "40 min", note: "down the switchbacks to Wiesing, one junction east on the A12, then the B169 into the Zillertal to Fügen" }
-      },
-      {
-        time: "~16:00",
-        title: "Down the mountain road, home for dinner",
-        description:
-          "The winding descent does what it does best — both kids asleep before Wiesing. Forty minutes later you're back in Fügen with sandy feet and nothing left to organise: the Stacherhof's swimming pond is warmer than the lake was, the playground is right there, and Sunday dinner can be as simple as you like.",
-      }
-    ],
-    driveNotes:
-      "Fügen → Pertisau ≈ 35–40 min: ten minutes down the B169 to the A12 at Strass, west one junction to Wiesing, then the switchback climb up to the Achensee — a proper mountain road for about ten minutes, smooth but curvy, and the one bit of today that a car-sick toddler might notice. From the top it's flat shore road along the lake into Pertisau, with big car parks at the Strandbad. Same road home, and the descent is a reliable nap-maker.",
-    gear: [
-      { item: "Swim gear, swim diaper for Tom, and a full change of clothes for everyone", for: "achensee" },
-      { item: "Water shoes — the lake entry is pebbly in places", for: "achensee" },
-      { item: "Sun hats and SPF50 — mountain sun at 950 m is stronger than it feels", for: "achensee" },
-      { item: "A windbreaker layer each for the boat deck — it's breezy on the water even in August", for: "achensee" },
-      { item: "Cash for the Strandbad entry, the boat tickets and ice creams — small Tyrolean kiosks still love it" }
-    ],
-    dayTips: [
-      "The lake sits at ~950 m: the morning can start at 15 °C even when the afternoon hits 27 °C, so layer the kids and let the sun warm the shallows before the serious swimming",
-      "Kids under 6 sail free on the Achensee ships — buy tickets right at the dock, and confirm the day's timetable there rather than trusting a printed schedule",
-      "Afternoon thunderstorms are an Alpine summer classic: do the water first, keep the boat flexible, and don't be on the top deck when the sky goes dark",
-      "August Sundays fill the Strandbad by midday — arriving around 10:00 gets you a shaded spot and a parking space near the entrance",
-      "The drive up and down is the only mountain road of the week: ten curvy minutes each way, so keep a snack and a bag within reach and take the descent slowly if anyone's asleep"
-    ],
-    italianWords: [
       {
         word: "Wasser",
         pronounce: "VAH-ser",
         meaning: "Water",
         example: "Das Wasser ist kalt!",
         exampleMeaning: "The water is cold!"
+      },
+      {
+        word: "Schlüssel",
+        pronounce: "SHLUE-sel",
+        meaning: "Key (the one word you need at check-in)",
+        example: "Hier ist der Schlüssel für die Suite.",
+        exampleMeaning: "Here's the key for the suite."
+      }
+    ],
+    drinkOfTheDay: {
+      name: "Zillertal Bier",
+      type: "beer",
+      pairing:
+        "Brewed in Zell am Ziller since 1500, a few kilometres up the valley you've just moved into. First night at the Stacherhof, balcony, mountains going pink — the Weißbier is cloudy, cold and about as local as a beer gets on this trip.",
+      servingNote: "Weißbier glass, poured slowly, yeast swirled in at the end"
+    }
+  },
+  {
+    dayNumber: 3,
+    date: "2026-08-13",
+    weekday: "Thursday",
+    departureTime: "08:30",
+    rideToFirst: { duration: "22 min", note: "B169 down to Strass, A12 west one junction to Wiesing, then the climb up to Maurach" },
+    region: "north",
+    base: "Fügen (Zillertal)",
+    title: "The eagle's nest, then Tyrol's big turquoise lake",
+    subtitle: "Rofan cable car high above the Achensee in the morning · Pertisau's promenade, playground, ducks and the 1887 steamer in the afternoon",
+    leadImage: "./images/achensee.jpg",
+    activities: [
+      {
+        time: "~08:55",
+        title: "Rofan Seilbahn — up to the eagle's nest",
+        description:
+          "A measured 22 minutes from the hotel, and then the cable car does all the climbing. At the top you're looking straight down onto the Achensee from the Adlerhorst — the 'eagle's nest' viewing platform that hangs out over the drop, glass-fronted and safely railed, which is exactly the sort of thing a 3-year-old finds thrilling and a 1.5-year-old finds mildly interesting. The real reason to stay a while is the big wooden alpine playground by the top station: towers, slides and climbing frames a hundred metres from the cabin, with a hut for coffee. Check the day's first and last cabin at the valley station — and if it's blowing hard up there, the lift staff will tell you straight.",
+        attractionId: "rofan-seilbahn",
+        tag: "view",
+        rideToNext: { duration: "8 min", note: "cable car down, then the shore road to a lakeside table at Maurach", departAt: "12:30" }
+      },
+      {
+        time: "12:30",
+        title: "Lunch by the water",
+        description:
+          "Down the cable car and straight to the lake for lunch — the Maurach and Pertisau shores are lined with places that have a terrace, a view and a high chair. Don't over-plan it: pick the one with a free table in the shade and let the kids eat slowly, because the afternoon is deliberately gentle."
+      },
+      {
+        time: "13:30",
+        title: "The nap lap — a slow loop round the lake",
+        description:
+          "Honest version: the Rofan valley station to Pertisau is only about six minutes, so the scenic loop is the point, not the distance. If both kids are asleep by the time you reach Pertisau — and they will be, three minutes in — just keep driving the shore road north toward Achenkirch and turn around whenever they surface. Same lake, same view, an hour of sleep banked, and you arrive at the promenade with two children who can actually enjoy it."
+      },
+      {
+        time: "14:30",
+        title: "Pertisau promenade & the Spielplatz am Achensee",
+        description:
+          "Flat, paved, pram-perfect promenade along the water, with the Karwendel doing the scenery on one side and ducks doing the entertainment on the other (bring nothing to feed them but bread crusts from breakfast — or better, just watch, since half the lakes here ask you not to feed them at all). The Spielplatz am Achensee sits right by the shore: climbing frames, swings, sand, and grass to collapse onto. This is the whole afternoon if you want it to be. The lake is drinking-water clear and famously brisk; Gili will go in anyway, so the swim kit comes out of the car.",
+        attractionId: "spielplatz-achensee",
+        tag: "family"
+      },
+      {
+        time: "~15:45",
+        title: "The 1887 steamer from the Pertisau dock",
+        description:
+          "The Achensee ships have sailed since 1887 and still work the lake's docks in summer. A short leg out of Pertisau is plenty — whistle, open top deck, big water, back before anyone melts — and under-6s ride free, so this is a cheap thrill for two. Confirm the day's timetable at the dock itself rather than planning around a printed schedule, and only go if the sailing lines up with the kids instead of against them. The promenade and the playground are a complete afternoon on their own.",
+        attractionId: "achensee",
+        tag: "water",
+        optional: true,
+        rideToNext: { duration: "22 min", note: "back down the mountain road to Wiesing, one junction east on the A12, then the B169 home", departAt: "16:40" }
+      },
+      {
+        time: "~17:00",
+        title: "Down the mountain road, home for dinner",
+        description:
+          "The winding descent to Wiesing does what it always does — everyone asleep before the motorway. Home in Fügen with damp feet and nothing left to organise: the Stacherhof pond is warmer than the lake was, the playground is right there, and dinner can be as simple as you like."
+      }
+    ],
+    driveNotes:
+      "A short-drive day, which is why it works so well after the travel day. Fügen → Rofan Seilbahn at Maurach is a measured 22 min: ten minutes down the B169 to the A12 at Strass, one junction west to Wiesing, then the climb up toward the Achensee — a proper mountain road for about ten minutes, smooth but curvy, and the only bit of today a car-sick toddler might notice. Rofan → Pertisau is a measured 6 min, so the afternoon 'transfer' is really a nap loop you drive on purpose. Same road home, and the descent is a reliable nap-maker.",
+    gear: [
+      { item: "Fleece layers and a windproof top each — the Rofan summit is exposed and a lot colder than the lake shore", for: "rofan-seilbahn" },
+      { item: "Carrier for Tom at the top — the playground is right by the station but the ground is gravel and uneven", for: "rofan-seilbahn" },
+      { item: "Swim kit and towels out of the car kit — the lake shallows at Pertisau are shallow, clear and freezing, and Gili will not be talked out of it", for: "achensee" },
+      { item: "Pram for the promenade — it's flat, paved and made for it", for: "spielplatz-achensee" },
+      { item: "Sun hats and SPF50 — the light off the water at 930 m is stronger than it feels" },
+      { item: "Cash in small notes for the boat tickets, the kiosk and ice creams", for: "achensee" }
+    ],
+    dayTips: [
+      "The 'scenic drive round the lake' is only 6 measured minutes end to end — so drive the nap, don't schedule it: carry on up the shore toward Achenkirch and turn around when the kids wake",
+      "Under-6s sail free on the Achensee ships. Buy at the dock and confirm the day's departures there — timetables shift with the season and the weather",
+      "The lake sits around 930 m: mornings can start at 15 °C even when the afternoon hits 27 °C, so layer both kids and let the sun warm the shallows before any serious paddling",
+      "Rainy-day backup for the whole trip, and it's the lift days that need one: Swarovski Kristallwelten in Wattens — indoor Chambers of Wonder plus a covered play tower. Book a time slot online before you drive over",
+      "Innsbruck with the Alpenzoo is only about 40 min from base if you ever want a city-and-animals day instead of a park day. Worth knowing about — but genuinely, the park and water days suit Gili and Tom better, so treat it as an option rather than a recommendation",
+      "Restock the car kit tonight while you remember: wet swimwear out, dry spares in. Tomorrow ends at a lake too"
+    ],
+    italianWords: [
+      {
+        word: "Adler",
+        pronounce: "AHD-ler",
+        meaning: "Eagle (Tyrol's symbol — and the name of the viewing platform up top)",
+        example: "Der Adler fliegt über den See.",
+        exampleMeaning: "The eagle flies over the lake."
+      },
+      {
+        word: "Seilbahn",
+        pronounce: "ZILE-bahn",
+        meaning: "Cable car",
+        example: "Die Seilbahn fährt ganz nach oben.",
+        exampleMeaning: "The cable car goes all the way up."
       },
       {
         word: "See",
@@ -608,93 +324,226 @@ export const itinerary: Day[] = [
         exampleMeaning: "The Achensee is the biggest lake in Tyrol."
       },
       {
+        word: "Ente",
+        pronounce: "EN-teh",
+        meaning: "Duck",
+        example: "Schau, die Enten schwimmen!",
+        exampleMeaning: "Look, the ducks are swimming!"
+      },
+      {
         word: "Schiff",
         pronounce: "shif",
         meaning: "Ship, boat",
-        example: "Schau, das Schiff kommt!",
-        exampleMeaning: "Look, the boat is coming!"
+        example: "Das Schiff kommt zum Steg.",
+        exampleMeaning: "The boat is coming to the dock."
       },
       {
-        word: "Schwimmen",
-        pronounce: "SHVIM-men",
-        meaning: "To swim",
-        example: "Gili will schwimmen gehen.",
-        exampleMeaning: "Gili wants to go swimming."
+        word: "Wolke",
+        pronounce: "VOL-keh",
+        meaning: "Cloud",
+        example: "Wir sind über den Wolken!",
+        exampleMeaning: "We're above the clouds!"
+      }
+    ],
+    drinkOfTheDay: {
+      name: "Grüner Veltliner",
+      type: "wine",
+      pairing:
+        "Austria's signature white — white pepper, green apple, crystal-crisp acidity — and the standard pour with Achensee whitefish, which is on half the lakeside menus you walked past today. Order it by the Achtel or the Viertel like a local and it arrives properly cold.",
+      servingNote: "Well-chilled (8–10 °C); a Grüner from a 'DAC' region is a safe pick"
+    }
+  },
+  {
+    dayNumber: 4,
+    date: "2026-08-14",
+    weekday: "Friday",
+    departureTime: "08:30",
+    rideToFirst: { duration: "15 min", note: "B169 up the valley to the Zillertal Arena valley station at Zell am Ziller" },
+    region: "south",
+    base: "Fügen (Zillertal)",
+    title: "A wooden castle in the sky, then a turquoise lake",
+    subtitle: "Fichtenschloss play world above Zell am Ziller · the Hintersteiner See in the afternoon (65 min away, not 40) · supermarket run before tomorrow's holiday",
+    leadImage: "./images/hintersteiner-see.jpg",
+    activities: [
+      {
+        time: "~08:45",
+        title: "Zillertal Arena — gondola up from Zell am Ziller",
+        description:
+          "A measured 15 minutes up the valley to the Zell am Ziller valley station, then the gondola takes over and does the altitude for you. Buy the family ticket, load the pram straight into the cabin (they take prams without folding gymnastics), and watch the valley you've been driving all week drop away below. Check the day's first ascent and last descent at the counter and give yourselves a clear hour of margin at the end — you don't want to be the family running for the final cabin.",
+        attractionId: "zillertal-arena",
+        tag: "family"
       },
       {
-        word: "Kalt",
-        pronounce: "kahlt",
-        meaning: "Cold",
-        example: "Brrr, das ist kalt!",
-        exampleMeaning: "Brrr, that's cold!"
+        time: "~09:15",
+        title: "Fichtenschloss Rosenalm — the spruce castle",
+        description:
+          "A whole play world built out of spruce at the Rosenalm top station: a big wooden castle with towers and bridges, trampolines sunk into the ground, water channels with dams and gates to open, and the kind of climbing structures that a 3-year-old can do unaided. It's a few minutes' walk from the gondola, all of it flat, and there's a hut right there for coffee and an early lunch. Tom's version of this is one water channel and a lot of stones; Gili's version is the castle, twice. Both count as a complete morning.",
+        attractionId: "fichtenschloss-rosenalm",
+        tag: "family"
       },
       {
-        word: "Berg",
-        pronounce: "behrk",
-        meaning: "Mountain",
-        example: "Die Berge sind so hoch!",
-        exampleMeaning: "The mountains are so tall!"
+        time: "12:30",
+        title: "Lunch — up top or back down in Zell",
+        description:
+          "Eat at the Rosenalm hut if the kids are still going, or ride down and take a table in Zell am Ziller. Either way, start the transfer at 13:30 rather than 14:00: today's afternoon drive is longer than it looks and the nap needs the room.",
+        rideToNext: { duration: "1 h 5", note: "gondola down, B169 to Strass, A12 east to Wörgl, then up to Scheffau and the Hintersteiner See — a measured 65 min, not the 40 in the original plan", departAt: "13:30" }
+      },
+      {
+        time: "14:35",
+        title: "Hintersteiner See — an easy walk by turquoise water",
+        description:
+          "One of the great postcard lakes of Tyrol, sitting under the Wilder Kaiser's rock wall: genuinely turquoise, ringed by a shaded, easy path that a pram can mostly handle and a 3-year-old can definitely handle in pieces. You do not have to walk the whole way round — go out along the shore, find a flat rock or a jetty, let them throw stones in, and come back. The water is warm enough by mid-August that swimming is a real option; the car kit already has what you need. Parking is in paid lots above the lake with a short walk down, so bring coins and check the machine's rules when you park.",
+        attractionId: "hintersteiner-see",
+        tag: "nature",
+        optional: false
+      },
+      {
+        time: "Alternative, not an add-on",
+        title: "Kufstein old town instead of the lake",
+        description:
+          "This corner of Tyrol is Hila's own alternative for the afternoon, and it's a fair swap: Kufstein is close by from Scheffau, and instead of a second lake you get a real town — car-free lanes, a proper café, ice cream, and the 800-year-old fortress glowering over everything from its rock (there's a barrier-free glass lift up to it if the mood takes you, but the town at pram pace is the point). Pick one: lake or town. Both in one afternoon would break the nap and the 17:00 finish.",
+        attractionId: "kufstein-festung",
+        tag: "village",
+        optional: true
+      },
+      {
+        time: "~16:45",
+        title: "Home via the supermarket",
+        description:
+          "The drive home retraces the A12 west and comes in a bit under the outbound hour, since Fügen sits about fifteen minutes down-valley from Zell. Stop at the supermarket on the way in and do a proper shop tonight — tomorrow is Mariä Himmelfahrt, a national holiday, and Austrian supermarkets close for it. Breakfast is included at the hotel, so what you actually need is snacks, fruit, drinks and something easy for tomorrow's dinner."
+      }
+    ],
+    driveNotes:
+      "Fügen → Zell am Ziller valley station is a measured 15 min straight up the B169 — the easy part. Then the correction that matters: Zell am Ziller → Hintersteiner See is a measured 1 h 5, not the 40 min in the original plan. Route is B169 down to Strass, A12 east past Wörgl, then up to Scheffau on the Wilder Kaiser. That's the longest single leg of the week so far, so it earns its place as the nap transfer — leave at 13:30, not 14:00. Coming home is the same road in reverse and lands a little under the hour, since Fügen is down-valley of Zell. If you take the Kufstein alternative instead, you're on the same A12 corridor either way.",
+    gear: [
+      { item: "A change of clothes each for the Fichtenschloss water channels — the dams always win", for: "fichtenschloss-rosenalm" },
+      { item: "Fleece layers for the Rosenalm — a lot cooler at the top station than in Zell", for: "zillertal-arena" },
+      { item: "Swimwear and towels from the car kit — the Hintersteiner See is warm enough to swim in by mid-August", for: "hintersteiner-see" },
+      { item: "Carrier for Tom on the lake path — parts of it are rooty even where the pram copes", for: "hintersteiner-see" },
+      { item: "Coins for the Hintersteiner See parking machines", for: "hintersteiner-see" },
+      { item: "Sunscreen, hats, and a full water bottle each — the top station is above the treeline" },
+      { item: "The cool bag in the boot for tonight's supermarket run — tomorrow everything is shut" }
+    ],
+    dayTips: [
+      "Correction worth knowing before you commit: Zell am Ziller → Hintersteiner See is a measured 65 min, not 40. Leaving lunch at 13:30 gets you there around 14:35 with the nap intact — leaving at 14:00 gets you there tired",
+      "Do the supermarket run TODAY. Tomorrow, Sat 15 Aug, is Mariä Himmelfahrt — a national holiday in Austria, and the supermarkets close",
+      "Designated rainy-day backup, and today's gondola is exactly the kind of morning that gets rained off: Swarovski Kristallwelten in Wattens. Indoor and covered, and slots should be pre-booked online",
+      "Prams ride the gondola cabins as they are — no folding required. Wheel in, wheel out at the top",
+      "The nap is the transfer: 13:30 out of Zell, both asleep by the A12, awake at the lake. It's the longest leg of the week so far and it's doing a job",
+      "Vignette check while you're thinking about the motorway: a 10-day vignette bought on the 11th runs through the 20th, which covers the whole trip. If you bought a shorter one, look at the end date now rather than on Monday's long run"
+    ],
+    italianWords: [
+      {
+        word: "Schloss",
+        pronounce: "shloss",
+        meaning: "Castle",
+        example: "Das Schloss ist aus Holz!",
+        exampleMeaning: "The castle is made of wood!"
+      },
+      {
+        word: "Trampolin",
+        pronounce: "tram-po-LEEN",
+        meaning: "Trampoline",
+        example: "Noch einmal auf dem Trampolin!",
+        exampleMeaning: "One more time on the trampoline!"
+      },
+      {
+        word: "Ritter",
+        pronounce: "RIT-ter",
+        meaning: "Knight",
+        example: "Gili ist ein Ritter im Schloss.",
+        exampleMeaning: "Gili is a knight in the castle."
+      },
+      {
+        word: "Tanne",
+        pronounce: "TAH-neh",
+        meaning: "Spruce, fir (the 'Fichte' in Fichtenschloss is the spruce it's built from)",
+        example: "Das Schloss riecht nach Tanne.",
+        exampleMeaning: "The castle smells of spruce."
+      },
+      {
+        word: "Türkis",
+        pronounce: "tuer-KEES",
+        meaning: "Turquoise (the colour of this afternoon's lake)",
+        example: "Der See ist türkis!",
+        exampleMeaning: "The lake is turquoise!"
+      },
+      {
+        word: "Einkaufen",
+        pronounce: "INE-kow-fen",
+        meaning: "To shop, to do the shopping",
+        example: "Heute müssen wir einkaufen — morgen ist Feiertag.",
+        exampleMeaning: "We have to shop today — tomorrow is a holiday."
       }
     ],
     drinkOfTheDay: {
       name: "Obstler",
       type: "digestif",
       pairing:
-        "The Tyrolean farmhouse schnaps — clear fruit brandy distilled from apples and pears, and every gasthof around the Achensee pours a homemade one. After a Sunday of cold turquoise water and a boat deck, one small glass 'für die Verdauung' is the local liturgy.",
+        "The Tyrolean farmhouse schnaps — clear fruit brandy off apples and pears, and every gasthof around the Wilder Kaiser pours a homemade one. After a gondola morning and an hour on the road to a turquoise lake, one small glass 'für die Verdauung' is the local liturgy.",
       servingNote: "A tiny stem glass, room temperature, sipped — never shot"
     }
   },
   {
-    dayNumber: 7,
-    date: "2026-08-17",
-    weekday: "Monday",
-    departureTime: "08:30",
-    rideToFirst: { duration: "50 min", note: "B169 to Strass, A12 east toward Kufstein, exit Wörgl-Ost, then the B178 up to Söll" },
+    dayNumber: 5,
+    date: "2026-08-15",
+    weekday: "Saturday",
+    departureTime: "08:15",
+    rideToFirst: { duration: "52 min", note: "B169 to Strass, A12 east to Wörgl-Ost, then the B178 up to Söll — a measured 52 min, not the 35 in the original plan" },
     region: "south",
     base: "Fügen (Zillertal)",
-    title: "Hexenwasser — barefoot with the witches",
-    subtitle: "A whole mountain of water play above Söll",
+    title: "Barefoot with the witches",
+    subtitle: "Hexenwasser Söll — a whole mountain of water play · Rattenberg in the afternoon, with an honest warning about the holiday",
     leadImage: "./images/hexenwasser-soell.jpg",
     activities: [
       {
-        time: "09:30",
-        title: "Gondola up to Hochsöll",
+        time: "~09:10",
+        title: "Hexenwasser Söll — gondola up into the witches' water",
         description:
-          "The Hexenwasser gondola runs daily through the season, 08:45–17:30. Ride up with the morning crowd of rubber-booted toddlers — you're all going to the same place.",
-        attractionId: "hexenwasser-soell",
-        tag: "family",
-        rideToNext: { duration: "5 min", note: "the witch's world starts right at the top station" }
-      },
-      {
-        time: "09:45",
-        title: "Hexenwasser — Austria's best barefoot water world",
-        description:
-          "Seventy-plus hands-on stations spread over the mountainside: the long barefoot trail through mud, moss and spring water, witch-themed water channels with little gates and mills, a giant sundial, bees behind glass, and bread you can watch being baked at the witches' bakery. It is the single best 3-year-old attraction in Tyrol — Gili will do the barefoot trail twice, Tom parks himself at the first water channel and stays. Staff ('witches') run little demos through the day; the whole thing is included in the lift ticket.",
+          "The single best three-year-old attraction in Tyrol, and it's Hila's for a reason. Seventy-plus hands-on stations spread across the mountainside above Söll: a long barefoot trail through mud, moss, gravel and spring water; witch-themed channels with gates, dams and little mills that Gili can operate herself; a giant sundial; bees behind glass; and bread baking at the witches' bakery. Everything at the top is included in the lift ticket — no coin-operated anything. Tom will find the first water channel and never leave it, which is a completely successful visit. Ride up early: the barefoot trail is nearly empty before 10:30 and the mountain restaurants at Hochsöll are entirely used to soaked toddlers. Check the day's gondola hours at the valley station before you go up.",
         attractionId: "hexenwasser-soell",
         tag: "water"
       },
       {
-        time: "14:30",
-        title: "Last splash, gondola down, nap-drive home",
+        time: "12:30",
+        title: "Lunch at Hochsöll, then down",
         description:
-          "Buy the fresh witch-bakery bread on the way out — breakfast at the Stacherhof is included, so make this tonight's dinner bread instead. Then fifty minutes of valley motorway does the rest; nobody will be awake past Wörgl."
+          "Eat at the top — it's easier than herding two wet children into a car first, and the huts up here expect exactly this crowd. Buy the fresh witch-bakery bread on the way out for tonight (breakfast is included at the hotel, so this becomes dinner bread), get everyone into the dry spare clothes at the car, and start the transfer at 13:30.",
+        rideToNext: { duration: "35 min", note: "gondola down, B178 to Wörgl, then the A12 west one junction to Rattenberg — a measured 35 min, not 25", departAt: "13:30" }
+      },
+      {
+        time: "14:05",
+        title: "Rattenberg — Austria's smallest town (read the holiday note first)",
+        description:
+          "A single medieval main street, about 400 residents, car-free, flat and pram-perfect, with a bend in the road where the ice cream is. Here's the honest part: Rattenberg's whole draw is its glass — the workshops where you watch blowers, cutters and engravers at the bench, and the shops that sell what they make. Today is Mariä Himmelfahrt, a national holiday, and those workshops and shops will very likely be shut. Cafés and restaurants do open on Austrian holidays, so the fallback is real and pleasant: a pretty car-free stroll, a coffee, a slice of apple strudel, and a look at dark medieval walls with the Rat mountain behind them. But it will not be a shopping afternoon. If the glass is what you wanted, swap this afternoon with Friday's or Tuesday's so Rattenberg lands on a working day — the drive from Söll is 35 min either way.",
+        attractionId: "rattenberg",
+        tag: "village",
+        rideToNext: { duration: "25 min", note: "A12 west to Strass, then the B169 up the Zillertal home", departAt: "16:15" }
+      },
+      {
+        time: "~16:40",
+        title: "Home, and everything wet into the wash",
+        description:
+          "Short hop back up the valley. Tonight's whole job is laundry logistics: wet swimwear, muddy clothes and soaked shoes out of the car, dry spares back in for tomorrow. Then the pond, the playground, the witch bread and an early night — today was a lot of mountain."
       }
     ],
     driveNotes:
-      "Fügen → Söll ≈ 50 min: ten minutes down the B169 to the A12 at Strass, east toward Kufstein, exit at Wörgl-Ost, then the B178 to the Hexenwasser gondola's big free car park. It's the longest day-trip drive of the week now that we're based in the Zillertal — leave by 08:30 and it's done before anyone notices. Same directions in reverse for the sleepy ride home.",
+      "Two corrections on today's numbers, both upward. Fügen → Söll is a measured 52 min (not 35): B169 down to Strass, A12 east toward Kufstein, exit Wörgl-Ost, then the B178 up to the Hexenwasser gondola's big car park. Leave at 08:15 and you're on an early cabin. Söll → Rattenberg is a measured 35 min (not 25): back down the B178 to Wörgl and one junction west on the A12. Rattenberg → Fügen is a short 25 min up the valley. All motorway and valley road, no mountain passes — the gondola does the climbing today.",
     gear: [
-      { item: "Towels, full changes of clothes for BOTH kids, and swim diaper for Tom — this is a getting-wet day, not a maybe", for: "hexenwasser-soell" },
-      { item: "Crocs or sandals that can get soaked, for the walks between barefoot stations", for: "hexenwasser-soell" },
-      { item: "Carrier for Tom — paths are gravel and gently sloped; strollers manage the main loop but the carrier is easier", for: "hexenwasser-soell" },
-      { item: "Sunscreen and hats — most water stations sit in open meadow", for: "hexenwasser-soell" },
-      { item: "A plastic bag for the wet everything" }
+      { item: "Towels and a FULL change of clothes for both kids — at Hexenwasser this is non-negotiable, not a precaution", for: "hexenwasser-soell" },
+      { item: "Crocs or sandals that can be soaked, for the walks between barefoot stations", for: "hexenwasser-soell" },
+      { item: "Carrier for Tom — the paths are gravel and gently sloped, and prams manage the main loop but the carrier is easier", for: "hexenwasser-soell" },
+      { item: "A big plastic bag for the wet everything, so the car survives the transfer", for: "hexenwasser-soell" },
+      { item: "Sunscreen and hats — most of the water stations sit in open meadow", for: "hexenwasser-soell" },
+      { item: "Cash for the holiday café in Rattenberg and for ice cream — small places, closed banks", for: "rattenberg" }
     ],
     dayTips: [
-      "Go on a warm sunny day if the week allows a swap — Hexenwasser in drizzle is heroic, in sunshine it's perfect",
-      "Arrive for the first gondolas: you'll have the barefoot trail nearly to yourselves until 10:30",
-      "The mountain restaurants at Hochsöll are used to soaked toddlers — lunch there rather than packing out",
-      "Watch the boards for the witches' little demos (bread baking, candle making) — short, wordless enough, and toddler-mesmerizing",
-      "Everything at the top is included with the gondola ticket — no coin-operated anything, blessedly"
+      "Correction: Fügen → Söll is a measured 52 min, not 35. Leave around 08:15 to be on an early gondola with the barefoot trail still empty",
+      "Rattenberg on a national holiday: the glass workshops and shops will very likely be closed. Either take it as a pretty car-free stroll with a café and strudel — those do open — or swap this afternoon with Friday's or Tuesday's so Rattenberg lands on a working day. Don't drive over expecting to shop",
+      "Everything on the mountain at Hexenwasser is included in the lift ticket, which makes it the easiest 'yes' of the week: no wallet, no queues, no coin slots",
+      "Today is Mariä Himmelfahrt: supermarkets shut (you shopped yesterday), cafés and restaurants open, lifts running, locals out in force. Expect a busy gondola from about 10:30",
+      "Söll → Rattenberg is a measured 35 min, which is the nap. Get everyone changed into dry clothes at the car before you set off — a wet toddler doesn't sleep",
+      "Restock the car kit tonight: today empties it completely. Dry towels, dry spares, dry shoes back in the boot for tomorrow's pool day"
     ],
     italianWords: [
       {
@@ -719,6 +568,13 @@ export const itinerary: Day[] = [
         exampleMeaning: "Tom loves the mud."
       },
       {
+        word: "Nass",
+        pronounce: "nahs",
+        meaning: "Wet",
+        example: "Alle sind nass!",
+        exampleMeaning: "Everyone is wet!"
+      },
+      {
         word: "Brot",
         pronounce: "broht",
         meaning: "Bread",
@@ -726,202 +582,486 @@ export const itinerary: Day[] = [
         exampleMeaning: "The bread is still warm!"
       },
       {
-        word: "Nass",
-        pronounce: "nahs",
-        meaning: "Wet",
-        example: "Alle sind nass!",
-        exampleMeaning: "Everyone is wet!"
+        word: "Feiertag",
+        pronounce: "FYE-er-tahk",
+        meaning: "Public holiday (today's word — and today's problem)",
+        example: "Heute ist Feiertag, die Geschäfte sind zu.",
+        exampleMeaning: "Today is a holiday, the shops are closed."
       }
     ],
     drinkOfTheDay: {
       name: "Skiwasser",
       type: "other",
       pairing:
-        "Tyrol's own invention — raspberry syrup, lemon and cold water, born on these slopes for thirsty skiers. On the day everyone spent six hours in mountain spring water, the family toast is the local water-based classic. Order it at the mountain hut; make it again at home all winter.",
+        "Tyrol's own invention — raspberry syrup, lemon and cold water, born on these slopes for thirsty skiers. On the day everyone spent four hours in mountain spring water, the family toast is the local water-based classic. Order it at the mountain hut; make it again at home all winter.",
       servingNote: "Tall glass, lots of ice, roughly 1 part raspberry syrup to 5 parts water, big lemon squeeze"
+    }
+  },
+  {
+    dayNumber: 6,
+    date: "2026-08-16",
+    weekday: "Sunday",
+    departureTime: "08:30",
+    rideToFirst: { duration: "40 min", note: "B169 to Strass, A12 east to Wörgl, then over to the Hopfgarten valley station" },
+    region: "south",
+    base: "Fügen (Zillertal)",
+    title: "A 360° summit, then a whole afternoon in the water",
+    subtitle: "Gipfelalm Hohe Salve for the panorama · Salvenaland Hopfgarten for swimming, trampolines and lawns — with a bonus hour, because the transfer is 4 minutes",
+    leadImage: "./images/salvenaland-hopfgarten.jpg",
+    activities: [
+      {
+        time: "~09:10",
+        title: "Gipfelalm Hohe Salve — the 360° morning",
+        description:
+          "A measured 40 minutes to the Hopfgarten valley station, then the gondola carries you up to what locals call the most beautiful viewpoint in Tyrol — and on a clear morning it's not marketing: you can see the whole Kitzbühel Alps one way and the Wilder Kaiser's wall the other, a full circle from one spot. There's a tiny pilgrimage chapel at the summit, the Gipfelalm hut for a second breakfast with that view, and enough flat ground around the top station for two small children to run without anyone's heart rate rising. Go up early while the air is still clear — summits haze over by midday in August. Check the day's first ascent and last descent at the valley station.",
+        attractionId: "gipfelalm-hohe-salve",
+        tag: "view"
+      },
+      {
+        time: "12:00",
+        title: "Lunch — the Gipfelalm up top or down in Hopfgarten",
+        description:
+          "Eat at the summit hut if the view has everyone in a good mood, or ride down and eat in Hopfgarten. Either way, don't linger past 13:00: the afternoon has just quietly gained an hour and it would be a shame to spend it on dessert.",
+        rideToNext: { duration: "4 min", note: "Salvenaland is essentially across the road from the Hohe Salve valley station — a measured 4 min, not the 15 in the original plan", departAt: "13:10" }
+      },
+      {
+        time: "~13:15",
+        title: "Salvenaland Hopfgarten — the long, lazy water afternoon",
+        description:
+          "Good news you get to keep: the transfer from the gondola to the pool is a measured four minutes, so instead of arriving at 14:00 you're through the turnstile just after 13:15 — nearly a whole extra hour in the water. Salvenaland is the leisure complex the region built for families: a swimming lake with a gently shelving entry, a separate shaded children's pool at proper toddler depth, trampolines, big lawns to spread a towel on, slides for Gili, and enough shade that Tom can nap on a blanket. Confirm the day's opening hours and any Sunday specifics at the entrance, and take coins for a locker. Then stop planning: this is the afternoon where you don't move again.",
+        attractionId: "salvenaland-hopfgarten",
+        tag: "water",
+        rideToNext: { duration: "40 min", note: "back over to Wörgl, A12 west to Strass, then the B169 up the Zillertal", departAt: "16:20" }
+      },
+      {
+        time: "~16:20",
+        title: "Dry off and drive home",
+        description:
+          "Straight choice, made in advance so nobody argues at the poolside: leave around 16:20 and you're home by about 17:00 in the usual rhythm, or stay until the light goes and accept a later dinner. Either is fine — you're not driving a mountain pass, it's motorway and valley road, and both kids will sleep the whole way after a day in the water."
+      }
+    ],
+    driveNotes:
+      "Fügen → Hopfgarten (Hohe Salve valley station) is a measured 40 min: B169 down to Strass, A12 east to the Wörgl exits, then across to Hopfgarten. The nice surprise is the afternoon: the Hohe Salve valley station → Salvenaland is a measured 4 min, not the 15 the original plan allowed — so today's 'transfer' isn't a nap drive at all, it's a hop, and the hour it saves goes straight into the pool. Which means today's nap has to happen either on the 40-minute drive out or on the way home, or on a towel in the shade at Salvenaland. Same 40 min home.",
+    gear: [
+      { item: "Swim kit for all four, swim diaper for Tom, and two towels each — today is entirely wet", for: "salvenaland-hopfgarten" },
+      { item: "Coins for the lockers and the changing rooms", for: "salvenaland-hopfgarten" },
+      { item: "A blanket or towel for a shaded lawn nap — Tom's sleep has to happen somewhere today", for: "salvenaland-hopfgarten" },
+      { item: "Water shoes — poolside and the lake entry are easier on small feet with them", for: "salvenaland-hopfgarten" },
+      { item: "Fleece layers for the summit — the Hohe Salve is exposed and windy even on a hot day", for: "gipfelalm-hohe-salve" },
+      { item: "SPF50, hats and a long-sleeve rash top each — a full afternoon in open water is a lot of sun" }
+    ],
+    dayTips: [
+      "Bonus, not a correction for once: the gondola-to-pool transfer is a measured 4 minutes rather than 15, so you get nearly an extra hour at Salvenaland. Spend it in the water, not on the road",
+      "Which means the nap needs re-planning today: use the 40-minute drive out, or the drive home, or a blanket in the shade at the pool. Don't count on the transfer — it's four minutes long",
+      "Rainy-day backup, again flagged on a lift day because the lift is the vulnerable half: Swarovski Kristallwelten in Wattens, indoor and covered, slots pre-booked online. If the summit is in cloud, this is the swap",
+      "Go up the Hohe Salve early — the 360° view is a morning thing, and August afternoons haze over",
+      "It's Sunday: the pool will fill from midday and locals come out in force. Arriving just after 13:15 still beats the worst of it, and the shaded lawn spots go first",
+      "Take the car kit seriously today — you'll use every towel in it. Dry clothes for the drive home, and a bag for the wet pile"
+    ],
+    italianWords: [
+      {
+        word: "Gipfel",
+        pronounce: "GIP-fel",
+        meaning: "Summit, mountain top",
+        example: "Wir sind auf dem Gipfel!",
+        exampleMeaning: "We're on the summit!"
+      },
+      {
+        word: "Aussicht",
+        pronounce: "OWS-zikht",
+        meaning: "View, panorama",
+        example: "Die Aussicht ist wunderschön.",
+        exampleMeaning: "The view is beautiful."
+      },
+      {
+        word: "Schwimmen",
+        pronounce: "SHVIM-men",
+        meaning: "To swim",
+        example: "Gili will schwimmen gehen.",
+        exampleMeaning: "Gili wants to go swimming."
+      },
+      {
+        word: "Handtuch",
+        pronounce: "HANT-tookh",
+        meaning: "Towel",
+        example: "Wo ist mein Handtuch?",
+        exampleMeaning: "Where is my towel?"
+      },
+      {
+        word: "Sonne",
+        pronounce: "ZON-neh",
+        meaning: "Sun",
+        example: "Die Sonne ist heiß heute!",
+        exampleMeaning: "The sun is hot today!"
+      },
+      {
+        word: "Bad",
+        pronounce: "baht",
+        meaning: "Pool, baths (Salvenaland is a 'Freibad' — an open-air pool)",
+        example: "Wir gehen ins Bad!",
+        exampleMeaning: "We're going to the pool!"
+      }
+    ],
+    drinkOfTheDay: {
+      name: "Radler",
+      type: "beer",
+      pairing:
+        "Beer cut with lemonade, invented for cyclists who still had to get home — which is roughly your situation after a summit and five hours of swimming. Light, sweet-sharp, barely alcoholic, and the only thing that tastes right on a lawn next to a pool.",
+      servingNote: "Half lager, half citrus lemonade, in a tall glass, colder than you think"
+    }
+  },
+  {
+    dayNumber: 7,
+    date: "2026-08-17",
+    weekday: "Monday",
+    departureTime: "08:00",
+    rideToFirst: { duration: "1 h 16", note: "B169 to Strass, A12 east to Wörgl, B178 over St. Johann in Tirol, then on to Waidring — a measured 76 min, not the 55 in the original plan" },
+    region: "south",
+    base: "Fügen (Zillertal)",
+    title: "Dinosaurs on a mountain, then a lake to row on",
+    subtitle: "Triassic Park at Waidring (76 min away — leave at 08:00) · the Pillersee, moved here from Tuesday because from this corner it's 20 minutes instead of two hours",
+    leadImage: "./images/triassic-park.jpg",
+    activities: [
+      {
+        time: "~09:20",
+        title: "Triassic Park Waidring — a dinosaur world on the Steinplatte",
+        description:
+          "The furthest corner of the trip and worth the drive: the Steinplatte above Waidring was a coral reef 220 million years ago, and the whole mountain has been turned into a dinosaur adventure world on the back of it. Gondola up, then a themed trail with life-size dinosaurs, a fossil-digging pit where kids sift sand for 'finds' and keep them, water and mud stations, inflatables and slides, and a glass viewing terrace out over the drop that's more thrilling than frightening. Gili's dream morning, honestly. Tom will do sand, water and one very large dinosaur foot. Check the day's gondola hours at the valley station, and expect to leave with sand in places you didn't know had places.",
+        attractionId: "triassic-park",
+        tag: "family"
+      },
+      {
+        time: "12:30",
+        title: "Lunch at the top or back at the valley station",
+        description:
+          "Eat where you are — the mountain restaurant up top is set up for exactly this — then get everyone brushed off and back into the car by 13:30. Today's afternoon transfer is short, which is the entire reason the Pillersee now sits on this day.",
+        rideToNext: { duration: "20 min", note: "down to Waidring and on to the Pillersee at St. Ulrich — 20 min from this corner, versus roughly 2 h from the Zillertal", departAt: "13:30" }
+      },
+      {
+        time: "13:50",
+        title: "Pillersee — a flat lap and a rowing boat",
+        description:
+          "A long, quiet lake in a wooded bowl, and the path round it is flat, wide and pram-friendly the whole way — the easiest walking of the entire trip. There are rowing boats and pedal boats for hire at the shore, which for a 3-year-old is a genuinely big event: sitting in a real boat that a parent rows. Ask about the day's hours and prices at the hire hut when you arrive rather than counting on anything. An hour on the water, an hour on the path, a stone-throwing session, done. The lake is famously cold and deep, so this is a paddle-and-row afternoon rather than a swim.",
+        attractionId: "pillersee",
+        tag: "nature",
+        optional: false
+      },
+      {
+        time: "Instead of the Pillersee, not as well as",
+        title: "Kundler Klamm — the flat gorge walk",
+        description:
+          "This was the original afternoon for today and it's still a lovely one: a wide, flat, pram-friendly path through a gorge along the Wildschönauer Ache, cool and shaded even in high summer. The arithmetic is the problem — from Waidring it's about 56 minutes back toward home, versus 20 minutes to the Pillersee, so it's one or the other. Here's the useful part: the Kundler Klamm is only about 26 minutes from the hotel. That makes it the perfect swap-in for any day the weather ruins, or any day when what you want is something flat, shaded and easy with no lift involved.",
+        attractionId: "kundler-klamm",
+        tag: "nature",
+        optional: true,
+        rideToNext: { duration: "1 h 15", note: "back through St. Johann and Wörgl, A12 west to Strass, then the B169 up the Zillertal", departAt: "15:00" }
+      },
+      {
+        time: "~16:15",
+        title: "The long drive home",
+        description:
+          "About an hour and a quarter back from that corner of Tyrol — the longest homeward run of the week, and after a dinosaur morning and a boat it will be a silent car. Snacks within reach, one podcast for the grown-ups, and dinner at the Stacherhof when you land."
+      }
+    ],
+    driveNotes:
+      "Today is the geography day, and the numbers drive the plan. Fügen → Waidring is a measured 1 h 16 (not the 55 min originally penciled in): B169 to Strass, A12 east to Wörgl, B178 over toward St. Johann in Tirol, then on to Waidring. Leave at 08:00. From Waidring, the Pillersee is a measured 20 min — which is exactly why it moved onto this day; from the Zillertal base it's roughly two hours, so pairing it with Mayrhofen on Tuesday was never physically possible. Kundler Klamm from Waidring is about 56 min back toward home, so it's Pillersee OR the Klamm. Home from that corner is about 1 h 15. Longest total road day of the week — the kit and the nap earn their keep today.",
+    gear: [
+      { item: "A full change of clothes each — the fossil dig is sand and the water stations are water", for: "triassic-park" },
+      { item: "Closed shoes for the dinosaur trail and the dig pit; sandals for the lake afterwards", for: "triassic-park" },
+      { item: "Carrier for Tom on the mountain, pram for the flat Pillersee lap — today genuinely wants both", for: "pillersee" },
+      { item: "Cash for the boat hire at the Pillersee", for: "pillersee" },
+      { item: "Sun hats and SPF50 — the Steinplatte trail is high and mostly open", for: "triassic-park" },
+      { item: "Double snacks and full water bottles — the longest drive of the week, out and back" }
+    ],
+    dayTips: [
+      "Correction: Fügen → Waidring is a measured 76 min, not 55. Leave at 08:00 and the morning still starts on time",
+      "Why the Pillersee moved here from Tuesday: it's a measured 20 min from Waidring but roughly 2 hours from the Zillertal base. Paired with Mayrhofen it simply didn't fit on the map; paired with Triassic Park it's a natural, easy add",
+      "Pillersee OR Kundler Klamm, not both: from Waidring the Klamm is about 56 min back toward home versus 20 min to the lake",
+      "Keep the Kundler Klamm in your pocket though — it's only about 26 min from the hotel, flat, shaded and pram-friendly, which makes it the ideal swap for a rained-off day or a day when nobody wants a lift",
+      "Longest road day of the week: this is the one where the car kit and the planned nap really pay off. Change of clothes in the boot, snacks within arm's reach, and leave the fossil-digging sand outside the car if you can",
+      "Ask at the boat hut about the day's hours and prices for the rowing boats rather than promising Gili anything on the drive over"
+    ],
+    italianWords: [
+      {
+        word: "Dinosaurier",
+        pronounce: "dee-no-ZOW-ree-er",
+        meaning: "Dinosaur",
+        example: "Der Dinosaurier ist riesig!",
+        exampleMeaning: "The dinosaur is enormous!"
+      },
+      {
+        word: "Knochen",
+        pronounce: "KNOKH-en",
+        meaning: "Bone",
+        example: "Wir suchen Knochen im Sand.",
+        exampleMeaning: "We're digging for bones in the sand."
+      },
+      {
+        word: "Sand",
+        pronounce: "zahnt",
+        meaning: "Sand",
+        example: "Tom sitzt im Sand.",
+        exampleMeaning: "Tom is sitting in the sand."
+      },
+      {
+        word: "Stein",
+        pronounce: "shtine",
+        meaning: "Stone, rock",
+        example: "Wirf den Stein ins Wasser!",
+        exampleMeaning: "Throw the stone in the water!"
+      },
+      {
+        word: "Boot",
+        pronounce: "boht",
+        meaning: "Boat",
+        example: "Wir fahren mit dem Boot auf dem See.",
+        exampleMeaning: "We're going out on the lake in a boat."
+      },
+      {
+        word: "Riesig",
+        pronounce: "REE-zikh",
+        meaning: "Huge, giant",
+        example: "Alles hier ist riesig!",
+        exampleMeaning: "Everything here is huge!"
+      }
+    ],
+    drinkOfTheDay: {
+      name: "Hugo",
+      type: "cocktail",
+      pairing:
+        "The Alps' summer spritz — prosecco, elderflower syrup, mint and soda, invented just over the ridge in South Tyrol. After 150 kilometres of driving, a mountain of dinosaurs and a rowing boat, its light floral fizz on the Stacherhof balcony is the correct reward.",
+      servingNote: "Big wine glass, lots of ice, a mint sprig and a squeeze of lime"
     }
   },
   {
     dayNumber: 8,
     date: "2026-08-18",
     weekday: "Tuesday",
-    departureTime: "08:45",
-    rideToFirst: { duration: "45 min", note: "B169 down to Strass, then the A12 north-east to Kufstein" },
+    departureTime: "08:30",
+    rideToFirst: { duration: "21 min", note: "B169 up the valley past Zell to the Erlebnissennerei at Mayrhofen" },
     region: "south",
     base: "Fügen (Zillertal)",
-    title: "Kufstein — a real fortress above the Inn",
-    subtitle: "Festung Kufstein by glass lift, the noon organ, optional Riedel glassworks",
-    leadImage: "./images/kufstein-festung.jpg",
+    title: "Cheese, tractors, and a Mayrhofen afternoon",
+    subtitle: "The show dairy at Mayrhofen with animals to pet and cheese to taste · the Erlebnisbad · then the flat main street, ice cream and playgrounds",
+    leadImage: "./images/erlebnissennerei-zillertal.jpg",
     activities: [
       {
-        time: "09:45",
-        title: "Festung Kufstein — up by the glass Panoramabahn",
+        time: "~08:50",
+        title: "Erlebnissennerei Zillertal — the show dairy",
         description:
-          "The 800-year-old fortress glowers over the town from its rock — and the barrier-free glass Panoramabahn glides you from the visitor center straight to the top, no climb. Up there: ramparts to patrol, the deep well, cannons, the Kaiserturm, and lawns where the kids can safely charge around. The stroller comes up fine on the lift, but inside the towers it's stairs — carrier for Tom, and let Gili count the cannons. Open daily; last entry an hour before closing.",
-        attractionId: "kufstein-festung",
-        tag: "culture",
-        rideToNext: { duration: "5 min", note: "walk down into the old town lanes", departAt: "12:15" }
+          "A measured 21 minutes up the valley, and the last easy morning of the trip. This is a working dairy that decided to let families in: glass windows onto the production floor where you watch milk become cheese, a farm yard with animals to pet, toy tractors that Gili will monopolise, a big playground, and a shop with tastings at the end. Straightforward, indoor-ish and completely toddler-proof — a good choice for a day when everyone's legs have had enough mountains. On the food: this is one of the few stops where the allergies genuinely matter. Gili can't have sesame and Tom can't have banana, and a dairy shop means bakery items at the counter and fruit yoghurts, smoothies and milkshakes at the tasting bar. Read the labels, and ask staff before either kid tastes anything — 'Enthält das Sesam?' and 'Ist da Banane drin?' do the job.",
+        attractionId: "erlebnissennerei-zillertal",
+        tag: "food",
+        rideToNext: { duration: "5 min", note: "a couple of minutes on into Mayrhofen", departAt: "11:30" }
       },
       {
-        time: "12:00",
-        title: "The Heldenorgel at noon, then lunch in the old town",
+        time: "11:30",
+        title: "Erlebnisbad Mayrhofen — a swim before lunch",
         description:
-          "Time your descent for 12:00: the Heldenorgel — the world's largest open-air organ, built into the fortress tower in 1931 — plays every day at noon and echoes across the whole town. Listen from the square below, then lunch in the postcard-perfect Römerhofgasse lane.",
-        attractionId: "kufstein-festung",
-        tag: "culture",
-        rideToNext: { duration: "5 min", note: "short drive across town to the Riedel works" }
+          "Hila's own pick, and it fills the slot the Pillersee vacated when it moved to Monday: Mayrhofen's outdoor pool complex, with a shallow toddler area, big lawns to lie on, slides for Gili and enough space that nobody feels watched. Ninety minutes is exactly the right dose before lunch — in and out, not a full pool day (you already had one of those on Sunday). Check the day's opening hours and prices at the entrance, and take coins for a locker.",
+        attractionId: "erlebnisbad-mayrhofen",
+        tag: "water"
+      },
+      {
+        time: "The quieter alternative",
+        title: "An easy riverside stretch of the Ziller path instead",
+        description:
+          "If nobody has the appetite for another pool, swap in the gentle version: the Ziller cycle and walking path runs flat along the river at Mayrhofen too, and an out-and-back stroll with the pram — water on one side, mountains straight ahead — is a completely respectable way to spend ninety minutes. Cooler than the pool, no changing rooms, and it costs nothing.",
+        attractionId: "ziller-radweg",
+        tag: "nature",
+        optional: true
+      },
+      {
+        time: "13:00",
+        title: "Lunch, and the nap you have to engineer today",
+        description:
+          "Lunch in Mayrhofen, and then a small honest problem: every stop today is minutes apart, so there's no long transfer to sleep through. Two options that work. One, drive the nap on purpose — head a little further up the valley toward Ginzling on the quiet road and turn back when they're out; it's beautiful and it's exactly the kind of road that puts children to sleep. Two, accept a pram nap: Mayrhofen's main street is flat and shaded in places, so one parent walks laps while the other sits with a coffee. Either is fine. Skipping the nap on the second-to-last day is not."
       },
       {
         time: "14:00",
-        title: "Riedel Glass — watch the glassblowers",
+        title: "Mayrhofen village — flat streets, cafés, ice cream, playgrounds",
         description:
-          "The famous wine-glass maker's Kufstein home opens its factory to visitors on weekdays: a museum, a multimedia 'Sinnfonie' walk, and a gallery view of glassblowers shaping red-hot glass. Public tours typically run late morning and early afternoon on weekdays — check times at riedel.com before committing. Gili gets fifteen fascinated minutes out of molten glass; that's the right dose. Skip freely if naps call.",
-        attractionId: "riedel-glass",
-        tag: "culture",
-        optional: true
+          "The Zillertal's big resort village, and in August it's an easy, cheerful place to spend an afternoon at toddler pace: a flat main street you can do with the pram, cafés with terraces, several playgrounds tucked between the hotels, ice cream in more than one place, and shop windows full of the kind of Tyrolean tat that makes a good souvenir. Park once and walk. There's no sight to tick off here, which is the point — this is the afternoon where nothing is scheduled and you all wind down toward the last day.",
+        attractionId: "mayrhofen-town",
+        tag: "village",
+        optional: false,
+        rideToNext: { duration: "21 min", note: "back down the B169 through Zell to Fügen", departAt: "16:40" }
       }
     ],
     driveNotes:
-      "Fügen → Kufstein ≈ 45 min: ten minutes down the B169 to the A12 at Strass, then straight north-east down the Inn valley (Kufstein is the last town before the German border — you'll drive this same stretch to the airport on Thursday, so today doubles as a dry run). Park at the City Parkgarage or the Riedel car park; both are a short walk from the fortress visitor center.",
+      "The gentlest driving day of the whole week, and deliberately so before tomorrow's transfer. Fügen → Erlebnissennerei Zillertal at Mayrhofen is a measured 21 min straight up the B169 through Zell. Everything after that is inside Mayrhofen — the pool and the village are minutes apart, so the car mostly sits. Home is the same 21 min back down the valley. The flip side of all these short hops is that today's nap has no transfer to hide in, so it has to be driven deliberately (the quiet road up toward Ginzling) or done in the pram.",
     gear: [
-      { item: "Carrier for Tom — the Panoramabahn is step-free but the fortress interiors are stairs on stairs", for: "kufstein-festung" },
-      { item: "Sun hats — the ramparts and lawns at the top are shade-free at midday", for: "kufstein-festung" },
-      { item: "Snack stash — the fortress café lines are slow at peak; the lawns are made for a picnic", for: "kufstein-festung" },
-      { item: "A light layer for the Riedel factory hall — cool inside, hot at the furnace viewing", for: "riedel-glass" }
+      { item: "Snacks you've already checked the labels on — Gili sesame, Tom banana — so the tasting counter isn't the only option", for: "erlebnissennerei-zillertal" },
+      { item: "A cool bag in the boot for the cheese you'll buy at the dairy shop", for: "erlebnissennerei-zillertal" },
+      { item: "Wet wipes and hand gel — there's a farm yard with animals to pet", for: "erlebnissennerei-zillertal" },
+      { item: "Swim kit, swim diaper for Tom, towels, and coins for a locker", for: "erlebnisbad-mayrhofen" },
+      { item: "Pram for the flat main street and for the fallback pram nap", for: "mayrhofen-town" },
+      { item: "Cash for ice cream, the playground kiosk and small shops" }
     ],
     dayTips: [
-      "Be on the Panoramabahn by 10:00 — tour groups arrive from 11 and the fortress top is nicest empty",
-      "Stand a little away from the organ tower at noon — the Heldenorgel is genuinely loud up close, and Tom may have opinions",
-      "The fortress is partly barrier-free thanks to the lift, but plan for 'carrier terrain' inside the towers and casemates",
-      "Riedel is closed Sundays and holidays and its tours are weekday-only — today (Tuesday) works; still check the day's tour times before driving over",
-      "Kufstein is your fuel-up recon: note the petrol stations by the A12 on-ramp for the airport run on Thursday"
+      "The one stop where the allergies really matter: a dairy shop means bakery goods (sesame) and fruit yoghurts, smoothies and milkshakes (banana). Read labels, ask staff, and have safe snacks of your own in the bag before anyone starts tasting",
+      "Buy the cheese here rather than at the supermarket — it's the trip's best edible souvenir. Cool bag in the boot, and it survives to Munich",
+      "Today's nap has no long transfer to hide in: drive it on purpose up the quiet valley road toward Ginzling, or do a pram nap on the main street. Don't let it slide — tomorrow is a two-hour drive to Germany",
+      "If you swapped Saturday's Rattenberg to today because of the holiday, this is the afternoon to do it: it's a working Tuesday, the glass workshops and shops will be open, and Rattenberg is a short hop down the valley from Fügen",
+      "Check the Erlebnisbad's hours and prices at the entrance — outdoor pools in the Alps change their timetable with the weather",
+      "Second-to-last night: start the sort tonight. Wet things washed, souvenirs wrapped, and the car kit slimmed down to what you actually need for tomorrow's drive"
     ],
     italianWords: [
       {
-        word: "Festung",
-        pronounce: "FES-toong",
-        meaning: "Fortress",
-        example: "Die Festung ist auf dem Berg.",
-        exampleMeaning: "The fortress is on the mountain."
+        word: "Käse",
+        pronounce: "KAY-zeh",
+        meaning: "Cheese",
+        example: "Der Käse kommt von dieser Kuh!",
+        exampleMeaning: "The cheese comes from this cow!"
       },
       {
-        word: "Ritter",
-        pronounce: "RIT-ter",
-        meaning: "Knight",
-        example: "Hier wohnten Ritter!",
-        exampleMeaning: "Knights lived here!"
+        word: "Kuh",
+        pronounce: "koo",
+        meaning: "Cow (you hear the bells before you see them)",
+        example: "Die Kuh hat eine Glocke.",
+        exampleMeaning: "The cow has a bell."
       },
       {
-        word: "Kanone",
-        pronounce: "kah-NOH-neh",
-        meaning: "Cannon",
-        example: "Eins, zwei, drei Kanonen!",
-        exampleMeaning: "One, two, three cannons!"
+        word: "Milch",
+        pronounce: "milkh",
+        meaning: "Milk",
+        example: "Frische Milch für Tom, bitte.",
+        exampleMeaning: "Fresh milk for Tom, please."
       },
       {
-        word: "Turm",
-        pronounce: "toorm",
-        meaning: "Tower",
-        example: "Der Turm ist sehr hoch.",
-        exampleMeaning: "The tower is very tall."
+        word: "Traktor",
+        pronounce: "TRAHK-tor",
+        meaning: "Tractor",
+        example: "Gili fährt den Traktor!",
+        exampleMeaning: "Gili is driving the tractor!"
       },
       {
-        word: "Musik",
-        pronounce: "moo-ZEEK",
-        meaning: "Music",
-        example: "Hörst du die Musik? Das ist die Orgel!",
-        exampleMeaning: "Do you hear the music? That's the organ!"
+        word: "Eis",
+        pronounce: "ice",
+        meaning: "Ice cream (also 'ice')",
+        example: "Ein Eis für Gili, bitte.",
+        exampleMeaning: "One ice cream for Gili, please."
       },
       {
-        word: "Glas",
-        pronounce: "glahs",
-        meaning: "Glass",
-        example: "Das Glas ist heiß und rot!",
-        exampleMeaning: "The glass is hot and red!"
+        word: "Enthält das Sesam?",
+        pronounce: "ent-HELT dahs ZAY-zahm",
+        meaning: "Does this contain sesame? (the one phrase worth memorising — and 'Ist da Banane drin?' for Tom)",
+        example: "Entschuldigung, enthält das Sesam?",
+        exampleMeaning: "Excuse me, does this contain sesame?"
       }
     ],
     drinkOfTheDay: {
       name: "Zweigelt",
       type: "wine",
       pairing:
-        "Austria's flagship red — juicy sour cherry, soft tannins, dangerously drinkable. On the day you watched Riedel's glassblowers, drink an Austrian red from the glass they designed for it. If the hotel has Riedel stemware (many Tyrolean hotels do), tonight's the night to notice.",
-      servingNote: "Lightly cooled (16 °C) — Austrians never serve red warm — ideally in a Burgundy-ish bowl"
+        "Austria's flagship red — juicy sour cherry, soft tannins, dangerously drinkable — and the obvious partner for the cheese you carried home from the dairy this morning. Buy a bottle in the village, cut some Zillertal Bergkäse, and call it dinner on the balcony.",
+      servingNote: "Lightly cooled (16 °C) — Austrians never serve red warm"
     }
   },
   {
     dayNumber: 9,
     date: "2026-08-19",
     weekday: "Wednesday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "20 min", note: "B169 down to Strass, then one junction east on the A12 to Rattenberg" },
-    region: "south",
-    base: "Fügen (check-out) → Munich",
-    title: "Check out, glass town, one last lake",
-    subtitle: "Out of the Stacherhof, an hour in Rattenberg, lunch and a long swim at the Chiemsee, then a Munich hotel for the night",
-    leadImage: "./images/chiemsee-uebersee.jpg",
+    departureTime: "08:30",
+    rideToFirst: { duration: "24 min", note: "B169 down to Strass, A12 east one junction to Kramsach, then up into the Alpbachtal to Reith" },
+    region: "transit",
+    base: "Fügen (check-out) → Freising / Munich",
+    title: "One last Austrian morning, then north to Germany",
+    subtitle: "Check out of the Stacherhof · Lauserland's wooden play park in the Alpbachtal · a 2-hour drive to the Freising / Munich-airport area (with an optional Chiemsee swim on the way)",
+    leadImage: "./images/lauserland.jpg",
     activities: [
       {
         time: "08:00",
-        title: "Last breakfast, check out, load the car",
+        title: "Last included breakfast, check out, load the car",
         description:
-          "Seven nights done. Last included breakfast, then the full sweep: pack everything, check under the beds (that's where Tom's other shoe lives), empty the apartment fridge into the car snack bag, and get the boot loaded before you go anywhere — you want to be rolling by about 09:30. Pack the swim kit and one night's clothes for all four of you on top of the load; everything else can stay buried until Tel Aviv. From here on the car is home base until the Munich hotel tonight.",
+          "Seven nights done. Take the last breakfast properly — it's included and it's the last one you don't have to make — then the full sweep: pack everything, check under the beds (that's where Tom's other shoe lives), empty the apartment fridge into the car snack bag, and get the boot loaded before you go anywhere. Two things packed where you can reach them: the swim kit, in case you take the Chiemsee stop, and one night's clothes for all four of you, because you unpack almost nothing tonight. Aim to be rolling by 08:30.",
+        rideToNext: { duration: "24 min", note: "B169 down to Strass, A12 east one junction to Kramsach, then up into the Alpbachtal to Reith", departAt: "08:30" }
       },
       {
-        time: "09:50",
-        title: "Rattenberg — Austria's smallest town, made of glass",
+        time: "~09:00",
+        title: "Lauserland — the wooden play park at Reith im Alpbachtal",
         description:
-          "Twenty minutes down the valley and directly on the way out: a single medieval main street, about 400 residents, and glass shops end to end — Rattenberg has been a glass town for centuries. At Kisslinger Kristall-Glas the craft workshop is viewable on weekdays: glassblowers, cutters and engravers at their benches. Keep it light — the car is already loaded and an hour here is plenty. The street is car-free, flat and stroller-perfect, the ice cream is where the street bends, and a little glass animal each is the right souvenir of the week.",
-        attractionId: "rattenberg",
-        tag: "village",
-        rideToNext: { duration: "1 h 15", note: "A12 north-east over the Kufstein border onto the A93, then the A8 toward Munich and off at Übersee", departAt: "11:15" }
+          "A measured 24 minutes and a perfect last Austrian morning: a big adventure play park at the Reitherkogel base, built out of wood and water and pitched squarely at little ones. Wooden climbing structures at toddler scale, water channels and dams, sand, slides, animal figures to sit on, a hut for coffee, and grass to run on — no lift, no hike, no queue, and nothing here that Tom is too small for. Give it until about 12:30 and let it be unhurried; nobody wants to hurry a child on the last morning. Note the separate Lauser-Sauser alpine coaster at the same base station: from age 3 a child rides in front of an adult, so Gili qualifies and Tom doesn't — one parent takes her down, the other waits at the bottom with Tom. Check the day's hours and the height rules at the base station.",
+        attractionId: "lauserland",
+        tag: "family"
       },
       {
-        time: "~12:30",
-        title: "Chiemsee at Übersee — lunch and the last real swim",
+        time: "12:30",
+        title: "Lunch in the Alpbachtal — last Austrian meal",
         description:
-          "Five minutes off the A8's Übersee exit, on the Chiemsee's southern shore: the Feldwieser Bucht and the Strandbad at Übersee, where the Bavarian sea shelves so gently that Tom can wade in on his own two feet. Big lawns, food on site, and a playground with carousels, climbing frames, slides and swings for when swimming stops being enough. This is the last real play of the trip, so give it the whole afternoon — lunch first, then let them run it into the ground. Check the day's opening and lifeguard hours at the entrance, and pick your lawn spot with some shade in it.",
+          "Eat at the play park's hut or drop into Reith or Alpbach village for a proper last Tyrolean lunch — Kaiserschmarrn, if you haven't had it yet, is the correct final order. Then get everyone into the car by 13:30, because the afternoon is a real drive and the nap has a job to do.",
+        rideToNext: { duration: "2 h", note: "A12 north over the Kufstein border, A93 then A8 toward Munich, then north to Freising — a measured 2 h and 170 km, not the 1.5 h in the original plan", departAt: "13:30" }
+      },
+      {
+        time: "Optional leg-stretch",
+        title: "Chiemsee — Strandbad Feldwies at Übersee",
+        description:
+          "Five minutes off the A8 at the Übersee exit, on the Chiemsee's southern shore: shallow, warm, gently shelving water that Tom can walk into on his own feet, a lawn, and a playground. It's directly on the route, so it costs you nothing but the time you spend there — and it would be the last swim of the trip. Decide it in the car: if the kids wake early and get restless, take it and let them run the trip's energy out in Bavarian water. If they're both asleep and you'd rather bank the hour and arrive relaxed, drive on without guilt. Check the day's opening and lifeguard hours at the entrance if you stop.",
         attractionId: "chiemsee-uebersee",
         tag: "water",
-        rideToNext: { duration: "1 h", note: "back onto the A8 north-west toward Munich", departAt: "16:00" }
+        optional: true,
+        rideToNext: { duration: "1 h", note: "back onto the A8 north-west, round Munich and on to Freising" }
       },
       {
-        time: "Late afternoon",
-        title: "Check in at the Munich hotel",
+        time: "15:30",
+        title: "Arrive at the Freising / Munich-airport-area hotel",
         description:
-          "Tonight you sleep near Munich — that part is decided; the specific hotel is still being booked, so check the Lists section for the confirmed address before you set the nav after the lake. Wherever it lands, unpack exactly one night's worth and no more, then repack the airport bag on top: passports, boarding passes, the glass souvenirs wrapped in clothes, and the flight entertainment. Tomorrow's fixed points don't move — Sixt return by 13:00 at Terminalstraße Mitte, Parkhaus P6, and LY254 at 16:30 — but from a Munich bed they're suddenly relaxed instead of tight.",
+          "Tonight you sleep near the airport — that part is decided; the specific hotel is still being booked, so check the Lists section for the confirmed address before you set the nav after lunch. Whatever it turns out to be, an airport-area bed is what makes tomorrow calm: the 13:00 Sixt return stops being a race and becomes an errand. Unpack exactly one night's worth and no more, then repack the airport bag on top — passports, boarding passes, the cheese wrapped in a cool bag, anything fragile in hand luggage, and the flight entertainment. Then a relaxed evening: hotel dinner, early bath, and a first look through 2,000 photos."
       }
     ],
     driveNotes:
-      "Check-out morning, so the car gets loaded before anything else happens — and today the driving actually adds up, split into three friendly pieces. Fügen → Rattenberg ≈ 20 min (B169 down to Strass, then one junction east on the A12). Rattenberg → Chiemsee/Übersee ≈ 1 h 15: on north-east past Kufstein, over the German border onto the A93, then the A8 toward Munich and off at the Übersee exit, with the lido about five minutes from the motorway. Übersee → Munich ≈ 1 h back up the A8. All motorway, no mountain roads, and the long swim in the middle is what keeps the day from feeling like a transfer.",
+      "Check-out morning, so the car gets loaded before anything else happens, then two legs. Fügen → Lauserland at Reith im Alpbachtal is a measured 24 min: B169 down to Strass, A12 east one junction to Kramsach, then up into the Alpbachtal. The correction that reshapes the afternoon: Lauserland → Freising is a measured 2 h and 170 km, not the 1.5 h originally assumed — A12 north over the Kufstein border, the A93, then the A8 toward Munich and north to Freising. All motorway. The Chiemsee at Übersee sits directly on that route about five minutes off the A8, so it's a free option rather than a detour: taking it splits the drive into roughly 1 h + a swim + 1 h.",
     gear: [
-      { item: "Swim kit and towels packed where you can reach them — they go into the laundry bag after the Chiemsee, not back into a suitcase" },
-      { item: "One night's clothes for all four of you on top of the load — you unpack almost nothing at the Munich hotel" },
-      { item: "Stroller for the flat, car-free glass street", for: "rattenberg" },
-      { item: "A small padded box or bubble wrap if you buy glass — hand luggage, never the checked bag", for: "rattenberg" },
-      { item: "Cash and coins for the lido entry, ice creams and German parking machines — you're in Bavaria from lunchtime on" }
+      { item: "Swim kit and towels packed where you can actually reach them — the Chiemsee decision gets made in the car", for: "chiemsee-uebersee" },
+      { item: "One night's clothes for all four of you on top of the load — you unpack almost nothing at the hotel tonight" },
+      { item: "A change of clothes each for Lauserland's water channels — the last wet stop of the trip", for: "lauserland" },
+      { item: "The cool bag with yesterday's cheese, kept in the shade of the boot" },
+      { item: "Double snacks and full water bottles for the 2-hour run north — this is the longest single leg of the trip" },
+      { item: "Euro coins for German parking machines and the lido entry — you're in Bavaria from mid-afternoon" }
     ],
     dayTips: [
-      "Check-out is this morning, not tonight — load the car before Rattenberg and the whole day stays easy",
-      "Tonight is near Munich: that's decided, but the hotel itself is still being booked — check the Lists section for the confirmed address before you set the nav after the lake",
-      "Rattenberg is the light stop, not an outing: an hour on the glass street with the car already packed, then move on to the lake while the kids still have an afternoon in them",
-      "Glass shops + toddlers = one parent browses while the other runs perimeter defense outside. Alternate. The shops are genuinely worth a look",
-      "The Chiemsee is the last swim of the trip — plan the day so it gets four unhurried hours, not the leftovers",
-      "Empty the apartment fridge at check-out: leftover snacks become today's car provisions, and there's a real drive today"
+      "Correction: Lauserland → Freising is a measured 2 h (170 km), not 1.5 h. Leaving at 13:30 puts you at the hotel around 15:30 without the Chiemsee, later with it",
+      "Lauser-Sauser at the same base station: from age 3 a child rides in front of an adult, so Gili can and Tom can't. Parents alternate, and check the day's hours and rules at the base station rather than promising anything",
+      "The Chiemsee is a genuinely free option — five minutes off the A8, directly on the route. Take it if the kids wake up restless; skip it if they're asleep and you'd rather bank the hour",
+      "Tonight's hotel is in the Freising / Munich-airport area — decided, but still being booked. Check the Lists section for the confirmed address before you set the nav, and don't invent one at the roadside",
+      "An airport-area hotel is the whole reason tomorrow works: the 13:00 Sixt return and El Al's long security become comfortable instead of tight",
+      "Last check-out sweep: under the beds, the balcony, the bathroom hooks, the fridge. Then the car kit gets retired — wet things into a laundry bag, not back into a suitcase"
     ],
     italianWords: [
       {
-        word: "Klein",
-        pronounce: "kline",
-        meaning: "Small",
-        example: "Rattenberg ist die kleinste Stadt Österreichs.",
-        exampleMeaning: "Rattenberg is Austria's smallest town."
+        word: "Rutsche",
+        pronounce: "ROOT-sheh",
+        meaning: "Slide",
+        example: "Noch einmal die Rutsche!",
+        exampleMeaning: "The slide again!"
       },
       {
-        word: "Warm",
-        pronounce: "varm",
-        meaning: "Warm",
-        example: "Der See ist warm!",
-        exampleMeaning: "The lake is warm!"
+        word: "Spielplatz",
+        pronounce: "SHPEEL-plats",
+        meaning: "Playground",
+        example: "Das ist der schönste Spielplatz!",
+        exampleMeaning: "This is the best playground!"
+      },
+      {
+        word: "Grenze",
+        pronounce: "GREN-tseh",
+        meaning: "Border",
+        example: "Jetzt fahren wir über die Grenze.",
+        exampleMeaning: "Now we're crossing the border."
+      },
+      {
+        word: "Autobahn",
+        pronounce: "OW-toh-bahn",
+        meaning: "Motorway",
+        example: "Die Autobahn ist lang heute.",
+        exampleMeaning: "The motorway is long today."
+      },
+      {
+        word: "Müde",
+        pronounce: "MUE-deh",
+        meaning: "Tired",
+        example: "Alle sind müde im Auto.",
+        exampleMeaning: "Everyone is tired in the car."
       },
       {
         word: "Koffer",
@@ -929,27 +1069,13 @@ export const itinerary: Day[] = [
         meaning: "Suitcase",
         example: "Wir packen die Koffer.",
         exampleMeaning: "We're packing the suitcases."
-      },
-      {
-        word: "Andenken",
-        pronounce: "AHN-den-ken",
-        meaning: "Souvenir, keepsake",
-        example: "Ein Andenken aus Glas für Gili.",
-        exampleMeaning: "A glass souvenir for Gili."
-      },
-      {
-        word: "Vorsichtig!",
-        pronounce: "FOR-zikh-tikh",
-        meaning: "Careful! (the word of the day in a glass shop)",
-        example: "Vorsichtig, das ist aus Glas!",
-        exampleMeaning: "Careful, that's made of glass!"
       }
     ],
     drinkOfTheDay: {
       name: "Weißer Spritzer",
       type: "wine",
       pairing:
-        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water. Light enough for a day that ends with a hotel check-in, and the most Austrian possible way to toast seven nights in the Zillertal — from a Rattenberg glass, if you bought one. You're in Bavaria by dinner, so ask for a 'Weinschorle' and you'll get the same thing.",
+        "The Austrian evening default: Grüner Veltliner cut half-and-half with sparkling water — the most Austrian possible way to toast seven nights in the Zillertal, even though you're drinking it in Bavaria. Ask for a 'Weinschorle' here and you'll get exactly the same thing.",
       servingNote: "Half dry white wine, half soda water, plenty of ice — 'a G'spritzter' if you want to order like a local"
     }
   },
@@ -957,51 +1083,65 @@ export const itinerary: Day[] = [
     dayNumber: 10,
     date: "2026-08-20",
     weekday: "Thursday",
-    departureTime: "10:45",
-    rideToFirst: { duration: "short — depends on the hotel", note: "a fuel stop, then the airport spur; from an airport hotel it's minutes" },
+    departureTime: "08:30",
+    rideToFirst: { duration: "32 min", note: "Freising down to Munich and across to the Olympiapark — a measured 32 min" },
     region: "transit",
     base: "Munich → home",
-    title: "Auf Wiedersehen — a slow morning, then home",
-    subtitle: "Sixt return 13:00 at Terminalstr. Mitte P6 · LY254 departs 16:30",
-    leadImage: "./images/munich-airport.jpg",
+    title: "Auf Wiedersehen — a Munich morning, then home",
+    subtitle: "Olympiapark lawns, the lake and the tower · leave the park by 11:15 · Sixt return 13:00 at Terminalstr. Mitte P6 · LY254 departs 16:30",
+    leadImage: "./images/olympiapark-munich.jpg",
     activities: [
       {
-        time: "~09:00",
-        title: "A proper hotel breakfast — there's finally time for one",
+        time: "~07:45",
+        title: "Breakfast, final sweep, load the car",
         description:
-          "Sleeping near Munich buys you the one thing every previous morning lacked: no drive to speak of. Have the full breakfast, let the kids take it slowly, do the final room sweep (check under the beds — that's where Tom's other shoe lives), and have the car loaded by around 10:30. One last coffee while Gili tells you which animal was her favourite.",
-        rideToNext: { duration: "short — depends on the hotel", note: "fuel up on the way, not at the airport", departAt: "10:45" }
+          "Last hotel breakfast of the trip, and there's time for a real one. Do the room sweep while the kids eat (under the beds — that's where Tom's other shoe lives), get the boot loaded, and keep the airport bag on the back seat rather than buried: passports, boarding passes, snacks, the flight surprises. Rolling by 08:30 gives the morning its whole shape.",
+        rideToNext: { duration: "32 min", note: "Freising down toward Munich and across to the Olympiapark — park in the Olympiapark garage", departAt: "08:30" }
       },
       {
-        time: "12:15",
-        title: "Fuel + Sixt return at Parkhaus P6",
+        time: "~09:05",
+        title: "Olympiapark München — lawns, ducks, and one last big view",
         description:
-          "Fill the tank on the way in — a station a few minutes short of the airport, never the airport itself, where the prices are punitive. Rental return is signposted 'Mietwagen-Rückgabe': Terminalstraße Mitte, Parkhaus P6. Return by 13:00, keep the fuel receipt and the return paperwork, and it's a short walk into the terminal. Do the full car sweep at the petrol station rather than at P6 — calm beats frantic for finding pacifiers under seats.",
-        attractionId: "munich-airport"
+          "Hila's choice for the last morning and a good one: the 1972 Olympic park is essentially a giant landscaped playground — huge rolling lawns to run down, a lake with ducks and swans that will hold Tom's attention longer than anything in a museum, the tented stadium roof to point at, and paved paths that make the whole thing easy with a pram. If there's appetite for one more altitude hit, the Olympiaturm lift goes up the tower for a farewell view over Munich to the Alps you were standing in yesterday — check the day's hours and ticket prices at the tower entrance. Otherwise just walk the lake, buy an ice cream, and let the trip end gently. Two and a half hours here is plenty.",
+        attractionId: "olympiapark-munich",
+        tag: "family",
+        rideToNext: { duration: "28 min", note: "Mittlerer Ring to the A9 north and the airport spur — fuel up before you get there, never at the airport", departAt: "11:15" }
       },
       {
-        time: "13:15",
+        time: "~11:45",
+        title: "Fuel, then the Sixt return at Parkhaus P6",
+        description:
+          "Fill the tank a few minutes short of the airport — never at the airport itself, where the prices are punitive — and do the full car sweep there rather than at the return desk: seat pockets, under the seats, the boot corners where a pacifier and one sock are definitely hiding. Then the rental return, signposted 'Mietwagen-Rückgabe': Terminalstraße Mitte, Parkhaus P6. Hand back by 13:00, keep the fuel receipt and the return paperwork, and it's a short walk into the terminal.",
+        attractionId: "munich-airport",
+        optional: false
+      },
+      {
+        time: "~13:00",
         title: "Check-in, security, LY254 at 16:30",
         description:
-          "El Al flights from Munich come with thorough security interviews — the 3.5-hour buffer is not padding, it's the plan. Once through, MUC is a comfortable airport to burn an hour in: the kids' play areas and the plane-watching beat sitting at the gate. Land in Tel Aviv tonight with 2,000 photos and one glass marmot.",
-        attractionId: "munich-airport"
+          "El Al flights out of Munich come with thorough security interviews — the buffer isn't padding, it's the plan. One parent drops the bags while the other takes the kids straight to the play area; divide and survive. Once you're through, MUC is a comfortable airport to burn an hour in: kids' play areas, plane-watching windows, and a last Wiener Melange. Land in Tel Aviv tonight with 2,000 photos, a bag of Zillertal cheese, and a three-year-old who now says 'Gondel'.",
+        attractionId: "munich-airport",
+        optional: false
       }
     ],
     driveNotes:
-      "Today's drive is short — how short depends on which Munich hotel gets booked. If it's an airport hotel, the transfer is a matter of minutes; from the city or the A8 side of Munich, budget 30–45 minutes plus the fuel stop and the usual toddler margin. Either way this is the calmest last morning of the trip: yesterday's drive up from the Zillertal did all the hard work, so leaving around 10:45 lands you at Sixt comfortably inside the 13:00 return slot with time for a real breakfast first. Once the hotel is confirmed, check its actual airport transfer — several of the Munich-area hotels run a shuttle, which is worth knowing if the return of the car and the walk to check-in ever feel tight.",
+      "Two measured drives and one hard deadline, which is why the timing is worth reading twice. Freising → Olympiapark is 32 min, so leaving the hotel at 08:30 puts you on the grass just after 09:00. Olympiapark → Munich Airport is a measured 28 min, and the Sixt return is a hard 13:00 with a fuel stop needed first. Leaving the park at 12:00 as originally planned leaves essentially zero slack — one wrong turn on the Mittlerer Ring and you're late for the car and then hurried through El Al security. Leave by 11:15 instead: it still gives you a good two and a half hours in the park, and it turns the rest of the day into a walk rather than a run.",
     gear: [
       { item: "The entertainment bag, loaded fresh: snacks, water, one new small surprise toy each for the flight" },
-      { item: "Passports + booking confirmations in the daypack, not the suitcase" },
-      { item: "The glass souvenirs wrapped in clothes in the HAND luggage", for: "munich-airport" },
-      { item: "Change of clothes for both kids in the carry-on — flight insurance of the practical kind" },
-      { item: "Empty water bottles through security, refill at the gate" }
+      { item: "Flight snacks you've read the labels on — Gili sesame, Tom banana — because airport food gets bought in a hurry" },
+      { item: "Passports and booking confirmations in the daypack, not the suitcase" },
+      { item: "The cheese and anything fragile in HAND luggage, wrapped in clothes", for: "munich-airport" },
+      { item: "A change of clothes for both kids in the carry-on — flight insurance of the practical kind" },
+      { item: "Empty water bottles through security, refilled at the gate" },
+      { item: "Pram right up to the gate — most airlines take it there, and MUC is a long walk", for: "olympiapark-munich" }
     ],
     dayTips: [
-      "You're starting from Munich, so today has something no other morning had: time. A full hotel breakfast, no rushing the kids, and still at Sixt well before 13:00",
-      "Fuel receipt from within ~20 min of the airport is your proof of a full tank if Sixt queries it",
-      "P6 return: follow 'Mietwagen' signs, not 'Parken' — they split late and the loop back costs ten minutes",
-      "El Al security at MUC interviews every family — with kids you're often waved toward the shorter line; budget the time anyway",
-      "One parent drops the bags at check-in while the other takes the kids straight to the play area — divide and survive"
+      "The one timing change worth taking seriously today: leave the Olympiapark by 11:15, not 12:00. It's a measured 28 min to MUC, you still need fuel, and the 13:00 Sixt return doesn't move. You'd still get a full two and a half hours in the park",
+      "Fuel a few minutes short of the airport and keep the receipt — it's your proof of a full tank if Sixt queries it",
+      "At the airport follow 'Mietwagen' signs, not 'Parken' — they split late and the loop back costs ten minutes you won't have",
+      "The Olympiaturm lift is the optional flourish, not the plan: check the day's hours and prices at the entrance, and skip it without regret if the lawns and the ducks are working",
+      "El Al security at MUC interviews every family. With small kids you're often waved toward the shorter line — budget the full time anyway",
+      "Do the car sweep at the petrol station, not at P6: calm beats frantic for finding pacifiers under seats, and P6 is where the clock is loudest"
     ],
     italianWords: [
       {

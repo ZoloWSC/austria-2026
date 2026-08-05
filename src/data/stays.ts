@@ -39,8 +39,8 @@ export const stays: Stay[] = [
       "Weekly cleaning with fresh linen, daily rubbish service, WiFi throughout"
     ],
     warnings: [
-      "Air conditioning is NOT mentioned anywhere in the offer — worth calling to ask (+43 5288 62753) before August. The suite has a balcony and hillside airflow, but bring a plan for a hot night (fan, cross-ventilation, blinds down by day).",
-      "The booking ends on 19 Aug — the night of 19→20 Aug still needs sorting (extend here, or sleep near Munich Airport for the flight home).",
+      "CONFIRMED: there is no air conditioning. The suite is on a hillside with a balcony, so the Alpine routine is the answer — shutters and curtains shut through the afternoon, windows wide open once it cools, and a clip-on fan for the kids' room. Ask reception for a fan as well.",
+      "The booking ends on the morning of 19 Aug — that day you check out, spend the last Austrian morning at Lauserland and drive to a hotel in the Freising / Munich-airport area (still to book).",
       "The sauna / wellness area is 14+, so it's not an option with Gili and Tom — the swim pond and playground are the kids' territory.",
       "Underground garage height is 2.20 m — fine for the booked SUV class, but check if you end up with a roof box.",
       "It's in the Zillertal, not the Alpbachtal: Söll and Kufstein are now ~45–50 min away, while Spieljoch, Jenbach and Rattenberg are very close."

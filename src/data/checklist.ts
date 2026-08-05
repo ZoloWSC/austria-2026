@@ -30,22 +30,21 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "last-night",
     text: "Book the Munich hotel for the last night (19 Aug)",
-    detail: "Decided: we drive back to Munich on the 19th and sleep there. Still to book. An airport hotel is the calmest option — the Hilton we use on the 11th is connected to the terminal by a covered walkway, so on the 20th it's just return the car and walk over. A hotel in the city means a ~40 min drive before the 13:00 car return.",
+    detail: "Decided: we drive out of Austria on the 19th and sleep in the Freising / Munich-airport area. Still to book. An airport hotel is the calmest option — the Hilton we use on the 11th is connected to the terminal, so on the 20th it's just return the car and walk over. Freising is ~30 min out, which still works with the Olympiapark morning and the 13:00 car return.",
     urgent: true
   },
   {
     id: "hotel-ac",
-    text: "Call the Stacherhof about air conditioning",
-    detail: "The offer never mentions AC. Ring +43 5288 62753 to ask whether the Chalet Suite has it — and if not, ask for a fan and plan on shutters-down-by-day, windows-open-at-night.",
-    link: "tel:+43528862753",
-    urgent: true
+    text: "Air conditioning: asked — there is none",
+    detail: "Confirmed with the hotel: the Chalet Suite has no AC. It's a hillside apartment with a balcony, so the plan is the Alpine one — shutters and curtains closed through the afternoon, windows wide open once it cools, and a clip-on fan for the kids' room (worth packing one, they're light). Ask reception for a fan too.",
+    done: true
   },
   {
     id: "child-seats",
     text: "Sort child car seats with Sixt (or bring your own)",
-    detail: "Austria requires seats for kids under 135 cm. Reserve a toddler seat for Tom and a forward seat for Gili with the Sixt booking, or bring your own — supply on the day isn't guaranteed.",
+    detail: "Sorted. Austria requires seats for kids under 135 cm — a toddler seat for Tom and a forward-facing one for Gili. Still worth checking they're actually fitted and the right size before leaving the garage at pickup.",
     link: "https://www.sixt.com/",
-    urgent: true
+    done: true
   },
   {
     id: "vignette",
@@ -61,16 +60,15 @@ export const bookingChecklist: ChecklistItem[] = [
     link: "https://kristallwelten.swarovski.com/en"
   },
   {
-    id: "passports",
-    text: "Check passports valid well past Aug 2026",
-    detail: "All four passports. Israeli citizens enter Schengen visa-free for short stays.",
-    urgent: true
+    id: "bike-hire",
+    text: "Sort bike hire + a child trailer for the Ziller cycle path",
+    detail: "For the flat riverside ride out of Fügen on arrival afternoon. Ask the Stacherhof for the nearest rental — a trailer (or a child seat) is the way to do it with Tom, and Gili can ride along or sit in with him. Book ahead in August if you can.",
   },
   {
-    id: "etias",
-    text: "Check ETIAS status before departure",
-    detail: "The EU's pre-travel authorisation has been delayed repeatedly — check close to the trip whether it's live for August 2026 and register online if so.",
-    link: "https://travel-europe.europa.eu/etias_en"
+    id: "passports",
+    text: "Passports checked — all four valid",
+    detail: "Israeli citizens enter the Schengen area visa-free for short stays.",
+    done: true
   },
   {
     id: "insurance",
@@ -90,7 +88,7 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "carrier",
     text: "Hiking baby carrier for Tom",
-    detail: "Essential for the gondola-top loops (Juppi's Zauberwald, Spieljoch) and cobbled old towns where a stroller struggles."
+    detail: "Essential for the gondola-top play worlds (Spieljoch, Fichtenschloss, Hohe Salve) and cobbled old towns like Rattenberg where a stroller struggles."
   },
   {
     id: "stroller",
@@ -105,7 +103,13 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "water-clothes",
     text: "Swimwear, water sandals & a full change of clothes",
-    detail: "For Achensee, the Reintalersee and especially the Hexenwasser — the kids WILL come home soaked and muddy."
+    detail: "There is water on almost every day — Achensee, Salvenaland, the Spieljoch pools, Hintersteiner See and especially the Hexenwasser. Hila's rule: a permanent kit lives in the car (swimwear, towels, spare clothes, carrier, water)."
+  },
+  {
+    id: "fan",
+    text: "A clip-on / USB fan for the kids' room",
+    detail: "The Stacherhof has no air conditioning (confirmed). A small clip fan weighs nothing and makes a hot August night in the chalet suite far easier — plus shutters closed by day, windows open at night.",
+    urgent: true
   },
   {
     id: "sun",
